@@ -45,6 +45,14 @@
             <unmanaged>IUnknown* pEffect</unmanaged>	
             <unmanaged-short>IUnknown pEffect</unmanaged-short>	
         </member>
+        <member name="F:SharpDX.XAudio2.EffectDescriptor.InitialState">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='XAUDIO2_EFFECT_DESCRIPTOR::InitialState']/*"/>	
+            <unmanaged>BOOL InitialState</unmanaged>	
+            <unmanaged-short>BOOL InitialState</unmanaged-short>	
+        </member>
         <member name="F:SharpDX.XAudio2.EffectDescriptor.OutputChannelCount">
             <summary>	
             No documentation.	
@@ -58,14 +66,6 @@
             Gets or sets the AudioProcessor. The AudioProcessor cannot be set more than one.
             </summary>
             <value>The effect.</value>
-        </member>
-        <member name="P:SharpDX.XAudio2.EffectDescriptor.InitialState">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='XAUDIO2_EFFECT_DESCRIPTOR::InitialState']/*"/>	
-            <unmanaged>BOOL InitialState</unmanaged>	
-            <unmanaged-short>BOOL InitialState</unmanaged-short>	
         </member>
         <member name="T:SharpDX.XAudio2.AudioBuffer">
             <summary>	
@@ -1151,7 +1151,7 @@
             <unmanaged>float RoomSize</unmanaged>	
             <unmanaged-short>float RoomSize</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.XAudio2.Fx.ReverbParameters.DisableLateField">
+        <member name="F:SharpDX.XAudio2.Fx.ReverbParameters.DisableLateField">
             <summary>	
             <dd> If set to TRUE, disables late field reflection calculations.  Disabling late field reflection calculations results in a significant CPU time savings. </dd>	
             </summary>	
@@ -2590,7 +2590,7 @@
             <unmanaged>unsigned int BreakMask</unmanaged>	
             <unmanaged-short>unsigned int BreakMask</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.XAudio2.DebugConfiguration.LogThreadID">
+        <member name="F:SharpDX.XAudio2.DebugConfiguration.LogThreadID">
             <summary>	
             No documentation.	
             </summary>	
@@ -2598,7 +2598,7 @@
             <unmanaged>BOOL LogThreadID</unmanaged>	
             <unmanaged-short>BOOL LogThreadID</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.XAudio2.DebugConfiguration.LogFileline">
+        <member name="F:SharpDX.XAudio2.DebugConfiguration.LogFileline">
             <summary>	
             No documentation.	
             </summary>	
@@ -2606,7 +2606,7 @@
             <unmanaged>BOOL LogFileline</unmanaged>	
             <unmanaged-short>BOOL LogFileline</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.XAudio2.DebugConfiguration.LogFunctionName">
+        <member name="F:SharpDX.XAudio2.DebugConfiguration.LogFunctionName">
             <summary>	
             No documentation.	
             </summary>	
@@ -2614,7 +2614,7 @@
             <unmanaged>BOOL LogFunctionName</unmanaged>	
             <unmanaged-short>BOOL LogFunctionName</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.XAudio2.DebugConfiguration.LogTiming">
+        <member name="F:SharpDX.XAudio2.DebugConfiguration.LogTiming">
             <summary>	
             No documentation.	
             </summary>	
@@ -4274,7 +4274,7 @@
             <unmanaged>void IXAPO::UnlockForProcess()</unmanaged>	
             <unmanaged-short>IXAPO::UnlockForProcess</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.XAPO.AudioProcessorNative.Process_(System.Int32,SharpDX.XAPO.BufferParameters[],System.Int32,SharpDX.XAPO.BufferParameters[],System.Boolean)">
+        <member name="M:SharpDX.XAPO.AudioProcessorNative.Process_(System.Int32,SharpDX.XAPO.BufferParameters[],System.Int32,SharpDX.XAPO.BufferParameters[],SharpDX.Bool)">
             <summary>	
             Runs the XAPO's digital signal processing (DSP) code on the given input and output buffers.	
             </summary>	

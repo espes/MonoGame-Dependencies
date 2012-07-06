@@ -34,6 +34,15 @@
             The result of the conversion.
             </returns>
         </member>
+        <member name="M:SharpDX.D3DCompiler.CompilationResult.op_Implicit(SharpDX.D3DCompiler.CompilationResult)~System.Byte[]">
+            <summary>
+            Performs an implicit conversion from <see cref="T:SharpDX.D3DCompiler.CompilationResult"/> to byte array
+            </summary>
+            <param name="input">The input.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
         <member name="T:SharpDX.D3DCompiler.ConstantBufferFlags">
             <summary>	
             <p>Values that identify the indended use of a constant-data buffer.</p>	
@@ -2684,7 +2693,7 @@
             <unmanaged>HRESULT D3DGetBlobPart([In, Buffer] const void* pSrcData,[In] SIZE_T SrcDataSize,[In] D3D_BLOB_PART Part,[In] unsigned int Flags,[Out] ID3D10Blob** ppPart)</unmanaged>	
             <unmanaged-short>D3DGetBlobPart</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.D3DCompiler.D3D.WriteBlobToFile(SharpDX.Direct3D.Blob,System.String,System.Boolean)">
+        <member name="M:SharpDX.D3DCompiler.D3D.WriteBlobToFile(SharpDX.Direct3D.Blob,System.String,SharpDX.Bool)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Writes a memory blob to a file on disk.</p>	
             </summary>	
@@ -3165,7 +3174,7 @@
             <unmanaged>unsigned longlong ID3D11ShaderReflection::GetRequiresFlags()</unmanaged>	
             <unmanaged-short>ID3D11ShaderReflection::GetRequiresFlags</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.D3DCompiler.ShaderReflection.#ctor(SharpDX.D3DCompiler.ShaderBytecode)">
+        <member name="M:SharpDX.D3DCompiler.ShaderReflection.#ctor(System.Byte[])">
             <summary>
               Initializes a new instance of the <see cref = "T:SharpDX.D3DCompiler.ShaderReflection" /> class from a <see cref = "T:SharpDX.D3DCompiler.ShaderBytecode" />.
             </summary>
@@ -4811,13 +4820,6 @@
             </summary>
             <param name="stream">The stream.</param>
         </member>
-        <member name="M:SharpDX.D3DCompiler.ShaderBytecode.FromPointer(System.IntPtr)">
-            <summary>
-            Froms the pointer.
-            </summary>
-            <param name="pointer">The pointer.</param>
-            <returns></returns>
-        </member>
         <member name="M:SharpDX.D3DCompiler.ShaderBytecode.Preprocess(System.String,SharpDX.Direct3D.ShaderMacro[],SharpDX.D3DCompiler.Include)">
             <summary>
               Preprocesses the provided shader or effect source.
@@ -4874,6 +4876,13 @@
             <returns>A string containing any errors that may have occurred.</returns>
             <unmanaged>HRESULT D3DStripShader([In, Buffer] const void* pShaderBytecode,[In] SIZE_T BytecodeLength,[In] D3DCOMPILER_STRIP_FLAGS uStripFlags,[Out] ID3D10Blob** ppStrippedBlob)</unmanaged>
         </member>
+        <member name="M:SharpDX.D3DCompiler.ShaderBytecode.op_Implicit(SharpDX.D3DCompiler.ShaderBytecode)~System.Byte[]">
+            <summary>
+            Cast this <see cref="T:SharpDX.D3DCompiler.ShaderBytecode"/> to the underlying byte buffer.
+            </summary>
+            <param name="shaderBytecode"></param>
+            <returns>A byte buffer</returns>
+        </member>
         <member name="M:SharpDX.D3DCompiler.ShaderBytecode.FromStream(System.IO.Stream)">
             <summary>
               Read a compiled shader bytecode from a Stream and return a ShaderBytecode
@@ -4881,18 +4890,10 @@
             <param name = "stream"></param>
             <returns></returns>
         </member>
-        <member name="P:SharpDX.D3DCompiler.ShaderBytecode.BufferPointer">
+        <member name="P:SharpDX.D3DCompiler.ShaderBytecode.Data">
             <summary>
             Gets the buffer pointer.
             </summary>
-        </member>
-        <member name="P:SharpDX.D3DCompiler.ShaderBytecode.BufferSize">
-            <summary>
-            Gets or sets the size of the buffer.
-            </summary>
-            <value>
-            The size of the buffer.
-            </value>
         </member>
         <member name="P:SharpDX.D3DCompiler.ShaderBytecode.IsCompressed">
             <summary>
@@ -4901,11 +4902,6 @@
             <value>
                 <c>true</c> if this instance is compressed; otherwise, <c>false</c>.
             </value>
-        </member>
-        <member name="P:SharpDX.D3DCompiler.ShaderBytecode.Data">
-            <summary>
-              Gets the raw data of the compiled bytecode.
-            </summary>
         </member>
         <member name="T:SharpDX.D3DCompiler.ShaderSignature">
             <summary>
@@ -4931,14 +4927,13 @@
             </summary>
             <param name="data">The data.</param>
         </member>
-        <member name="M:SharpDX.D3DCompiler.ShaderSignature.#ctor(System.Byte[],System.Boolean)">
+        <member name="M:SharpDX.D3DCompiler.ShaderSignature.#ctor(System.Byte[])">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.D3DCompiler.ShaderSignature"/> class.
             </summary>
             <param name="data">The data.</param>
-            <param name="makeACopy">if set to <c>true</c> [make A copy] else the buffer is pinned.</param>
         </member>
-        <member name="M:SharpDX.D3DCompiler.ShaderSignature.GetInputOutputSignature(SharpDX.D3DCompiler.ShaderBytecode)">
+        <member name="M:SharpDX.D3DCompiler.ShaderSignature.GetInputOutputSignature(System.Byte[])">
             <summary>
               Extracts the input and output signatures from a compiled shader or effect.
             </summary>
@@ -4948,7 +4943,7 @@
             <unmanaged>HRESULT D3DGetInputAndOutputSignatureBlob([In, Buffer] const void* pSrcData,[In] SIZE_T SrcDataSize,[Out] ID3D10Blob** ppSignatureBlob)</unmanaged>	
             <unmanaged-short>D3DGetInputAndOutputSignatureBlob</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.D3DCompiler.ShaderSignature.GetInputSignature(SharpDX.D3DCompiler.ShaderBytecode)">
+        <member name="M:SharpDX.D3DCompiler.ShaderSignature.GetInputSignature(System.Byte[])">
             <summary>
               Extracts the input signature from a compiled shader or effect.
             </summary>
@@ -4958,7 +4953,7 @@
             <unmanaged>HRESULT D3DGetInputSignatureBlob([In, Buffer] const void* pSrcData,[In] SIZE_T SrcDataSize,[Out] ID3D10Blob** ppSignatureBlob)</unmanaged>	
             <unmanaged-short>D3DGetInputSignatureBlob</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.D3DCompiler.ShaderSignature.GetOutputSignature(SharpDX.D3DCompiler.ShaderBytecode)">
+        <member name="M:SharpDX.D3DCompiler.ShaderSignature.GetOutputSignature(System.Byte[])">
             <summary>
               Extracts the output signature from a compiled shader or effect.
             </summary>
@@ -4969,18 +4964,12 @@
             <unmanaged>HRESULT D3DGetOutputSignatureBlob([In, Buffer] const void* pSrcData,[In] SIZE_T SrcDataSize,[Out] ID3D10Blob** ppSignatureBlob)</unmanaged>	
             <unmanaged-short>D3DGetOutputSignatureBlob</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.D3DCompiler.ShaderSignature.BufferPointer">
+        <member name="M:SharpDX.D3DCompiler.ShaderSignature.op_Implicit(SharpDX.D3DCompiler.ShaderSignature)~System.Byte[]">
             <summary>
-            Gets the buffer pointer.
+            Cast this <see cref="T:SharpDX.D3DCompiler.ShaderSignature"/> to the underlying byte buffer.
             </summary>
-        </member>
-        <member name="P:SharpDX.D3DCompiler.ShaderSignature.BufferSize">
-            <summary>
-            Gets the size of the buffer.
-            </summary>
-            <value>
-            The size of the buffer.
-            </value>
+            <param name="shaderSignature"></param>
+            <returns>A byte buffer</returns>
         </member>
         <member name="P:SharpDX.D3DCompiler.ShaderSignature.Data">
             <summary>

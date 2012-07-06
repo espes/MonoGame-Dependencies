@@ -444,6 +444,54 @@
             Gets a new SharpDX.AngleSingle instance that represents the full rotation angle (i.e. 360° or 2π).
             </summary>
         </member>
+        <member name="T:SharpDX.Bool">
+            <summary>
+            A boolean value stored on 4 bytes (instead of 1 in .NET).
+            </summary>
+        </member>
+        <member name="M:SharpDX.Bool.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Bool"/> class.
+            </summary>
+            <param name="boolValue">if set to <c>true</c> [bool value].</param>
+        </member>
+        <member name="M:SharpDX.Bool.Equals(SharpDX.Bool)">
+            <summary>
+            Indicates whether this instance and a specified object are equal.
+            </summary>
+            <param name="other">The other.</param>
+            <returns>true if <paramref name="other" /> and this instance are the same type and represent the same value; otherwise, false.</returns>
+        </member>
+        <member name="M:SharpDX.Bool.op_Equality(SharpDX.Bool,SharpDX.Bool)">
+            <summary>
+            Implements the ==.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:SharpDX.Bool.op_Inequality(SharpDX.Bool,SharpDX.Bool)">
+            <summary>
+            Implements the !=.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:SharpDX.Bool.op_Implicit(SharpDX.Bool)~System.Boolean">
+            <summary>
+            Performs an explicit conversion from <see cref="T:SharpDX.Color4"/> to <see cref="!:System.Drawing.Color"/>.
+            </summary>
+            <param name="booleanValue">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:SharpDX.Bool.op_Implicit(System.Boolean)~SharpDX.Bool">
+            <summary>
+            Performs an explicit conversion from <see cref="T:SharpDX.Color4"/> to <see cref="!:System.Drawing.Color"/>.
+            </summary>
+            <param name="boolValue">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
         <member name="T:SharpDX.BoundingBox">
             <summary>
             Represents an axis-aligned bounding box in three dimensional space.
@@ -713,6 +761,13 @@
             The result of the operator.
             </returns>
         </member>
+        <member name="M:SharpDX.BoundingFrustum.GetPlane(System.Int32)">
+            <summary>
+            Returns one of the 6 planes related to this frustum.
+            </summary>
+            <param name="index">Plane index where 0 fro Left, 1 for Right, 2 for Top, 3 for Bottom, 4 for Near, 5 for Far</param>
+            <returns></returns>
+        </member>
         <member name="M:SharpDX.BoundingFrustum.FromCamera(SharpDX.Vector3,SharpDX.Vector3,SharpDX.Vector3,System.Single,System.Single,System.Single,System.Single)">
             <summary>
             Creates a new frustum relaying on perspective camera parameters
@@ -815,7 +870,7 @@
             <param name="frustum">The frustum.</param>
             <returns>Type of the containment</returns>
         </member>
-        <member name="M:SharpDX.BoundingFrustum.Contains(SharpDX.BoundingFrustum@,SharpDX.ContainmentType@)">
+        <member name="M:SharpDX.BoundingFrustum.Contains(SharpDX.BoundingFrustum@,System.Boolean@)">
             <summary>
             Determines the intersection relationship between the frustum and another bounding frustum.
             </summary>
@@ -863,20 +918,6 @@
             </summary>
             <param name="plane">The plane.</param>
             <param name="result">Plane intersection type.</param>
-        </member>
-        <member name="M:SharpDX.BoundingFrustum.Intersects(SharpDX.BoundingFrustum@)">
-            <summary>
-            Checks whether the current BoundingFrustum intersects with another BoundingFrustum.
-            </summary>
-            <param name="frustum">The frustum.</param>
-            <returns><c>true</c> if the current BoundingFrustum intersects with another BoundingFrustum.</returns>
-        </member>
-        <member name="M:SharpDX.BoundingFrustum.Intersects(SharpDX.BoundingFrustum@,System.Boolean@)">
-            <summary>
-            Checks whether the current BoundingFrustum intersects with another BoundingFrustum.
-            </summary>
-            <param name="frustum">The frustum.</param>
-            <param name="result"><c>true</c> if the current BoundingFrustum intersects with another BoundingFrustum.</param>
         </member>
         <member name="M:SharpDX.BoundingFrustum.GetWidthAtDepth(System.Single)">
             <summary>
@@ -1584,6 +1625,44 @@
             <summary>
             The <see cref="N:SharpDX"/> assembly is the core assembly providing infrastructure for all managed DirectX API.
             </summary>
+        </member>
+        <member name="T:SharpDX.DataPointer">
+            <summary>
+            Pointer to a native buffer with a specific size.
+            </summary>
+        </member>
+        <member name="M:SharpDX.DataPointer.#ctor(System.IntPtr,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.DataPointer"/> struct.
+            </summary>
+            <param name="pointer">The pointer.</param>
+            <param name="size">The size.</param>
+        </member>
+        <member name="F:SharpDX.DataPointer.Pointer">
+            <summary>
+            Pointer to the buffer.
+            </summary>
+        </member>
+        <member name="F:SharpDX.DataPointer.Size">
+            <summary>
+            Size in bytes of the buffer.
+            </summary>
+        </member>
+        <member name="M:SharpDX.DataPointer.op_Equality(SharpDX.DataPointer,SharpDX.DataPointer)">
+            <summary>
+            Implements the ==.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:SharpDX.DataPointer.op_Inequality(SharpDX.DataPointer,SharpDX.DataPointer)">
+            <summary>
+            Implements the !=.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
         </member>
         <member name="T:SharpDX.Design.NamespaceDoc">
             <summary>
@@ -4411,6 +4490,12 @@
             </summary>
             <returns>A packed integer containing all four color components.</returns>
         </member>
+        <member name="M:SharpDX.Color4.ToArgb(System.Byte@,System.Byte@,System.Byte@,System.Byte@)">
+            <summary>
+            Converts the color into a packed integer.
+            </summary>
+            <returns>A packed integer containing all four color components.</returns>
+        </member>
         <member name="M:SharpDX.Color4.ToVector3">
             <summary>
             Converts the color into a three component vector.
@@ -5235,13 +5320,13 @@
             <list type="bullet">
             <item><description>a way to create named disposable component which can be associated with some user tags.</description></item>
             <item><description>a container for disposable objects, being able to dispose dependent disposable.</description></item>
-            <item><description>an automatic component container with todipose-region that will be able to add newly created components to a list of components to dispose. Use <see cref="M:SharpDX.Component.PushCollector"/> and <see cref="M:SharpDX.Component.PopCollector"/> to use this feature in a subclass container component.</description></item>
+            <item><description>an automatic component container with todipose-region that will be able to add newly created components to a list of components to dispose. Use <see cref="!:PushCollector"/> and <see cref="!:PopCollector"/> to use this feature in a subclass container component.</description></item>
             </list>
             </summary>
         </member>
-        <member name="F:SharpDX.Component._collectors">
+        <member name="F:SharpDX.Component.name">
             <summary>
-            Thread local storage for ToDispose Collectors.
+            Occurs while this component is disposing and before it is disposed.
             </summary>
         </member>
         <member name="M:SharpDX.Component.#ctor">
@@ -5249,36 +5334,9 @@
             Initializes a new instance of the <see cref="T:SharpDX.Component"/> class.
             </summary>
         </member>
-        <member name="M:SharpDX.Component.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.Component"/> class.
-            </summary>
-            <param name="name">The name attached to this component</param>
-        </member>
         <member name="M:SharpDX.Component.Dispose">
             <summary>
             Releases unmanaged and - optionally - managed resources
-            </summary>
-        </member>
-        <member name="M:SharpDX.Component.PushCollector">
-            <summary>
-            Use this component as the collector for new components created in the current thread.
-            </summary>
-            <remarks>
-            The collector push on the stack is local to the current executing thread.
-            </remarks>
-        </member>
-        <member name="M:SharpDX.Component.PopCollector">
-            <summary>
-            Unuse this component as the collector for new components created in the current thread.
-            </summary>
-            <remarks>
-            The collector push on the stack is local to the current executing thread.
-            </remarks>
-        </member>
-        <member name="M:SharpDX.Component.ToDisposeAuto">
-            <summary>
-            Try to add this component to the latest component that started PushCollector
             </summary>
         </member>
         <member name="M:SharpDX.Component.Dispose(System.Boolean)">
@@ -5306,11 +5364,6 @@
             </summary>
             <typeparam name="T"></typeparam>
             <param name="toDisposeArg">To dispose.</param>
-        </member>
-        <member name="E:SharpDX.Component.Disposing">
-            <summary>
-            Occurs while this component is disposing and before it is disposed.
-            </summary>
         </member>
         <member name="P:SharpDX.Component.Disposables">
             <summary>
@@ -5920,6 +5973,13 @@
               all of the contents <paramref name = "data" /> will be written.</param>
             <exception cref = "T:System.NotSupportedException">This stream does not support writing.</exception>
         </member>
+        <member name="M:SharpDX.DataStream.op_Implicit(SharpDX.DataStream)~SharpDX.DataPointer">
+            <summary>
+            Performs an explicit conversion from <see cref="T:SharpDX.DataStream"/> to <see cref="T:SharpDX.DataPointer"/>.
+            </summary>
+            <param name="from">The from value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
         <member name="P:SharpDX.DataStream.CanRead">
             <summary>
               Gets a value indicating whether the current stream supports reading.
@@ -6281,6 +6341,13 @@
             <param name = "offset">The zero-based offset in data at which to begin copying values to the current buffer.</param>
             <param name = "count">The number of values to be written to the current buffer. If this is zero,
               all of the contents <paramref name = "data" /> will be written.</param>
+        </member>
+        <member name="M:SharpDX.DataBuffer.op_Implicit(SharpDX.DataBuffer)~SharpDX.DataPointer">
+            <summary>
+            Performs an explicit conversion from <see cref="T:SharpDX.DataBuffer"/> to <see cref="T:SharpDX.DataPointer"/>.
+            </summary>
+            <param name="from">The from value.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="P:SharpDX.DataBuffer.DataPointer">
             <summary>
@@ -38509,7 +38576,7 @@
             <param name="array">The array.</param>
             <returns></returns>
         </member>
-        <member name="M:SharpDX.Utilities.ConvertToBoolArray(System.Int32[])">
+        <member name="M:SharpDX.Utilities.ConvertToBoolArray(SharpDX.Bool[])">
             <summary>
             Converts to bool array.
             </summary>
@@ -38585,6 +38652,14 @@
             </summary>
             <param name="blob">A blob.</param>
             <returns>A string extracted from a blob.</returns>
+        </member>
+        <member name="M:SharpDX.Utilities.IntPtrAdd(System.IntPtr,System.Int32)">
+            <summary>
+            Equivalent to IntPtr.Add method from 3.5+ .NET Framework.
+            </summary>
+            <param name="ptr">A native pointer</param>
+            <param name="offset">The offset to add (number of bytes)</param>
+            <returns></returns>
         </member>
         <member name="M:SharpDX.Utilities.ReadStream(System.IO.Stream)">
             <summary>
