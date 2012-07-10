@@ -1476,7 +1476,7 @@
             <unmanaged>HRESULT ID2D1ConcreteTransform::SetOutputBuffer([In] D2D1_BUFFER_PRECISION bufferPrecision,[In] D2D1_CHANNEL_DEPTH channelDepth)</unmanaged>	
             <unmanaged-short>ID2D1ConcreteTransform::SetOutputBuffer</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.ConcreteTransform.SetCached(System.Boolean)">
+        <member name="M:SharpDX.Direct2D1.ConcreteTransform.SetCached(SharpDX.Bool)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets whether the output of the specified transform is cached.</p>	
             </summary>	
@@ -1887,7 +1887,7 @@
             <unmanaged>HRESULT ID2D1RenderInfo::SetOutputBuffer([In] D2D1_BUFFER_PRECISION bufferPrecision,[In] D2D1_CHANNEL_DEPTH channelDepth)</unmanaged>	
             <unmanaged-short>ID2D1RenderInfo::SetOutputBuffer</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.RenderInformation.SetCached(System.Boolean)">
+        <member name="M:SharpDX.Direct2D1.RenderInformation.SetCached(SharpDX.Bool)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Specifies that the output of the transform in which the render information is encapsulated is or is not cached.</p>	
             </summary>	
@@ -6312,7 +6312,7 @@
             <summary>Constant Transform3D.</summary>
             <unmanaged>CLSID_D2D13DTransform</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.Effect.SetInput(System.Int32,SharpDX.Direct2D1.Image,System.Boolean)">
+        <member name="M:SharpDX.Direct2D1.Effect.SetInput(System.Int32,SharpDX.Direct2D1.Image,SharpDX.Bool)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the given input image by index. </p>	
             </summary>	
@@ -13512,7 +13512,7 @@
             <unmanaged>HRESULT IWICBitmapCodecInfo::GetFileExtensions([In] unsigned int cchFileExtensions,[In] void* wzFileExtensions,[Out] unsigned int* pcchActual)</unmanaged>	
             <unmanaged-short>IWICBitmapCodecInfo::GetFileExtensions</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.BitmapCodecInfo.IsAnimationSupported_(System.Boolean@)">
+        <member name="M:SharpDX.WIC.BitmapCodecInfo.IsAnimationSupported_(SharpDX.Bool@)">
             <summary>	
             <p>Retrieves a value indicating whether the codec supports animation.</p>	
             </summary>	
@@ -13523,7 +13523,7 @@
             <unmanaged>HRESULT IWICBitmapCodecInfo::DoesSupportAnimation([Out] BOOL* pfSupportAnimation)</unmanaged>	
             <unmanaged-short>IWICBitmapCodecInfo::DoesSupportAnimation</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.BitmapCodecInfo.IsChromakeySupported_(System.Boolean@)">
+        <member name="M:SharpDX.WIC.BitmapCodecInfo.IsChromakeySupported_(SharpDX.Bool@)">
             <summary>	
             <p>Retrieves a value indicating whether the codec supports chromakeys.</p>	
             </summary>	
@@ -13534,7 +13534,7 @@
             <unmanaged>HRESULT IWICBitmapCodecInfo::DoesSupportChromakey([Out] BOOL* pfSupportChromakey)</unmanaged>	
             <unmanaged-short>IWICBitmapCodecInfo::DoesSupportChromakey</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.BitmapCodecInfo.IsLosslessSupported_(System.Boolean@)">
+        <member name="M:SharpDX.WIC.BitmapCodecInfo.IsLosslessSupported_(SharpDX.Bool@)">
             <summary>	
             <p>Retrieves a value indicating whether the codec supports lossless formats.</p>	
             </summary>	
@@ -13545,7 +13545,7 @@
             <unmanaged>HRESULT IWICBitmapCodecInfo::DoesSupportLossless([Out] BOOL* pfSupportLossless)</unmanaged>	
             <unmanaged-short>IWICBitmapCodecInfo::DoesSupportLossless</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.BitmapCodecInfo.IsMultiframeSupported_(System.Boolean@)">
+        <member name="M:SharpDX.WIC.BitmapCodecInfo.IsMultiframeSupported_(SharpDX.Bool@)">
             <summary>	
             <p>Retrieves a value indicating whether the codec supports multi frame images.</p>	
             </summary>	
@@ -14996,7 +14996,7 @@
             <unmanaged>HRESULT IWICBitmapSourceTransform::GetClosestPixelFormat([InOut] GUID* pguidDstFormat)</unmanaged>	
             <unmanaged-short>IWICBitmapSourceTransform::GetClosestPixelFormat</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.BitmapSourceTransform.IsSupportingTransform(SharpDX.WIC.BitmapTransformOptions,System.Boolean@)">
+        <member name="M:SharpDX.WIC.BitmapSourceTransform.IsSupportingTransform(SharpDX.WIC.BitmapTransformOptions,SharpDX.Bool@)">
             <summary>	
             <p>Determines whether a specific transform option is supported natively by the implementation of the <strong><see cref="T:SharpDX.WIC.BitmapSourceTransform"/></strong> interface.</p>	
             </summary>	
@@ -16815,7 +16815,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.WIC.Palette.Initialize(SharpDX.WIC.BitmapPaletteType,System.Boolean)">
+        <member name="M:SharpDX.WIC.Palette.Initialize(SharpDX.WIC.BitmapPaletteType,SharpDX.Bool)">
             <summary>	
             <p>Initializes the palette to one of the pre-defined palettes specified by <strong><see cref="T:SharpDX.WIC.BitmapPaletteType"/></strong> and optionally adds a transparent color.</p>	
             </summary>	
@@ -16842,7 +16842,7 @@
             <unmanaged>HRESULT IWICPalette::InitializeCustom([In, Buffer] unsigned int* pColors,[In] unsigned int cCount)</unmanaged>	
             <unmanaged-short>IWICPalette::InitializeCustom</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.Palette.Initialize(SharpDX.WIC.BitmapSource,System.Int32,System.Boolean)">
+        <member name="M:SharpDX.WIC.Palette.Initialize(SharpDX.WIC.BitmapSource,System.Int32,SharpDX.Bool)">
             <summary>	
             <p>Initializes a palette using a computed optimized values based on the reference bitmap.</p>	
             </summary>	
@@ -16907,7 +16907,7 @@
             <unmanaged>HRESULT IWICPalette::GetColors([In] unsigned int cCount,[Out, Buffer] unsigned int* pColors,[Out] unsigned int* pcActualColors)</unmanaged>	
             <unmanaged-short>IWICPalette::GetColors</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.Palette.IsBlackWhite_(System.Boolean@)">
+        <member name="M:SharpDX.WIC.Palette.IsBlackWhite_(SharpDX.Bool@)">
             <summary>	
             <p>Retrieves a value that describes whether the palette is black and white.</p>	
             </summary>	
@@ -16918,7 +16918,7 @@
             <unmanaged>HRESULT IWICPalette::IsBlackWhite([Out] BOOL* pfIsBlackWhite)</unmanaged>	
             <unmanaged-short>IWICPalette::IsBlackWhite</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.Palette.IsGrayscale_(System.Boolean@)">
+        <member name="M:SharpDX.WIC.Palette.IsGrayscale_(SharpDX.Bool@)">
             <summary>	
             <p>Retrieves a value that describes whether a palette is grayscale.</p>	
             </summary>	
@@ -16929,7 +16929,7 @@
             <unmanaged>HRESULT IWICPalette::IsGrayscale([Out] BOOL* pfIsGrayscale)</unmanaged>	
             <unmanaged-short>IWICPalette::IsGrayscale</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.Palette.HasAlpha(System.Boolean@)">
+        <member name="M:SharpDX.WIC.Palette.HasAlpha(SharpDX.Bool@)">
             <summary>	
             <p>Retrieves a value that describes whether the palette contains an alpha transparent color.</p>	
             </summary>	
@@ -17157,7 +17157,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.WIC.PixelFormatInfo2.IsSupportingTransparency_(System.Boolean@)">
+        <member name="M:SharpDX.WIC.PixelFormatInfo2.IsSupportingTransparency_(SharpDX.Bool@)">
             <summary>	
             <p>Returns whether the format supports transparent pixels.</p>	
             </summary>	
@@ -17486,7 +17486,7 @@
             <unmanaged>unsigned char* Mask</unmanaged>	
             <unmanaged-short>unsigned char Mask</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.WIC.BitmapPattern.EndOfStream">
+        <member name="F:SharpDX.WIC.BitmapPattern.EndOfStream">
             <summary>	
             <dd> <p>The end of the stream.</p> </dd>	
             </summary>	
@@ -18478,7 +18478,7 @@
             <param name="point"><dd>  <p>The point to test.</p> </dd></param>	
             <param name="worldTransform"><dd>  <p>The transform to apply to the geometry prior to testing for containment, or <strong><c>null</c></strong>.</p> </dd></param>	
             <param name="flatteningTolerance"><dd>  <p>The numeric accuracy with which the precise geometric path and path intersection is calculated. Points missing the fill by less than the tolerance are still considered inside.  Smaller values produce more accurate results but cause slower execution. </p> </dd></param>	
-            <returns><dd>  <p>When this method returns, contains a <strong><see cref="T:System.Boolean"/></strong> value that is <strong>TRUE</strong> if the area filled by the geometry contains <em>point</em>; otherwise, <strong><see cref="F:SharpDX.Result.False"/></strong>.You must allocate storage for this parameter.</p> </dd></returns>	
+            <returns><dd>  <p>When this method returns, contains a <strong><see cref="T:SharpDX.Bool"/></strong> value that is <strong>TRUE</strong> if the area filled by the geometry contains <em>point</em>; otherwise, <strong><see cref="F:SharpDX.Result.False"/></strong>.You must allocate storage for this parameter.</p> </dd></returns>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1Geometry::FillContainsPoint']/*"/>	
             <msdn-id>dd316687</msdn-id>	
             <unmanaged>HRESULT ID2D1Geometry::FillContainsPoint([In] D2D_POINT_2F point,[In, Optional] const D2D_MATRIX_3X2_F* worldTransform,[In] float flatteningTolerance,[Out] BOOL* contains)</unmanaged>	
@@ -19823,7 +19823,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.DirectWrite.InlineObjectNative.Draw__(System.IntPtr,System.IntPtr,System.Single,System.Single,System.Boolean,System.Boolean,System.IntPtr)">
+        <member name="M:SharpDX.DirectWrite.InlineObjectNative.Draw__(System.IntPtr,System.IntPtr,System.Single,System.Single,SharpDX.Bool,SharpDX.Bool,System.IntPtr)">
             <summary>	
             <p> The application implemented rendering callback (<strong><see cref="!:SharpDX.DirectWrite.TextRenderer.DrawInlineObject_"/></strong>) can use this to draw the inline object without needing to cast or query the object type. The text layout does not call this method directly. </p>	
             </summary>	
@@ -19985,7 +19985,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.DirectWrite.Factory.GetSystemFontCollection(System.Boolean)">
+        <member name="M:SharpDX.DirectWrite.Factory.GetSystemFontCollection(SharpDX.Bool)">
             <summary>	
             <p> Gets an object which represents the set of installed fonts. </p>	
             </summary>	
@@ -20220,7 +20220,7 @@
             <unmanaged>HRESULT IDWriteFactory::CreateTextLayout([In, Buffer] const wchar_t* string,[In] unsigned int stringLength,[In] IDWriteTextFormat* textFormat,[In] float maxWidth,[In] float maxHeight,[Out, Fast] IDWriteTextLayout** textLayout)</unmanaged>	
             <unmanaged-short>IDWriteFactory::CreateTextLayout</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.Factory.CreateGdiCompatibleTextLayout(System.String,System.Int32,SharpDX.DirectWrite.TextFormat,System.Single,System.Single,System.Single,System.Nullable{SharpDX.DirectWrite.Matrix},System.Boolean,SharpDX.DirectWrite.TextLayout)">
+        <member name="M:SharpDX.DirectWrite.Factory.CreateGdiCompatibleTextLayout(System.String,System.Int32,SharpDX.DirectWrite.TextFormat,System.Single,System.Single,System.Single,System.Nullable{SharpDX.DirectWrite.Matrix},SharpDX.Bool,SharpDX.DirectWrite.TextLayout)">
             <summary>	
             <p> Takes a string, format, and associated constraints, and produces an object representing the result, formatted for a particular display resolution and measuring mode.  </p>	
             </summary>	
@@ -20268,7 +20268,7 @@
             <unmanaged>HRESULT IDWriteFactory::CreateTextAnalyzer([Out, Fast] IDWriteTextAnalyzer** textAnalyzer)</unmanaged>	
             <unmanaged-short>IDWriteFactory::CreateTextAnalyzer</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.Factory.CreateNumberSubstitution(SharpDX.DirectWrite.NumberSubstitutionMethod,System.String,System.Boolean,SharpDX.DirectWrite.NumberSubstitution)">
+        <member name="M:SharpDX.DirectWrite.Factory.CreateNumberSubstitution(SharpDX.DirectWrite.NumberSubstitutionMethod,System.String,SharpDX.Bool,SharpDX.DirectWrite.NumberSubstitution)">
             <summary>	
             <p> Creates a number substitution object using a locale name, substitution method, and an indicator  whether to ignore user overrides (use NLS defaults for the given culture instead). </p>	
             </summary>	
@@ -20318,7 +20318,7 @@
             <p> An object that encapsulates a set of fonts, such as the set of fonts installed on the system, or the set of fonts in a particular directory. The font collection API can be used to discover what font families and fonts are available, and to obtain some metadata about the fonts.</p>	
             </summary>	
             <remarks>	
-            <p>The <strong><see cref="M:SharpDX.DirectWrite.Factory.GetSystemFontCollection(System.Boolean)"/></strong> method will give you an <strong><see cref="T:SharpDX.DirectWrite.FontCollection"/></strong> object, which encapsulates the set of fonts installed on the system, as shown in the following code example.</p><pre><code><see cref="T:SharpDX.DirectWrite.FontCollection"/>* pFontCollection = <c>null</c>; // Get the system font collection.	
+            <p>The <strong><see cref="M:SharpDX.DirectWrite.Factory.GetSystemFontCollection(SharpDX.Bool)"/></strong> method will give you an <strong><see cref="T:SharpDX.DirectWrite.FontCollection"/></strong> object, which encapsulates the set of fonts installed on the system, as shown in the following code example.</p><pre><code><see cref="T:SharpDX.DirectWrite.FontCollection"/>* pFontCollection = <c>null</c>; // Get the system font collection.	
             if (SUCCEEDED(hr))	
             { hr = pDWriteFactory-&gt;GetSystemFontCollection(&amp;pFontCollection);	
             }	
@@ -20329,7 +20329,7 @@
             template &lt;class T&gt; inline void SafeRelease(T **ppT)	
             { if (*ppT) { (*ppT)-&gt;Release(); *ppT = <c>null</c>; }	
             } void wmain()	
-            { <see cref="T:SharpDX.DirectWrite.Factory"/>* pDWriteFactory = <c>null</c>; <see cref="T:SharpDX.Result"/> hr = <see cref="M:SharpDX.DirectWrite.DWrite.CreateFactory(SharpDX.DirectWrite.FactoryType,System.Guid,SharpDX.ComObject)"/>( <see cref="F:SharpDX.DirectWrite.FactoryType.Shared"/>, __uuidof(<see cref="T:SharpDX.DirectWrite.Factory"/>), reinterpret_cast&lt;<see cref="T:SharpDX.ComObject"/>**&gt;(&amp;pDWriteFactory) ); <see cref="T:SharpDX.DirectWrite.FontCollection"/>* pFontCollection = <c>null</c>; // Get the system font collection. if (SUCCEEDED(hr)) { hr = pDWriteFactory-&gt;GetSystemFontCollection(&amp;pFontCollection); } UINT32 familyCount = 0; // Get the number of font families in the collection. if (SUCCEEDED(hr)) { familyCount = pFontCollection-&gt;GetFontFamilyCount(); } for (UINT32 i = 0; i &lt; familyCount; ++i) { <see cref="T:SharpDX.DirectWrite.FontFamily"/>* pFontFamily = <c>null</c>; // Get the font family. if (SUCCEEDED(hr)) { hr = pFontCollection-&gt;GetFontFamily(i, &amp;pFontFamily); } <see cref="T:SharpDX.DirectWrite.LocalizedStrings"/>* pFamilyNames = <c>null</c>; // Get a list of localized strings for the family name. if (SUCCEEDED(hr)) { hr = pFontFamily-&gt;GetFamilyNames(&amp;pFamilyNames); } UINT32 index = 0; <see cref="T:System.Boolean"/> exists = false; wchar_t localeName[LOCALE_NAME_MAX_LENGTH]; if (SUCCEEDED(hr)) { // Get the default locale for this user. int defaultLocaleSuccess = GetUserDefaultLocaleName(localeName, LOCALE_NAME_MAX_LENGTH); // If the default locale is returned, find that locale name, otherwise use "en-us". if (defaultLocaleSuccess) { hr = pFamilyNames-&gt;FindLocaleName(localeName, &amp;index, &amp;exists); } if (SUCCEEDED(hr) &amp;&amp; !exists) // if the above find did not find a match, retry with US English { hr = pFamilyNames-&gt;FindLocaleName(L"en-us", &amp;index, &amp;exists); } } // If the specified locale doesn't exist, select the first on the list. if (!exists) index = 0; UINT32 length = 0; // Get the string length. if (SUCCEEDED(hr)) { hr = pFamilyNames-&gt;GetStringLength(index, &amp;length); } // Allocate a string big enough to hold the name. wchar_t* name = new (std::nothrow) wchar_t[length+1]; if (name == <c>null</c>) { hr = E_OUTOFMEMORY; } // Get the family name. if (SUCCEEDED(hr)) { hr = pFamilyNames-&gt;GetString(index, name, length+1); } if (SUCCEEDED(hr)) { // Print out the family name. wprintf(L"%s\n", name); } SafeRelease(&amp;pFontFamily); SafeRelease(&amp;pFamilyNames); delete [] name; } SafeRelease(&amp;pFontCollection); SafeRelease(&amp;pDWriteFactory);	
+            { <see cref="T:SharpDX.DirectWrite.Factory"/>* pDWriteFactory = <c>null</c>; <see cref="T:SharpDX.Result"/> hr = <see cref="M:SharpDX.DirectWrite.DWrite.CreateFactory(SharpDX.DirectWrite.FactoryType,System.Guid,SharpDX.ComObject)"/>( <see cref="F:SharpDX.DirectWrite.FactoryType.Shared"/>, __uuidof(<see cref="T:SharpDX.DirectWrite.Factory"/>), reinterpret_cast&lt;<see cref="T:SharpDX.ComObject"/>**&gt;(&amp;pDWriteFactory) ); <see cref="T:SharpDX.DirectWrite.FontCollection"/>* pFontCollection = <c>null</c>; // Get the system font collection. if (SUCCEEDED(hr)) { hr = pDWriteFactory-&gt;GetSystemFontCollection(&amp;pFontCollection); } UINT32 familyCount = 0; // Get the number of font families in the collection. if (SUCCEEDED(hr)) { familyCount = pFontCollection-&gt;GetFontFamilyCount(); } for (UINT32 i = 0; i &lt; familyCount; ++i) { <see cref="T:SharpDX.DirectWrite.FontFamily"/>* pFontFamily = <c>null</c>; // Get the font family. if (SUCCEEDED(hr)) { hr = pFontCollection-&gt;GetFontFamily(i, &amp;pFontFamily); } <see cref="T:SharpDX.DirectWrite.LocalizedStrings"/>* pFamilyNames = <c>null</c>; // Get a list of localized strings for the family name. if (SUCCEEDED(hr)) { hr = pFontFamily-&gt;GetFamilyNames(&amp;pFamilyNames); } UINT32 index = 0; <see cref="T:SharpDX.Bool"/> exists = false; wchar_t localeName[LOCALE_NAME_MAX_LENGTH]; if (SUCCEEDED(hr)) { // Get the default locale for this user. int defaultLocaleSuccess = GetUserDefaultLocaleName(localeName, LOCALE_NAME_MAX_LENGTH); // If the default locale is returned, find that locale name, otherwise use "en-us". if (defaultLocaleSuccess) { hr = pFamilyNames-&gt;FindLocaleName(localeName, &amp;index, &amp;exists); } if (SUCCEEDED(hr) &amp;&amp; !exists) // if the above find did not find a match, retry with US English { hr = pFamilyNames-&gt;FindLocaleName(L"en-us", &amp;index, &amp;exists); } } // If the specified locale doesn't exist, select the first on the list. if (!exists) index = 0; UINT32 length = 0; // Get the string length. if (SUCCEEDED(hr)) { hr = pFamilyNames-&gt;GetStringLength(index, &amp;length); } // Allocate a string big enough to hold the name. wchar_t* name = new (std::nothrow) wchar_t[length+1]; if (name == <c>null</c>) { hr = E_OUTOFMEMORY; } // Get the family name. if (SUCCEEDED(hr)) { hr = pFamilyNames-&gt;GetString(index, name, length+1); } if (SUCCEEDED(hr)) { // Print out the family name. wprintf(L"%s\n", name); } SafeRelease(&amp;pFontFamily); SafeRelease(&amp;pFamilyNames); delete [] name; } SafeRelease(&amp;pFontCollection); SafeRelease(&amp;pDWriteFactory);	
             } </code></pre>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDWriteFontCollection']/*"/>	
@@ -20634,7 +20634,7 @@
             <unmanaged>unsigned short IDWriteFontFace::GetGlyphCount()</unmanaged>	
             <unmanaged-short>IDWriteFontFace::GetGlyphCount</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.FontFace.GetDesignGlyphMetrics(System.Int16[],System.Int32,SharpDX.DirectWrite.GlyphMetrics[],System.Boolean)">
+        <member name="M:SharpDX.DirectWrite.FontFace.GetDesignGlyphMetrics(System.Int16[],System.Int32,SharpDX.DirectWrite.GlyphMetrics[],SharpDX.Bool)">
             <summary>	
             <p> Obtains ideal (resolution-independent) glyph metrics in font design units.  </p>	
             </summary>	
@@ -20667,7 +20667,7 @@
             <unmanaged>HRESULT IDWriteFontFace::GetGlyphIndices([In, Buffer] const unsigned int* codePoints,[In] unsigned int codePointCount,[Out, Buffer] unsigned short* glyphIndices)</unmanaged>	
             <unmanaged-short>IDWriteFontFace::GetGlyphIndices</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.FontFace.TryGetFontTable(System.Int32,System.IntPtr,System.Int32@,System.IntPtr@,System.Boolean@)">
+        <member name="M:SharpDX.DirectWrite.FontFace.TryGetFontTable(System.Int32,System.IntPtr,System.Int32@,System.IntPtr@,SharpDX.Bool@)">
             <summary>	
             <p> Finds the specified OpenType font table if it exists and returns a reference to it. The function accesses the underlying font data through the <strong><see cref="T:SharpDX.DirectWrite.FontFileStream"/></strong> interface implemented by the font file loader. </p>	
             </summary>	
@@ -20695,7 +20695,7 @@
             <unmanaged>void IDWriteFontFace::ReleaseFontTable([In] void* tableContext)</unmanaged>	
             <unmanaged-short>IDWriteFontFace::ReleaseFontTable</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.FontFace.GetGlyphRunOutline_(System.Single,System.Int16[],System.Single[],SharpDX.DirectWrite.GlyphOffset[],System.Int32,System.Boolean,System.Boolean,System.IntPtr)">
+        <member name="M:SharpDX.DirectWrite.FontFace.GetGlyphRunOutline_(System.Single,System.Int16[],System.Single[],SharpDX.DirectWrite.GlyphOffset[],System.Int32,SharpDX.Bool,SharpDX.Bool,System.IntPtr)">
             <summary>	
             <p> Computes the outline of a run of glyphs by calling back to the outline sink interface. </p>	
             </summary>	
@@ -20740,7 +20740,7 @@
             <unmanaged>HRESULT IDWriteFontFace::GetGdiCompatibleMetrics([In] float emSize,[In] float pixelsPerDip,[In, Optional] const DWRITE_MATRIX* transform,[Out] DWRITE_FONT_METRICS* fontFaceMetrics)</unmanaged>	
             <unmanaged-short>IDWriteFontFace::GetGdiCompatibleMetrics</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.FontFace.GetGdiCompatibleGlyphMetrics(System.Single,System.Single,System.Nullable{SharpDX.DirectWrite.Matrix},System.Boolean,System.Int16[],System.Int32,SharpDX.DirectWrite.GlyphMetrics[],System.Boolean)">
+        <member name="M:SharpDX.DirectWrite.FontFace.GetGdiCompatibleGlyphMetrics(System.Single,System.Single,System.Nullable{SharpDX.DirectWrite.Matrix},SharpDX.Bool,System.Int16[],System.Int32,SharpDX.DirectWrite.GlyphMetrics[],SharpDX.Bool)">
             <summary>	
             <p>Obtains glyph metrics in font design units with the return values compatible with what GDI would produce.</p>	
             </summary>	
@@ -20751,7 +20751,7 @@
             <param name="glyphIndices"><dd> <p>An array of glyph indices for which to compute the metrics.</p> </dd></param>	
             <param name="glyphCount"><dd> <p>The number of elements in the <em>glyphIndices</em> array.</p> </dd></param>	
             <param name="glyphMetrics"><dd> <p>An array of <strong><see cref="T:SharpDX.DirectWrite.GlyphMetrics"/></strong> structures filled by this function. The metrics are in font design units.</p> </dd></param>	
-            <param name="isSideways"><dd> <p>A <see cref="T:System.Boolean"/> value that indicates whether the font is being used in a sideways run.  This can affect the glyph metrics if the font has oblique simulation because sideways oblique simulation differs from non-sideways oblique simulation.</p> </dd></param>	
+            <param name="isSideways"><dd> <p>A <see cref="T:SharpDX.Bool"/> value that indicates whether the font is being used in a sideways run.  This can affect the glyph metrics if the font has oblique simulation because sideways oblique simulation differs from non-sideways oblique simulation.</p> </dd></param>	
             <returns><p>Standard <strong><see cref="T:SharpDX.Result"/></strong> error code. If any of the input glyph indices are outside of the valid glyph index range for the current font face, <strong>E_INVALIDARG</strong> will be returned.</p></returns>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDWriteFontFace::GetGdiCompatibleGlyphMetrics']/*"/>	
             <msdn-id>dd941788</msdn-id>	
@@ -20857,7 +20857,7 @@
         </member>
         <member name="T:SharpDX.DirectWrite.FontFile">
             <summary>	
-            <p> Represents a font file. Applications  such as font managers or font viewers can call <strong><see cref="M:SharpDX.DirectWrite.FontFile.Analyze(System.Boolean@,SharpDX.DirectWrite.FontFileType@,SharpDX.DirectWrite.FontFaceType@,System.Int32@)"/></strong> to find out if a particular file is a font file, and whether it is a font type that is supported by the font system.</p>	
+            <p> Represents a font file. Applications  such as font managers or font viewers can call <strong><see cref="M:SharpDX.DirectWrite.FontFile.Analyze(SharpDX.Bool@,SharpDX.DirectWrite.FontFileType@,SharpDX.DirectWrite.FontFaceType@,System.Int32@)"/></strong> to find out if a particular file is a font file, and whether it is a font type that is supported by the font system.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDWriteFontFile']/*"/>	
             <msdn-id>dd371060</msdn-id>	
@@ -20939,7 +20939,7 @@
             <unmanaged>HRESULT IDWriteFontFile::GetLoader([Out] IDWriteFontFileLoader** fontFileLoader)</unmanaged>	
             <unmanaged-short>IDWriteFontFile::GetLoader</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.FontFile.Analyze(System.Boolean@,SharpDX.DirectWrite.FontFileType@,SharpDX.DirectWrite.FontFaceType@,System.Int32@)">
+        <member name="M:SharpDX.DirectWrite.FontFile.Analyze(SharpDX.Bool@,SharpDX.DirectWrite.FontFileType@,SharpDX.DirectWrite.FontFaceType@,System.Int32@)">
             <summary>	
             <p> Analyzes a file and returns whether it represents a font, and whether the font type is supported by the font system. </p>	
             </summary>	
@@ -21353,7 +21353,7 @@
             <unmanaged>HRESULT IDWriteGdiInterop::CreateFontFromLOGFONT([In] const void* logFont,[Out] IDWriteFont** font)</unmanaged>	
             <unmanaged-short>IDWriteGdiInterop::CreateFontFromLOGFONT</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.GdiInterop.ConvertFontToLOGFONT(SharpDX.DirectWrite.Font,System.IntPtr,System.Boolean@)">
+        <member name="M:SharpDX.DirectWrite.GdiInterop.ConvertFontToLOGFONT(SharpDX.DirectWrite.Font,System.IntPtr,SharpDX.Bool@)">
             <summary>	
             <p> Initializes a <strong><see cref="T:SharpDX.Win32Native.LogFont"/></strong> structure based on the GDI-compatible properties of the specified font. </p>	
             </summary>	
@@ -21474,6 +21474,15 @@
             <unmanaged>const DWRITE_GLYPH_OFFSET* glyphOffsets</unmanaged>	
             <unmanaged-short>DWRITE_GLYPH_OFFSET glyphOffsets</unmanaged-short>	
         </member>
+        <member name="F:SharpDX.DirectWrite.GlyphRun.IsSideways">
+            <summary>	
+            <dd> <p>If true, specifies that glyphs are rotated 90 degrees to the left and vertical metrics are used. Vertical writing is achieved by specifying <strong>isSideways</strong> = true and rotating the entire run 90 degrees to the right via a rotate transform.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DWRITE_GLYPH_RUN::isSideways']/*"/>	
+            <msdn-id>dd368089</msdn-id>	
+            <unmanaged>BOOL isSideways</unmanaged>	
+            <unmanaged-short>BOOL isSideways</unmanaged-short>	
+        </member>
         <member name="F:SharpDX.DirectWrite.GlyphRun.BidiLevel">
             <summary>	
             <dd> <p>The implicit resolved bidi level of the run. Odd levels indicate right-to-left languages like Hebrew and Arabic, while even levels indicate left-to-right languages like English and Japanese (when written horizontally). For right-to-left languages, the text origin is on the right, and text should be drawn to the left.</p> </dd>	
@@ -21503,15 +21512,6 @@
             <summary>
             An optional array of glyph offsets. This array could be null or contains <see cref="F:SharpDX.DirectWrite.GlyphRun.GlyphCount"/> elements.
             </summary>
-        </member>
-        <member name="P:SharpDX.DirectWrite.GlyphRun.IsSideways">
-            <summary>	
-            <dd> <p>If true, specifies that glyphs are rotated 90 degrees to the left and vertical metrics are used. Vertical writing is achieved by specifying <strong>isSideways</strong> = true and rotating the entire run 90 degrees to the right via a rotate transform.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DWRITE_GLYPH_RUN::isSideways']/*"/>	
-            <msdn-id>dd368089</msdn-id>	
-            <unmanaged>BOOL isSideways</unmanaged>	
-            <unmanaged-short>BOOL isSideways</unmanaged-short>	
         </member>
         <member name="T:SharpDX.DirectWrite.GlyphRunAnalysis">
             <summary>	
@@ -21785,7 +21785,7 @@
             if (SUCCEEDED(hr))	
             { hr = pFontFamily-&gt;GetFamilyNames(&amp;pFamilyNames);	
             } UINT32 index = 0;	
-            <see cref="T:System.Boolean"/> exists = false; wchar_t localeName[LOCALE_NAME_MAX_LENGTH]; if (SUCCEEDED(hr))	
+            <see cref="T:SharpDX.Bool"/> exists = false; wchar_t localeName[LOCALE_NAME_MAX_LENGTH]; if (SUCCEEDED(hr))	
             { // Get the default locale for this user. int defaultLocaleSuccess = GetUserDefaultLocaleName(localeName, LOCALE_NAME_MAX_LENGTH); // If the default locale is returned, find that locale name, otherwise use "en-us". if (defaultLocaleSuccess) { hr = pFamilyNames-&gt;FindLocaleName(localeName, &amp;index, &amp;exists); } if (SUCCEEDED(hr) &amp;&amp; !exists) // if the above find did not find a match, retry with US English { hr = pFamilyNames-&gt;FindLocaleName(L"en-us", &amp;index, &amp;exists); }	
             } // If the specified locale doesn't exist, select the first on the list.	
             if (!exists) index = 0; UINT32 length = 0; // Get the string length.	
@@ -21856,7 +21856,7 @@
             <returns><dd> <p>When this method returns, contains <strong>TRUE</strong> if the locale name exists; otherwise, <strong><see cref="F:SharpDX.Result.False"/></strong>. This method initializes <em>exists</em> to <strong><see cref="F:SharpDX.Result.False"/></strong>.</p> </dd></returns>	
             <remarks>	
             <p>Note that if the locale name does not exist, the return value is a success and the <em>exists</em> parameter is <strong><see cref="F:SharpDX.Result.False"/></strong>. If you are getting the font family name for a font and the specified locale name does not exist, one option is to set the index to 0 as shown below.  There is always at least one locale for a font family.</p><pre><code>UINT32 index = 0;	
-            <see cref="T:System.Boolean"/> exists = false; wchar_t localeName[LOCALE_NAME_MAX_LENGTH]; if (SUCCEEDED(hr))	
+            <see cref="T:SharpDX.Bool"/> exists = false; wchar_t localeName[LOCALE_NAME_MAX_LENGTH]; if (SUCCEEDED(hr))	
             { // Get the default locale for this user. int defaultLocaleSuccess = GetUserDefaultLocaleName(localeName, LOCALE_NAME_MAX_LENGTH); // If the default locale is returned, find that locale name, otherwise use "en-us". if (defaultLocaleSuccess) { hr = pFamilyNames-&gt;FindLocaleName(localeName, &amp;index, &amp;exists); } if (SUCCEEDED(hr) &amp;&amp; !exists) // if the above find did not find a match, retry with US English { hr = pFamilyNames-&gt;FindLocaleName(L"en-us", &amp;index, &amp;exists); }	
             } // If the specified locale doesn't exist, select the first on the list.	
             if (!exists) index = 0;	
@@ -22419,7 +22419,7 @@
             </summary>	
             <param name="textPosition">The starting position from which to report. </param>
             <param name="textLength">The number of UTF16 units of the reported range. </param>
-            <param name="numberSubstitution">An object that holds the appropriate digits and numeric punctuation for a given locale. Use <see cref="M:SharpDX.DirectWrite.Factory.CreateNumberSubstitution(SharpDX.DirectWrite.NumberSubstitutionMethod,System.String,System.Boolean,SharpDX.DirectWrite.NumberSubstitution)"/> to create this object. </param>
+            <param name="numberSubstitution">An object that holds the appropriate digits and numeric punctuation for a given locale. Use <see cref="M:SharpDX.DirectWrite.Factory.CreateNumberSubstitution(SharpDX.DirectWrite.NumberSubstitutionMethod,System.String,SharpDX.Bool,SharpDX.DirectWrite.NumberSubstitution)"/> to create this object. </param>
             <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code. </returns>
             <unmanaged>HRESULT IDWriteTextAnalysisSink::SetNumberSubstitution([None] int textPosition,[None] int textLength,[None] IDWriteNumberSubstitution* numberSubstitution)</unmanaged>
         </member>
@@ -22785,7 +22785,7 @@
             <unmanaged>HRESULT IDWriteTextAnalyzer::AnalyzeLineBreakpoints([In] IDWriteTextAnalysisSource* analysisSource,[In] unsigned int textPosition,[In] unsigned int textLength,[In] IDWriteTextAnalysisSink* analysisSink)</unmanaged>	
             <unmanaged-short>IDWriteTextAnalyzer::AnalyzeLineBreakpoints</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.TextAnalyzer.GetGlyphs(System.String,System.Int32,SharpDX.DirectWrite.FontFace,System.Boolean,System.Boolean,SharpDX.DirectWrite.ScriptAnalysis,System.String,SharpDX.DirectWrite.NumberSubstitution,System.IntPtr,System.Int32[],System.Int32,System.Int32,System.Int16[],SharpDX.DirectWrite.ShapingTextProperties[],System.Int16[],SharpDX.DirectWrite.ShapingGlyphProperties[],System.Int32@)">
+        <member name="M:SharpDX.DirectWrite.TextAnalyzer.GetGlyphs(System.String,System.Int32,SharpDX.DirectWrite.FontFace,SharpDX.Bool,SharpDX.Bool,SharpDX.DirectWrite.ScriptAnalysis,System.String,SharpDX.DirectWrite.NumberSubstitution,System.IntPtr,System.Int32[],System.Int32,System.Int32,System.Int16[],SharpDX.DirectWrite.ShapingTextProperties[],System.Int16[],SharpDX.DirectWrite.ShapingGlyphProperties[],System.Int32@)">
             <summary>	
             <p> Parses the input text string and maps it to the set of glyphs and associated glyph data according to the font and the writing system's rendering rules. </p>	
             </summary>	
@@ -22815,7 +22815,7 @@
             <unmanaged>HRESULT IDWriteTextAnalyzer::GetGlyphs([In, Buffer] const wchar_t* textString,[In] unsigned int textLength,[In] IDWriteFontFace* fontFace,[In] BOOL isSideways,[In] BOOL isRightToLeft,[In] const DWRITE_SCRIPT_ANALYSIS* scriptAnalysis,[In, Optional] const wchar_t* localeName,[In, Optional] IDWriteNumberSubstitution* numberSubstitution,[In, Optional] const void** features,[In, Buffer, Optional] const unsigned int* featureRangeLengths,[In] unsigned int featureRanges,[In] unsigned int maxGlyphCount,[Out, Buffer] unsigned short* clusterMap,[Out, Buffer] DWRITE_SHAPING_TEXT_PROPERTIES* textProps,[Out, Buffer] unsigned short* glyphIndices,[Out, Buffer] DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps,[Out] unsigned int* actualGlyphCount)</unmanaged>	
             <unmanaged-short>IDWriteTextAnalyzer::GetGlyphs</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.TextAnalyzer.GetGlyphPlacements(System.String,System.Int16[],SharpDX.DirectWrite.ShapingTextProperties[],System.Int32,System.Int16[],SharpDX.DirectWrite.ShapingGlyphProperties[],System.Int32,SharpDX.DirectWrite.FontFace,System.Single,System.Boolean,System.Boolean,SharpDX.DirectWrite.ScriptAnalysis,System.String,System.IntPtr,System.Int32[],System.Int32,System.Single[],SharpDX.DirectWrite.GlyphOffset[])">
+        <member name="M:SharpDX.DirectWrite.TextAnalyzer.GetGlyphPlacements(System.String,System.Int16[],SharpDX.DirectWrite.ShapingTextProperties[],System.Int32,System.Int16[],SharpDX.DirectWrite.ShapingGlyphProperties[],System.Int32,SharpDX.DirectWrite.FontFace,System.Single,SharpDX.Bool,SharpDX.Bool,SharpDX.DirectWrite.ScriptAnalysis,System.String,System.IntPtr,System.Int32[],System.Int32,System.Single[],SharpDX.DirectWrite.GlyphOffset[])">
             <summary>	
             <p> Places glyphs output from the <strong>GetGlyphs</strong> method according to the font  and the writing system's rendering rules. </p>	
             </summary>	
@@ -22843,7 +22843,7 @@
             <unmanaged>HRESULT IDWriteTextAnalyzer::GetGlyphPlacements([In, Buffer] const wchar_t* textString,[In, Buffer] const unsigned short* clusterMap,[In, Buffer] DWRITE_SHAPING_TEXT_PROPERTIES* textProps,[In] unsigned int textLength,[In, Buffer] const unsigned short* glyphIndices,[In, Buffer] const DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps,[In] unsigned int glyphCount,[In] IDWriteFontFace* fontFace,[In] float fontEmSize,[In] BOOL isSideways,[In] BOOL isRightToLeft,[In] const DWRITE_SCRIPT_ANALYSIS* scriptAnalysis,[In, Optional] const wchar_t* localeName,[In, Optional] const void** features,[In, Buffer, Optional] const unsigned int* featureRangeLengths,[In] unsigned int featureRanges,[Out, Buffer] float* glyphAdvances,[Out, Buffer] DWRITE_GLYPH_OFFSET* glyphOffsets)</unmanaged>	
             <unmanaged-short>IDWriteTextAnalyzer::GetGlyphPlacements</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.TextAnalyzer.GetGdiCompatibleGlyphPlacements(System.String,System.Int16[],SharpDX.DirectWrite.ShapingTextProperties[],System.Int32,System.Int16[],SharpDX.DirectWrite.ShapingGlyphProperties[],System.Int32,SharpDX.DirectWrite.FontFace,System.Single,System.Single,System.Nullable{SharpDX.DirectWrite.Matrix},System.Boolean,System.Boolean,System.Boolean,SharpDX.DirectWrite.ScriptAnalysis,System.String,System.IntPtr,System.Int32[],System.Int32,System.Single[],SharpDX.DirectWrite.GlyphOffset[])">
+        <member name="M:SharpDX.DirectWrite.TextAnalyzer.GetGdiCompatibleGlyphPlacements(System.String,System.Int16[],SharpDX.DirectWrite.ShapingTextProperties[],System.Int32,System.Int16[],SharpDX.DirectWrite.ShapingGlyphProperties[],System.Int32,SharpDX.DirectWrite.FontFace,System.Single,System.Single,System.Nullable{SharpDX.DirectWrite.Matrix},SharpDX.Bool,SharpDX.Bool,SharpDX.Bool,SharpDX.DirectWrite.ScriptAnalysis,System.String,System.IntPtr,System.Int32[],System.Int32,System.Single[],SharpDX.DirectWrite.GlyphOffset[])">
             <summary>	
             <p>Place glyphs output from the <strong>GetGlyphs</strong> method according to the font  and the writing system's rendering rules.</p>	
             </summary>	
@@ -23753,7 +23753,7 @@
             <unmanaged>HRESULT IDWriteTextLayout::SetFontSize([In] float fontSize,[In] DWRITE_TEXT_RANGE textRange)</unmanaged>	
             <unmanaged-short>IDWriteTextLayout::SetFontSize</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.TextLayout.SetUnderline(System.Boolean,SharpDX.DirectWrite.TextRange)">
+        <member name="M:SharpDX.DirectWrite.TextLayout.SetUnderline(SharpDX.Bool,SharpDX.DirectWrite.TextRange)">
             <summary>	
             <p>Sets underlining for text within a specified text range. </p>	
             </summary>	
@@ -23765,7 +23765,7 @@
             <unmanaged>HRESULT IDWriteTextLayout::SetUnderline([In] BOOL hasUnderline,[In] DWRITE_TEXT_RANGE textRange)</unmanaged>	
             <unmanaged-short>IDWriteTextLayout::SetUnderline</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.TextLayout.SetStrikethrough(System.Boolean,SharpDX.DirectWrite.TextRange)">
+        <member name="M:SharpDX.DirectWrite.TextLayout.SetStrikethrough(SharpDX.Bool,SharpDX.DirectWrite.TextRange)">
             <summary>	
             <p>Sets strikethrough for text within a specified text range. </p>	
             </summary>	
@@ -24109,7 +24109,7 @@
             <unmanaged>HRESULT IDWriteTextLayout::DetermineMinWidth([Out] float* minWidth)</unmanaged>	
             <unmanaged-short>IDWriteTextLayout::DetermineMinWidth</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.TextLayout.HitTestPoint(System.Single,System.Single,System.Boolean@,System.Boolean@)">
+        <member name="M:SharpDX.DirectWrite.TextLayout.HitTestPoint(System.Single,System.Single,SharpDX.Bool@,SharpDX.Bool@)">
             <summary>	
             <p> The application calls this function passing in a specific pixel location relative to the top-left location of the layout box and obtains the information about the correspondent hit-test metrics of the text string where the hit-test has occurred. When the specified pixel location is outside the text string, the function sets the output value <em>*isInside</em> to <strong><see cref="F:SharpDX.Result.False"/></strong>. </p>	
             </summary>	
@@ -24123,7 +24123,7 @@
             <unmanaged>HRESULT IDWriteTextLayout::HitTestPoint([In] float pointX,[In] float pointY,[Out] BOOL* isTrailingHit,[Out] BOOL* isInside,[Out] DWRITE_HIT_TEST_METRICS* hitTestMetrics)</unmanaged>	
             <unmanaged-short>IDWriteTextLayout::HitTestPoint</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.TextLayout.HitTestTextPosition(System.Int32,System.Boolean,System.Single@,System.Single@)">
+        <member name="M:SharpDX.DirectWrite.TextLayout.HitTestTextPosition(System.Int32,SharpDX.Bool,System.Single@,System.Single@)">
             <summary>	
             <p> The application calls this function to get the pixel location relative to the top-left of the layout box given the text position and the logical side of the position. This function is normally used as part of caret positioning of text where the caret is drawn at the location corresponding to the current text editing position. It may also be used as a way to programmatically obtain the geometry of a particular text position in UI automation. </p>	
             </summary>	
@@ -27040,7 +27040,7 @@
             if (SUCCEEDED(hr))	
             { hr = pFontFamily-&gt;GetFamilyNames(&amp;pFamilyNames);	
             } UINT32 index = 0;	
-            <see cref="T:System.Boolean"/> exists = false; wchar_t localeName[LOCALE_NAME_MAX_LENGTH]; if (SUCCEEDED(hr))	
+            <see cref="T:SharpDX.Bool"/> exists = false; wchar_t localeName[LOCALE_NAME_MAX_LENGTH]; if (SUCCEEDED(hr))	
             { // Get the default locale for this user. int defaultLocaleSuccess = GetUserDefaultLocaleName(localeName, LOCALE_NAME_MAX_LENGTH); // If the default locale is returned, find that locale name, otherwise use "en-us". if (defaultLocaleSuccess) { hr = pFamilyNames-&gt;FindLocaleName(localeName, &amp;index, &amp;exists); } if (SUCCEEDED(hr) &amp;&amp; !exists) // if the above find did not find a match, retry with US English { hr = pFamilyNames-&gt;FindLocaleName(L"en-us", &amp;index, &amp;exists); }	
             } // If the specified locale doesn't exist, select the first on the list.	
             if (!exists) index = 0; UINT32 length = 0; // Get the string length.	
@@ -27096,7 +27096,7 @@
             if (SUCCEEDED(hr))	
             { hr = pFontFamily-&gt;GetFamilyNames(&amp;pFamilyNames);	
             } UINT32 index = 0;	
-            <see cref="T:System.Boolean"/> exists = false; wchar_t localeName[LOCALE_NAME_MAX_LENGTH]; if (SUCCEEDED(hr))	
+            <see cref="T:SharpDX.Bool"/> exists = false; wchar_t localeName[LOCALE_NAME_MAX_LENGTH]; if (SUCCEEDED(hr))	
             { // Get the default locale for this user. int defaultLocaleSuccess = GetUserDefaultLocaleName(localeName, LOCALE_NAME_MAX_LENGTH); // If the default locale is returned, find that locale name, otherwise use "en-us". if (defaultLocaleSuccess) { hr = pFamilyNames-&gt;FindLocaleName(localeName, &amp;index, &amp;exists); } if (SUCCEEDED(hr) &amp;&amp; !exists) // if the above find did not find a match, retry with US English { hr = pFamilyNames-&gt;FindLocaleName(L"en-us", &amp;index, &amp;exists); }	
             } // If the specified locale doesn't exist, select the first on the list.	
             if (!exists) index = 0; UINT32 length = 0; // Get the string length.	
@@ -27535,7 +27535,7 @@
             <unmanaged>unsigned int bidiLevel</unmanaged>	
             <unmanaged-short>unsigned int bidiLevel</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.DirectWrite.HitTestMetrics.IsText">
+        <member name="F:SharpDX.DirectWrite.HitTestMetrics.IsText">
             <summary>	
             <dd> <p>true if the hit region contains text; otherwise, false.</p> </dd>	
             </summary>	
@@ -27544,7 +27544,7 @@
             <unmanaged>BOOL isText</unmanaged>	
             <unmanaged-short>BOOL isText</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.DirectWrite.HitTestMetrics.IsTrimmed">
+        <member name="F:SharpDX.DirectWrite.HitTestMetrics.IsTrimmed">
             <summary>	
             No documentation.	
             </summary>	
@@ -27589,7 +27589,7 @@
             <unmanaged>float baseline</unmanaged>	
             <unmanaged-short>float baseline</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.DirectWrite.InlineObjectMetrics.SupportsSideways">
+        <member name="F:SharpDX.DirectWrite.InlineObjectMetrics.SupportsSideways">
             <summary>	
             <dd> <p>A Boolean flag that indicates whether the object is to be placed upright or alongside the text baseline for vertical text.</p> </dd>	
             </summary>	
@@ -27652,7 +27652,7 @@
             <unmanaged>float baseline</unmanaged>	
             <unmanaged-short>float baseline</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.DirectWrite.LineMetrics.IsTrimmed">
+        <member name="F:SharpDX.DirectWrite.LineMetrics.IsTrimmed">
             <summary>	
             <dd> <p>The line is trimmed.</p> </dd>	
             </summary>	
@@ -36345,7 +36345,7 @@
             <unmanaged>D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS</unmanaged>	
             <unmanaged-short>D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct2D1.FeatureDataD3D10XHardwareOptions.ComputeShadersPlusRawAndStructuredBuffersViaShader4X">
+        <member name="F:SharpDX.Direct2D1.FeatureDataD3D10XHardwareOptions.ComputeShadersPlusRawAndStructuredBuffersViaShader4X">
             <summary>	
             <dd> <p>The x-coordinate of the upper-left corner of the rectangle.</p> </dd>	
             </summary>	
@@ -36363,7 +36363,7 @@
             <unmanaged>D2D1_FEATURE_DATA_DOUBLES</unmanaged>	
             <unmanaged-short>D2D1_FEATURE_DATA_DOUBLES</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct2D1.FeatureDataDoubles.DoublePrecisionFloatShaderOps">
+        <member name="F:SharpDX.Direct2D1.FeatureDataDoubles.DoublePrecisionFloatShaderOps">
             <summary>	
             <dd> <p>The x-coordinate of the upper-left corner of the rectangle.</p> </dd>	
             </summary>	

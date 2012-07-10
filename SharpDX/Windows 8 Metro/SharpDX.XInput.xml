@@ -1045,7 +1045,7 @@
             <unmanaged>unsigned int XInputGetCapabilities([In] unsigned int dwUserIndex,[In] XINPUT_DEVQUERYTYPE dwFlags,[Out] XINPUT_CAPABILITIES* pCapabilities)</unmanaged>	
             <unmanaged-short>XInputGetCapabilities</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.XInput.XInput.XInputEnable(System.Boolean)">
+        <member name="M:SharpDX.XInput.XInput.XInputEnable(SharpDX.Bool)">
             <summary>	
             Sets the reporting state of XInput.	
             </summary>	

@@ -191,6 +191,48 @@
             <unmanaged-short>GetDesc</unmanaged-short>	
             <unmanaged>void ID3D11BlendState::GetDesc([Out] D3D11_BLEND_DESC* pDesc)</unmanaged>
         </member>
+        <member name="T:SharpDX.Direct3D11.BlendStateDescription">
+            <summary>	
+            <p>Describes the blend state that you use in a call to <strong><see cref="M:SharpDX.Direct3D11.Device.CreateBlendState(SharpDX.Direct3D11.BlendStateDescription@,SharpDX.Direct3D11.BlendState)"/></strong> to create a blend-state object.</p>	
+            </summary>	
+            <remarks>	
+            <p>Here are the default values for blend state.</p><table> <tr><th>State</th><th>Default Value</th></tr> <tr><td>AlphaToCoverageEnable</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>IndependentBlendEnable</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>RenderTarget[0].BlendEnable</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>RenderTarget[0].SrcBlend</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.One"/></td></tr> <tr><td>RenderTarget[0].DestBlend</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.Zero"/></td></tr> <tr><td>RenderTarget[0].BlendOp</td><td><see cref="F:SharpDX.Direct3D11.BlendOperation.Add"/></td></tr> <tr><td>RenderTarget[0].SrcBlendAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.One"/></td></tr> <tr><td>RenderTarget[0].DestBlendAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.Zero"/></td></tr> <tr><td>RenderTarget[0].BlendOpAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOperation.Add"/></td></tr> <tr><td>RenderTarget[0].RenderTargetWriteMask</td><td><see cref="F:SharpDX.Direct3D11.ColorWriteMaskFlags.All"/></td></tr> </table><p>?</p><p><strong>Note</strong>??<strong><see cref="T:SharpDX.Direct3D11.BlendStateDescription"/></strong> is identical to <strong>D3D10_BLEND_DESC1</strong>.</p><p>If the driver type is set to <strong><see cref="F:SharpDX.Direct3D.DriverType.Hardware"/></strong>, the feature level is set to less than or equal to <strong><see cref="F:SharpDX.Direct3D.FeatureLevel.Level_9_3"/></strong>, and the pixel format of the render target is set to <strong><see cref="F:SharpDX.DXGI.Format.R8G8B8A8_UNorm_SRgb"/></strong>, <strong><see cref="F:SharpDX.DXGI.Format.B8G8R8A8_UNorm_SRgb"/></strong>, or <strong><see cref="F:SharpDX.DXGI.Format.B8G8R8X8_UNorm_SRgb"/></strong>, the display device performs the blend in standard RGB (sRGB) space and not in linear space. However, if the feature level is set to greater than <strong><see cref="F:SharpDX.Direct3D.FeatureLevel.Level_9_3"/></strong>, the display device performs the blend in linear space, which is ideal.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC']/*"/>	
+            <msdn-id>ff476087</msdn-id>	
+            <unmanaged>D3D11_BLEND_DESC</unmanaged>	
+            <unmanaged-short>D3D11_BLEND_DESC</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.BlendStateDescription.Clone">
+            <summary>
+            Clones this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:SharpDX.Direct3D11.BlendStateDescription.AlphaToCoverageEnable">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC::AlphaToCoverageEnable']/*"/>	
+            <unmanaged>BOOL AlphaToCoverageEnable</unmanaged>	
+            <unmanaged-short>BOOL AlphaToCoverageEnable</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.BlendStateDescription.IndependentBlendEnable">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC::IndependentBlendEnable']/*"/>	
+            <unmanaged>BOOL IndependentBlendEnable</unmanaged>	
+            <unmanaged-short>BOOL IndependentBlendEnable</unmanaged-short>	
+        </member>
+        <member name="P:SharpDX.Direct3D11.BlendStateDescription.RenderTarget">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC::RenderTarget']/*"/>	
+            <unmanaged>D3D11_RENDER_TARGET_BLEND_DESC RenderTarget[8]</unmanaged>	
+            <unmanaged-short>D3D11_RENDER_TARGET_BLEND_DESC RenderTarget</unmanaged-short>	
+        </member>
         <member name="T:SharpDX.Direct3D11.Buffer">
             <summary>	
             <p>A buffer interface accesses a buffer resource, which is unstructured memory. Buffers typically store vertex or index data.</p>	
@@ -361,6 +403,9 @@
             </summary>
             <param name = "device">The device with which to associate the buffer.</param>
             <param name = "description">The description of the buffer.</param>
+            <msdn-id>ff476501</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateBuffer([In] const D3D11_BUFFER_DESC* pDesc,[In, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Buffer** ppBuffer)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateBuffer</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Buffer.#ctor(SharpDX.Direct3D11.Device,SharpDX.DataStream,SharpDX.Direct3D11.BufferDescription)">
             <summary>
@@ -369,6 +414,20 @@
             <param name = "device">The device with which to associate the buffer.</param>
             <param name = "data">Initial data used to initialize the buffer.</param>
             <param name = "description">The description of the buffer.</param>
+            <msdn-id>ff476501</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateBuffer([In] const D3D11_BUFFER_DESC* pDesc,[In, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Buffer** ppBuffer)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateBuffer</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.Buffer.#ctor(SharpDX.Direct3D11.Device,System.IntPtr,SharpDX.Direct3D11.BufferDescription)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Direct3D11.Buffer" /> class.
+            </summary>
+            <param name="device">The device with which to associate the buffer.</param>
+            <param name="dataPointer">The data pointer.</param>
+            <param name="description">The description of the buffer.</param>
+            <msdn-id>ff476501</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateBuffer([In] const D3D11_BUFFER_DESC* pDesc,[In, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Buffer** ppBuffer)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateBuffer</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Buffer.#ctor(SharpDX.Direct3D11.Device,System.Int32,SharpDX.Direct3D11.ResourceUsage,SharpDX.Direct3D11.BindFlags,SharpDX.Direct3D11.CpuAccessFlags,SharpDX.Direct3D11.ResourceOptionFlags,System.Int32)">
             <summary>
@@ -381,6 +440,9 @@
             <param name = "accessFlags">Flags specifying how the buffer will be accessible from the CPU.</param>
             <param name = "optionFlags">Miscellaneous resource options.</param>
             <param name = "structureByteStride">The size (in bytes) of the structure element for structured buffers.</param>
+            <msdn-id>ff476501</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateBuffer([In] const D3D11_BUFFER_DESC* pDesc,[In, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Buffer** ppBuffer)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateBuffer</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Buffer.#ctor(SharpDX.Direct3D11.Device,SharpDX.DataStream,System.Int32,SharpDX.Direct3D11.ResourceUsage,SharpDX.Direct3D11.BindFlags,SharpDX.Direct3D11.CpuAccessFlags,SharpDX.Direct3D11.ResourceOptionFlags,System.Int32)">
             <summary>
@@ -394,6 +456,9 @@
             <param name = "accessFlags">Flags specifying how the buffer will be accessible from the CPU.</param>
             <param name = "optionFlags">Miscellaneous resource options.</param>
             <param name = "structureByteStride">The size (in bytes) of the structure element for structured buffers.</param>
+            <msdn-id>ff476501</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateBuffer([In] const D3D11_BUFFER_DESC* pDesc,[In, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Buffer** ppBuffer)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateBuffer</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Buffer.Create``1(SharpDX.Direct3D11.Device,SharpDX.Direct3D11.BindFlags,``0@,System.Int32,SharpDX.Direct3D11.ResourceUsage,SharpDX.Direct3D11.CpuAccessFlags,SharpDX.Direct3D11.ResourceOptionFlags,System.Int32)">
             <summary>
@@ -409,6 +474,9 @@
             <param name="optionFlags">Miscellaneous resource options.</param>
             <param name="structureByteStride">The size (in bytes) of the structure element for structured buffers.</param>
             <returns>An initialized buffer</returns>
+            <msdn-id>ff476501</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateBuffer([In] const D3D11_BUFFER_DESC* pDesc,[In, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Buffer** ppBuffer)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateBuffer</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Buffer.Create``1(SharpDX.Direct3D11.Device,SharpDX.Direct3D11.BindFlags,``0[],System.Int32,SharpDX.Direct3D11.ResourceUsage,SharpDX.Direct3D11.CpuAccessFlags,SharpDX.Direct3D11.ResourceOptionFlags,System.Int32)">
             <summary>
@@ -424,6 +492,9 @@
             <param name="optionFlags">Miscellaneous resource options.</param>
             <param name="structureByteStride">The size (in bytes) of the structure element for structured buffers.</param>
             <returns>An initialized buffer</returns>
+            <msdn-id>ff476501</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateBuffer([In] const D3D11_BUFFER_DESC* pDesc,[In, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Buffer** ppBuffer)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateBuffer</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Buffer.Create``1(SharpDX.Direct3D11.Device,``0@,SharpDX.Direct3D11.BufferDescription)">
             <summary>
@@ -439,6 +510,9 @@
             <remarks>
             If the <see cref="F:SharpDX.Direct3D11.BufferDescription.SizeInBytes"/> is at 0, sizeof(T) is used.
             </remarks>
+            <msdn-id>ff476501</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateBuffer([In] const D3D11_BUFFER_DESC* pDesc,[In, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Buffer** ppBuffer)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateBuffer</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Buffer.Create``1(SharpDX.Direct3D11.Device,``0[],SharpDX.Direct3D11.BufferDescription)">
             <summary>
@@ -454,6 +528,9 @@
             <remarks>
             If the <see cref="F:SharpDX.Direct3D11.BufferDescription.SizeInBytes"/> is at 0, sizeof(T) * data.Length is used.
             </remarks>
+            <msdn-id>ff476501</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateBuffer([In] const D3D11_BUFFER_DESC* pDesc,[In, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Buffer** ppBuffer)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateBuffer</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Buffer.#ctor(System.IntPtr)">
             <summary>
@@ -788,13 +865,6 @@
             <msdn-id>ff476363</msdn-id>	
             <unmanaged>ID3D11ComputeShader</unmanaged>	
             <unmanaged-short>ID3D11ComputeShader</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.Direct3D11.ComputeShader.#ctor(SharpDX.Direct3D11.Device,System.Byte[])">
-            <summary>
-              Initializes a new instance of the <see cref = "T:SharpDX.Direct3D11.ComputeShader" /> class.
-            </summary>
-            <param name = "device">The device used to create the shader.</param>
-            <param name = "shaderBytecode">The compiled shader bytecode.</param>
         </member>
         <member name="M:SharpDX.Direct3D11.ComputeShader.#ctor(SharpDX.Direct3D11.Device,System.Byte[],SharpDX.Direct3D11.ClassLinkage)">
             <summary>
@@ -2386,6 +2456,9 @@
             <param name="source">A reference to the source resource (see <see cref="T:SharpDX.Direct3D11.Resource"/>). </param>
             <param name="destination">A reference to the destination resource (see <see cref="T:SharpDX.Direct3D11.Resource"/>). </param>
             <unmanaged>void ID3D11DeviceContext::CopyResource([In] ID3D11Resource* pDstResource,[In] ID3D11Resource* pSrcResource)</unmanaged>
+            <msdn-id>ff476392</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::CopyResource([In] ID3D11Resource* pDstResource,[In] ID3D11Resource* pSrcResource)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::CopyResource</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.DeviceContext.CopySubresourceRegion(SharpDX.Direct3D11.Resource,System.Int32,System.Nullable{SharpDX.Direct3D11.ResourceRegion},SharpDX.Direct3D11.Resource,System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>	
@@ -2411,7 +2484,9 @@
             <param name="dstX">The x-coordinate of the upper left corner of the destination region. </param>
             <param name="dstY">The y-coordinate of the upper left corner of the destination region. For a 1D subresource, this must be zero. </param>
             <param name="dstZ">The z-coordinate of the upper left corner of the destination region. For a 1D or 2D subresource, this must be zero. </param>
-            <unmanaged>void ID3D11DeviceContext::CopySubresourceRegion([In] ID3D11Resource* pDstResource,[In] int DstSubresource,[In] int DstX,[In] int DstY,[In] int DstZ,[In] ID3D11Resource* pSrcResource,[In] int SrcSubresource,[In, Optional] const D3D11_BOX* pSrcBox)</unmanaged>
+            <msdn-id>ff476394</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::CopySubresourceRegion([In] ID3D11Resource* pDstResource,[In] unsigned int DstSubresource,[In] unsigned int DstX,[In] unsigned int DstY,[In] unsigned int DstZ,[In] ID3D11Resource* pSrcResource,[In] unsigned int SrcSubresource,[In, Optional] const D3D11_BOX* pSrcBox)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::CopySubresourceRegion</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.DeviceContext.ResolveSubresource(SharpDX.Direct3D11.Resource,System.Int32,SharpDX.Direct3D11.Resource,System.Int32,SharpDX.DXGI.Format)">
             <summary>	
@@ -2512,7 +2587,7 @@
             <returns>The locked <see cref="T:SharpDX.DataBox"/></returns>
             <unmanaged>HRESULT ID3D11DeviceContext::Map([In] ID3D11Resource* pResource,[In] unsigned int Subresource,[In] D3D11_MAP MapType,[In] D3D11_MAP_FLAG MapFlags,[Out] D3D11_MAPPED_SUBRESOURCE* pMappedResource)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct3D11.DeviceContext.UpdateSubresource``1(``0@,SharpDX.Direct3D11.Resource,System.Int32,System.Int32,System.Int32)">
+        <member name="M:SharpDX.Direct3D11.DeviceContext.UpdateSubresource``1(``0@,SharpDX.Direct3D11.Resource,System.Int32,System.Int32,System.Int32,System.Nullable{SharpDX.Direct3D11.ResourceRegion})">
             <summary>
             Copies data from the CPU to to a non-mappable subresource region.
             </summary>
@@ -2525,9 +2600,11 @@
             <remarks>
             This method is implementing the <a href="http://blogs.msdn.com/b/chuckw/archive/2010/07/28/known-issue-direct3d-11-updatesubresource-and-deferred-contexts.aspx">workaround for defered context</a>.
             </remarks>
+            <msdn-id>ff476486</msdn-id>	
             <unmanaged>void ID3D11DeviceContext::UpdateSubresource([In] ID3D11Resource* pDstResource,[In] unsigned int DstSubresource,[In, Optional] const D3D11_BOX* pDstBox,[In] const void* pSrcData,[In] unsigned int SrcRowPitch,[In] unsigned int SrcDepthPitch)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::UpdateSubresource</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.DeviceContext.UpdateSubresource``1(``0[],SharpDX.Direct3D11.Resource,System.Int32,System.Int32,System.Int32)">
+        <member name="M:SharpDX.Direct3D11.DeviceContext.UpdateSubresource``1(``0[],SharpDX.Direct3D11.Resource,System.Int32,System.Int32,System.Int32,System.Nullable{SharpDX.Direct3D11.ResourceRegion})">
             <summary>
             Copies data from the CPU to to a non-mappable subresource region.
             </summary>
@@ -2537,10 +2614,11 @@
             <param name="subresource">The destination subresource.</param>
             <param name="rowPitch">The row pitch.</param>
             <param name="depthPitch">The depth pitch.</param>
-            <remarks>
-            This method is implementing the <a href="http://blogs.msdn.com/b/chuckw/archive/2010/07/28/known-issue-direct3d-11-updatesubresource-and-deferred-contexts.aspx">workaround for defered context</a>.
-            </remarks>
-            <unmanaged>void ID3D11DeviceContext::UpdateSubresource([In] ID3D11Resource* pDstResource,[In] unsigned int DstSubresource,[In, Optional] const D3D11_BOX* pDstBox,[In] const void* pSrcData,[In] unsigned int SrcRowPitch,[In] unsigned int SrcDepthPitch)</unmanaged>	
+            <param name="region">A region that defines the portion of the destination subresource to copy the resource data into. Coordinates are in bytes for buffers and in texels for textures.</param>
+            <msdn-id>ff476486</msdn-id>
+              <unmanaged>void ID3D11DeviceContext::UpdateSubresource([In] ID3D11Resource* pDstResource,[In] unsigned int DstSubresource,[In, Optional] const D3D11_BOX* pDstBox,[In] const void* pSrcData,[In] unsigned int SrcRowPitch,[In] unsigned int SrcDepthPitch)</unmanaged>
+              <unmanaged-short>ID3D11DeviceContext::UpdateSubresource</unmanaged-short>
+            <remarks>This method is implementing the <a href="http://blogs.msdn.com/b/chuckw/archive/2010/07/28/known-issue-direct3d-11-updatesubresource-and-deferred-contexts.aspx">workaround for defered context</a>.</remarks>
         </member>
         <member name="M:SharpDX.Direct3D11.DeviceContext.UpdateSubresource(SharpDX.DataBox,SharpDX.Direct3D11.Resource,System.Int32)">
             <summary>
@@ -2798,11 +2876,11 @@
             <unmanaged>HRESULT ID3D11DeviceContext::GetData([In] ID3D11Asynchronous* pAsync,[Out, Buffer, Optional] void* pData,[In] unsigned int DataSize,[In] D3D11_ASYNC_GETDATA_FLAG GetDataFlags)</unmanaged>	
             <unmanaged-short>ID3D11DeviceContext::GetData</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.DeviceContext.SetPredication(SharpDX.Direct3D11.Predicate,System.Boolean)">
+        <member name="M:SharpDX.Direct3D11.DeviceContext.SetPredication(SharpDX.Direct3D11.Predicate,SharpDX.Bool)">
             <summary>	
             <p>Set a rendering predicate.</p>	
             </summary>	
-            <param name="predicateRef"><dd>  <p>Pointer to a predicate (see <strong><see cref="T:SharpDX.Direct3D11.Predicate"/></strong>). A <strong><c>null</c></strong> value indicates "no" predication; in this case, the value of PredicateValue is irrelevent but will be preserved for <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetPredication(System.Boolean@)"/></strong>.</p> </dd></param>	
+            <param name="predicateRef"><dd>  <p>Pointer to a predicate (see <strong><see cref="T:SharpDX.Direct3D11.Predicate"/></strong>). A <strong><c>null</c></strong> value indicates "no" predication; in this case, the value of PredicateValue is irrelevent but will be preserved for <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetPredication(SharpDX.Bool@)"/></strong>.</p> </dd></param>	
             <param name="predicateValue"><dd>  <p>If <strong>TRUE</strong>, rendering will be affected by when the predicate's conditions are met. If <strong><see cref="F:SharpDX.Result.False"/></strong>, rendering will be affected when the conditions are not met.</p> </dd></param>	
             <remarks>	
             <p>The predicate must be in the "issued" or "signaled" state to be used for predication. While the predicate is set for predication, calls to <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.Begin(SharpDX.Direct3D11.Asynchronous)"/></strong> and <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.End(SharpDX.Direct3D11.Asynchronous)"/></strong> are invalid.</p><p>This method is used to denote that subsequent rendering and resource manipulation commands are not actually performed if the resulting Predicate data of the Predicate is equal to the PredicateValue. However, some Predicates are only hints, so they may not actually prevent operations from being performed. </p><p>The primary usefulness of Predication is to allow an application to issue graphics commands without taking the performance hit of spinning, waiting for <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> to return. So, Predication can occur while <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> returns S_FALSE. Another way to think of it: an application can also use Predication as a fallback, if it is possible that <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> returns S_FALSE. If <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> returns <see cref="F:SharpDX.Result.Ok"/>, the application can skip calling the graphics commands manually with it's own application logic.</p>	
@@ -3106,7 +3184,7 @@
             <unmanaged>void ID3D11DeviceContext::ResolveSubresource([In] ID3D11Resource* pDstResource,[In] unsigned int DstSubresource,[In] ID3D11Resource* pSrcResource,[In] unsigned int SrcSubresource,[In] DXGI_FORMAT Format)</unmanaged>	
             <unmanaged-short>ID3D11DeviceContext::ResolveSubresource</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.DeviceContext.ExecuteCommandList(SharpDX.Direct3D11.CommandList,System.Boolean)">
+        <member name="M:SharpDX.Direct3D11.DeviceContext.ExecuteCommandList(SharpDX.Direct3D11.CommandList,SharpDX.Bool)">
             <summary>	
             <p>Queues commands from a command list onto a device.</p>	
             </summary>	
@@ -3120,7 +3198,7 @@
             <unmanaged>void ID3D11DeviceContext::ExecuteCommandList([In] ID3D11CommandList* pCommandList,[In] BOOL RestoreContextState)</unmanaged>	
             <unmanaged-short>ID3D11DeviceContext::ExecuteCommandList</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.DeviceContext.GetPredication(System.Boolean@)">
+        <member name="M:SharpDX.Direct3D11.DeviceContext.GetPredication(SharpDX.Bool@)">
             <summary>	
             <p>Get the rendering predicate state.</p>	
             </summary>	
@@ -3138,7 +3216,7 @@
             <p>Restore all default settings.</p>	
             </summary>	
             <remarks>	
-            <p>This method resets any device context to the default settings. This sets all input/output resource slots, shaders, input layouts, predications, scissor rectangles, depth-stencil state, rasterizer state, blend state, sampler state, and viewports to <strong><c>null</c></strong>. The primitive topology is set to UNDEFINED.</p><p>For a scenario where you would like to clear a list of commands recorded so far, call <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.FinishCommandListInternal(System.Boolean,SharpDX.Direct3D11.CommandList@)"/></strong> and throw away the resulting <strong><see cref="T:SharpDX.Direct3D11.CommandList"/></strong>.</p>	
+            <p>This method resets any device context to the default settings. This sets all input/output resource slots, shaders, input layouts, predications, scissor rectangles, depth-stencil state, rasterizer state, blend state, sampler state, and viewports to <strong><c>null</c></strong>. The primitive topology is set to UNDEFINED.</p><p>For a scenario where you would like to clear a list of commands recorded so far, call <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.FinishCommandListInternal(SharpDX.Bool,SharpDX.Direct3D11.CommandList@)"/></strong> and throw away the resulting <strong><see cref="T:SharpDX.Direct3D11.CommandList"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11DeviceContext::ClearState']/*"/>	
             <msdn-id>ff476389</msdn-id>	
@@ -3181,7 +3259,7 @@
             <unmanaged>unsigned int ID3D11DeviceContext::GetContextFlags()</unmanaged>	
             <unmanaged-short>ID3D11DeviceContext::GetContextFlags</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.DeviceContext.FinishCommandListInternal(System.Boolean,SharpDX.Direct3D11.CommandList@)">
+        <member name="M:SharpDX.Direct3D11.DeviceContext.FinishCommandListInternal(SharpDX.Bool,SharpDX.Direct3D11.CommandList@)">
             <summary>	
             <p>Create a command list and record graphics commands into it.</p>	
             </summary>	
@@ -3189,7 +3267,7 @@
             <param name="commandListOut"><dd>  <p>Upon completion of the method, the passed reference to an <strong><see cref="T:SharpDX.Direct3D11.CommandList"/></strong> interface reference is initialized with the recorded command list information.</p> </dd></param>	
             <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if successful; otherwise, returns one of the following:</p><ul> <li>Returns <see cref="F:SharpDX.DXGI.ResultCode.DeviceRemoved"/> if the video card has been physically removed from the system, or a driver upgrade for the video card has occurred. If this error occurs, you should destroy and recreate the device.</li> <li>Returns <see cref="F:SharpDX.DXGI.ResultCode.InvalidCall"/> if <strong>FinishCommandList</strong> cannot be called from the current context. See remarks.</li> <li>Returns E_OUTOFMEMORY if the application has exhausted available memory.</li> </ul></returns>	
             <remarks>	
-            <p>Create a command list from a deferred context and record commands into it by calling <strong>FinishCommandList</strong>. Play back a command list with an immediate context by calling <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.ExecuteCommandList(SharpDX.Direct3D11.CommandList,System.Boolean)"/></strong>.</p><p>Immediate context state is cleared before and after a command list is executed. A command list has no concept of inheritance. Each call to <strong>FinishCommandList</strong> will record only the state set since any previous call to  <strong>FinishCommandList</strong>.</p><p>For example, the state of a device context is its render state or pipeline state. To retrieve device context state, an application can call  <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> or  <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetPredication(System.Boolean@)"/></strong>.</p><p>For more information about how to use <strong>FinishCommandList</strong>, see How to: Record a Command List.</p>	
+            <p>Create a command list from a deferred context and record commands into it by calling <strong>FinishCommandList</strong>. Play back a command list with an immediate context by calling <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.ExecuteCommandList(SharpDX.Direct3D11.CommandList,SharpDX.Bool)"/></strong>.</p><p>Immediate context state is cleared before and after a command list is executed. A command list has no concept of inheritance. Each call to <strong>FinishCommandList</strong> will record only the state set since any previous call to  <strong>FinishCommandList</strong>.</p><p>For example, the state of a device context is its render state or pipeline state. To retrieve device context state, an application can call  <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> or  <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetPredication(SharpDX.Bool@)"/></strong>.</p><p>For more information about how to use <strong>FinishCommandList</strong>, see How to: Record a Command List.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11DeviceContext::FinishCommandList']/*"/>	
             <msdn-id>ff476424</msdn-id>	
@@ -4022,7 +4100,7 @@
             Set the target output {{buffers}} for the {{StreamOutput}} stage, which enables/disables the pipeline to stream-out data.	
             </summary>	
             <remarks>	
-            Call ID3D10Device::SOSetTargets (before any draw calls) to stream data out; call SOSetTargets with NULL to stop streaming data out. For an example, see Exercise 01 from the GDC 2007 workshop, which sets the stream output rendertargets before calling draw methods in the RenderInstanceToStream function. An offset of -1 will cause the stream output buffer to be appended, continuing after the last location written to the buffer in a previous stream output pass. Calling this method using a buffer that is currently bound for writing will effectively bind NULL instead because a buffer cannot be bound as both an input and an output at the same time. The {{Debug Layer}} will generate a warning whenever a resource is prevented from being bound simultaneously as an input and an output, but this will not prevent invalid data from being used by the runtime. The method will not hold a reference to the interfaces passed in. For that reason, applications should be careful not to release an interface currently in use by the device. 	
+            Call ID3D10Device::SOSetTargets (before any draw calls) to stream data out; call SOSetTargets with NULL to stop streaming data out. For an example, see Exercise 01 from the GDC 2007 workshop, which sets the stream output rendertargets before calling draw methods in the RenderInstanceToStream function. An offset of -1 will cause the stream output buffer to be appended, continuing after the last location written to the buffer in a previous stream output pass. Calling this method using a buffer that is currently bound for writing will effectively bind NULL instead because a buffer cannot be bound as both an input and an output at the same time. The {{DeviceDebug Layer}} will generate a warning whenever a resource is prevented from being bound simultaneously as an input and an output, but this will not prevent invalid data from being used by the runtime. The method will not hold a reference to the interfaces passed in. For that reason, applications should be careful not to release an interface currently in use by the device. 	
             </remarks>	
             <param name="bufferBindings">an array of output buffers (see <see cref="T:SharpDX.Direct3D11.StreamOutputBufferBinding"/>) to bind to the device. The buffers must have been created with the <see cref="F:SharpDX.Direct3D11.BindFlags.StreamOutput"/> flag. </param>
             <unmanaged>void SOSetTargets([In] int NumBuffers,[In, Buffer, Optional] const ID3D10Buffer** ppSOTargets,[In, Buffer, Optional] const int* pOffsets)</unmanaged>
@@ -5686,13 +5764,6 @@
             <unmanaged>ID3D11DomainShader</unmanaged>	
             <unmanaged-short>ID3D11DomainShader</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.DomainShader.#ctor(SharpDX.Direct3D11.Device,System.Byte[])">
-            <summary>
-              Initializes a new instance of the <see cref = "T:SharpDX.Direct3D11.DomainShader" /> class.
-            </summary>
-            <param name = "device">The device used to create the shader.</param>
-            <param name = "shaderBytecode">The compiled shader bytecode.</param>
-        </member>
         <member name="M:SharpDX.Direct3D11.DomainShader.#ctor(SharpDX.Direct3D11.Device,System.Byte[],SharpDX.Direct3D11.ClassLinkage)">
             <summary>
               Initializes a new instance of the <see cref = "T:SharpDX.Direct3D11.DomainShader" /> class.
@@ -7113,22 +7184,6 @@
             <unmanaged>None</unmanaged>	
             <unmanaged-short>None</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.Direct3D11.EffectVariableFlags">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3DX11_EFFECT_VARIABLE_FLAGS']/*"/>	
-            <unmanaged>D3DX11_EFFECT_VARIABLE_FLAGS</unmanaged>	
-            <unmanaged-short>D3DX11_EFFECT_VARIABLE_FLAGS</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.EffectVariableFlags.None">
-            <summary>	
-            None.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='']/*"/>	
-            <unmanaged>None</unmanaged>	
-            <unmanaged-short>None</unmanaged-short>	
-        </member>
         <member name="T:SharpDX.Direct3D11.Feature">
             <summary>	
             <p>Direct3D 11 feature options.</p>	
@@ -8010,7 +8065,7 @@
         </member>
         <member name="F:SharpDX.Direct3D11.QueryType.Event">
             <summary>	
-            <dd> <p>Determines whether or not the GPU is finished processing commands. When the GPU is finished processing commands <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> will return <see cref="F:SharpDX.Result.Ok"/>, and pData will point to a <see cref="T:System.Boolean"/> with a value of <strong>TRUE</strong>. When using this type of query, <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.Begin(SharpDX.Direct3D11.Asynchronous)"/></strong> is disabled.</p> </dd>	
+            <dd> <p>Determines whether or not the GPU is finished processing commands. When the GPU is finished processing commands <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> will return <see cref="F:SharpDX.Result.Ok"/>, and pData will point to a <see cref="T:SharpDX.Bool"/> with a value of <strong>TRUE</strong>. When using this type of query, <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.Begin(SharpDX.Direct3D11.Asynchronous)"/></strong> is disabled.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_QUERY_EVENT']/*"/>	
             <msdn-id>ff476191</msdn-id>	
@@ -8055,7 +8110,7 @@
         </member>
         <member name="F:SharpDX.Direct3D11.QueryType.OcclusionPredicate">
             <summary>	
-            <dd> <p>Similar to <see cref="F:SharpDX.Direct3D11.QueryType.Occlusion"/>, except <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> returns a <see cref="T:System.Boolean"/> indicating whether or not any samples passed the depth and stencil tests - <strong>TRUE</strong> meaning at least one passed, <strong><see cref="F:SharpDX.Result.False"/></strong> meaning none passed.</p> </dd>	
+            <dd> <p>Similar to <see cref="F:SharpDX.Direct3D11.QueryType.Occlusion"/>, except <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> returns a <see cref="T:SharpDX.Bool"/> indicating whether or not any samples passed the depth and stencil tests - <strong>TRUE</strong> meaning at least one passed, <strong><see cref="F:SharpDX.Result.False"/></strong> meaning none passed.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_QUERY_OCCLUSION_PREDICATE']/*"/>	
             <msdn-id>ff476191</msdn-id>	
@@ -8073,7 +8128,7 @@
         </member>
         <member name="F:SharpDX.Direct3D11.QueryType.StreamOutputOverflowPredicate">
             <summary>	
-            <dd> <p>Determines whether or not any of the streaming output buffers overflowed in between <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.Begin(SharpDX.Direct3D11.Asynchronous)"/></strong> and <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.End(SharpDX.Direct3D11.Asynchronous)"/></strong>. <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> returns a <see cref="T:System.Boolean"/> - <strong>TRUE</strong> meaning there was an overflow, <strong><see cref="F:SharpDX.Result.False"/></strong> meaning there was not an overflow. If streaming output writes to multiple buffers, and one of the buffers overflows, then it will stop writing to all the output buffers. When an overflow is detected by Direct3D it is prevented from happening - no memory is corrupted. This predication may be used in conjunction with an SO_STATISTICS query so that when an overflow occurs the SO_STATISTIC query will let the application know how much memory was needed to prevent an overflow.</p> </dd>	
+            <dd> <p>Determines whether or not any of the streaming output buffers overflowed in between <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.Begin(SharpDX.Direct3D11.Asynchronous)"/></strong> and <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.End(SharpDX.Direct3D11.Asynchronous)"/></strong>. <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> returns a <see cref="T:SharpDX.Bool"/> - <strong>TRUE</strong> meaning there was an overflow, <strong><see cref="F:SharpDX.Result.False"/></strong> meaning there was not an overflow. If streaming output writes to multiple buffers, and one of the buffers overflows, then it will stop writing to all the output buffers. When an overflow is detected by Direct3D it is prevented from happening - no memory is corrupted. This predication may be used in conjunction with an SO_STATISTICS query so that when an overflow occurs the SO_STATISTIC query will let the application know how much memory was needed to prevent an overflow.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_QUERY_SO_OVERFLOW_PREDICATE']/*"/>	
             <msdn-id>ff476191</msdn-id>	
@@ -8091,7 +8146,7 @@
         </member>
         <member name="F:SharpDX.Direct3D11.QueryType.StreamOutputOverflowPredicateStream0">
             <summary>	
-            <dd> <p>Determines whether or not the stream 0 output buffers overflowed in between <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.Begin(SharpDX.Direct3D11.Asynchronous)"/></strong> and <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.End(SharpDX.Direct3D11.Asynchronous)"/></strong>. <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> returns a <see cref="T:System.Boolean"/> - <strong>TRUE</strong> meaning there was an overflow, <strong><see cref="F:SharpDX.Result.False"/></strong> meaning there was not an overflow. If streaming output writes to multiple buffers, and one of the buffers overflows, then it will stop writing to all the output buffers. When an overflow is detected by Direct3D it is prevented from happening - no memory is corrupted. This predication may be used in conjunction with an SO_STATISTICS query so that when an overflow occurs the SO_STATISTIC query will let the application know how much memory was needed to prevent an overflow.</p> </dd>	
+            <dd> <p>Determines whether or not the stream 0 output buffers overflowed in between <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.Begin(SharpDX.Direct3D11.Asynchronous)"/></strong> and <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.End(SharpDX.Direct3D11.Asynchronous)"/></strong>. <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> returns a <see cref="T:SharpDX.Bool"/> - <strong>TRUE</strong> meaning there was an overflow, <strong><see cref="F:SharpDX.Result.False"/></strong> meaning there was not an overflow. If streaming output writes to multiple buffers, and one of the buffers overflows, then it will stop writing to all the output buffers. When an overflow is detected by Direct3D it is prevented from happening - no memory is corrupted. This predication may be used in conjunction with an SO_STATISTICS query so that when an overflow occurs the SO_STATISTIC query will let the application know how much memory was needed to prevent an overflow.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_QUERY_SO_OVERFLOW_PREDICATE_STREAM0']/*"/>	
             <msdn-id>ff476191</msdn-id>	
@@ -8109,7 +8164,7 @@
         </member>
         <member name="F:SharpDX.Direct3D11.QueryType.StreamOutputOverflowPredicateStream1">
             <summary>	
-            <dd> <p>Determines whether or not the stream 1 output buffers overflowed in between <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.Begin(SharpDX.Direct3D11.Asynchronous)"/></strong> and <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.End(SharpDX.Direct3D11.Asynchronous)"/></strong>. <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> returns a <see cref="T:System.Boolean"/> - <strong>TRUE</strong> meaning there was an overflow, <strong><see cref="F:SharpDX.Result.False"/></strong> meaning there was not an overflow. If streaming output writes to multiple buffers, and one of the buffers overflows, then it will stop writing to all the output buffers. When an overflow is detected by Direct3D it is prevented from happening - no memory is corrupted. This predication may be used in conjunction with an SO_STATISTICS query so that when an overflow occurs the SO_STATISTIC query will let the application know how much memory was needed to prevent an overflow.</p> </dd>	
+            <dd> <p>Determines whether or not the stream 1 output buffers overflowed in between <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.Begin(SharpDX.Direct3D11.Asynchronous)"/></strong> and <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.End(SharpDX.Direct3D11.Asynchronous)"/></strong>. <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> returns a <see cref="T:SharpDX.Bool"/> - <strong>TRUE</strong> meaning there was an overflow, <strong><see cref="F:SharpDX.Result.False"/></strong> meaning there was not an overflow. If streaming output writes to multiple buffers, and one of the buffers overflows, then it will stop writing to all the output buffers. When an overflow is detected by Direct3D it is prevented from happening - no memory is corrupted. This predication may be used in conjunction with an SO_STATISTICS query so that when an overflow occurs the SO_STATISTIC query will let the application know how much memory was needed to prevent an overflow.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_QUERY_SO_OVERFLOW_PREDICATE_STREAM1']/*"/>	
             <msdn-id>ff476191</msdn-id>	
@@ -8127,7 +8182,7 @@
         </member>
         <member name="F:SharpDX.Direct3D11.QueryType.StreamOutputOverflowPredicateStream2">
             <summary>	
-            <dd> <p>Determines whether or not the stream 2 output buffers overflowed in between <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.Begin(SharpDX.Direct3D11.Asynchronous)"/></strong> and <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.End(SharpDX.Direct3D11.Asynchronous)"/></strong>. <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> returns a <see cref="T:System.Boolean"/> - <strong>TRUE</strong> meaning there was an overflow, <strong><see cref="F:SharpDX.Result.False"/></strong> meaning there was not an overflow. If streaming output writes to multiple buffers, and one of the buffers overflows, then it will stop writing to all the output buffers. When an overflow is detected by Direct3D it is prevented from happening - no memory is corrupted. This predication may be used in conjunction with an SO_STATISTICS query so that when an overflow occurs the SO_STATISTIC query will let the application know how much memory was needed to prevent an overflow.</p> </dd>	
+            <dd> <p>Determines whether or not the stream 2 output buffers overflowed in between <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.Begin(SharpDX.Direct3D11.Asynchronous)"/></strong> and <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.End(SharpDX.Direct3D11.Asynchronous)"/></strong>. <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> returns a <see cref="T:SharpDX.Bool"/> - <strong>TRUE</strong> meaning there was an overflow, <strong><see cref="F:SharpDX.Result.False"/></strong> meaning there was not an overflow. If streaming output writes to multiple buffers, and one of the buffers overflows, then it will stop writing to all the output buffers. When an overflow is detected by Direct3D it is prevented from happening - no memory is corrupted. This predication may be used in conjunction with an SO_STATISTICS query so that when an overflow occurs the SO_STATISTIC query will let the application know how much memory was needed to prevent an overflow.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_QUERY_SO_OVERFLOW_PREDICATE_STREAM2']/*"/>	
             <msdn-id>ff476191</msdn-id>	
@@ -8145,7 +8200,7 @@
         </member>
         <member name="F:SharpDX.Direct3D11.QueryType.StreamOutputOverflowPredicateStream3">
             <summary>	
-            <dd> <p>Determines whether or not the stream 3 output buffers overflowed in between <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.Begin(SharpDX.Direct3D11.Asynchronous)"/></strong> and <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.End(SharpDX.Direct3D11.Asynchronous)"/></strong>. <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> returns a <see cref="T:System.Boolean"/> - <strong>TRUE</strong> meaning there was an overflow, <strong><see cref="F:SharpDX.Result.False"/></strong> meaning there was not an overflow. If streaming output writes to multiple buffers, and one of the buffers overflows, then it will stop writing to all the output buffers. When an overflow is detected by Direct3D it is prevented from happening - no memory is corrupted. This predication may be used in conjunction with an SO_STATISTICS query so that when an overflow occurs the SO_STATISTIC query will let the application know how much memory was needed to prevent an overflow.</p> </dd>	
+            <dd> <p>Determines whether or not the stream 3 output buffers overflowed in between <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.Begin(SharpDX.Direct3D11.Asynchronous)"/></strong> and <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.End(SharpDX.Direct3D11.Asynchronous)"/></strong>. <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> returns a <see cref="T:SharpDX.Bool"/> - <strong>TRUE</strong> meaning there was an overflow, <strong><see cref="F:SharpDX.Result.False"/></strong> meaning there was not an overflow. If streaming output writes to multiple buffers, and one of the buffers overflows, then it will stop writing to all the output buffers. When an overflow is detected by Direct3D it is prevented from happening - no memory is corrupted. This predication may be used in conjunction with an SO_STATISTICS query so that when an overflow occurs the SO_STATISTIC query will let the application know how much memory was needed to prevent an overflow.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_QUERY_SO_OVERFLOW_PREDICATE_STREAM3']/*"/>	
             <msdn-id>ff476191</msdn-id>	
@@ -8388,7 +8443,7 @@
         </member>
         <member name="F:SharpDX.Direct3D11.ResourceOptionFlags.GdiCompatible">
             <summary>	
-            <dd> <p>Enables a resource compatible with GDI. You must set the <strong><see cref="F:SharpDX.Direct3D11.ResourceOptionFlags.GdiCompatible"/></strong> flag  on surfaces that you use with GDI. Setting the <strong><see cref="F:SharpDX.Direct3D11.ResourceOptionFlags.GdiCompatible"/></strong> flag allows GDI rendering on the surface via <strong><see cref="M:SharpDX.DXGI.Surface1.GetDC(System.Boolean)"/></strong>.	
+            <dd> <p>Enables a resource compatible with GDI. You must set the <strong><see cref="F:SharpDX.Direct3D11.ResourceOptionFlags.GdiCompatible"/></strong> flag  on surfaces that you use with GDI. Setting the <strong><see cref="F:SharpDX.Direct3D11.ResourceOptionFlags.GdiCompatible"/></strong> flag allows GDI rendering on the surface via <strong><see cref="M:SharpDX.DXGI.Surface1.GetDC(SharpDX.Bool)"/></strong>.	
             </p> <p>Consider the following programming tips for using <see cref="F:SharpDX.Direct3D11.ResourceOptionFlags.GdiCompatible"/> when you create a texture or use that texture in a swap chain:</p> <ul> <li><see cref="F:SharpDX.Direct3D11.ResourceOptionFlags.SharedKeyedmutex"/> and <see cref="F:SharpDX.Direct3D11.ResourceOptionFlags.GdiCompatible"/> are mutually exclusive. Therefore, do not use them together.</li> <li><see cref="F:SharpDX.Direct3D11.ResourceOptionFlags.ResourceClamp"/> and <see cref="F:SharpDX.Direct3D11.ResourceOptionFlags.GdiCompatible"/> are mutually exclusive. Therefore, do not use them together.</li> <li>You must bind the texture as a render target for the output-merger stage. For example, set the <see cref="F:SharpDX.Direct3D11.BindFlags.RenderTarget"/> flag in the <strong>BindFlags</strong> member of the <strong><see cref="T:SharpDX.Direct3D11.Texture2DDescription"/></strong> structure.</li> <li>You must set the maximum number of MIP map levels to 1. For example, set the <strong>MipLevels</strong> member of the <strong><see cref="T:SharpDX.Direct3D11.Texture2DDescription"/></strong> structure to 1.</li> <li>You must specify that the texture requires read and write access by the GPU. For example, set the <strong>Usage</strong> member of the <strong><see cref="T:SharpDX.Direct3D11.Texture2DDescription"/></strong> structure to <see cref="F:SharpDX.Direct3D11.ResourceUsage.Default"/>.</li> <li> <p>You must set the texture format to one of the following types. </p> <ul> <li><see cref="F:SharpDX.DXGI.Format.B8G8R8A8_UNorm"/>	
             </li> <li><see cref="F:SharpDX.DXGI.Format.B8G8R8A8_Typeless"/></li> <li><see cref="F:SharpDX.DXGI.Format.B8G8R8A8_UNorm_SRgb"/>	
             </li> </ul>For example, set the <strong>Format</strong> member of the <strong><see cref="T:SharpDX.Direct3D11.Texture2DDescription"/></strong> structure to one of these  types.</li> <li>You cannot use <see cref="F:SharpDX.Direct3D11.ResourceOptionFlags.GdiCompatible"/> with multisampling. Therefore, set the <strong>Count</strong> member of the <strong><see cref="T:SharpDX.DXGI.SampleDescription"/></strong> structure to 1. Then, set the <strong>SampleDesc</strong> member of the <strong><see cref="T:SharpDX.Direct3D11.Texture2DDescription"/></strong> structure to this <strong><see cref="T:SharpDX.DXGI.SampleDescription"/></strong> structure.</li> </ul> </dd>	
@@ -9086,7 +9141,7 @@
         </member>
         <member name="F:SharpDX.Direct3D11.VideoProcessorAlphaFillMode.Background">
             <summary>	
-            <dd> <p>Alpha values inside the target rectangle are set to the alpha value specified in the background color. To set the background color, call the <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetOutputBackgroundColor(SharpDX.Direct3D11.VideoProcessor,System.Boolean,SharpDX.Direct3D11.VideoColor)"/></strong> method.</p> </dd>	
+            <dd> <p>Alpha values inside the target rectangle are set to the alpha value specified in the background color. To set the background color, call the <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetOutputBackgroundColor(SharpDX.Direct3D11.VideoProcessor,SharpDX.Bool,SharpDX.Direct3D11.VideoColor)"/></strong> method.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE_BACKGROUND']/*"/>	
             <msdn-id>hh447648</msdn-id>	
@@ -9257,7 +9312,7 @@
         </member>
         <member name="F:SharpDX.Direct3D11.VideoProcessorFeatureCaps.Constriction">
             <summary>	
-            <dd> <p>The video processor can downsample the video output. For more information, see <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetOutputConstriction(SharpDX.Direct3D11.VideoProcessor,System.Boolean,SharpDX.DrawingSize)"/></strong>.</p> </dd>	
+            <dd> <p>The video processor can downsample the video output. For more information, see <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetOutputConstriction(SharpDX.Direct3D11.VideoProcessor,SharpDX.Bool,SharpDX.DrawingSize)"/></strong>.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_VIDEO_PROCESSOR_FEATURE_CAPS_CONSTRICTION']/*"/>	
             <msdn-id>hh447655</msdn-id>	
@@ -9266,7 +9321,7 @@
         </member>
         <member name="F:SharpDX.Direct3D11.VideoProcessorFeatureCaps.LumaKey">
             <summary>	
-            <dd> <p>The video processor can perform luma keying. For more information, see <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamLumaKey(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean,System.Single,System.Single)"/></strong>.</p> </dd>	
+            <dd> <p>The video processor can perform luma keying. For more information, see <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamLumaKey(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool,System.Single,System.Single)"/></strong>.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_VIDEO_PROCESSOR_FEATURE_CAPS_LUMA_KEY']/*"/>	
             <msdn-id>hh447655</msdn-id>	
@@ -9293,7 +9348,7 @@
         </member>
         <member name="F:SharpDX.Direct3D11.VideoProcessorFeatureCaps.Stereo">
             <summary>	
-            <dd> <p>The video processor can support 3D stereo video. For more information, see <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamStereoFormat(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean,SharpDX.Direct3D11.VideoProcessorStereoFormat,System.Boolean,System.Boolean,SharpDX.Direct3D11.VideoProcessorStereoFlipMode,System.Int32)"/></strong>.</p> </dd>	
+            <dd> <p>The video processor can support 3D stereo video. For more information, see <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamStereoFormat(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool,SharpDX.Direct3D11.VideoProcessorStereoFormat,SharpDX.Bool,SharpDX.Bool,SharpDX.Direct3D11.VideoProcessorStereoFlipMode,System.Int32)"/></strong>.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_VIDEO_PROCESSOR_FEATURE_CAPS_STEREO']/*"/>	
             <msdn-id>hh447655</msdn-id>	
@@ -9409,7 +9464,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Defines image filter capabilities for a Microsoft Direct3D?11 video processor.</p>	
             </summary>	
             <remarks>	
-            <p>These capability flags indicate support for the image filters defined by the <strong><see cref="T:SharpDX.Direct3D11.VideoProcessorFilter"/></strong> enumeration. To apply a particular filter, call the <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamFilter(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Direct3D11.VideoProcessorFilter,System.Boolean,System.Int32)"/></strong> method.</p>	
+            <p>These capability flags indicate support for the image filters defined by the <strong><see cref="T:SharpDX.Direct3D11.VideoProcessorFilter"/></strong> enumeration. To apply a particular filter, call the <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamFilter(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Direct3D11.VideoProcessorFilter,SharpDX.Bool,System.Int32)"/></strong> method.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_VIDEO_PROCESSOR_FILTER_CAPS']/*"/>	
             <msdn-id>hh447671</msdn-id>	
@@ -9941,7 +9996,7 @@
         </member>
         <member name="F:SharpDX.Direct3D11.VideoProcessorStereoFormat.MonoOffset">
             <summary>	
-            <dd> <p>The sample contains non-stereo data. However, the driver should create a left/right output of this sample using a specified offset.  The offset is specified in the <em>MonoOffset</em> parameter of the <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamStereoFormat(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean,SharpDX.Direct3D11.VideoProcessorStereoFormat,System.Boolean,System.Boolean,SharpDX.Direct3D11.VideoProcessorStereoFlipMode,System.Int32)"/></strong> method. </p> <p>This format is primarily intended for subtitles and other subpicture data, where the entire sample is presented on the same plane.</p> <p>Support for this stereo format is optional.</p> </dd>	
+            <dd> <p>The sample contains non-stereo data. However, the driver should create a left/right output of this sample using a specified offset.  The offset is specified in the <em>MonoOffset</em> parameter of the <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamStereoFormat(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool,SharpDX.Direct3D11.VideoProcessorStereoFormat,SharpDX.Bool,SharpDX.Bool,SharpDX.Direct3D11.VideoProcessorStereoFlipMode,System.Int32)"/></strong> method. </p> <p>This format is primarily intended for subtitles and other subpicture data, where the entire sample is presented on the same plane.</p> <p>Support for this stereo format is optional.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_MONO_OFFSET']/*"/>	
             <msdn-id>hh447669</msdn-id>	
@@ -10125,12 +10180,6 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='SharpDX.Direct3D11.D3DX11']/*"/>	
         </member>
-        <member name="T:SharpDX.Direct3D11.D3DX11Effects">
-            <summary>	
-            Functions	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='SharpDX.Direct3D11.D3DX11Effects']/*"/>	
-        </member>
         <member name="T:SharpDX.Direct3D11.ResultCode">
             <summary>	
             Functions	
@@ -10238,7 +10287,7 @@
             <p>The <strong><see cref="T:SharpDX.Direct3D11.CommandList"/></strong> interface encapsulates a list of graphics commands for play back.</p>	
             </summary>	
             <remarks>	
-            <p>There is no explicit creation method, simply declare an <strong><see cref="T:SharpDX.Direct3D11.CommandList"/></strong> interface, then call <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.FinishCommandListInternal(System.Boolean,SharpDX.Direct3D11.CommandList@)"/></strong> to record commands or <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.ExecuteCommandList(SharpDX.Direct3D11.CommandList,System.Boolean)"/></strong> to play back commands.</p>	
+            <p>There is no explicit creation method, simply declare an <strong><see cref="T:SharpDX.Direct3D11.CommandList"/></strong> interface, then call <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.FinishCommandListInternal(SharpDX.Bool,SharpDX.Direct3D11.CommandList@)"/></strong> to record commands or <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.ExecuteCommandList(SharpDX.Direct3D11.CommandList,SharpDX.Bool)"/></strong> to play back commands.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11CommandList']/*"/>	
             <msdn-id>ff476361</msdn-id>	
@@ -10654,13 +10703,6 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.Direct3D11.GeometryShader.#ctor(SharpDX.Direct3D11.Device,System.Byte[])">
-            <summary>
-              Initializes a new instance of the <see cref = "T:SharpDX.Direct3D11.GeometryShader" /> class.
-            </summary>
-            <param name = "device">The device used to create the shader.</param>
-            <param name = "shaderBytecode">The compiled shader bytecode.</param>
-        </member>
         <member name="M:SharpDX.Direct3D11.GeometryShader.#ctor(SharpDX.Direct3D11.Device,System.Byte[],SharpDX.Direct3D11.ClassLinkage)">
             <summary>
               Initializes a new instance of the <see cref = "T:SharpDX.Direct3D11.GeometryShader" /> class.
@@ -10668,16 +10710,6 @@
             <param name = "device">The device used to create the shader.</param>
             <param name = "shaderBytecode">The compiled shader bytecode.</param>
             <param name = "linkage">A dynamic class linkage interface.</param>
-        </member>
-        <member name="M:SharpDX.Direct3D11.GeometryShader.#ctor(SharpDX.Direct3D11.Device,System.Byte[],SharpDX.Direct3D11.StreamOutputElement[],System.Int32[],System.Int32)">
-            <summary>
-              Initializes a new instance of the <see cref = "T:SharpDX.Direct3D11.GeometryShader" /> class.
-            </summary>
-            <param name = "device">The device used to create the shader.</param>
-            <param name = "shaderBytecode">The compiled shader bytecode.</param>
-            <param name = "elements">An array of <see cref = "T:SharpDX.Direct3D11.StreamOutputElement" /> instances describing the layout of the output buffers.</param>
-            <param name = "bufferedStrides">An array of buffer strides; each stride is the size of an element for that buffer.</param>
-            <param name = "rasterizedStream">The index number of the stream to be sent to the rasterizer stage. Set to NoRasterizedStream if no stream is to be rasterized.</param>
         </member>
         <member name="M:SharpDX.Direct3D11.GeometryShader.#ctor(SharpDX.Direct3D11.Device,System.Byte[],SharpDX.Direct3D11.StreamOutputElement[],System.Int32[],System.Int32,SharpDX.Direct3D11.ClassLinkage)">
             <summary>
@@ -10889,13 +10921,6 @@
             <returns>
             The result of the conversion.
             </returns>
-        </member>
-        <member name="M:SharpDX.Direct3D11.HullShader.#ctor(SharpDX.Direct3D11.Device,System.Byte[])">
-            <summary>
-              Initializes a new instance of the <see cref = "T:SharpDX.Direct3D11.HullShader" /> class.
-            </summary>
-            <param name = "device">The device used to create the shader.</param>
-            <param name = "shaderBytecode">The compiled shader bytecode.</param>
         </member>
         <member name="M:SharpDX.Direct3D11.HullShader.#ctor(SharpDX.Direct3D11.Device,System.Byte[],SharpDX.Direct3D11.ClassLinkage)">
             <summary>
@@ -11141,13 +11166,6 @@
             <returns>
             The result of the conversion.
             </returns>
-        </member>
-        <member name="M:SharpDX.Direct3D11.PixelShader.#ctor(SharpDX.Direct3D11.Device,System.Byte[])">
-            <summary>
-              Initializes a new instance of the <see cref = "T:SharpDX.Direct3D11.PixelShader" /> class.
-            </summary>
-            <param name = "device">The device used to create the shader.</param>
-            <param name = "shaderBytecode">The compiled shader bytecode.</param>
         </member>
         <member name="M:SharpDX.Direct3D11.PixelShader.#ctor(SharpDX.Direct3D11.Device,System.Byte[],SharpDX.Direct3D11.ClassLinkage)">
             <summary>
@@ -11397,7 +11415,7 @@
             <p>A predicate interface determines whether geometry should be processed depending on the results of a previous draw call.</p>	
             </summary>	
             <remarks>	
-            <p>To create a predicate object, call <strong><see cref="M:SharpDX.Direct3D11.Device.CreatePredicate(SharpDX.Direct3D11.QueryDescription,SharpDX.Direct3D11.Predicate)"/></strong>. To set the predicate object, call <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.SetPredication(SharpDX.Direct3D11.Predicate,System.Boolean)"/></strong>.</p><p>There are two types of predicates: stream-output-overflow predicates and occlusion predicates. Stream-output-overflow predicates cause any geometry residing in stream-output buffers that were overflowed to not be processed. Occlusion predicates cause any geometry that did not have a single sample pass the depth/stencil tests to not be processed.</p>	
+            <p>To create a predicate object, call <strong><see cref="M:SharpDX.Direct3D11.Device.CreatePredicate(SharpDX.Direct3D11.QueryDescription,SharpDX.Direct3D11.Predicate)"/></strong>. To set the predicate object, call <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.SetPredication(SharpDX.Direct3D11.Predicate,SharpDX.Bool)"/></strong>.</p><p>There are two types of predicates: stream-output-overflow predicates and occlusion predicates. Stream-output-overflow predicates cause any geometry residing in stream-output buffers that were overflowed to not be processed. Occlusion predicates cause any geometry that did not have a single sample pass the depth/stencil tests to not be processed.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11Predicate']/*"/>	
             <msdn-id>ff476577</msdn-id>	
@@ -11666,7 +11684,9 @@
             </summary>
             <param name = "device">The device to use when creating this <see cref = "T:SharpDX.Direct3D11.ShaderResourceView" />.</param>
             <param name = "resource">The resource that represents the render-target surface. This surface must have been created with the <see cref = "T:SharpDX.Direct3D11.BindFlags">ShaderResource</see> flag.</param>
-            <unmanaged>ID3D11Device::CreateShaderResourceView</unmanaged>
+            <msdn-id>ff476519</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateShaderResourceView([In] ID3D11Resource* pResource,[In, Optional] const D3D11_SHADER_RESOURCE_VIEW_DESC* pDesc,[Out, Fast] ID3D11ShaderResourceView** ppSRView)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateShaderResourceView</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.ShaderResourceView.#ctor(SharpDX.Direct3D11.Device,SharpDX.Direct3D11.Resource,SharpDX.Direct3D11.ShaderResourceViewDescription)">
             <summary>
@@ -11675,7 +11695,9 @@
             <param name = "device">The device to use when creating this <see cref = "T:SharpDX.Direct3D11.ShaderResourceView" />.</param>
             <param name = "resource">The resource that represents the render-target surface. This surface must have been created with the <see cref = "T:SharpDX.Direct3D11.BindFlags">ShaderResource</see> flag.</param>
             <param name = "description">A structure describing the <see cref = "T:SharpDX.Direct3D11.ShaderResourceView" /> to be created.</param>
-            <unmanaged>ID3D11Device::CreateShaderResourceView</unmanaged>
+            <msdn-id>ff476519</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateShaderResourceView([In] ID3D11Resource* pResource,[In, Optional] const D3D11_SHADER_RESOURCE_VIEW_DESC* pDesc,[Out, Fast] ID3D11ShaderResourceView** ppSRView)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateShaderResourceView</unmanaged-short>	
         </member>
         <member name="P:SharpDX.Direct3D11.ShaderResourceView.Description">
             <summary>	
@@ -11730,6 +11752,9 @@
             </summary>
             <param name = "device">The device with which to associate the texture.</param>
             <param name = "description">The description of the texture.</param>
+            <msdn-id>ff476520</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateTexture1D([In] const D3D11_TEXTURE1D_DESC* pDesc,[In, Buffer, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Texture1D** ppTexture1D)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateTexture1D</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Texture1D.#ctor(SharpDX.Direct3D11.Device,SharpDX.Direct3D11.Texture1DDescription,SharpDX.DataStream[])">
             <summary>
@@ -11738,6 +11763,20 @@
             <param name = "device">The device with which to associate the texture.</param>
             <param name = "description">The description of the texture.</param>
             <param name = "data">An array of initial texture data for each subresource.</param>
+            <msdn-id>ff476520</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateTexture1D([In] const D3D11_TEXTURE1D_DESC* pDesc,[In, Buffer, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Texture1D** ppTexture1D)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateTexture1D</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.Texture1D.#ctor(SharpDX.Direct3D11.Device,SharpDX.Direct3D11.Texture1DDescription,System.IntPtr[])">
+            <summary>
+              Initializes a new instance of the <see cref = "T:SharpDX.Direct3D11.Texture1D" /> class.
+            </summary>
+            <param name = "device">The device with which to associate the texture.</param>
+            <param name = "description">The description of the texture.</param>
+            <param name = "data">An array of initial texture data for each subresource.</param>
+            <msdn-id>ff476520</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateTexture1D([In] const D3D11_TEXTURE1D_DESC* pDesc,[In, Buffer, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Texture1D** ppTexture1D)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateTexture1D</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Texture1D.CalculateSubResourceIndex(System.Int32,System.Int32,System.Int32@)">
             <inheritdoc/>
@@ -11795,6 +11834,9 @@
             </summary>
             <param name = "device">The device with which to associate the texture.</param>
             <param name = "description">The description of the texture.</param>
+            <msdn-id>ff476521</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateTexture2D([In] const D3D11_TEXTURE2D_DESC* pDesc,[In, Buffer, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Texture2D** ppTexture2D)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateTexture2D</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Texture2D.#ctor(SharpDX.Direct3D11.Device,SharpDX.Direct3D11.Texture2DDescription,SharpDX.DataRectangle[])">
             <summary>
@@ -11803,6 +11845,9 @@
             <param name = "device">The device with which to associate the texture.</param>
             <param name = "description">The description of the texture.</param>
             <param name = "data">An array of initial texture data for each subresource.</param>
+            <msdn-id>ff476521</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateTexture2D([In] const D3D11_TEXTURE2D_DESC* pDesc,[In, Buffer, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Texture2D** ppTexture2D)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateTexture2D</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Texture2D.CalculateSubResourceIndex(System.Int32,System.Int32,System.Int32@)">
             <inheritdoc/>
@@ -12080,13 +12125,6 @@
             <returns>
             The result of the conversion.
             </returns>
-        </member>
-        <member name="M:SharpDX.Direct3D11.VertexShader.#ctor(SharpDX.Direct3D11.Device,System.Byte[])">
-            <summary>
-              Initializes a new instance of the <see cref = "T:SharpDX.Direct3D11.VertexShader" /> class.
-            </summary>
-            <param name = "device">The device used to create the shader.</param>
-            <param name = "shaderBytecode">The compiled shader bytecode.</param>
         </member>
         <member name="M:SharpDX.Direct3D11.VertexShader.#ctor(SharpDX.Direct3D11.Device,System.Byte[],SharpDX.Direct3D11.ClassLinkage)">
             <summary>
@@ -12378,7 +12416,7 @@
             <unmanaged>HRESULT ID3D11VideoContext::DecoderExtension([In] ID3D11VideoDecoder* pDecoder,[In] const D3D11_VIDEO_DECODER_EXTENSION* pExtensionData)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::DecoderExtension</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetOutputTargetRect(SharpDX.Direct3D11.VideoProcessor,System.Boolean,System.Nullable{SharpDX.Rectangle})">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetOutputTargetRect(SharpDX.Direct3D11.VideoProcessor,SharpDX.Bool,System.Nullable{SharpDX.Rectangle})">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the target rectangle for the video processor.</p>	
             </summary>	
@@ -12393,7 +12431,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorSetOutputTargetRect([In] ID3D11VideoProcessor* pVideoProcessor,[In] BOOL Enable,[In, Optional] const RECT* pRect)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorSetOutputTargetRect</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetOutputBackgroundColor(SharpDX.Direct3D11.VideoProcessor,System.Boolean,SharpDX.Direct3D11.VideoColor)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetOutputBackgroundColor(SharpDX.Direct3D11.VideoProcessor,SharpDX.Bool,SharpDX.Direct3D11.VideoColor)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the background color for the video processor.</p>	
             </summary>	
@@ -12434,7 +12472,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorSetOutputAlphaFillMode([In] ID3D11VideoProcessor* pVideoProcessor,[In] D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE AlphaFillMode,[In] unsigned int StreamIndex)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorSetOutputAlphaFillMode</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetOutputConstriction(SharpDX.Direct3D11.VideoProcessor,System.Boolean,SharpDX.DrawingSize)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetOutputConstriction(SharpDX.Direct3D11.VideoProcessor,SharpDX.Bool,SharpDX.DrawingSize)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the amount of downsampling to perform on the output.</p>	
             </summary>	
@@ -12449,14 +12487,14 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorSetOutputConstriction([In] ID3D11VideoProcessor* pVideoProcessor,[In] BOOL Enable,[In] SIZE Size)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorSetOutputConstriction</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetOutputStereoMode(SharpDX.Direct3D11.VideoProcessor,System.Boolean)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetOutputStereoMode(SharpDX.Direct3D11.VideoProcessor,SharpDX.Bool)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Specifies whether the video processor produces stereo video frames.</p>	
             </summary>	
             <param name="videoProcessorRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.Direct3D11.VideoProcessor"/></strong> interface. To get this reference, call <strong><see cref="M:SharpDX.Direct3D11.VideoDevice.CreateVideoProcessor(SharpDX.Direct3D11.VideoProcessorEnumerator,System.Int32,SharpDX.Direct3D11.VideoProcessor@)"/></strong>.</p> </dd></param>	
             <param name="enable"><dd> <p>If <strong>TRUE</strong>, stereo output is enabled. Otherwise, the video processor produces mono video frames.</p> </dd></param>	
             <remarks>	
-            <p>By default, the video processor produces mono video frames. If stereo video is enabled,  set the stereo output format by calling <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamStereoFormat(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean,SharpDX.Direct3D11.VideoProcessorStereoFormat,System.Boolean,System.Boolean,SharpDX.Direct3D11.VideoProcessorStereoFlipMode,System.Int32)"/></strong>.</p><p>To use this feature, the driver must support stereo video, indicated by the <strong><see cref="F:SharpDX.Direct3D11.VideoProcessorFeatureCaps.Stereo"/></strong> capability flag. To query for this capability, call <strong><see cref="M:SharpDX.Direct3D11.VideoProcessorEnumerator.GetVideoProcessorCaps(SharpDX.Direct3D11.VideoProcessorCaps@)"/></strong>.</p>	
+            <p>By default, the video processor produces mono video frames. If stereo video is enabled,  set the stereo output format by calling <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamStereoFormat(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool,SharpDX.Direct3D11.VideoProcessorStereoFormat,SharpDX.Bool,SharpDX.Bool,SharpDX.Direct3D11.VideoProcessorStereoFlipMode,System.Int32)"/></strong>.</p><p>To use this feature, the driver must support stereo video, indicated by the <strong><see cref="F:SharpDX.Direct3D11.VideoProcessorFeatureCaps.Stereo"/></strong> capability flag. To query for this capability, call <strong><see cref="M:SharpDX.Direct3D11.VideoProcessorEnumerator.GetVideoProcessorCaps(SharpDX.Direct3D11.VideoProcessorCaps@)"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11VideoContext::VideoProcessorSetOutputStereoMode']/*"/>	
             <msdn-id>hh447751</msdn-id>	
@@ -12477,19 +12515,19 @@
             <unmanaged>HRESULT ID3D11VideoContext::VideoProcessorSetOutputExtension([In] ID3D11VideoProcessor* pVideoProcessor,[In] const GUID* pExtensionGuid,[In] unsigned int DataSize,[In] void* pData)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorSetOutputExtension</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetOutputTargetRect(SharpDX.Direct3D11.VideoProcessor,System.Boolean@,SharpDX.Rectangle@)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetOutputTargetRect(SharpDX.Direct3D11.VideoProcessor,SharpDX.Bool@,SharpDX.Rectangle@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the current target rectangle for the video processor.</p>	
             </summary>	
             <param name="videoProcessorRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.Direct3D11.VideoProcessor"/></strong> interface. To get this reference, call <strong><see cref="M:SharpDX.Direct3D11.VideoDevice.CreateVideoProcessor(SharpDX.Direct3D11.VideoProcessorEnumerator,System.Int32,SharpDX.Direct3D11.VideoProcessor@)"/></strong>.</p> </dd></param>	
-            <param name="enabled"><dd> <p>Receives the value <strong>TRUE</strong> if the target rectangle was explicitly set using the <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetOutputTargetRect(SharpDX.Direct3D11.VideoProcessor,System.Boolean,System.Nullable{SharpDX.Rectangle})"/></strong> method. Receives the value <see cref="F:SharpDX.Result.False"/> if the target rectangle was disabled or was never set.</p> </dd></param>	
+            <param name="enabled"><dd> <p>Receives the value <strong>TRUE</strong> if the target rectangle was explicitly set using the <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetOutputTargetRect(SharpDX.Direct3D11.VideoProcessor,SharpDX.Bool,System.Nullable{SharpDX.Rectangle})"/></strong> method. Receives the value <see cref="F:SharpDX.Result.False"/> if the target rectangle was disabled or was never set.</p> </dd></param>	
             <param name="rectRef"><dd> <p>If <em>Enabled</em> receives the value <strong>TRUE</strong>, this parameter receives the target rectangle. Otherwise, this parameter is ignored.  </p> </dd></param>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11VideoContext::VideoProcessorGetOutputTargetRect']/*"/>	
             <msdn-id>hh447726</msdn-id>	
             <unmanaged>void ID3D11VideoContext::VideoProcessorGetOutputTargetRect([In] ID3D11VideoProcessor* pVideoProcessor,[Out] BOOL* Enabled,[Out] RECT* pRect)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorGetOutputTargetRect</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetOutputBackgroundColor(SharpDX.Direct3D11.VideoProcessor,System.Boolean@,SharpDX.Direct3D11.VideoColor@)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetOutputBackgroundColor(SharpDX.Direct3D11.VideoProcessor,SharpDX.Bool@,SharpDX.Direct3D11.VideoColor@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the current background color for the video processor.</p>	
             </summary>	
@@ -12524,19 +12562,19 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorGetOutputAlphaFillMode([In] ID3D11VideoProcessor* pVideoProcessor,[Out] D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE* pAlphaFillMode,[Out] unsigned int* pStreamIndex)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorGetOutputAlphaFillMode</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetOutputConstriction(SharpDX.Direct3D11.VideoProcessor,System.Boolean@,SharpDX.DrawingSize@)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetOutputConstriction(SharpDX.Direct3D11.VideoProcessor,SharpDX.Bool@,SharpDX.DrawingSize@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the current level of downsampling that is performed by the video processor.</p>	
             </summary>	
             <param name="videoProcessorRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.Direct3D11.VideoProcessor"/></strong> interface. To get this reference, call <strong><see cref="M:SharpDX.Direct3D11.VideoDevice.CreateVideoProcessor(SharpDX.Direct3D11.VideoProcessorEnumerator,System.Int32,SharpDX.Direct3D11.VideoProcessor@)"/></strong>.</p> </dd></param>	
-            <param name="enabledRef"><dd> <p>Receives the value <strong>TRUE</strong> if downsampling was explicitly enabled using the <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetOutputConstriction(SharpDX.Direct3D11.VideoProcessor,System.Boolean,SharpDX.DrawingSize)"/></strong> method. Receives the value <strong><see cref="F:SharpDX.Result.False"/></strong> if the downsampling was disabled or was never set.</p> </dd></param>	
+            <param name="enabledRef"><dd> <p>Receives the value <strong>TRUE</strong> if downsampling was explicitly enabled using the <strong><see cref="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetOutputConstriction(SharpDX.Direct3D11.VideoProcessor,SharpDX.Bool,SharpDX.DrawingSize)"/></strong> method. Receives the value <strong><see cref="F:SharpDX.Result.False"/></strong> if the downsampling was disabled or was never set.</p> </dd></param>	
             <param name="sizeRef"><dd> <p>If <em>Enabled</em> receives the value <strong>TRUE</strong>, this parameter receives the downsampling size. Otherwise, this parameter is ignored.</p> </dd></param>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11VideoContext::VideoProcessorGetOutputConstriction']/*"/>	
             <msdn-id>hh447723</msdn-id>	
             <unmanaged>void ID3D11VideoContext::VideoProcessorGetOutputConstriction([In] ID3D11VideoProcessor* pVideoProcessor,[Out] BOOL* pEnabled,[Out] SIZE* pSize)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorGetOutputConstriction</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetOutputStereoMode(SharpDX.Direct3D11.VideoProcessor,System.Boolean@)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetOutputStereoMode(SharpDX.Direct3D11.VideoProcessor,SharpDX.Bool@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Queries whether the video processor produces stereo video frames.</p>	
             </summary>	
@@ -12585,7 +12623,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorSetStreamColorSpace([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[In] const D3D11_VIDEO_PROCESSOR_COLOR_SPACE* pColorSpace)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorSetStreamColorSpace</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamOutputRate(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Direct3D11.VideoProcessorOutputRate,System.Boolean,System.Nullable{SharpDX.DXGI.Rational})">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamOutputRate(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Direct3D11.VideoProcessorOutputRate,SharpDX.Bool,System.Nullable{SharpDX.DXGI.Rational})">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the rate at which the video processor produces output frames for an input stream.</p>	
             </summary>	
@@ -12602,7 +12640,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorSetStreamOutputRate([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[In] D3D11_VIDEO_PROCESSOR_OUTPUT_RATE OutputRate,[In] BOOL RepeatFrame,[In, Optional] const DXGI_RATIONAL* pCustomRate)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorSetStreamOutputRate</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamSourceRect(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean,System.Nullable{SharpDX.Rectangle})">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamSourceRect(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool,System.Nullable{SharpDX.Rectangle})">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the source rectangle for an input stream on the video processor.</p>	
             </summary>	
@@ -12618,7 +12656,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorSetStreamSourceRect([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[In] BOOL Enable,[In, Optional] const RECT* pRect)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorSetStreamSourceRect</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamDestRect(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean,System.Nullable{SharpDX.Rectangle})">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamDestRect(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool,System.Nullable{SharpDX.Rectangle})">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the destination rectangle for an input stream on the video processor.</p>	
             </summary>	
@@ -12634,7 +12672,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorSetStreamDestRect([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[In] BOOL Enable,[In, Optional] const RECT* pRect)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorSetStreamDestRect</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamAlpha(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean,System.Single)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamAlpha(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool,System.Single)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the planar alpha for an input stream on the video processor.</p>	
             </summary>	
@@ -12666,7 +12704,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorSetStreamPalette([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[In] unsigned int Count,[In, Buffer, Optional] const unsigned int* pEntries)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorSetStreamPalette</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamPixelAspectRatio(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean,System.Nullable{SharpDX.DXGI.Rational},System.Nullable{SharpDX.DXGI.Rational})">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamPixelAspectRatio(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool,System.Nullable{SharpDX.DXGI.Rational},System.Nullable{SharpDX.DXGI.Rational})">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the pixel aspect ratio for an input stream on the video processor.</p>	
             </summary>	
@@ -12683,7 +12721,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorSetStreamPixelAspectRatio([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[In] BOOL Enable,[In, Optional] const DXGI_RATIONAL* pSourceAspectRatio,[In, Optional] const DXGI_RATIONAL* pDestinationAspectRatio)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorSetStreamPixelAspectRatio</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamLumaKey(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean,System.Single,System.Single)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamLumaKey(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool,System.Single,System.Single)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the luma key for an input stream on the video processor.</p>	
             </summary>	
@@ -12700,7 +12738,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorSetStreamLumaKey([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[In] BOOL Enable,[In] float Lower,[In] float Upper)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorSetStreamLumaKey</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamStereoFormat(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean,SharpDX.Direct3D11.VideoProcessorStereoFormat,System.Boolean,System.Boolean,SharpDX.Direct3D11.VideoProcessorStereoFlipMode,System.Int32)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamStereoFormat(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool,SharpDX.Direct3D11.VideoProcessorStereoFormat,SharpDX.Bool,SharpDX.Bool,SharpDX.Direct3D11.VideoProcessorStereoFlipMode,System.Int32)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Enables or disables stereo 3D video for an input stream on the video processor. In addition, this method specifies the layout of the video frames in memory.</p>	
             </summary>	
@@ -12717,7 +12755,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorSetStreamStereoFormat([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[In] BOOL Enable,[In] D3D11_VIDEO_PROCESSOR_STEREO_FORMAT Format,[In] BOOL LeftViewFrame0,[In] BOOL BaseViewFrame0,[In] D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE FlipMode,[In] int MonoOffset)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorSetStreamStereoFormat</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamAutoProcessingMode(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamAutoProcessingMode(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Enables or disables automatic processing features on the video processor.</p>	
             </summary>	
@@ -12732,7 +12770,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorSetStreamAutoProcessingMode([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[In] BOOL Enable)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorSetStreamAutoProcessingMode</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamFilter(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Direct3D11.VideoProcessorFilter,System.Boolean,System.Int32)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamFilter(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Direct3D11.VideoProcessorFilter,SharpDX.Bool,System.Int32)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Enables or disables an image filter for an input stream on the video processor.</p>	
             </summary>	
@@ -12785,7 +12823,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorGetStreamColorSpace([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[Out] D3D11_VIDEO_PROCESSOR_COLOR_SPACE* pColorSpace)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorGetStreamColorSpace</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamOutputRate(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Direct3D11.VideoProcessorOutputRate@,System.Boolean@,SharpDX.DXGI.Rational@)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamOutputRate(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Direct3D11.VideoProcessorOutputRate@,SharpDX.Bool@,SharpDX.DXGI.Rational@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the rate at which the video processor produces output frames for an input stream. </p>	
             </summary>	
@@ -12799,7 +12837,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorGetStreamOutputRate([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[Out] D3D11_VIDEO_PROCESSOR_OUTPUT_RATE* pOutputRate,[Out] BOOL* pRepeatFrame,[Out] DXGI_RATIONAL* pCustomRate)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorGetStreamOutputRate</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamSourceRect(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean@,SharpDX.Rectangle@)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamSourceRect(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool@,SharpDX.Rectangle@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the source rectangle for an input stream on the video processor. </p>	
             </summary>	
@@ -12812,7 +12850,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorGetStreamSourceRect([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[Out] BOOL* pEnabled,[Out] RECT* pRect)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorGetStreamSourceRect</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamDestRect(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean@,SharpDX.Rectangle@)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamDestRect(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool@,SharpDX.Rectangle@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the destination rectangle for an input stream on the video processor. </p>	
             </summary>	
@@ -12825,7 +12863,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorGetStreamDestRect([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[Out] BOOL* pEnabled,[Out] RECT* pRect)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorGetStreamDestRect</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamAlpha(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean@,System.Single@)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamAlpha(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool@,System.Single@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the planar alpha for an input stream on the video processor. </p>	
             </summary>	
@@ -12854,7 +12892,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorGetStreamPalette([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[In] unsigned int Count,[Out, Buffer] unsigned int* pEntries)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorGetStreamPalette</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamPixelAspectRatio(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean@,SharpDX.DXGI.Rational@,SharpDX.DXGI.Rational@)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamPixelAspectRatio(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool@,SharpDX.DXGI.Rational@,SharpDX.DXGI.Rational@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the pixel aspect ratio for an input stream on the video processor. </p>	
             </summary>	
@@ -12871,7 +12909,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorGetStreamPixelAspectRatio([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[Out] BOOL* pEnabled,[Out] DXGI_RATIONAL* pSourceAspectRatio,[Out] DXGI_RATIONAL* pDestinationAspectRatio)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorGetStreamPixelAspectRatio</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamLumaKey(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean@,System.Single@,System.Single@)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamLumaKey(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool@,System.Single@,System.Single@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the luma key for an input stream of the video processor. </p>	
             </summary>	
@@ -12885,7 +12923,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorGetStreamLumaKey([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[Out] BOOL* pEnabled,[Out] float* pLower,[Out] float* pUpper)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorGetStreamLumaKey</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamStereoFormat(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean@,SharpDX.Direct3D11.VideoProcessorStereoFormat@,System.Boolean@,System.Boolean@,SharpDX.Direct3D11.VideoProcessorStereoFlipMode@,System.Int32@)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamStereoFormat(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool@,SharpDX.Direct3D11.VideoProcessorStereoFormat@,SharpDX.Bool@,SharpDX.Bool@,SharpDX.Direct3D11.VideoProcessorStereoFlipMode@,System.Int32@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the stereo 3D format for an input stream on the video processor</p>	
             </summary>	
@@ -12902,7 +12940,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorGetStreamStereoFormat([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[Out] BOOL* pEnable,[Out] D3D11_VIDEO_PROCESSOR_STEREO_FORMAT* pFormat,[Out] BOOL* pLeftViewFrame0,[Out] BOOL* pBaseViewFrame0,[Out] D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE* pFlipMode,[Out] int* MonoOffset)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorGetStreamStereoFormat</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamAutoProcessingMode(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean@)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamAutoProcessingMode(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Queries whether automatic processing features of the video processor are enabled.</p>	
             </summary>	
@@ -12914,7 +12952,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorGetStreamAutoProcessingMode([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[Out] BOOL* pEnabled)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorGetStreamAutoProcessingMode</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamFilter(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Direct3D11.VideoProcessorFilter,System.Boolean@,System.Int32@)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamFilter(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Direct3D11.VideoProcessorFilter,SharpDX.Bool@,System.Int32@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the image filter settings for an input stream on the video processor.</p>	
             </summary>	
@@ -13100,7 +13138,7 @@
             <unmanaged>HRESULT ID3D11VideoContext::ConfigureAuthenticatedChannel([In] ID3D11AuthenticatedChannel* pChannel,[In] unsigned int InputSize,[In, Buffer] const void* pInput,[Out] D3D11_AUTHENTICATED_CONFIGURE_OUTPUT* pOutput)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::ConfigureAuthenticatedChannel</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamRotation(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean,SharpDX.Direct3D11.VideoProcessorRotation)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorSetStreamRotation(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool,SharpDX.Direct3D11.VideoProcessorRotation)">
             <summary>	
             No documentation.	
             </summary>	
@@ -13112,7 +13150,7 @@
             <unmanaged>void ID3D11VideoContext::VideoProcessorSetStreamRotation([In] ID3D11VideoProcessor* pVideoProcessor,[In] unsigned int StreamIndex,[In] BOOL Enable,[In] D3D11_VIDEO_PROCESSOR_ROTATION Rotation)</unmanaged>	
             <unmanaged-short>ID3D11VideoContext::VideoProcessorSetStreamRotation</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamRotation(SharpDX.Direct3D11.VideoProcessor,System.Int32,System.Boolean@,SharpDX.Direct3D11.VideoProcessorRotation@)">
+        <member name="M:SharpDX.Direct3D11.VideoContext.VideoProcessorGetStreamRotation(SharpDX.Direct3D11.VideoProcessor,System.Int32,SharpDX.Bool@,SharpDX.Direct3D11.VideoProcessorRotation@)">
             <summary>	
             No documentation.	
             </summary>	
@@ -13420,7 +13458,7 @@
             <unmanaged>HRESULT ID3D11VideoDevice::GetVideoDecoderProfile([In] unsigned int Index,[Out] GUID* pDecoderProfile)</unmanaged>	
             <unmanaged-short>ID3D11VideoDevice::GetVideoDecoderProfile</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.VideoDevice.CheckVideoDecoderFormat(System.Guid,SharpDX.DXGI.Format,System.Boolean@)">
+        <member name="M:SharpDX.Direct3D11.VideoDevice.CheckVideoDecoderFormat(System.Guid,SharpDX.DXGI.Format,SharpDX.Bool@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Given a DirectX Video Accelaration (DXVA) profile, checks whether the driver supports a specified output format.</p>	
             </summary>	
@@ -14101,7 +14139,7 @@
             <unmanaged>void* ProcessHandle</unmanaged>	
             <unmanaged-short>void ProcessHandle</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.AuthenticatedConfigureSharedResourceInput.AllowAccess">
+        <member name="F:SharpDX.Direct3D11.AuthenticatedConfigureSharedResourceInput.AllowAccess">
             <summary>	
             <dd> <p>If <strong>TRUE</strong>, the specified process has access to restricted shared resources.</p> </dd>	
             </summary>	
@@ -14286,7 +14324,7 @@
             <unmanaged>D3D11_BUS_TYPE BusType</unmanaged>	
             <unmanaged-short>D3D11_BUS_TYPE BusType</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.AuthenticatedQueryAcessibilityOutput.AccessibleInContiguousBlocks">
+        <member name="F:SharpDX.Direct3D11.AuthenticatedQueryAcessibilityOutput.AccessibleInContiguousBlocks">
             <summary>	
             <dd> <p>If <strong>TRUE</strong>, contiguous blocks of video memory may be accessible to the CPU or the bus.</p> </dd>	
             </summary>	
@@ -14295,7 +14333,7 @@
             <unmanaged>BOOL AccessibleInContiguousBlocks</unmanaged>	
             <unmanaged-short>BOOL AccessibleInContiguousBlocks</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.AuthenticatedQueryAcessibilityOutput.AccessibleInNonContiguousBlocks">
+        <member name="F:SharpDX.Direct3D11.AuthenticatedQueryAcessibilityOutput.AccessibleInNonContiguousBlocks">
             <summary>	
             <dd> <p>If <strong>TRUE</strong>, non-contiguous blocks of video memory may be accessible to the CPU or the bus.</p> </dd>	
             </summary>	
@@ -14892,7 +14930,7 @@
             <unmanaged>D3D11_BLEND_DESC1</unmanaged>	
             <unmanaged-short>D3D11_BLEND_DESC1</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.BlendDescription1.AlphaToCoverageEnable">
+        <member name="F:SharpDX.Direct3D11.BlendDescription1.AlphaToCoverageEnable">
             <summary>	
             No documentation.	
             </summary>	
@@ -14900,7 +14938,7 @@
             <unmanaged>BOOL AlphaToCoverageEnable</unmanaged>	
             <unmanaged-short>BOOL AlphaToCoverageEnable</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.BlendDescription1.IndependentBlendEnable">
+        <member name="F:SharpDX.Direct3D11.BlendDescription1.IndependentBlendEnable">
             <summary>	
             No documentation.	
             </summary>	
@@ -14915,42 +14953,6 @@
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC1::RenderTarget']/*"/>	
             <unmanaged>D3D11_RENDER_TARGET_BLEND_DESC1 RenderTarget[8]</unmanaged>	
             <unmanaged-short>D3D11_RENDER_TARGET_BLEND_DESC1 RenderTarget</unmanaged-short>	
-        </member>
-        <member name="T:SharpDX.Direct3D11.BlendStateDescription">
-            <summary>	
-            <p>Describes the blend state that you use in a call to <strong><see cref="M:SharpDX.Direct3D11.Device.CreateBlendState(SharpDX.Direct3D11.BlendStateDescription@,SharpDX.Direct3D11.BlendState)"/></strong> to create a blend-state object.</p>	
-            </summary>	
-            <remarks>	
-            <p>Here are the default values for blend state.</p><table> <tr><th>State</th><th>Default Value</th></tr> <tr><td>AlphaToCoverageEnable</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>IndependentBlendEnable</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>RenderTarget[0].BlendEnable</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>RenderTarget[0].SrcBlend</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.One"/></td></tr> <tr><td>RenderTarget[0].DestBlend</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.Zero"/></td></tr> <tr><td>RenderTarget[0].BlendOp</td><td><see cref="F:SharpDX.Direct3D11.BlendOperation.Add"/></td></tr> <tr><td>RenderTarget[0].SrcBlendAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.One"/></td></tr> <tr><td>RenderTarget[0].DestBlendAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.Zero"/></td></tr> <tr><td>RenderTarget[0].BlendOpAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOperation.Add"/></td></tr> <tr><td>RenderTarget[0].RenderTargetWriteMask</td><td><see cref="F:SharpDX.Direct3D11.ColorWriteMaskFlags.All"/></td></tr> </table><p>?</p><p><strong>Note</strong>??<strong><see cref="T:SharpDX.Direct3D11.BlendStateDescription"/></strong> is identical to <strong>D3D10_BLEND_DESC1</strong>.</p><p>If the driver type is set to <strong><see cref="F:SharpDX.Direct3D.DriverType.Hardware"/></strong>, the feature level is set to less than or equal to <strong><see cref="F:SharpDX.Direct3D.FeatureLevel.Level_9_3"/></strong>, and the pixel format of the render target is set to <strong><see cref="F:SharpDX.DXGI.Format.R8G8B8A8_UNorm_SRgb"/></strong>, <strong><see cref="F:SharpDX.DXGI.Format.B8G8R8A8_UNorm_SRgb"/></strong>, or <strong><see cref="F:SharpDX.DXGI.Format.B8G8R8X8_UNorm_SRgb"/></strong>, the display device performs the blend in standard RGB (sRGB) space and not in linear space. However, if the feature level is set to greater than <strong><see cref="F:SharpDX.Direct3D.FeatureLevel.Level_9_3"/></strong>, the display device performs the blend in linear space, which is ideal.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC']/*"/>	
-            <msdn-id>ff476087</msdn-id>	
-            <unmanaged>D3D11_BLEND_DESC</unmanaged>	
-            <unmanaged-short>D3D11_BLEND_DESC</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.Direct3D11.BlendStateDescription.AlphaToCoverageEnable">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC::AlphaToCoverageEnable']/*"/>	
-            <unmanaged>BOOL AlphaToCoverageEnable</unmanaged>	
-            <unmanaged-short>BOOL AlphaToCoverageEnable</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.Direct3D11.BlendStateDescription.IndependentBlendEnable">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC::IndependentBlendEnable']/*"/>	
-            <unmanaged>BOOL IndependentBlendEnable</unmanaged>	
-            <unmanaged-short>BOOL IndependentBlendEnable</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.Direct3D11.BlendStateDescription.RenderTarget">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC::RenderTarget']/*"/>	
-            <unmanaged>D3D11_RENDER_TARGET_BLEND_DESC RenderTarget[8]</unmanaged>	
-            <unmanaged-short>D3D11_RENDER_TARGET_BLEND_DESC RenderTarget</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D11.Cd3d11VideoDefault">
             <summary>	
@@ -15035,7 +15037,7 @@
             <unmanaged>unsigned int BaseSampler</unmanaged>	
             <unmanaged-short>unsigned int BaseSampler</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.ClassInstanceDescription.IsCreated">
+        <member name="F:SharpDX.Direct3D11.ClassInstanceDescription.IsCreated">
             <summary>	
             <dd> <p>True if the class was created; the default value is false.</p> </dd>	
             </summary>	
@@ -15173,6 +15175,15 @@
             <unmanaged>D3D11_DEPTH_STENCIL_DESC</unmanaged>	
             <unmanaged-short>D3D11_DEPTH_STENCIL_DESC</unmanaged-short>	
         </member>
+        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.IsDepthEnabled">
+            <summary>	
+            <dd> <p>Enable depth testing.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::DepthEnable']/*"/>	
+            <msdn-id>ff476110</msdn-id>	
+            <unmanaged>BOOL DepthEnable</unmanaged>	
+            <unmanaged-short>BOOL DepthEnable</unmanaged-short>	
+        </member>
         <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.DepthWriteMask">
             <summary>	
             <dd> <p>Identify a portion of the depth-stencil buffer that can be modified by depth data (see <strong><see cref="T:SharpDX.Direct3D11.DepthWriteMask"/></strong>).</p> </dd>	
@@ -15190,6 +15201,15 @@
             <msdn-id>ff476110</msdn-id>	
             <unmanaged>D3D11_COMPARISON_FUNC DepthFunc</unmanaged>	
             <unmanaged-short>D3D11_COMPARISON_FUNC DepthFunc</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.IsStencilEnabled">
+            <summary>	
+            <dd> <p>Enable stencil testing.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::StencilEnable']/*"/>	
+            <msdn-id>ff476110</msdn-id>	
+            <unmanaged>BOOL StencilEnable</unmanaged>	
+            <unmanaged-short>BOOL StencilEnable</unmanaged-short>	
         </member>
         <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.StencilReadMask">
             <summary>	
@@ -15226,24 +15246,6 @@
             <msdn-id>ff476110</msdn-id>	
             <unmanaged>D3D11_DEPTH_STENCILOP_DESC BackFace</unmanaged>	
             <unmanaged-short>D3D11_DEPTH_STENCILOP_DESC BackFace</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.Direct3D11.DepthStencilStateDescription.IsDepthEnabled">
-            <summary>	
-            <dd> <p>Enable depth testing.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::DepthEnable']/*"/>	
-            <msdn-id>ff476110</msdn-id>	
-            <unmanaged>BOOL DepthEnable</unmanaged>	
-            <unmanaged-short>BOOL DepthEnable</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.Direct3D11.DepthStencilStateDescription.IsStencilEnabled">
-            <summary>	
-            <dd> <p>Enable stencil testing.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::StencilEnable']/*"/>	
-            <msdn-id>ff476110</msdn-id>	
-            <unmanaged>BOOL StencilEnable</unmanaged>	
-            <unmanaged-short>BOOL StencilEnable</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D11.DepthStencilViewDescription">
             <summary>	
@@ -15554,7 +15556,7 @@
             <unmanaged>D3D11_FEATURE_DATA_ARCHITECTURE_INFO</unmanaged>	
             <unmanaged-short>D3D11_FEATURE_DATA_ARCHITECTURE_INFO</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataArchitectureInformation.TileBasedDeferredRenderer">
+        <member name="F:SharpDX.Direct3D11.FeatureDataArchitectureInformation.TileBasedDeferredRenderer">
             <summary>	
             <dd> <p>Specifies whether a rendering device batches rendering commands and performs multipass rendering into tiles or bins over a render area. Certain API usage patterns that are fine TileBasedDefferredRenderers (TBDRs) can perform worse on non-TBDRs and vice versa.  Applications that are careful about rendering can be friendly to both TBDR and non-TBDR architectures. <strong>TRUE</strong> if the rendering device batches rendering commands and <strong><see cref="F:SharpDX.Result.False"/></strong> otherwise. </p> </dd>	
             </summary>	
@@ -15575,7 +15577,7 @@
             <unmanaged>D3D11_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS</unmanaged>	
             <unmanaged-short>D3D11_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataD3D10XHardwareOptions.ComputeShadersPlusRawAndStructuredBuffersViaShader4X">
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D10XHardwareOptions.ComputeShadersPlusRawAndStructuredBuffersViaShader4X">
             <summary>	
             <dd> <p><strong>TRUE</strong> if compute shaders and raw and structured buffers are supported; otherwise <strong><see cref="F:SharpDX.Result.False"/></strong>.</p> </dd>	
             </summary>	
@@ -15596,7 +15598,7 @@
             <unmanaged>D3D11_FEATURE_DATA_D3D11_OPTIONS</unmanaged>	
             <unmanaged-short>D3D11_FEATURE_DATA_D3D11_OPTIONS</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataD3D11Options.OutputMergerLogicOp">
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D11Options.OutputMergerLogicOp">
             <summary>	
             <dd> <p>Specifies whether logic operations are available in blend state. The runtime sets this member to <strong>TRUE</strong> if logic operations are available in blend state and <strong><see cref="F:SharpDX.Result.False"/></strong> otherwise. This member is <strong><see cref="F:SharpDX.Result.False"/></strong> for feature level 9.1, 9.2, and 9.3.  This member is optional for feature level 10, 10.1, and 11.  This member is <strong>TRUE</strong> for feature level 11.1.</p> </dd>	
             </summary>	
@@ -15605,7 +15607,7 @@
             <unmanaged>BOOL OutputMergerLogicOp</unmanaged>	
             <unmanaged-short>BOOL OutputMergerLogicOp</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataD3D11Options.UAVOnlyRenderingForcedSampleCount">
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D11Options.UAVOnlyRenderingForcedSampleCount">
             <summary>	
             <dd> <p>Specifies whether the driver can render with no RTVs or DSVs and only UAVs bound. The runtime sets this member to <strong>TRUE</strong> if  the driver can render with no RTVs or DSVs and only UAVs bound and <strong><see cref="F:SharpDX.Result.False"/></strong> otherwise. If <strong>TRUE</strong>, you can set the <strong>ForcedSampleCount</strong> member of <strong><see cref="T:SharpDX.Direct3D11.RasterizerDescription1"/></strong> to 1, 4, or 8 when you render with no RTVs or DSV and only UAVs bound.  For feature level 11.1, this member is always <strong>TRUE</strong> and you can also set <strong>ForcedSampleCount</strong> to 16 in addition to 1, 4, or 8.  The default value of <strong>ForcedSampleCount</strong> is 0, which means the same as if the value is set to 1. You can always set <strong>ForcedSampleCount</strong> to 0 or 1 for UAV-only rendering independently of how this member is set.</p> </dd>	
             </summary>	
@@ -15614,7 +15616,7 @@
             <unmanaged>BOOL UAVOnlyRenderingForcedSampleCount</unmanaged>	
             <unmanaged-short>BOOL UAVOnlyRenderingForcedSampleCount</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataD3D11Options.DiscardAPIsSeenByDriver">
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D11Options.DiscardAPIsSeenByDriver">
             <summary>	
             <dd> <p>Specifies whether the driver supports the <strong><see cref="M:SharpDX.Direct3D11.DeviceContext1.DiscardView(SharpDX.Direct3D11.ResourceView)"/></strong> and <strong><see cref="M:SharpDX.Direct3D11.DeviceContext1.DiscardResource(SharpDX.Direct3D11.Resource)"/></strong> methods. The runtime sets this member to <strong>TRUE</strong> if the driver supports these methods and <strong><see cref="F:SharpDX.Result.False"/></strong> otherwise. How this member is set does not indicate whether the driver actually uses these methods; that is,   the driver might ignore these methods if they are not useful to the  hardware.  If <strong><see cref="F:SharpDX.Result.False"/></strong>, the runtime does not expose these methods to the driver because the driver does not support them.  You can monitor this member during development to rule out legacy drivers on hardware where these methods might have otherwise been beneficial.  You are not required to write separate code paths based on whether this member is <strong>TRUE</strong> or <strong><see cref="F:SharpDX.Result.False"/></strong>; you can call these methods whenever applicable.</p> </dd>	
             </summary>	
@@ -15623,7 +15625,7 @@
             <unmanaged>BOOL DiscardAPIsSeenByDriver</unmanaged>	
             <unmanaged-short>BOOL DiscardAPIsSeenByDriver</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataD3D11Options.FlagsForUpdateAndCopySeenByDriver">
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D11Options.FlagsForUpdateAndCopySeenByDriver">
             <summary>	
             <dd> <p>Specifies whether the driver supports new semantics for copy and update that are exposed by the <strong><see cref="M:SharpDX.Direct3D11.DeviceContext1.CopySubresourceRegion1(SharpDX.Direct3D11.Resource,System.Int32,System.Int32,System.Int32,System.Int32,SharpDX.Direct3D11.Resource,System.Int32,System.Nullable{SharpDX.Direct3D11.ResourceRegion},System.Int32)"/></strong> and <strong><see cref="M:SharpDX.Direct3D11.DeviceContext1.UpdateSubresource1(SharpDX.Direct3D11.Resource,System.Int32,System.Nullable{SharpDX.Direct3D11.ResourceRegion},System.IntPtr,System.Int32,System.Int32,System.Int32)"/></strong> methods.  The runtime sets this member to <strong>TRUE</strong> if the driver supports new semantics for copy and update. The runtime sets this member to <strong><see cref="F:SharpDX.Result.False"/></strong> only for legacy drivers. The runtime handles this member similarly to the <strong>DiscardAPIsSeenByDriver</strong> member.</p> </dd>	
             </summary>	
@@ -15632,7 +15634,7 @@
             <unmanaged>BOOL FlagsForUpdateAndCopySeenByDriver</unmanaged>	
             <unmanaged-short>BOOL FlagsForUpdateAndCopySeenByDriver</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataD3D11Options.ClearView">
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D11Options.ClearView">
             <summary>	
             <dd> <p>Specifies whether the driver supports the <strong><see cref="M:SharpDX.Direct3D11.DeviceContext1.ClearView(SharpDX.Direct3D11.ResourceView,System.Single,SharpDX.Rectangle[],System.Int32)"/></strong> method. The runtime sets this member to <strong>TRUE</strong> if the driver supports this method and <strong><see cref="F:SharpDX.Result.False"/></strong> otherwise. If <strong><see cref="F:SharpDX.Result.False"/></strong>, the runtime does not expose this method to the driver because the driver does not support it.  </p> <p><strong>Note</strong>??For feature level 9.1, 9.2, and 9.3, this member is always <strong>TRUE</strong> because the option is emulated by the runtime.</p> </dd>	
             </summary>	
@@ -15641,7 +15643,7 @@
             <unmanaged>BOOL ClearView</unmanaged>	
             <unmanaged-short>BOOL ClearView</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataD3D11Options.CopyWithOverlap">
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D11Options.CopyWithOverlap">
             <summary>	
             <dd> <p>Specifies whether you can call <strong><see cref="M:SharpDX.Direct3D11.DeviceContext1.CopySubresourceRegion1(SharpDX.Direct3D11.Resource,System.Int32,System.Int32,System.Int32,System.Int32,SharpDX.Direct3D11.Resource,System.Int32,System.Nullable{SharpDX.Direct3D11.ResourceRegion},System.Int32)"/></strong> with overlapping source and destination rectangles. The runtime sets this member to <strong>TRUE</strong> if  you can call <strong>CopySubresourceRegion1</strong> with overlapping source and destination rectangles and <strong><see cref="F:SharpDX.Result.False"/></strong> otherwise. If <strong><see cref="F:SharpDX.Result.False"/></strong>, the runtime does not expose this method to the driver because the driver does not support it.  </p> <p><strong>Note</strong>??For feature level 9.1, 9.2, and 9.3, this member is always <strong>TRUE</strong> because drivers already support the option for these feature levels.</p> </dd>	
             </summary>	
@@ -15650,7 +15652,7 @@
             <unmanaged>BOOL CopyWithOverlap</unmanaged>	
             <unmanaged-short>BOOL CopyWithOverlap</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataD3D11Options.ConstantBufferPartialUpdate">
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D11Options.ConstantBufferPartialUpdate">
             <summary>	
             <dd> <p>Specifies whether the driver supports partial updates of constant buffers. The runtime sets this member to <strong>TRUE</strong> if  the driver supports partial updates of constant buffers and <strong><see cref="F:SharpDX.Result.False"/></strong> otherwise. If <strong><see cref="F:SharpDX.Result.False"/></strong>, the runtime does not expose this operation to the driver because the driver does not support it.  </p> <p><strong>Note</strong>??For feature level 9.1, 9.2, and 9.3, this member is always <strong>TRUE</strong> because the option is emulated by the runtime.</p> </dd>	
             </summary>	
@@ -15659,7 +15661,7 @@
             <unmanaged>BOOL ConstantBufferPartialUpdate</unmanaged>	
             <unmanaged-short>BOOL ConstantBufferPartialUpdate</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataD3D11Options.ConstantBufferOffsetting">
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D11Options.ConstantBufferOffsetting">
             <summary>	
             <dd> <p>Specifies whether the driver supports new semantics for setting offsets in constant buffers for a shader. The runtime sets this member to <strong>TRUE</strong> if  the driver supports allowing you to specify offsets when you call new methods like the <strong><see cref="M:SharpDX.Direct3D11.DeviceContext1.VSSetConstantBuffers1(System.Int32,System.Int32,SharpDX.Direct3D11.Buffer[],System.Int32[],System.Int32[])"/></strong> method and <strong><see cref="F:SharpDX.Result.False"/></strong> otherwise. If <strong><see cref="F:SharpDX.Result.False"/></strong>, the runtime does not expose this operation to the driver because the driver does not support it.    </p> <p><strong>Note</strong>??For feature level 9.1, 9.2, and 9.3, this member is always <strong>TRUE</strong> because the option is emulated by the runtime.</p> </dd>	
             </summary>	
@@ -15668,7 +15670,7 @@
             <unmanaged>BOOL ConstantBufferOffsetting</unmanaged>	
             <unmanaged-short>BOOL ConstantBufferOffsetting</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataD3D11Options.MapNoOverwriteOnDynamicConstantBuffer">
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D11Options.MapNoOverwriteOnDynamicConstantBuffer">
             <summary>	
             <dd> <p>Specifies whether you can call <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.MapSubresource(SharpDX.Direct3D11.Texture1D,System.Int32,System.Int32,SharpDX.Direct3D11.MapMode,SharpDX.Direct3D11.MapFlags,SharpDX.DataStream@)"/></strong> with <strong><see cref="F:SharpDX.Direct3D11.MapMode.WriteNoOverwrite"/></strong> on a dynamic constant buffer (that is, whether the driver supports this operation). The runtime sets this member to <strong>TRUE</strong> if  the driver supports this operation and <strong><see cref="F:SharpDX.Result.False"/></strong> otherwise. If <strong><see cref="F:SharpDX.Result.False"/></strong>, the runtime fails this method because the driver does not support the operation.  </p> <p><strong>Note</strong>??For feature level 9.1, 9.2, and 9.3, this member is always <strong>TRUE</strong> because the option is emulated by the runtime.</p> </dd>	
             </summary>	
@@ -15677,7 +15679,7 @@
             <unmanaged>BOOL MapNoOverwriteOnDynamicConstantBuffer</unmanaged>	
             <unmanaged-short>BOOL MapNoOverwriteOnDynamicConstantBuffer</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataD3D11Options.MapNoOverwriteOnDynamicBufferSRV">
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D11Options.MapNoOverwriteOnDynamicBufferSRV">
             <summary>	
             <dd> <p>Specifies whether you can call <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.MapSubresource(SharpDX.Direct3D11.Texture1D,System.Int32,System.Int32,SharpDX.Direct3D11.MapMode,SharpDX.Direct3D11.MapFlags,SharpDX.DataStream@)"/></strong> with <strong><see cref="F:SharpDX.Direct3D11.MapMode.WriteNoOverwrite"/></strong> on a dynamic buffer SRV (that is, whether the driver supports this operation). The runtime sets this member to <strong>TRUE</strong> if  the driver supports this operation and <strong><see cref="F:SharpDX.Result.False"/></strong> otherwise. If <strong><see cref="F:SharpDX.Result.False"/></strong>, the runtime fails this method because the driver does not support the operation.</p> </dd>	
             </summary>	
@@ -15686,7 +15688,7 @@
             <unmanaged>BOOL MapNoOverwriteOnDynamicBufferSRV</unmanaged>	
             <unmanaged-short>BOOL MapNoOverwriteOnDynamicBufferSRV</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataD3D11Options.MultisampleRTVWithForcedSampleCountOne">
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D11Options.MultisampleRTVWithForcedSampleCountOne">
             <summary>	
             <dd> <p>Specifies whether the driver supports multisample rendering when you render with RTVs bound. If <strong>TRUE</strong>, you can set the <strong>ForcedSampleCount</strong> member of <strong><see cref="T:SharpDX.Direct3D11.RasterizerDescription1"/></strong> to 1 with a multisample RTV bound. The driver can support this option on feature level 10 and higher.  If <strong><see cref="F:SharpDX.Result.False"/></strong>, the rasterizer-state creation will fail because the driver is legacy or the feature level is too low.</p> </dd>	
             </summary>	
@@ -15695,7 +15697,7 @@
             <unmanaged>BOOL MultisampleRTVWithForcedSampleCountOne</unmanaged>	
             <unmanaged-short>BOOL MultisampleRTVWithForcedSampleCountOne</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataD3D11Options.SAD4ShaderInstructions">
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D11Options.SAD4ShaderInstructions">
             <summary>	
             <dd> <p>Specifies whether the hardware and driver support the <strong>msad4</strong> intrinsic function in shaders. The runtime sets this member to <strong>TRUE</strong> if  the hardware and driver support calls to <strong>msad4</strong> intrinsic functions in shaders. If <strong><see cref="F:SharpDX.Result.False"/></strong>, the driver is legacy or the hardware does not support the option; the runtime will fail shader creation for shaders that use <strong>msad4</strong>.</p> </dd>	
             </summary>	
@@ -15704,7 +15706,7 @@
             <unmanaged>BOOL SAD4ShaderInstructions</unmanaged>	
             <unmanaged-short>BOOL SAD4ShaderInstructions</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataD3D11Options.ExtendedDoublesShaderInstructions">
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D11Options.ExtendedDoublesShaderInstructions">
             <summary>	
             <dd> <p>Specifies whether the hardware and driver support the <strong>fma</strong> intrinsic function and other extended doubles instructions (<strong>DDIV</strong> and <strong>DRCP</strong>) in shaders. The <strong>fma</strong> intrinsic function emits an extended doubles <strong>DFMA</strong> instruction. The runtime sets this member to <strong>TRUE</strong> if  the hardware and driver support extended doubles instructions in shaders (shader model 5 and higher).  Support of this option implies support of basic double-precision shader instructions as well. You can use the <strong><see cref="F:SharpDX.Direct3D11.Feature.ShaderDoubles"/></strong> value to query for support of double-precision shaders.  If <strong><see cref="F:SharpDX.Result.False"/></strong>, the hardware and driver do not support the option; the runtime will fail shader creation for shaders that use extended doubles instructions.</p> </dd>	
             </summary>	
@@ -15713,7 +15715,7 @@
             <unmanaged>BOOL ExtendedDoublesShaderInstructions</unmanaged>	
             <unmanaged-short>BOOL ExtendedDoublesShaderInstructions</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataD3D11Options.ExtendedResourceSharing">
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D11Options.ExtendedResourceSharing">
             <summary>	
             No documentation.	
             </summary>	
@@ -15730,7 +15732,7 @@
             <unmanaged>D3D11_FEATURE_DATA_D3D9_OPTIONS</unmanaged>	
             <unmanaged-short>D3D11_FEATURE_DATA_D3D9_OPTIONS</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataD3D9Options.FullNonPow2TextureSupport">
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D9Options.FullNonPow2TextureSupport">
             <summary>	
             <dd> <p>Specifies whether the driver supports the nonpowers-of-2-unconditionally feature. For more information about this feature, see feature level. The runtime sets this member to <strong>TRUE</strong> for hardware at Direct3D 10 and higher feature levels.  For hardware at Direct3D 9.3 and lower feature levels, the runtime sets this member to <strong><see cref="F:SharpDX.Result.False"/></strong> if the hardware and driver support the powers-of-2 (2D textures must have widths and heights specified as powers of two) feature or the nonpowers-of-2-conditionally feature. For more information about this feature, see feature level.</p> </dd>	
             </summary>	
@@ -15751,7 +15753,7 @@
             <unmanaged>D3D11_FEATURE_DATA_DOUBLES</unmanaged>	
             <unmanaged-short>D3D11_FEATURE_DATA_DOUBLES</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataDoubles.DoublePrecisionFloatShaderOps">
+        <member name="F:SharpDX.Direct3D11.FeatureDataDoubles.DoublePrecisionFloatShaderOps">
             <summary>	
             <dd> <p>Specifies whether double types are allowed. If <strong>TRUE</strong>, double types are allowed; otherwise <strong><see cref="F:SharpDX.Result.False"/></strong>. The runtime must set <strong>DoublePrecisionFloatShaderOps</strong> to  <strong>TRUE</strong> in order for you to use any HLSL shader that is compiled with a double type.</p> </dd>	
             </summary>	
@@ -15856,7 +15858,7 @@
             <unmanaged>D3D11_FEATURE_DATA_THREADING</unmanaged>	
             <unmanaged-short>D3D11_FEATURE_DATA_THREADING</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataThreading.DriverConcurrentCreates">
+        <member name="F:SharpDX.Direct3D11.FeatureDataThreading.DriverConcurrentCreates">
             <summary>	
             <dd> <p><strong>TRUE</strong> means resources can be created concurrently on multiple threads while drawing; <strong><see cref="F:SharpDX.Result.False"/></strong> means that the presence of coarse synchronization will prevent concurrency.</p> </dd>	
             </summary>	
@@ -15865,7 +15867,7 @@
             <unmanaged>BOOL DriverConcurrentCreates</unmanaged>	
             <unmanaged-short>BOOL DriverConcurrentCreates</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.FeatureDataThreading.DriverCommandLists">
+        <member name="F:SharpDX.Direct3D11.FeatureDataThreading.DriverCommandLists">
             <summary>	
             <dd> <p><strong>TRUE</strong> means command lists are supported by the current driver; <strong><see cref="F:SharpDX.Result.False"/></strong> means that the API will emulate deferred contexts and command lists with software.</p> </dd>	
             </summary>	
@@ -16159,7 +16161,7 @@
             <unmanaged>unsigned longlong Frequency</unmanaged>	
             <unmanaged-short>unsigned longlong Frequency</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.QueryDataTimestampDisjoint.Disjoint">
+        <member name="F:SharpDX.Direct3D11.QueryDataTimestampDisjoint.Disjoint">
             <summary>	
             <dd> <p>If this is <strong>TRUE</strong>, something occurred in between the query's <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.Begin(SharpDX.Direct3D11.Asynchronous)"/></strong> and <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.End(SharpDX.Direct3D11.Asynchronous)"/></strong> calls that caused the timestamp counter to become discontinuous or disjoint, such as unplugging the AC chord on a laptop, overheating, or throttling up/down due to laptop savings events. The timestamp returned by <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.GetDataInternal(SharpDX.Direct3D11.Asynchronous,System.IntPtr,System.Int32,SharpDX.Direct3D11.AsynchronousFlags)"/></strong> for a timestamp query is only reliable if Disjoint is <strong><see cref="F:SharpDX.Result.False"/></strong>.</p> </dd>	
             </summary>	
@@ -16225,6 +16227,15 @@
             <unmanaged>D3D11_CULL_MODE CullMode</unmanaged>	
             <unmanaged-short>D3D11_CULL_MODE CullMode</unmanaged-short>	
         </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.FrontCounterClockwise">
+            <summary>	
+            <dd> <p>Specifies whether a triangle is front- or back-facing. If <strong>TRUE</strong>, a triangle will be considered front-facing if its vertices are counter-clockwise on the render target and considered back-facing if they are clockwise. If <strong><see cref="F:SharpDX.Result.False"/></strong>, the opposite is true.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::FrontCounterClockwise']/*"/>	
+            <msdn-id>hh404489</msdn-id>	
+            <unmanaged>BOOL FrontCounterClockwise</unmanaged>	
+            <unmanaged-short>BOOL FrontCounterClockwise</unmanaged-short>	
+        </member>
         <member name="F:SharpDX.Direct3D11.RasterizerDescription1.DepthBias">
             <summary>	
             <dd> <p>Depth value added to a given pixel. For info about depth bias, see Depth Bias.</p> </dd>	
@@ -16252,25 +16263,7 @@
             <unmanaged>float SlopeScaledDepthBias</unmanaged>	
             <unmanaged-short>float SlopeScaledDepthBias</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.ForcedSampleCount">
-            <summary>	
-            <dd> <p>The sample count that is forced while UAV rendering or rasterizing. Valid values are 0, 1, 2, 4, 8, and optionally 16. 0 indicates that the sample count is not forced.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::ForcedSampleCount']/*"/>	
-            <msdn-id>hh404489</msdn-id>	
-            <unmanaged>unsigned int ForcedSampleCount</unmanaged>	
-            <unmanaged-short>unsigned int ForcedSampleCount</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.Direct3D11.RasterizerDescription1.FrontCounterClockwise">
-            <summary>	
-            <dd> <p>Specifies whether a triangle is front- or back-facing. If <strong>TRUE</strong>, a triangle will be considered front-facing if its vertices are counter-clockwise on the render target and considered back-facing if they are clockwise. If <strong><see cref="F:SharpDX.Result.False"/></strong>, the opposite is true.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::FrontCounterClockwise']/*"/>	
-            <msdn-id>hh404489</msdn-id>	
-            <unmanaged>BOOL FrontCounterClockwise</unmanaged>	
-            <unmanaged-short>BOOL FrontCounterClockwise</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.Direct3D11.RasterizerDescription1.DepthClipEnable">
+        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.DepthClipEnable">
             <summary>	
             <dd> <p>Specifies whether to enable clipping based on distance.</p> <p>The hardware always performs x and y clipping of rasterized coordinates. When <strong>DepthClipEnable</strong> is set to the default?<strong>TRUE</strong>, the hardware also clips the z value (that is, the hardware performs the last step of the following algorithm).	
             </p> <code> 0 &lt; w	
@@ -16285,7 +16278,7 @@
             <unmanaged>BOOL DepthClipEnable</unmanaged>	
             <unmanaged-short>BOOL DepthClipEnable</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.RasterizerDescription1.ScissorEnable">
+        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.ScissorEnable">
             <summary>	
             <dd> <p>Specifies whether to enable scissor-rectangle culling. All pixels outside an active scissor rectangle are culled.</p> </dd>	
             </summary>	
@@ -16294,7 +16287,7 @@
             <unmanaged>BOOL ScissorEnable</unmanaged>	
             <unmanaged-short>BOOL ScissorEnable</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.RasterizerDescription1.MultisampleEnable">
+        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.MultisampleEnable">
             <summary>	
             <dd> <p>Specifies whether to use the quadrilateral or alpha line anti-aliasing algorithm on multisample antialiasing (MSAA) render targets. Set to <strong>TRUE</strong> to use the quadrilateral line anti-aliasing algorithm and to <strong><see cref="F:SharpDX.Result.False"/></strong> to use the alpha line anti-aliasing algorithm. For more info about this member, see Remarks.</p> </dd>	
             </summary>	
@@ -16303,7 +16296,7 @@
             <unmanaged>BOOL MultisampleEnable</unmanaged>	
             <unmanaged-short>BOOL MultisampleEnable</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.RasterizerDescription1.AntialiasedLineEnable">
+        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.AntialiasedLineEnable">
             <summary>	
             <dd> <p>Specifies whether to enable line antialiasing; only applies if doing line drawing and <strong>MultisampleEnable</strong> is <strong><see cref="F:SharpDX.Result.False"/></strong>. For more info about this member, see Remarks.</p> </dd>	
             </summary>	
@@ -16311,6 +16304,15 @@
             <msdn-id>hh404489</msdn-id>	
             <unmanaged>BOOL AntialiasedLineEnable</unmanaged>	
             <unmanaged-short>BOOL AntialiasedLineEnable</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.ForcedSampleCount">
+            <summary>	
+            <dd> <p>The sample count that is forced while UAV rendering or rasterizing. Valid values are 0, 1, 2, 4, 8, and optionally 16. 0 indicates that the sample count is not forced.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::ForcedSampleCount']/*"/>	
+            <msdn-id>hh404489</msdn-id>	
+            <unmanaged>unsigned int ForcedSampleCount</unmanaged>	
+            <unmanaged-short>unsigned int ForcedSampleCount</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D11.RasterizerStateDescription">
             <summary>	
@@ -16342,6 +16344,15 @@
             <unmanaged>D3D11_CULL_MODE CullMode</unmanaged>	
             <unmanaged-short>D3D11_CULL_MODE CullMode</unmanaged-short>	
         </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.IsFrontCounterClockwise">
+            <summary>	
+            <dd> <p>Determines if a triangle is front- or back-facing. If this parameter is true, then a triangle will be considered front-facing if its vertices are counter-clockwise on the render target and considered back-facing if they are clockwise. If this parameter is false then the opposite is true.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::FrontCounterClockwise']/*"/>	
+            <msdn-id>ff476198</msdn-id>	
+            <unmanaged>BOOL FrontCounterClockwise</unmanaged>	
+            <unmanaged-short>BOOL FrontCounterClockwise</unmanaged-short>	
+        </member>
         <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.DepthBias">
             <summary>	
             <dd> <p>Depth value added to a given pixel.</p> </dd>	
@@ -16369,16 +16380,7 @@
             <unmanaged>float SlopeScaledDepthBias</unmanaged>	
             <unmanaged-short>float SlopeScaledDepthBias</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.RasterizerStateDescription.IsFrontCounterClockwise">
-            <summary>	
-            <dd> <p>Determines if a triangle is front- or back-facing. If this parameter is true, then a triangle will be considered front-facing if its vertices are counter-clockwise on the render target and considered back-facing if they are clockwise. If this parameter is false then the opposite is true.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::FrontCounterClockwise']/*"/>	
-            <msdn-id>ff476198</msdn-id>	
-            <unmanaged>BOOL FrontCounterClockwise</unmanaged>	
-            <unmanaged-short>BOOL FrontCounterClockwise</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.Direct3D11.RasterizerStateDescription.IsDepthClipEnabled">
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.IsDepthClipEnabled">
             <summary>	
             <dd> <p>Enable clipping based on distance.</p> <p>The hardware always performs x and y clipping of rasterized coordinates. When <strong>DepthClipEnable</strong> is set to the default?TRUE, the hardware also clips the z value (that is, the hardware performs the last step of the following algorithm).	
             </p> <code> 0 &lt; w	
@@ -16393,7 +16395,7 @@
             <unmanaged>BOOL DepthClipEnable</unmanaged>	
             <unmanaged-short>BOOL DepthClipEnable</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.RasterizerStateDescription.IsScissorEnabled">
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.IsScissorEnabled">
             <summary>	
             <dd> <p>Enable scissor-rectangle culling. All pixels ouside an active scissor rectangle are culled.</p> </dd>	
             </summary>	
@@ -16402,7 +16404,7 @@
             <unmanaged>BOOL ScissorEnable</unmanaged>	
             <unmanaged-short>BOOL ScissorEnable</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.RasterizerStateDescription.IsMultisampleEnabled">
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.IsMultisampleEnabled">
             <summary>	
             <dd> <p>Enable multisample antialiasing.</p> </dd>	
             </summary>	
@@ -16411,7 +16413,7 @@
             <unmanaged>BOOL MultisampleEnable</unmanaged>	
             <unmanaged-short>BOOL MultisampleEnable</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.RasterizerStateDescription.IsAntialiasedLineEnabled">
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.IsAntialiasedLineEnabled">
             <summary>	
             <dd> <p>Enable line antialiasing; only applies if doing line drawing and <em>MultisampleEnable</em> is false.</p> </dd>	
             </summary>	
@@ -16431,6 +16433,15 @@
             <msdn-id>ff476200</msdn-id>	
             <unmanaged>D3D11_RENDER_TARGET_BLEND_DESC</unmanaged>	
             <unmanaged-short>D3D11_RENDER_TARGET_BLEND_DESC</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RenderTargetBlendDescription.IsBlendEnabled">
+            <summary>	
+            <dd> <p>Enable (or disable) blending.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RENDER_TARGET_BLEND_DESC::BlendEnable']/*"/>	
+            <msdn-id>ff476200</msdn-id>	
+            <unmanaged>BOOL BlendEnable</unmanaged>	
+            <unmanaged-short>BOOL BlendEnable</unmanaged-short>	
         </member>
         <member name="F:SharpDX.Direct3D11.RenderTargetBlendDescription.SourceBlend">
             <summary>	
@@ -16495,14 +16506,18 @@
             <unmanaged>D3D11_COLOR_WRITE_ENABLE RenderTargetWriteMask</unmanaged>	
             <unmanaged-short>D3D11_COLOR_WRITE_ENABLE RenderTargetWriteMask</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.Direct3D11.RenderTargetBlendDescription.IsBlendEnabled">
-            <summary>	
-            <dd> <p>Enable (or disable) blending.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RENDER_TARGET_BLEND_DESC::BlendEnable']/*"/>	
-            <msdn-id>ff476200</msdn-id>	
-            <unmanaged>BOOL BlendEnable</unmanaged>	
-            <unmanaged-short>BOOL BlendEnable</unmanaged-short>	
+        <member name="M:SharpDX.Direct3D11.RenderTargetBlendDescription.#ctor(System.Boolean,SharpDX.Direct3D11.BlendOption,SharpDX.Direct3D11.BlendOption,SharpDX.Direct3D11.BlendOperation,SharpDX.Direct3D11.BlendOption,SharpDX.Direct3D11.BlendOption,SharpDX.Direct3D11.BlendOperation,SharpDX.Direct3D11.ColorWriteMaskFlags)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Direct3D11.RenderTargetBlendDescription"/> struct.
+            </summary>
+            <param name="isBlendEnabled">The is blend enabled.</param>
+            <param name="sourceBlend">The source blend.</param>
+            <param name="destinationBlend">The destination blend.</param>
+            <param name="blendOperation">The blend operation.</param>
+            <param name="sourceAlphaBlend">The source alpha blend.</param>
+            <param name="destinationAlphaBlend">The destination alpha blend.</param>
+            <param name="alphaBlendOperation">The alpha blend operation.</param>
+            <param name="renderTargetWriteMask">The render target write mask.</param>
         </member>
         <member name="T:SharpDX.Direct3D11.RenderTargetBlendDescription1">
             <summary>	
@@ -16515,6 +16530,24 @@
             <msdn-id>hh404492</msdn-id>	
             <unmanaged>D3D11_RENDER_TARGET_BLEND_DESC1</unmanaged>	
             <unmanaged-short>D3D11_RENDER_TARGET_BLEND_DESC1</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RenderTargetBlendDescription1.IsBlendEnabled">
+            <summary>	
+            <dd> <p>Enable (or disable) blending.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RENDER_TARGET_BLEND_DESC1::BlendEnable']/*"/>	
+            <msdn-id>hh404492</msdn-id>	
+            <unmanaged>BOOL BlendEnable</unmanaged>	
+            <unmanaged-short>BOOL BlendEnable</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RenderTargetBlendDescription1.LogicOpEnable">
+            <summary>	
+            <dd> <p>Enable (or disable) a logical operation.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RENDER_TARGET_BLEND_DESC1::LogicOpEnable']/*"/>	
+            <msdn-id>hh404492</msdn-id>	
+            <unmanaged>BOOL LogicOpEnable</unmanaged>	
+            <unmanaged-short>BOOL LogicOpEnable</unmanaged-short>	
         </member>
         <member name="F:SharpDX.Direct3D11.RenderTargetBlendDescription1.SourceBlend">
             <summary>	
@@ -16587,24 +16620,6 @@
             <msdn-id>hh404492</msdn-id>	
             <unmanaged>D3D11_COLOR_WRITE_ENABLE RenderTargetWriteMask</unmanaged>	
             <unmanaged-short>D3D11_COLOR_WRITE_ENABLE RenderTargetWriteMask</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.Direct3D11.RenderTargetBlendDescription1.IsBlendEnabled">
-            <summary>	
-            <dd> <p>Enable (or disable) blending.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RENDER_TARGET_BLEND_DESC1::BlendEnable']/*"/>	
-            <msdn-id>hh404492</msdn-id>	
-            <unmanaged>BOOL BlendEnable</unmanaged>	
-            <unmanaged-short>BOOL BlendEnable</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.Direct3D11.RenderTargetBlendDescription1.LogicOpEnable">
-            <summary>	
-            <dd> <p>Enable (or disable) a logical operation.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RENDER_TARGET_BLEND_DESC1::LogicOpEnable']/*"/>	
-            <msdn-id>hh404492</msdn-id>	
-            <unmanaged>BOOL LogicOpEnable</unmanaged>	
-            <unmanaged-short>BOOL LogicOpEnable</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D11.RenderTargetViewDescription">
             <summary>	
@@ -17031,6 +17046,17 @@
             <msdn-id>ff476089</msdn-id>	
             <unmanaged>unsigned int back</unmanaged>	
             <unmanaged-short>unsigned int back</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.ResourceRegion.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initiailize a new instance of <see cref="T:SharpDX.Direct3D11.ResourceRegion"/> struct.
+            </summary>
+            <param name="left">Left coordinates</param>
+            <param name="top">Top coordinates</param>
+            <param name="front">Front coordinates</param>
+            <param name="right">Right coordinates</param>
+            <param name="bottom">Botoom coordinates</param>
+            <param name="back">Back coordinates</param>
         </member>
         <member name="T:SharpDX.Direct3D11.SamplerStateDescription">
             <summary>	
@@ -18693,15 +18719,7 @@
             <unmanaged>unsigned int IVSize</unmanaged>	
             <unmanaged-short>unsigned int IVSize</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Direct3D11.VideoDecoderBufferDescription.EncryptedBlockInfo">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_VIDEO_DECODER_BUFFER_DESC::EncryptedBlockInfo']/*"/>	
-            <unmanaged>D3D11_ENCRYPTED_BLOCK_INFO EncryptedBlockInfo</unmanaged>	
-            <unmanaged-short>D3D11_ENCRYPTED_BLOCK_INFO EncryptedBlockInfo</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.Direct3D11.VideoDecoderBufferDescription.PartialEncryption">
+        <member name="F:SharpDX.Direct3D11.VideoDecoderBufferDescription.PartialEncryption">
             <summary>	
             <dd> <p>A <strong><see cref="T:SharpDX.Direct3D11.EncryptedBlockInformation"/></strong> structure that specifies which bytes of the surface are encrypted.</p> </dd>	
             </summary>	
@@ -18709,6 +18727,14 @@
             <msdn-id>hh447641</msdn-id>	
             <unmanaged>BOOL PartialEncryption</unmanaged>	
             <unmanaged-short>BOOL PartialEncryption</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.VideoDecoderBufferDescription.EncryptedBlockInfo">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_VIDEO_DECODER_BUFFER_DESC::EncryptedBlockInfo']/*"/>	
+            <unmanaged>D3D11_ENCRYPTED_BLOCK_INFO EncryptedBlockInfo</unmanaged>	
+            <unmanaged-short>D3D11_ENCRYPTED_BLOCK_INFO EncryptedBlockInfo</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D11.VideoDecoderConfig">
             <summary>	
@@ -19282,6 +19308,15 @@
             <unmanaged>unsigned int OutputFrames</unmanaged>	
             <unmanaged-short>unsigned int OutputFrames</unmanaged-short>	
         </member>
+        <member name="F:SharpDX.Direct3D11.VideoProcessorCustomRate.InputInterlaced">
+            <summary>	
+            <dd> <p>If <strong>TRUE</strong>, the input stream must be interlaced. Otherwise, the input stream must be progressive. </p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_VIDEO_PROCESSOR_CUSTOM_RATE::InputInterlaced']/*"/>	
+            <msdn-id>hh447653</msdn-id>	
+            <unmanaged>BOOL InputInterlaced</unmanaged>	
+            <unmanaged-short>BOOL InputInterlaced</unmanaged-short>	
+        </member>
         <member name="F:SharpDX.Direct3D11.VideoProcessorCustomRate.InputFramesOrFields">
             <summary>	
             <dd> <p>The number of input fields or frames for every <em>N</em> output frames that will be generated, where <em>N</em> = <strong>OutputFrames</strong>. </p> </dd>	
@@ -19290,15 +19325,6 @@
             <msdn-id>hh447653</msdn-id>	
             <unmanaged>unsigned int InputFramesOrFields</unmanaged>	
             <unmanaged-short>unsigned int InputFramesOrFields</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.Direct3D11.VideoProcessorCustomRate.InputInterlaced">
-            <summary>	
-            <dd> <p>If <strong>TRUE</strong>, the input stream must be interlaced. Otherwise, the input stream must be progressive. </p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_VIDEO_PROCESSOR_CUSTOM_RATE::InputInterlaced']/*"/>	
-            <msdn-id>hh447653</msdn-id>	
-            <unmanaged>BOOL InputInterlaced</unmanaged>	
-            <unmanaged-short>BOOL InputInterlaced</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D11.VideoProcessorFilterRange">
             <summary>	
@@ -19486,6 +19512,14 @@
             <unmanaged>D3D11_VIDEO_PROCESSOR_STREAM</unmanaged>	
             <unmanaged-short>D3D11_VIDEO_PROCESSOR_STREAM</unmanaged-short>	
         </member>
+        <member name="F:SharpDX.Direct3D11.VideoProcessorStream.Enable">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_VIDEO_PROCESSOR_STREAM::Enable']/*"/>	
+            <unmanaged>BOOL Enable</unmanaged>	
+            <unmanaged-short>BOOL Enable</unmanaged-short>	
+        </member>
         <member name="F:SharpDX.Direct3D11.VideoProcessorStream.OutputIndex">
             <summary>	
             No documentation.	
@@ -19565,14 +19599,6 @@
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_VIDEO_PROCESSOR_STREAM::ppFutureSurfacesRight']/*"/>	
             <unmanaged>ID3D11VideoProcessorInputView** ppFutureSurfacesRight</unmanaged>	
             <unmanaged-short>ID3D11VideoProcessorInputView ppFutureSurfacesRight</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.Direct3D11.VideoProcessorStream.Enable">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_VIDEO_PROCESSOR_STREAM::Enable']/*"/>	
-            <unmanaged>BOOL Enable</unmanaged>	
-            <unmanaged-short>BOOL Enable</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D11.Viewport">
             <summary>	
