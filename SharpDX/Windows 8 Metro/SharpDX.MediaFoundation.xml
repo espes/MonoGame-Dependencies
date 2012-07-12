@@ -1402,7 +1402,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Queries the Microsoft Direct3D device for an interface.</p>	
             </summary>	
             <param name="hDevice"><dd> <p>A handle to the Direct3D device. To get the device handle, call <strong><see cref="M:SharpDX.MediaFoundation.DXGIDeviceManager.OpenDeviceHandle"/></strong>.</p> </dd></param>	
-            <param name="riid"><dd> <p>The interface identifier (IID) of the requested interface. The Direct3D device supports the following interfaces:</p> <ul> <li> <strong><see cref="!:SharpDX.Direct3D11.VideoContext"/></strong> </li> <li> <strong><see cref="!:SharpDX.Direct3D11.VideoDevice"/></strong> </li> </ul> </dd></param>	
+            <param name="riid"><dd> <p>The interface identifier (IID) of the requested interface. The Direct3D device supports the following interfaces:</p> <ul> <li> <strong>ID3D11VideoContext</strong> </li> <li> <strong>ID3D11VideoDevice</strong> </li> </ul> </dd></param>	
             <returns><dd> <p>Receives a reference to the requested interface. The caller must release the interface.</p> </dd></returns>	
             <remarks>	
             <p>If the method returns <strong>MF_E_DXGI_NEW_VIDEO_DEVICE</strong>, call <strong><see cref="M:SharpDX.MediaFoundation.DXGIDeviceManager.CloseDeviceHandle(System.IntPtr)"/></strong> to close the handle and then call <strong>OpenDeviceHandle</strong> again to get a new handle. The  <strong><see cref="M:SharpDX.MediaFoundation.DXGIDeviceManager.ResetDevice(SharpDX.ComObject)"/></strong> method invalidates all open device handles.</p>	
@@ -1417,7 +1417,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gives the caller exclusive access to the Microsoft Direct3D device.</p>	
             </summary>	
             <param name="hDevice"><dd> <p>A handle to the Direct3D device. To get the device handle, call <strong><see cref="M:SharpDX.MediaFoundation.DXGIDeviceManager.OpenDeviceHandle"/></strong>.</p> </dd></param>	
-            <param name="riid"><dd> <p>The interface identifier (IID) of the requested interface. The Direct3D device will support the following interfaces:</p> <ul> <li> <strong><see cref="!:SharpDX.Direct3D11.Device"/></strong> </li> <li> <strong><see cref="!:SharpDX.Direct3D11.VideoContext"/></strong> </li> <li> <strong><see cref="!:SharpDX.Direct3D11.VideoDevice"/></strong> </li> </ul> </dd></param>	
+            <param name="riid"><dd> <p>The interface identifier (IID) of the requested interface. The Direct3D device will support the following interfaces:</p> <ul> <li> <strong>ID3D11Device</strong> </li> <li> <strong>ID3D11VideoContext</strong> </li> <li> <strong>ID3D11VideoDevice</strong> </li> </ul> </dd></param>	
             <param name="fBlock"><dd> <p>Specifies whether to wait for the device lock. If the device is already locked and this parameter is <strong>TRUE</strong>, the method blocks until the device is unlocked. Otherwise, if the device is locked and this parameter is <strong><see cref="F:SharpDX.Result.False"/></strong>, the method returns immediately with the error code <strong>DXVA2_E_VIDEO_DEVICE_LOCKED</strong>.</p> </dd></param>	
             <returns><dd> <p>Receives a reference to the requested interface. The caller must release the interface.</p> </dd></returns>	
             <remarks>	
@@ -9077,33 +9077,6 @@
             <unmanaged>HRESULT MFCreateMFByteStreamOnStreamEx([In] IUnknown* punkStream,[Out, Fast] IMFByteStream** ppByteStream)</unmanaged>	
             <unmanaged-short>MFCreateMFByteStreamOnStreamEx</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.MediaFoundation.MediaFactory.LoadSignedLibrary(System.String,SharpDX.MediaFoundation.SignedLibrary@)">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> Creates the source resolver, which is used to create a media source from a URL or byte stream. </p>	
-            </summary>	
-            <param name="szNameRef"><dd> <p>Receives a reference to the source resolver's <strong><see cref="T:SharpDX.MediaFoundation.SourceResolver"/></strong> interface. The caller must release the interface.</p> </dd></param>	
-            <param name="libOut">No documentation.</param>	
-            <returns><p>If this function succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
-            <remarks>	
-            <p><strong>Note</strong>??Prior to Windows?7, this function was exported from mf.dll. Starting in Windows?7, this function is exported from mfplat.dll, and mf.dll exports a stub function that calls into mfplat.dll. For more information, see Library Changes in Windows?7.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MFLoadSignedLibrary']/*"/>	
-            <msdn-id>ms697433</msdn-id>	
-            <unmanaged>HRESULT MFLoadSignedLibrary([In] const wchar_t* pszName,[Out] IMFSignedLibrary** ppLib)</unmanaged>	
-            <unmanaged-short>MFLoadSignedLibrary</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.MediaFoundation.MediaFactory.GetLocalId(System.Byte[],System.Int32,System.IntPtr)">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <param name="verifier">No documentation.</param>	
-            <param name="size">No documentation.</param>	
-            <param name="id">No documentation.</param>	
-            <returns>No documentation.</returns>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MFGetLocalId']/*"/>	
-            <unmanaged>HRESULT MFGetLocalId([In, Buffer] const unsigned char* verifier,[In] unsigned int size,[Out] wchar_t** id)</unmanaged>	
-            <unmanaged-short>MFGetLocalId</unmanaged-short>	
-        </member>
         <member name="M:SharpDX.MediaFoundation.MediaFactory.CreateStreamOnMFByteStreamEx(System.IntPtr,System.Guid,System.IntPtr@)">
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Initializes Microsoft Media Foundation.</p>	
@@ -9141,20 +9114,6 @@
             <unmanaged>longlong MFGetSystemTime()</unmanaged>	
             <unmanaged-short>MFGetSystemTime</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.MediaFoundation.MediaFactory.GetService(SharpDX.ComObject,System.Guid,System.Guid,System.IntPtr@)">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Queries an object for a specified service interface.</p><p>This function is a helper function that wraps the <strong><see cref="M:SharpDX.MediaFoundation.ServiceProvider.GetService(System.Guid,System.Guid,System.IntPtr@)"/></strong> method. The function queries the object for the <strong><see cref="T:SharpDX.MediaFoundation.ServiceProvider"/></strong> interface and, if successful, calls <strong>GetService</strong> on the object.</p>	
-            </summary>	
-            <param name="unkObjectRef">No documentation.</param>	
-            <param name="guidService">No documentation.</param>	
-            <param name="riid">No documentation.</param>	
-            <param name="vObjectOut">No documentation.</param>	
-            <returns><p>The function returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p> The method succeeded. </p> </td></tr> <tr><td> <dl> <dt><strong>MF_E_UNSUPPORTED_SERVICE</strong></dt> </dl> </td><td> <p> The service requested cannot be found in the object represented by <em>punkObject</em>. </p> </td></tr> </table><p>?</p></returns>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MFGetService']/*"/>	
-            <msdn-id>ms694284</msdn-id>	
-            <unmanaged>HRESULT MFGetService([In] IUnknown* punkObject,[In] const GUID&amp; guidService,[In] const GUID&amp; riid,[Out] void** ppvObject)</unmanaged>	
-            <unmanaged-short>MFGetService</unmanaged-short>	
-        </member>
         <member name="M:SharpDX.MediaFoundation.MediaFactory.CreateStreamDescriptor(System.Int32,System.Int32,SharpDX.MediaFoundation.MediaType[],SharpDX.MediaFoundation.StreamDescriptor@)">
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> Creates a stream descriptor. </p>	
@@ -9188,21 +9147,6 @@
             <unmanaged>HRESULT MFCreatePresentationDescriptor([In] unsigned int cStreamDescriptors,[In, Buffer, Optional] IMFStreamDescriptor** apStreamDescriptors,[Out] IMFPresentationDescriptor** ppPresentationDescriptor)</unmanaged>	
             <unmanaged-short>MFCreatePresentationDescriptor</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.MediaFoundation.MediaFactory.CreateAggregateSource(SharpDX.MediaFoundation.Collection,SharpDX.MediaFoundation.MediaSource@)">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Creates a media source that aggregates a collection of media sources. </p>	
-            </summary>	
-            <param name="sourceCollectionRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.MediaFoundation.Collection"/></strong> interface of the collection object that contains a list of media sources. </p> </dd></param>	
-            <param name="aggSourceOut"><dd> <p>Receives a reference to the <strong><see cref="T:SharpDX.MediaFoundation.MediaSource"/></strong> interface of the aggregated media source. The caller must release the interface.</p> </dd></param>	
-            <returns><p>The function returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table. </p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The method succeeded.</p> </td></tr> <tr><td> <dl> <dt><strong>E_INVALIDARG</strong></dt> </dl> </td><td> <p> The <em>pSourceCollection</em> collection does not contain any elements.</p> </td></tr> </table><p>?</p></returns>	
-            <remarks>	
-            <p>The aggregated media source is useful for combining  streams from separate media sources. For example, you can use it to  combine a video capture source and an audio capture source. </p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MFCreateAggregateSource']/*"/>	
-            <msdn-id>dd388085</msdn-id>	
-            <unmanaged>HRESULT MFCreateAggregateSource([In] IMFCollection* pSourceCollection,[Out] IMFMediaSource** ppAggSource)</unmanaged>	
-            <unmanaged-short>MFCreateAggregateSource</unmanaged-short>	
-        </member>
         <member name="M:SharpDX.MediaFoundation.MediaFactory.CreatePropertiesFromMediaType(SharpDX.MediaFoundation.MediaType,System.Guid,System.IntPtr@)">
             <summary>	
             No documentation.	
@@ -9214,28 +9158,6 @@
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MFCreatePropertiesFromMediaType']/*"/>	
             <unmanaged>HRESULT MFCreatePropertiesFromMediaType([In] IMFMediaType* pMediaType,[In] const GUID&amp; riid,[Out] void** ppv)</unmanaged>	
             <unmanaged-short>MFCreatePropertiesFromMediaType</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.MediaFoundation.MediaFactory.CreateProtectedEnvironmentAccess(SharpDX.MediaFoundation.ProtectedEnvironmentAccess@)">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Creates an <strong><see cref="T:SharpDX.MediaFoundation.ProtectedEnvironmentAccess"/></strong> object that allows content protection systems to perform a handshake with the protected environment.</p>	
-            </summary>	
-            <param name="accessOut">No documentation.</param>	
-            <returns>No documentation.</returns>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MFCreateProtectedEnvironmentAccess']/*"/>	
-            <msdn-id>hh162758</msdn-id>	
-            <unmanaged>HRESULT MFCreateProtectedEnvironmentAccess([Out] IMFProtectedEnvironmentAccess** ppAccess)</unmanaged>	
-            <unmanaged-short>MFCreateProtectedEnvironmentAccess</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.MediaFoundation.MediaFactory.GetSystemId(SharpDX.MediaFoundation.SystemId@)">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Returns an <strong><see cref="T:SharpDX.MediaFoundation.SystemId"/></strong> object for retrieving system id data.</p>	
-            </summary>	
-            <param name="idOut">No documentation.</param>	
-            <returns>No documentation.</returns>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MFGetSystemId']/*"/>	
-            <msdn-id>hh162767</msdn-id>	
-            <unmanaged>HRESULT MFGetSystemId([Out] IMFSystemId** ppId)</unmanaged>	
-            <unmanaged-short>MFGetSystemId</unmanaged-short>	
         </member>
         <member name="M:SharpDX.MediaFoundation.MediaFactory.CreateTrackedSample(SharpDX.MediaFoundation.TrackedSample@)">
             <summary>	
@@ -9279,87 +9201,6 @@
             <msdn-id>ms703162</msdn-id>	
             <unmanaged>HRESULT MFDeserializeAttributesFromStream([In] IMFAttributes* pAttr,[In] unsigned int dwOptions,[In] IStream* pStm)</unmanaged>	
             <unmanaged-short>MFDeserializeAttributesFromStream</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.MediaFoundation.MediaFactory.CreateSourceReaderFromURL(System.String,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.SourceReader@)">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Creates the source reader from a URL.</p>	
-            </summary>	
-            <param name="wszURLRef"><dd> <p>The URL  of a media file to open.</p> </dd></param>	
-            <param name="attributesRef"><dd> <p>Pointer to the <strong><see cref="T:SharpDX.MediaFoundation.MediaAttributes"/></strong> interface. You can use this parameter to configure the source reader. For more information, see Source Reader Attributes. This parameter can be <strong><c>null</c></strong>.</p> </dd></param>	
-            <param name="sourceReaderOut"><dd> <p>Receives a reference to the <strong><see cref="T:SharpDX.MediaFoundation.SourceReader"/></strong> interface. The caller must release the interface.</p> </dd></param>	
-            <returns><p>If this function succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
-            <remarks>	
-            <p>Call <strong>CoInitialize(Ex)</strong> and <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.Startup(System.Int32,System.Int32)"/></strong> before calling this function.</p><p> Internally, the source reader calls the <strong><see cref="M:SharpDX.MediaFoundation.SourceResolver.CreateObjectFromURL(System.String,System.Int32,SharpDX.ComObject,SharpDX.MediaFoundation.ObjectType@,SharpDX.ComObject@)"/></strong> method to create a media source from the URL. </p><p>This function is available on Windows?Vista if Platform Update Supplement for Windows?Vista is installed.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MFCreateSourceReaderFromURL']/*"/>	
-            <msdn-id>dd388110</msdn-id>	
-            <unmanaged>HRESULT MFCreateSourceReaderFromURL([In] const wchar_t* pwszURL,[In, Optional] IMFAttributes* pAttributes,[Out] IMFSourceReader** ppSourceReader)</unmanaged>	
-            <unmanaged-short>MFCreateSourceReaderFromURL</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.MediaFoundation.MediaFactory.CreateSinkWriterFromMediaSink(SharpDX.MediaFoundation.MediaSink,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.SinkWriter@)">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Creates the sink writer from a media sink.</p>	
-            </summary>	
-            <param name="mediaSinkRef"><dd> <p>Pointer to the <strong><see cref="T:SharpDX.MediaFoundation.MediaSink"/></strong> interface of a media sink. </p> </dd></param>	
-            <param name="attributesRef"><dd> <p>Pointer to the <strong><see cref="T:SharpDX.MediaFoundation.MediaAttributes"/></strong> interface. You can use this parameter to configure the sink writer. For more information, see Sink Writer Attributes. This parameter can be <strong><c>null</c></strong>. </p> </dd></param>	
-            <param name="sinkWriterOut"><dd> <p>Receives a reference to the <strong><see cref="T:SharpDX.MediaFoundation.SinkWriter"/></strong> interface. The caller must release the interface.</p> </dd></param>	
-            <returns><p>If this function succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
-            <remarks>	
-            <p>Call <strong>CoInitialize(Ex)</strong> and <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.Startup(System.Int32,System.Int32)"/></strong> before calling this function.</p><p>When you are done using the media sink, call the media sink's <strong><see cref="M:SharpDX.MediaFoundation.MediaSink.Shutdown"/></strong> method. (The sink writer does not shut down the media sink.) Release the sink writer before calling <strong>Shutdown</strong> on the media sink.</p><p>This function is available on Windows?Vista if Platform Update Supplement for Windows?Vista is installed.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MFCreateSinkWriterFromMediaSink']/*"/>	
-            <msdn-id>dd388103</msdn-id>	
-            <unmanaged>HRESULT MFCreateSinkWriterFromMediaSink([In] IMFMediaSink* pMediaSink,[In, Optional] IMFAttributes* pAttributes,[Out] IMFSinkWriter** ppSinkWriter)</unmanaged>	
-            <unmanaged-short>MFCreateSinkWriterFromMediaSink</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.MediaFoundation.MediaFactory.CreateSinkWriterFromURL(System.String,System.IntPtr,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.SinkWriter@)">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Creates the sink writer from a URL or byte stream.</p>	
-            </summary>	
-            <param name="wszOutputURLRef"><dd> <p>A null-terminated string that contains the URL of the output file. This parameter can be <strong><c>null</c></strong>.</p> </dd></param>	
-            <param name="byteStreamRef"><dd> <p>Pointer to the <strong><see cref="T:SharpDX.MediaFoundation.IByteStream"/></strong> interface of a byte stream. This parameter can be <strong><c>null</c></strong>.</p> <p>If this parameter is a valid reference, the sink writer writes to the provided byte stream. (The byte stream must be writable.) Otherwise, if <em>pByteStream</em> is <strong><c>null</c></strong>, the sink writer creates a new file named <em>pwszOutputURL</em>.</p> </dd></param>	
-            <param name="attributesRef"><dd> <p>Pointer to the <strong><see cref="T:SharpDX.MediaFoundation.MediaAttributes"/></strong> interface. You can use this parameter to configure the sink writer. For more information, see Sink Writer Attributes. This parameter can be <strong><c>null</c></strong>. </p> </dd></param>	
-            <param name="sinkWriterOut"><dd> <p>Receives a reference to the <strong><see cref="T:SharpDX.MediaFoundation.SinkWriter"/></strong> interface. The caller must release the interface.</p> </dd></param>	
-            <returns><p>This function can return one of these values.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>Success.</p> </td></tr> <tr><td> <dl> <dt><strong>MF_E_NOT_FOUND</strong></dt> </dl> </td><td> <p>The specified URL was not found.</p> </td></tr> </table><p>?</p></returns>	
-            <remarks>	
-            <p>Call <strong>CoInitialize(Ex)</strong> and <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.Startup(System.Int32,System.Int32)"/></strong> before calling this function.</p><p>The first three parameters to this function can be <strong><c>null</c></strong>; however, only certain combinations are valid:</p><p> </p><table> <tr><th>Description</th><th><em>pwszOutputURL</em></th><th><em>pByteStream</em></th><th><em>pAttributes</em></th></tr> <tr><td>Specify a byte stream, with no URL.</td><td><strong><c>null</c></strong></td><td>non-<strong><c>null</c></strong></td><td>Required (must not be <strong><c>null</c></strong>).</td></tr> <tr><td>Specify a URL, with no byte stream.</td><td>not <strong><c>null</c></strong></td><td><strong><c>null</c></strong></td><td>Optional (may be <strong><c>null</c></strong>).</td></tr> <tr><td>Specify both a URL and a byte stream.</td><td>non-<strong><c>null</c></strong></td><td>non-<strong><c>null</c></strong></td><td>Optional (may be <strong><c>null</c></strong>).</td></tr> </table><p>?</p><p>The <em>pAttributes</em> parameter is required in the first case and optional in the others.</p><ul> <li>Case 1: Specify a byte stream without a URL. The <em>pAttributes</em> parameter must point to an attribute store that contains the MF_TRANSCODE_CONTAINERTYPE attribute. The sink writer uses the  MF_TRANSCODE_CONTAINERTYPE attribute to determine the type of file container to write, such as ASF or MP4.</li> <li>Case 2: Specify a URL without a byte stream. The sink writer creates a new file named <em>pwszOutputURL</em>. If <em>pAttributes</em> specifies an attribute store with the MF_TRANSCODE_CONTAINERTYPE attribute, the sink writer uses that attribute to determine the type of file container. Otherwise, if the MF_TRANSCODE_CONTAINERTYPE attribute is absent or <em>pAttributes</em> is <strong><c>null</c></strong>, the sink writer uses the file name extension to select the container type; for example, ".asf" for an ASF file.</li> <li>Case 3: Specify both a URL and a byte stream. The sink writer writes to the byte stream. The URL provided in <em>pwszOutputURL</em> is informational only; the sink writer does not create a new file. If <em>pAttributes</em> specifies an attribute store with the MF_TRANSCODE_CONTAINERTYPE attribute, the sink writer uses that attribute to determine the type of file container. Otherwise, the sink writer uses the file name extension to select the container type. The MF_TRANSCODE_CONTAINERTYPE attribute overrides the URL file name extension in this case.</li> </ul><p>This function is available on Windows?Vista if Platform Update Supplement for Windows?Vista is installed.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MFCreateSinkWriterFromURL']/*"/>	
-            <msdn-id>dd388105</msdn-id>	
-            <unmanaged>HRESULT MFCreateSinkWriterFromURL([In, Optional] const wchar_t* pwszOutputURL,[In, Optional] IMFByteStream* pByteStream,[In, Optional] IMFAttributes* pAttributes,[Out] IMFSinkWriter** ppSinkWriter)</unmanaged>	
-            <unmanaged-short>MFCreateSinkWriterFromURL</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.MediaFoundation.MediaFactory.CreateSourceReaderFromMediaSource(SharpDX.MediaFoundation.MediaSource,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.SourceReader@)">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Creates the source reader from a media source.</p>	
-            </summary>	
-            <param name="mediaSourceRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.MediaFoundation.MediaSource"/></strong> interface of a media source.</p> </dd></param>	
-            <param name="attributesRef"><dd> <p>Pointer to the <strong><see cref="T:SharpDX.MediaFoundation.MediaAttributes"/></strong> interface. You can use this parameter to configure the source reader. For more information, see Source Reader Attributes. This parameter can be <strong><c>null</c></strong>.</p> </dd></param>	
-            <param name="sourceReaderOut"><dd> <p>Receives a reference to the <strong><see cref="T:SharpDX.MediaFoundation.SourceReader"/></strong> interface. The caller must release the interface.</p> </dd></param>	
-            <returns><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><strong><see cref="F:SharpDX.Result.Ok"/></strong></strong></dt> </dl> </td><td> <p>The method succeeded.</p> </td></tr> <tr><td> <dl> <dt><strong><strong>MF_E_DRM_UNSUPPORTED</strong></strong></dt> </dl> </td><td> <p>The source contains protected content.</p> </td></tr> </table><p>?</p></returns>	
-            <remarks>	
-            <p>Call <strong>CoInitialize(Ex)</strong> and <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.Startup(System.Int32,System.Int32)"/></strong> before calling this function.</p><p>By default, when the application releases the source reader, the source reader shuts down the media source by calling <strong><see cref="M:SharpDX.MediaFoundation.MediaSource.Shutdown"/></strong> on the media source. At that point, the application can no longer use the media source.</p><p>To change this default behavior, set the <see cref="F:SharpDX.MediaFoundation.SourceReaderAttributeKeys.DisconnectMediasourceOnShutdown"/> attribute in the <em>pAttributes</em> parameter. If this attribute is <strong>TRUE</strong>, the application is responsible for  shutting down the media source.</p><p>When using the Source Reader, do not call any of the following methods on the media source:</p><ul> <li> <strong><see cref="M:SharpDX.MediaFoundation.MediaSource.Pause"/></strong> </li> <li> <strong><see cref="M:SharpDX.MediaFoundation.MediaSource.Start(SharpDX.MediaFoundation.PresentationDescriptor,System.Nullable{System.Guid},System.Nullable{SharpDX.Win32.Variant})"/></strong> </li> <li> <strong><see cref="M:SharpDX.MediaFoundation.MediaSource.Stop"/></strong> </li> <li>All <strong><see cref="T:SharpDX.MediaFoundation.MediaEventGenerator"/></strong> methods</li> </ul><p>This function is available on Windows?Vista if Platform Update Supplement for Windows?Vista is installed.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MFCreateSourceReaderFromMediaSource']/*"/>	
-            <msdn-id>dd388108</msdn-id>	
-            <unmanaged>HRESULT MFCreateSourceReaderFromMediaSource([In] IMFMediaSource* pMediaSource,[In, Optional] IMFAttributes* pAttributes,[Out] IMFSourceReader** ppSourceReader)</unmanaged>	
-            <unmanaged-short>MFCreateSourceReaderFromMediaSource</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.MediaFoundation.MediaFactory.CreateSourceReaderFromByteStream(System.IntPtr,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.SourceReader@)">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Creates the source reader from a byte stream.</p>	
-            </summary>	
-            <param name="byteStreamRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.MediaFoundation.IByteStream"/></strong> interface of a byte stream. This byte stream will provide the source data for the source reader.</p> </dd></param>	
-            <param name="attributesRef"><dd> <p>Pointer to the <strong><see cref="T:SharpDX.MediaFoundation.MediaAttributes"/></strong> interface. You can use this parameter to configure the source reader. For more information, see Source Reader Attributes. This parameter can be <strong><c>null</c></strong>.</p> </dd></param>	
-            <param name="sourceReaderOut"><dd> <p>Receives a reference to the <strong><see cref="T:SharpDX.MediaFoundation.SourceReader"/></strong> interface. The caller must release the interface.</p> </dd></param>	
-            <returns><p>If this function succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
-            <remarks>	
-            <p>Call <strong>CoInitialize(Ex)</strong> and <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.Startup(System.Int32,System.Int32)"/></strong> before calling this function.</p><p> Internally, the source reader calls the <strong><see cref="M:SharpDX.MediaFoundation.SourceResolver.CreateObjectFromByteStream_(System.IntPtr,System.String,System.Int32,SharpDX.ComObject,SharpDX.MediaFoundation.ObjectType@,SharpDX.ComObject@)"/></strong> method to create a media source from the byte stream. Therefore, a byte-stream handler must be registered for the byte stream. For more information about byte-stream handlers, see Scheme Handlers and Byte-Stream Handlers. </p><p>This function is available on Windows?Vista if Platform Update Supplement for Windows?Vista is installed.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MFCreateSourceReaderFromByteStream']/*"/>	
-            <msdn-id>dd388106</msdn-id>	
-            <unmanaged>HRESULT MFCreateSourceReaderFromByteStream([In] IMFByteStream* pByteStream,[In, Optional] IMFAttributes* pAttributes,[Out] IMFSourceReader** ppSourceReader)</unmanaged>	
-            <unmanaged-short>MFCreateSourceReaderFromByteStream</unmanaged-short>	
         </member>
         <member name="T:SharpDX.MediaFoundation.MediaSessionAttributeKeys">
             <summary>	
@@ -11292,7 +11133,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Queries the Microsoft DirectX Graphics Infrastructure (DXGI) surface for an interface.</p>	
             </summary>	
             <remarks>	
-            <p>You can use this method to get a reference to the <strong><see cref="!:SharpDX.Direct3D11.Texture2D"/></strong> interface of the surface. If the buffer is locked, the method returns <strong>MF_E_INVALIDREQUEST</strong>.</p>	
+            <p>You can use this method to get a reference to the <strong>ID3D11Texture2D</strong> interface of the surface. If the buffer is locked, the method returns <strong>MF_E_INVALIDREQUEST</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFDXGIBuffer']/*"/>	
             <msdn-id>hh447902</msdn-id>	
@@ -11322,7 +11163,7 @@
             <param name="vObjectOut"><dd> <p>Receives a reference to the interface. The caller must release the interface.</p> </dd></param>	
             <returns><p>This method can return one of these values.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>Success.</p> </td></tr> <tr><td> <dl> <dt><strong> E_NOINTERFACE</strong></dt> </dl> </td><td> <p>The object does not support the specified interface.</p> </td></tr> <tr><td> <dl> <dt><strong>MF_E_INVALIDREQUEST</strong></dt> </dl> </td><td> <p>Invalid request.</p> </td></tr> </table><p>?</p></returns>	
             <remarks>	
-            <p>You can use this method to get a reference to the <strong><see cref="!:SharpDX.Direct3D11.Texture2D"/></strong> interface of the surface. If the buffer is locked, the method returns <strong>MF_E_INVALIDREQUEST</strong>.</p>	
+            <p>You can use this method to get a reference to the <strong>ID3D11Texture2D</strong> interface of the surface. If the buffer is locked, the method returns <strong>MF_E_INVALIDREQUEST</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFDXGIBuffer::GetResource']/*"/>	
             <msdn-id>hh447902</msdn-id>	
@@ -11336,7 +11177,7 @@
             <param name="uSubresourceRef"><dd> <p>Receives the zero-based index of the subresource.</p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p>The subresource index is specified when you create the media buffer object. See <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateDXGISurfaceBuffer(System.Guid,SharpDX.ComObject,System.Int32,SharpDX.Bool,SharpDX.MediaFoundation.MediaBuffer@)"/></strong>.</p><p>For more information about texture subresources, see <strong><see cref="!:SharpDX.Direct3D11.Device.CreateTexture2D"/></strong>.</p>	
+            <p>The subresource index is specified when you create the media buffer object. See <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateDXGISurfaceBuffer(System.Guid,SharpDX.ComObject,System.Int32,SharpDX.Bool,SharpDX.MediaFoundation.MediaBuffer@)"/></strong>.</p><p>For more information about texture subresources, see <strong>ID3D11Device::CreateTexture2D</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFDXGIBuffer::GetSubresourceIndex']/*"/>	
             <msdn-id>hh447903</msdn-id>	
@@ -11376,7 +11217,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the index of the subresource that is associated with this media buffer.</p>	
             </summary>	
             <remarks>	
-            <p>The subresource index is specified when you create the media buffer object. See <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateDXGISurfaceBuffer(System.Guid,SharpDX.ComObject,System.Int32,SharpDX.Bool,SharpDX.MediaFoundation.MediaBuffer@)"/></strong>.</p><p>For more information about texture subresources, see <strong><see cref="!:SharpDX.Direct3D11.Device.CreateTexture2D"/></strong>.</p>	
+            <p>The subresource index is specified when you create the media buffer object. See <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateDXGISurfaceBuffer(System.Guid,SharpDX.ComObject,System.Int32,SharpDX.Bool,SharpDX.MediaFoundation.MediaBuffer@)"/></strong>.</p><p>For more information about texture subresources, see <strong>ID3D11Device::CreateTexture2D</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFDXGIBuffer::GetSubresourceIndex']/*"/>	
             <msdn-id>hh447903</msdn-id>	
@@ -11736,7 +11577,7 @@
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Enables the Media Engine to access protected content while in frame-server mode.</p>	
             </summary>	
-            <param name="reservedRef"><dd> <p>A reference to the Direct3D?11 device content. The Media Engine queries this reference for the <strong><see cref="!:SharpDX.Direct3D11.VideoContext"/></strong> interface. </p> </dd></param>	
+            <param name="reservedRef"><dd> <p>A reference to the Direct3D?11 device content. The Media Engine queries this reference for the <strong>ID3D11VideoContext</strong> interface. </p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
             <p>In frame-server mode, this method enables the Media Engine to share protected content with the Direct3D?11 device.</p>	
@@ -14214,7 +14055,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Provides a method that allows content protection systems to perform a handshake with the protected environment. This is needed because the <strong>CreateFile</strong> and <strong>DeviceIoControl</strong> APIs are not available to Metro style apps.</p>	
             </summary>	
             <remarks>	
-            <p>See  <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateProtectedEnvironmentAccess(SharpDX.MediaFoundation.ProtectedEnvironmentAccess@)"/></strong> for an example of how to create and use an <strong><see cref="T:SharpDX.MediaFoundation.ProtectedEnvironmentAccess"/></strong> object.</p>	
+            <p>See  <strong>MFCreateProtectedEnvironmentAccess</strong> for an example of how to create and use an <strong><see cref="T:SharpDX.MediaFoundation.ProtectedEnvironmentAccess"/></strong> object.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFProtectedEnvironmentAccess']/*"/>	
             <msdn-id>hh448045</msdn-id>	
@@ -14246,7 +14087,7 @@
             <param name="output"><dd> <p>A reference to the output data.</p> </dd></param>	
             <returns><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The method succeeded.</p> </td></tr> </table><p>?</p></returns>	
             <remarks>	
-            <p>See  <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateProtectedEnvironmentAccess(SharpDX.MediaFoundation.ProtectedEnvironmentAccess@)"/></strong> for an example of how to create an <strong><see cref="T:SharpDX.MediaFoundation.ProtectedEnvironmentAccess"/></strong> object and use the <strong>Call</strong> method.</p>	
+            <p>See  <strong>MFCreateProtectedEnvironmentAccess</strong> for an example of how to create an <strong><see cref="T:SharpDX.MediaFoundation.ProtectedEnvironmentAccess"/></strong> object and use the <strong>Call</strong> method.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFProtectedEnvironmentAccess::Call']/*"/>	
             <msdn-id>hh448046</msdn-id>	
@@ -14622,7 +14463,7 @@
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Creates an instance of either the sink writer or the source reader.</p>	
             </summary>	
             <remarks>	
-            <p>To get a reference to this interface, call the <strong>CoCreateInstance</strong> function. The CLSID is <strong>CLSID_MFReadWriteClassFactory</strong>. Call the <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.Startup(System.Int32,System.Int32)"/></strong> function before using  the interface.</p><p>As an alternative to using this interface, you can call any of the following functions:</p><ul> <li> <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateSinkWriterFromMediaSink(SharpDX.MediaFoundation.MediaSink,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.SinkWriter@)"/></strong> </li> <li> <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateSinkWriterFromURL(System.String,System.IntPtr,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.SinkWriter@)"/></strong> </li> <li> <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateSourceReaderFromByteStream(System.IntPtr,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.SourceReader@)"/></strong> </li> <li> <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateSourceReaderFromMediaSource(SharpDX.MediaFoundation.MediaSource,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.SourceReader@)"/></strong> </li> <li> <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateSourceReaderFromURL(System.String,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.SourceReader@)"/></strong> </li> </ul><p>Internally, these functions use the <strong><see cref="T:SharpDX.MediaFoundation.ReadWriteClassFactory"/></strong> interface.</p><p>This interface is available on Windows?Vista if Platform Update Supplement for Windows?Vista is installed.</p>	
+            <p>To get a reference to this interface, call the <strong>CoCreateInstance</strong> function. The CLSID is <strong>CLSID_MFReadWriteClassFactory</strong>. Call the <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.Startup(System.Int32,System.Int32)"/></strong> function before using  the interface.</p><p>As an alternative to using this interface, you can call any of the following functions:</p><ul> <li> <strong>MFCreateSinkWriterFromMediaSink</strong> </li> <li> <strong>MFCreateSinkWriterFromURL</strong> </li> <li> <strong>MFCreateSourceReaderFromByteStream</strong> </li> <li> <strong>MFCreateSourceReaderFromMediaSource</strong> </li> <li> <strong>MFCreateSourceReaderFromURL</strong> </li> </ul><p>Internally, these functions use the <strong><see cref="T:SharpDX.MediaFoundation.ReadWriteClassFactory"/></strong> interface.</p><p>This interface is available on Windows?Vista if Platform Update Supplement for Windows?Vista is installed.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFReadWriteClassFactory']/*"/>	
             <msdn-id>dd374514</msdn-id>	
@@ -15295,7 +15136,7 @@
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> Queries an object for a specified service interface. </p>	
             </summary>	
             <remarks>	
-            <p>A service is an interface that is exposed by one object but might be implemented by another object. The <strong>GetService</strong> method is equivalent to <strong>QueryInterface</strong>, with the following difference: when <strong>QueryInterface</strong> retrieves a reference to an interface, it is guaranteed that you can query the returned interface and get back the original interface. The <strong>GetService</strong> method does not make this guarantee, because the retrieved interface might be implemented by a separate object.</p><p>The <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.GetService(SharpDX.ComObject,System.Guid,System.Guid,System.IntPtr@)"/></strong> function is a helper function that queries an object for <strong><see cref="T:SharpDX.MediaFoundation.ServiceProvider"/></strong> and calls the <strong>GetService</strong> method.</p>	
+            <p>A service is an interface that is exposed by one object but might be implemented by another object. The <strong>GetService</strong> method is equivalent to <strong>QueryInterface</strong>, with the following difference: when <strong>QueryInterface</strong> retrieves a reference to an interface, it is guaranteed that you can query the returned interface and get back the original interface. The <strong>GetService</strong> method does not make this guarantee, because the retrieved interface might be implemented by a separate object.</p><p>The <strong>MFGetService</strong> function is a helper function that queries an object for <strong><see cref="T:SharpDX.MediaFoundation.ServiceProvider"/></strong> and calls the <strong>GetService</strong> method.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFGetService']/*"/>	
             <msdn-id>ms694261</msdn-id>	
@@ -15402,7 +15243,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Provides a method that allows content protection systems to get the procedure address of a function in the signed library.  This method provides the same functionality as <strong>GetProcAddress</strong> which is not available to Metro style apps.</p>	
             </summary>	
             <remarks>	
-            <p>See  <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.LoadSignedLibrary(System.String,SharpDX.MediaFoundation.SignedLibrary@)"/></strong> for an example of how to create and use an <strong><see cref="T:SharpDX.MediaFoundation.SignedLibrary"/></strong> object.</p>	
+            <p>See  <strong>MFLoadSignedLibrary</strong> for an example of how to create and use an <strong><see cref="T:SharpDX.MediaFoundation.SignedLibrary"/></strong> object.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFSignedLibrary']/*"/>	
             <msdn-id>hh448058</msdn-id>	
@@ -15432,7 +15273,7 @@
             <param name="address"><dd> <p>Receives the address of the entry point.</p> </dd></param>	
             <returns><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The method succeeded.</p> </td></tr> </table><p>?</p></returns>	
             <remarks>	
-            <p>See  <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.LoadSignedLibrary(System.String,SharpDX.MediaFoundation.SignedLibrary@)"/></strong> for an example of how to create an <strong><see cref="T:SharpDX.MediaFoundation.SignedLibrary"/></strong> object and call the <strong>GetProcedureAddress</strong> method.</p>	
+            <p>See  <strong>MFLoadSignedLibrary</strong> for an example of how to create an <strong><see cref="T:SharpDX.MediaFoundation.SignedLibrary"/></strong> object and call the <strong>GetProcedureAddress</strong> method.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFSignedLibrary::GetProcedureAddress']/*"/>	
             <msdn-id>hh448059</msdn-id>	
@@ -15444,7 +15285,7 @@
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Implemented by the Microsoft Media Foundation sink writer object.</p>	
             </summary>	
             <remarks>	
-            <p>To create the sink writer, call one of the following functions:</p><ul> <li> <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateSinkWriterFromMediaSink(SharpDX.MediaFoundation.MediaSink,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.SinkWriter@)"/></strong> </li> <li> <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateSinkWriterFromURL(System.String,System.IntPtr,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.SinkWriter@)"/></strong> </li> </ul><p>Alternatively, use the <strong><see cref="T:SharpDX.MediaFoundation.ReadWriteClassFactory"/></strong> interface.</p><p>This interface is available on Windows?Vista if Platform Update Supplement for Windows?Vista is installed.</p>	
+            <p>To create the sink writer, call one of the following functions:</p><ul> <li> <strong>MFCreateSinkWriterFromMediaSink</strong> </li> <li> <strong>MFCreateSinkWriterFromURL</strong> </li> </ul><p>Alternatively, use the <strong><see cref="T:SharpDX.MediaFoundation.ReadWriteClassFactory"/></strong> interface.</p><p>This interface is available on Windows?Vista if Platform Update Supplement for Windows?Vista is installed.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFSinkWriter']/*"/>	
             <msdn-id>dd374642</msdn-id>	
@@ -15727,7 +15568,7 @@
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Implemented by the Microsoft Media Foundation source reader object.</p>	
             </summary>	
             <remarks>	
-            <p>To create the source reader, call one of the following functions:</p><ul> <li> <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateSourceReaderFromByteStream(System.IntPtr,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.SourceReader@)"/></strong> </li> <li> <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateSourceReaderFromMediaSource(SharpDX.MediaFoundation.MediaSource,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.SourceReader@)"/></strong> </li> <li> <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateSourceReaderFromURL(System.String,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.SourceReader@)"/></strong> </li> </ul><p>Alternatively, use the <strong><see cref="T:SharpDX.MediaFoundation.ReadWriteClassFactory"/></strong> interface.</p><p>This interface is available on Windows?Vista if Platform Update Supplement for Windows?Vista is installed.</p>	
+            <p>To create the source reader, call one of the following functions:</p><ul> <li> <strong>MFCreateSourceReaderFromByteStream</strong> </li> <li> <strong>MFCreateSourceReaderFromMediaSource</strong> </li> <li> <strong>MFCreateSourceReaderFromURL</strong> </li> </ul><p>Alternatively, use the <strong><see cref="T:SharpDX.MediaFoundation.ReadWriteClassFactory"/></strong> interface.</p><p>This interface is available on Windows?Vista if Platform Update Supplement for Windows?Vista is installed.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFSourceReader']/*"/>	
             <msdn-id>dd374655</msdn-id>	

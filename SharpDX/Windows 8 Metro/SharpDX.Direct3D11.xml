@@ -203,11 +203,22 @@
             <unmanaged>D3D11_BLEND_DESC</unmanaged>	
             <unmanaged-short>D3D11_BLEND_DESC</unmanaged-short>	
         </member>
+        <member name="M:SharpDX.Direct3D11.BlendStateDescription.Default">
+            <summary>
+            Returns default values for <see cref="T:SharpDX.Direct3D11.BlendStateDescription"/>. 
+            </summary>
+            <remarks>
+            See MSDN documentation for default values.
+            </remarks>
+        </member>
         <member name="M:SharpDX.Direct3D11.BlendStateDescription.Clone">
             <summary>
             Clones this instance.
             </summary>
-            <returns></returns>
+            <returns>A copy of this instance.</returns>
+            <remarks>
+            Because this structure contains an array, it is not possible to modify it without making an explicit clone method.
+            </remarks>
         </member>
         <member name="F:SharpDX.Direct3D11.BlendStateDescription.AlphaToCoverageEnable">
             <summary>	
@@ -957,6 +968,98 @@
             <unmanaged>GetDesc1</unmanaged>	
             <unmanaged-short>GetDesc1</unmanaged-short>	
             <unmanaged>void ID3D11BlendState1::GetDesc1([Out] D3D11_BLEND_DESC1* pDesc)</unmanaged>
+        </member>
+        <member name="T:SharpDX.Direct3D11.DepthStencilStateDescription">
+            <summary>	
+            <p>Describes depth-stencil state.</p>	
+            </summary>	
+            <remarks>	
+            <p>Depth-stencil state controls how depth-stencil testing is performed by the output-merger stage.</p><p>The following table shows the default values of depth-stencil states.</p><table> <tr><th>State</th><th>Default Value</th></tr> <tr><td>DepthEnable</td><td>TRUE</td></tr> <tr><td>DepthWriteMask</td><td><see cref="F:SharpDX.Direct3D11.DepthWriteMask.All"/></td></tr> <tr><td>DepthFunc</td><td><see cref="F:SharpDX.Direct3D11.Comparison.Less"/></td></tr> <tr><td>StencilEnable</td><td><see cref="F:SharpDX.Result.False"/></td></tr> <tr><td>StencilReadMask</td><td>D3D11_DEFAULT_STENCIL_READ_MASK</td></tr> <tr><td>StencilWriteMask</td><td>D3D11_DEFAULT_STENCIL_WRITE_MASK</td></tr> <tr><td> <p>FrontFace.StencilFunc</p> <p>and</p> <p>BackFace.StencilFunc</p> </td><td><see cref="F:SharpDX.Direct3D11.Comparison.Always"/></td></tr> <tr><td> <p>FrontFace.StencilDepthFailOp</p> <p>and</p> <p>BackFace.StencilDepthFailOp</p> </td><td><see cref="F:SharpDX.Direct3D11.StencilOperation.Keep"/></td></tr> <tr><td> <p>FrontFace.StencilPassOp</p> <p>and</p> <p>BackFace.StencilPassOp</p> </td><td><see cref="F:SharpDX.Direct3D11.StencilOperation.Keep"/></td></tr> <tr><td> <p>FrontFace.StencilFailOp</p> <p>and</p> <p>BackFace.StencilFailOp</p> </td><td><see cref="F:SharpDX.Direct3D11.StencilOperation.Keep"/></td></tr> </table><p>?</p><p>The formats that support stenciling are <see cref="F:SharpDX.DXGI.Format.D24_UNorm_S8_UInt"/> and <see cref="F:SharpDX.DXGI.Format.D32_Float_S8X24_UInt"/>.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC']/*"/>	
+            <msdn-id>ff476110</msdn-id>	
+            <unmanaged>D3D11_DEPTH_STENCIL_DESC</unmanaged>	
+            <unmanaged-short>D3D11_DEPTH_STENCIL_DESC</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.DepthStencilStateDescription.Default">
+            <summary>
+            Returns default values for <see cref="T:SharpDX.Direct3D11.DepthStencilStateDescription"/>. 
+            </summary>
+            <remarks>
+            See MSDN documentation for default values.
+            </remarks>
+        </member>
+        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.IsDepthEnabled">
+            <summary>	
+            <dd> <p>Enable depth testing.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::DepthEnable']/*"/>	
+            <msdn-id>ff476110</msdn-id>	
+            <unmanaged>BOOL DepthEnable</unmanaged>	
+            <unmanaged-short>BOOL DepthEnable</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.DepthWriteMask">
+            <summary>	
+            <dd> <p>Identify a portion of the depth-stencil buffer that can be modified by depth data (see <strong><see cref="T:SharpDX.Direct3D11.DepthWriteMask"/></strong>).</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::DepthWriteMask']/*"/>	
+            <msdn-id>ff476110</msdn-id>	
+            <unmanaged>D3D11_DEPTH_WRITE_MASK DepthWriteMask</unmanaged>	
+            <unmanaged-short>D3D11_DEPTH_WRITE_MASK DepthWriteMask</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.DepthComparison">
+            <summary>	
+            <dd> <p>A function that compares depth data against existing depth data. The function options are listed in <strong><see cref="T:SharpDX.Direct3D11.Comparison"/></strong>.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::DepthFunc']/*"/>	
+            <msdn-id>ff476110</msdn-id>	
+            <unmanaged>D3D11_COMPARISON_FUNC DepthFunc</unmanaged>	
+            <unmanaged-short>D3D11_COMPARISON_FUNC DepthFunc</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.IsStencilEnabled">
+            <summary>	
+            <dd> <p>Enable stencil testing.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::StencilEnable']/*"/>	
+            <msdn-id>ff476110</msdn-id>	
+            <unmanaged>BOOL StencilEnable</unmanaged>	
+            <unmanaged-short>BOOL StencilEnable</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.StencilReadMask">
+            <summary>	
+            <dd> <p>Identify a portion of the depth-stencil buffer for reading stencil data.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::StencilReadMask']/*"/>	
+            <msdn-id>ff476110</msdn-id>	
+            <unmanaged>unsigned char StencilReadMask</unmanaged>	
+            <unmanaged-short>unsigned char StencilReadMask</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.StencilWriteMask">
+            <summary>	
+            <dd> <p>Identify a portion of the depth-stencil buffer for writing stencil data.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::StencilWriteMask']/*"/>	
+            <msdn-id>ff476110</msdn-id>	
+            <unmanaged>unsigned char StencilWriteMask</unmanaged>	
+            <unmanaged-short>unsigned char StencilWriteMask</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.FrontFace">
+            <summary>	
+            <dd> <p>Identify how to use the results of the depth test and the stencil test for pixels whose surface normal is facing towards the camera (see <strong><see cref="T:SharpDX.Direct3D11.DepthStencilOperationDescription"/></strong>).</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::FrontFace']/*"/>	
+            <msdn-id>ff476110</msdn-id>	
+            <unmanaged>D3D11_DEPTH_STENCILOP_DESC FrontFace</unmanaged>	
+            <unmanaged-short>D3D11_DEPTH_STENCILOP_DESC FrontFace</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.BackFace">
+            <summary>	
+            <dd> <p>Identify how to use the results of the depth test and the stencil test for pixels whose surface normal is facing away from the camera (see <strong><see cref="T:SharpDX.Direct3D11.DepthStencilOperationDescription"/></strong>).</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::BackFace']/*"/>	
+            <msdn-id>ff476110</msdn-id>	
+            <unmanaged>D3D11_DEPTH_STENCILOP_DESC BackFace</unmanaged>	
+            <unmanaged-short>D3D11_DEPTH_STENCILOP_DESC BackFace</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D11.Device1">
             <summary>	
@@ -2200,6 +2303,122 @@
             <unmanaged>Direct3D11</unmanaged>	
             <unmanaged-short>Direct3D11</unmanaged-short>	
         </member>
+        <member name="T:SharpDX.Direct3D11.RasterizerStateDescription">
+            <summary>	
+            <p>Describes rasterizer state.</p>	
+            </summary>	
+            <remarks>	
+            <p>Rasterizer state defines the behavior of the rasterizer stage; to set rasterizer state, call <strong><see cref="M:SharpDX.Direct3D11.RasterizerStage.SetState(SharpDX.Direct3D11.RasterizerState)"/></strong>.</p><p>These are the default values for rasterizer state.</p><table> <tr><th>State</th><th>Default Value</th></tr> <tr><td>FillMode</td><td>Solid</td></tr> <tr><td>CullMode</td><td>Back</td></tr> <tr><td>FrontCounterClockwise</td><td><see cref="F:SharpDX.Result.False"/></td></tr> <tr><td>DepthBias</td><td>0</td></tr> <tr><td>SlopeScaledDepthBias</td><td>0.0f</td></tr> <tr><td>DepthBiasClamp</td><td>0.0f</td></tr> <tr><td>DepthClipEnable</td><td>TRUE</td></tr> <tr><td>ScissorEnable</td><td><see cref="F:SharpDX.Result.False"/></td></tr> <tr><td>MultisampleEnable</td><td><see cref="F:SharpDX.Result.False"/></td></tr> <tr><td>AntialiasedLineEnable</td><td><see cref="F:SharpDX.Result.False"/></td></tr> </table><p>?</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC']/*"/>	
+            <msdn-id>ff476198</msdn-id>	
+            <unmanaged>D3D11_RASTERIZER_DESC</unmanaged>	
+            <unmanaged-short>D3D11_RASTERIZER_DESC</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.RasterizerStateDescription.Default">
+            <summary>
+            Returns default values for <see cref="T:SharpDX.Direct3D11.RasterizerStateDescription"/>. 
+            </summary>
+            <remarks>
+            See MSDN documentation for default values.
+            </remarks>
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.FillMode">
+            <summary>	
+            <dd> <p>Determines the fill mode to use when rendering (see <strong><see cref="T:SharpDX.Direct3D11.FillMode"/></strong>).</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::FillMode']/*"/>	
+            <msdn-id>ff476198</msdn-id>	
+            <unmanaged>D3D11_FILL_MODE FillMode</unmanaged>	
+            <unmanaged-short>D3D11_FILL_MODE FillMode</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.CullMode">
+            <summary>	
+            <dd> <p>Indicates triangles facing the specified direction are not drawn (see <strong><see cref="T:SharpDX.Direct3D11.CullMode"/></strong>).</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::CullMode']/*"/>	
+            <msdn-id>ff476198</msdn-id>	
+            <unmanaged>D3D11_CULL_MODE CullMode</unmanaged>	
+            <unmanaged-short>D3D11_CULL_MODE CullMode</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.IsFrontCounterClockwise">
+            <summary>	
+            <dd> <p>Determines if a triangle is front- or back-facing. If this parameter is true, then a triangle will be considered front-facing if its vertices are counter-clockwise on the render target and considered back-facing if they are clockwise. If this parameter is false then the opposite is true.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::FrontCounterClockwise']/*"/>	
+            <msdn-id>ff476198</msdn-id>	
+            <unmanaged>BOOL FrontCounterClockwise</unmanaged>	
+            <unmanaged-short>BOOL FrontCounterClockwise</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.DepthBias">
+            <summary>	
+            <dd> <p>Depth value added to a given pixel.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::DepthBias']/*"/>	
+            <msdn-id>ff476198</msdn-id>	
+            <unmanaged>int DepthBias</unmanaged>	
+            <unmanaged-short>int DepthBias</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.DepthBiasClamp">
+            <summary>	
+            <dd> <p>Maximum depth bias of a pixel.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::DepthBiasClamp']/*"/>	
+            <msdn-id>ff476198</msdn-id>	
+            <unmanaged>float DepthBiasClamp</unmanaged>	
+            <unmanaged-short>float DepthBiasClamp</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.SlopeScaledDepthBias">
+            <summary>	
+            <dd> <p>Scalar on a given pixel's slope.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::SlopeScaledDepthBias']/*"/>	
+            <msdn-id>ff476198</msdn-id>	
+            <unmanaged>float SlopeScaledDepthBias</unmanaged>	
+            <unmanaged-short>float SlopeScaledDepthBias</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.IsDepthClipEnabled">
+            <summary>	
+            <dd> <p>Enable clipping based on distance.</p> <p>The hardware always performs x and y clipping of rasterized coordinates. When <strong>DepthClipEnable</strong> is set to the default?TRUE, the hardware also clips the z value (that is, the hardware performs the last step of the following algorithm).	
+            </p> <code> 0 &lt; w	
+            -w &lt;= x &lt;= w (or arbitrarily wider range if implementation uses a guard band to reduce clipping burden)	
+            -w &lt;= y &lt;= w (or arbitrarily wider range if implementation uses a guard band to reduce clipping burden)	
+            0 &lt;= z &lt;= w	
+            </code> <p>When you set <strong>DepthClipEnable</strong> to <see cref="F:SharpDX.Result.False"/>, the hardware skips the z clipping (that is, the last step in the preceding algorithm). However, the hardware still performs the "0 &lt; w" clipping. When z clipping is disabled, improper depth ordering at the pixel level might result. However, when z clipping is disabled, stencil shadow implementations are simplified. In other words, you can avoid complex special-case handling for geometry that goes beyond the back clipping plane.	
+            </p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::DepthClipEnable']/*"/>	
+            <msdn-id>ff476198</msdn-id>	
+            <unmanaged>BOOL DepthClipEnable</unmanaged>	
+            <unmanaged-short>BOOL DepthClipEnable</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.IsScissorEnabled">
+            <summary>	
+            <dd> <p>Enable scissor-rectangle culling. All pixels ouside an active scissor rectangle are culled.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::ScissorEnable']/*"/>	
+            <msdn-id>ff476198</msdn-id>	
+            <unmanaged>BOOL ScissorEnable</unmanaged>	
+            <unmanaged-short>BOOL ScissorEnable</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.IsMultisampleEnabled">
+            <summary>	
+            <dd> <p>Enable multisample antialiasing.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::MultisampleEnable']/*"/>	
+            <msdn-id>ff476198</msdn-id>	
+            <unmanaged>BOOL MultisampleEnable</unmanaged>	
+            <unmanaged-short>BOOL MultisampleEnable</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.IsAntialiasedLineEnabled">
+            <summary>	
+            <dd> <p>Enable line antialiasing; only applies if doing line drawing and <em>MultisampleEnable</em> is false.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::AntialiasedLineEnable']/*"/>	
+            <msdn-id>ff476198</msdn-id>	
+            <unmanaged>BOOL AntialiasedLineEnable</unmanaged>	
+            <unmanaged-short>BOOL AntialiasedLineEnable</unmanaged-short>	
+        </member>
         <member name="T:SharpDX.Direct3D11.RasterizerState1">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>The rasterizer-state interface holds a description for rasterizer state that you can bind to the rasterizer stage. This rasterizer-state interface supports forced sample count.</p>	
@@ -2253,20 +2472,30 @@
             <unmanaged-short>ID3D11RasterizerState::GetDesc</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.RasterizerState.#ctor(SharpDX.Direct3D11.Device,SharpDX.Direct3D11.RasterizerStateDescription)">
-            <summary>
-              Constructs a new <see cref = "T:SharpDX.Direct3D11.RasterizerState" /> based on the specified description.
-            </summary>
+            <summary>	
+            <p>Create a rasterizer state object that tells the rasterizer stage how to behave.</p>	
+            </summary>	
             <param name = "device">The device with which to associate the state object.</param>
-            <param name = "description">The state description.</param>
-            <returns>The newly created object.</returns>
+            <param name="description">A rasterizer state description</param>	
+            <remarks>	
+            <p>4096 unique rasterizer state objects can be created on a device at a time.</p><p>If an application attempts to create a rasterizer-state interface with the same state as an existing interface, the same interface will be returned and the total number of unique rasterizer state objects will stay the same.</p>	
+            </remarks>	
+            <msdn-id>ff476516</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateRasterizerState([In] const D3D11_RASTERIZER_DESC* pRasterizerDesc,[Out, Fast] ID3D11RasterizerState** ppRasterizerState)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateRasterizerState</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.RasterizerState.#ctor(SharpDX.Direct3D11.Device,SharpDX.Direct3D11.RasterizerStateDescription@)">
-            <summary>
-              Constructs a new <see cref = "T:SharpDX.Direct3D11.RasterizerState" /> based on the specified description.
-            </summary>
+            <summary>	
+            <p>Create a rasterizer state object that tells the rasterizer stage how to behave.</p>	
+            </summary>	
             <param name = "device">The device with which to associate the state object.</param>
-            <param name = "description">The state description.</param>
-            <returns>The newly created object.</returns>
+            <param name="description">A rasterizer state description</param>	
+            <remarks>	
+            <p>4096 unique rasterizer state objects can be created on a device at a time.</p><p>If an application attempts to create a rasterizer-state interface with the same state as an existing interface, the same interface will be returned and the total number of unique rasterizer state objects will stay the same.</p>	
+            </remarks>	
+            <msdn-id>ff476516</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateRasterizerState([In] const D3D11_RASTERIZER_DESC* pRasterizerDesc,[Out, Fast] ID3D11RasterizerState** ppRasterizerState)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateRasterizerState</unmanaged-short>	
         </member>
         <member name="P:SharpDX.Direct3D11.RasterizerState.Description">
             <summary>	
@@ -3919,6 +4148,9 @@
             <param name = "device">The device with which to associate the state object.</param>
             <param name = "description">The state description.</param>
             <returns>The newly created object.</returns>
+            <msdn-id>ff476506</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateDepthStencilState([In] const D3D11_DEPTH_STENCIL_DESC* pDepthStencilDesc,[Out, Fast] ID3D11DepthStencilState** ppDepthStencilState)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateDepthStencilState</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.DepthStencilState.#ctor(SharpDX.Direct3D11.Device,SharpDX.Direct3D11.DepthStencilStateDescription@)">
             <summary>
@@ -3927,6 +4159,9 @@
             <param name = "device">The device with which to associate the state object.</param>
             <param name = "description">The state description.</param>
             <returns>The newly created object.</returns>
+            <msdn-id>ff476506</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateDepthStencilState([In] const D3D11_DEPTH_STENCIL_DESC* pDepthStencilDesc,[Out, Fast] ID3D11DepthStencilState** ppDepthStencilState)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateDepthStencilState</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.DepthStencilState.#ctor(System.IntPtr)">
             <summary>
@@ -5006,26 +5241,42 @@
         </member>
         <member name="M:SharpDX.Direct3D11.InputAssemblerStage.SetVertexBuffers(System.Int32,SharpDX.Direct3D11.VertexBufferBinding)">
             <summary>
-              Binds a single vertex buffer to the input assembler.
-            </summary>
-            <param name = "slot">Index of the slot to which to bind the vertex buffer.</param>
-            <param name = "vertexBufferBinding">A binding for the input vertex buffer.</param>
+            <p>Bind a single vertex buffer to the input-assembler stage.</p>	
+            </summary>	
+            <param name="slot"><dd>  <p>The first input slot for binding. The first vertex buffer is explicitly bound to the start slot; this causes each additional vertex buffer in the array to be implicitly bound to each subsequent input slot. The maximum of 16 or 32 input slots (ranges from 0 to <see cref="F:SharpDX.Direct3D11.InputAssemblerStage.VertexInputResourceSlotCount"/> - 1) are available; the maximum number of input slots depends on the feature level.</p> </dd></param>	
+            <param name="vertexBufferBinding"><dd>  <p>A <see cref="T:SharpDX.Direct3D11.VertexBufferBinding"/>. The vertex buffer must have been created with the <strong><see cref="F:SharpDX.Direct3D11.BindFlags.VertexBuffer"/></strong> flag.</p> </dd></param>        /// <remarks>	
+            <p>For information about creating vertex buffers, see Create a Vertex Buffer.</p><p>Calling this method using a buffer that is currently bound for writing (i.e. bound to the stream output pipeline stage) will effectively bind <strong><c>null</c></strong> instead because a buffer cannot be bound as both an input and an output at the same time.</p><p>The debug layer will generate a warning whenever a resource is prevented from being bound simultaneously as an input and an output, but this will not prevent invalid data from being used by the runtime.</p><p> The method will hold a reference to the interfaces passed in. This differs from the device state behavior in Direct3D 10. </p>	
+            </remarks>	
+            <msdn-id>ff476456</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::IASetVertexBuffers([In] unsigned int StartSlot,[In] unsigned int NumBuffers,[In, Buffer] const void* ppVertexBuffers,[In, Buffer] const void* pStrides,[In, Buffer] const void* pOffsets)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::IASetVertexBuffers</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.InputAssemblerStage.SetVertexBuffers(System.Int32,SharpDX.Direct3D11.VertexBufferBinding[])">
             <summary>
-              Binds an array of vertex buffers to the input assembler.
-            </summary>
-            <param name = "firstSlot">Index of the first input slot to use for binding. The first vertex buffer is explicitly bound to the start slot; this causes each additional vertex buffer in the array to be implicitly bound to each subsequent input slot. There are 16 input slots.</param>
-            <param name = "vertexBufferBindings">An array of bindings for input vertex buffers.</param>
+            <p>Bind an array of vertex buffers to the input-assembler stage.</p>	
+            </summary>	
+            <param name="firstSlot"><dd>  <p>The first input slot for binding. The first vertex buffer is explicitly bound to the start slot; this causes each additional vertex buffer in the array to be implicitly bound to each subsequent input slot. The maximum of 16 or 32 input slots (ranges from 0 to <see cref="F:SharpDX.Direct3D11.InputAssemblerStage.VertexInputResourceSlotCount"/> - 1) are available; the maximum number of input slots depends on the feature level.</p> </dd></param>	
+            <param name="vertexBufferBindings"><dd>  <p>A reference to an array of <see cref="T:SharpDX.Direct3D11.VertexBufferBinding"/>. The vertex buffers must have been created with the <strong><see cref="F:SharpDX.Direct3D11.BindFlags.VertexBuffer"/></strong> flag.</p> </dd></param>        /// <remarks>	
+            <p>For information about creating vertex buffers, see Create a Vertex Buffer.</p><p>Calling this method using a buffer that is currently bound for writing (i.e. bound to the stream output pipeline stage) will effectively bind <strong><c>null</c></strong> instead because a buffer cannot be bound as both an input and an output at the same time.</p><p>The debug layer will generate a warning whenever a resource is prevented from being bound simultaneously as an input and an output, but this will not prevent invalid data from being used by the runtime.</p><p> The method will hold a reference to the interfaces passed in. This differs from the device state behavior in Direct3D 10. </p>	
+            </remarks>	
+            <msdn-id>ff476456</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::IASetVertexBuffers([In] unsigned int StartSlot,[In] unsigned int NumBuffers,[In, Buffer] const void* ppVertexBuffers,[In, Buffer] const void* pStrides,[In, Buffer] const void* pOffsets)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::IASetVertexBuffers</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.InputAssemblerStage.SetVertexBuffers(System.Int32,SharpDX.Direct3D11.Buffer[],System.Int32[],System.Int32[])">
             <summary>
-            Binds an array of vertex buffers to the input assembler.
-            </summary>
-            <param name="slot">Index of the first input slot to use for binding. The first vertex buffer is explicitly bound to the start slot; this causes each additional vertex buffer in the array to be implicitly bound to each subsequent input slot. There are 16 input slots.</param>
-            <param name="vertexBuffers">The vertex buffers.</param>
-            <param name="stridesRef">The strides.</param>
-            <param name="offsetsRef">The offsets.</param>
+            <p>Bind an array of vertex buffers to the input-assembler stage.</p>	
+            </summary>	
+            <param name="slot"><dd>  <p>The first input slot for binding. The first vertex buffer is explicitly bound to the start slot; this causes each additional vertex buffer in the array to be implicitly bound to each subsequent input slot. The maximum of 16 or 32 input slots (ranges from 0 to <see cref="F:SharpDX.Direct3D11.InputAssemblerStage.VertexInputResourceSlotCount"/> - 1) are available; the maximum number of input slots depends on the feature level.</p> </dd></param>	
+            <param name="vertexBuffers"><dd>  <p>A reference to an array of vertex buffers (see <strong><see cref="T:SharpDX.Direct3D11.Buffer"/></strong>). The vertex buffers must have been created with the <strong><see cref="F:SharpDX.Direct3D11.BindFlags.VertexBuffer"/></strong> flag.</p> </dd></param>	
+            <param name="stridesRef"><dd>  <p>Pointer to an array of stride values; one stride value for each buffer in the vertex-buffer array. Each stride is the size (in bytes) of the elements that are to be used from that vertex buffer.</p> </dd></param>	
+            <param name="offsetsRef"><dd>  <p>Pointer to an array of offset values; one offset value for each buffer in the vertex-buffer array. Each offset is the number of bytes between the first element of a vertex buffer and the first element that will be used.</p> </dd></param>	
+            <remarks>	
+            <p>For information about creating vertex buffers, see Create a Vertex Buffer.</p><p>Calling this method using a buffer that is currently bound for writing (i.e. bound to the stream output pipeline stage) will effectively bind <strong><c>null</c></strong> instead because a buffer cannot be bound as both an input and an output at the same time.</p><p>The debug layer will generate a warning whenever a resource is prevented from being bound simultaneously as an input and an output, but this will not prevent invalid data from being used by the runtime.</p><p> The method will hold a reference to the interfaces passed in. This differs from the device state behavior in Direct3D 10. </p>	
+            </remarks>	
+            <msdn-id>ff476456</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::IASetVertexBuffers([In] unsigned int StartSlot,[In] unsigned int NumBuffers,[In, Buffer] const void* ppVertexBuffers,[In, Buffer] const void* pStrides,[In, Buffer] const void* pOffsets)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::IASetVertexBuffers</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.InputAssemblerStage.#ctor(System.IntPtr)">
             <summary>
@@ -5255,18 +5506,33 @@
             <summary>
               Unbinds all depth-stencil buffer and render targets from the output-merger stage.
             </summary>
+            <msdn-id>ff476464</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::OMSetRenderTargets([In] unsigned int NumViews,[In] const void** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::OMSetRenderTargets</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.OutputMergerStage.SetTargets(SharpDX.Direct3D11.RenderTargetView[])">
-            <summary>
-              Binds a set of render targets to the output-merger stage.
-            </summary>
+            <summary>	
+            <p>Bind one or more render targets atomically and the depth-stencil buffer to the output-merger stage.</p>	
+            </summary>	
             <param name = "renderTargetViews">A set of render target views to bind.</param>
+            <remarks>	
+            <p>The maximum number of active render targets a device can have active at any given time is set by a #define in D3D11.h called  D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT. It is invalid to try to set the same subresource to multiple render target slots.  Any render targets not defined by this call are set to <strong><c>null</c></strong>.</p><p>If any subresources are also currently bound for reading in a different stage or writing (perhaps in a different part of the pipeline),  those bind points will be set to <strong><c>null</c></strong>, in order to prevent the same subresource from being read and written simultaneously in a single rendering operation.</p><p> The method will hold a reference to the interfaces passed in. This differs from the device state behavior in Direct3D 10. </p><p>If the render-target views were created from an array resource type, then all of the render-target views must have the same array size.   This restriction also applies to the depth-stencil view, its array size must match that of the render-target views being bound.</p><p>The pixel shader must be able to simultaneously render to at least eight separate render targets. All of these render targets must access the same type of resource: Buffer, Texture1D, Texture1DArray, Texture2D, Texture2DArray, Texture3D, or TextureCube. All render targets must have the same size in all dimensions (width and height, and depth for 3D or array size for *Array types). If render targets use multisample anti-aliasing, all bound render targets and depth buffer must be the same form of multisample resource (that is, the sample counts must be the same). Each render target can have a different data format. These render target formats are not required to have identical bit-per-element counts.</p><p>Any combination of the eight slots for render targets can have a render target set or not set.</p><p>The same resource view cannot be bound to multiple render target slots simultaneously. However, you can set multiple non-overlapping resource views of a single resource as simultaneous multiple render targets.</p>	
+            </remarks>	
+            <msdn-id>ff476464</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::OMSetRenderTargets([In] unsigned int NumViews,[In] const void** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::OMSetRenderTargets</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.OutputMergerStage.SetTargets(SharpDX.Direct3D11.RenderTargetView)">
-            <summary>
+            <summary>	
               Binds a single render target to the output-merger stage.
-            </summary>
+            </summary>	
             <param name = "renderTargetView">A view of the render target to bind.</param>
+            <remarks>	
+            <p>The maximum number of active render targets a device can have active at any given time is set by a #define in D3D11.h called  D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT. It is invalid to try to set the same subresource to multiple render target slots.  Any render targets not defined by this call are set to <strong><c>null</c></strong>.</p><p>If any subresources are also currently bound for reading in a different stage or writing (perhaps in a different part of the pipeline),  those bind points will be set to <strong><c>null</c></strong>, in order to prevent the same subresource from being read and written simultaneously in a single rendering operation.</p><p> The method will hold a reference to the interfaces passed in. This differs from the device state behavior in Direct3D 10. </p><p>If the render-target views were created from an array resource type, then all of the render-target views must have the same array size.   This restriction also applies to the depth-stencil view, its array size must match that of the render-target views being bound.</p><p>The pixel shader must be able to simultaneously render to at least eight separate render targets. All of these render targets must access the same type of resource: Buffer, Texture1D, Texture1DArray, Texture2D, Texture2DArray, Texture3D, or TextureCube. All render targets must have the same size in all dimensions (width and height, and depth for 3D or array size for *Array types). If render targets use multisample anti-aliasing, all bound render targets and depth buffer must be the same form of multisample resource (that is, the sample counts must be the same). Each render target can have a different data format. These render target formats are not required to have identical bit-per-element counts.</p><p>Any combination of the eight slots for render targets can have a render target set or not set.</p><p>The same resource view cannot be bound to multiple render target slots simultaneously. However, you can set multiple non-overlapping resource views of a single resource as simultaneous multiple render targets.</p>	
+            </remarks>	
+            <msdn-id>ff476464</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::OMSetRenderTargets([In] unsigned int NumViews,[In] const void** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::OMSetRenderTargets</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.OutputMergerStage.SetTargets(SharpDX.Direct3D11.DepthStencilView,SharpDX.Direct3D11.RenderTargetView[])">
             <summary>
@@ -5274,6 +5540,12 @@
             </summary>
             <param name = "depthStencilView">A view of the depth-stencil buffer to bind.</param>
             <param name = "renderTargetViews">A set of render target views to bind.</param>
+            <remarks>	
+            <p>The maximum number of active render targets a device can have active at any given time is set by a #define in D3D11.h called  D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT. It is invalid to try to set the same subresource to multiple render target slots.  Any render targets not defined by this call are set to <strong><c>null</c></strong>.</p><p>If any subresources are also currently bound for reading in a different stage or writing (perhaps in a different part of the pipeline),  those bind points will be set to <strong><c>null</c></strong>, in order to prevent the same subresource from being read and written simultaneously in a single rendering operation.</p><p> The method will hold a reference to the interfaces passed in. This differs from the device state behavior in Direct3D 10. </p><p>If the render-target views were created from an array resource type, then all of the render-target views must have the same array size.   This restriction also applies to the depth-stencil view, its array size must match that of the render-target views being bound.</p><p>The pixel shader must be able to simultaneously render to at least eight separate render targets. All of these render targets must access the same type of resource: Buffer, Texture1D, Texture1DArray, Texture2D, Texture2DArray, Texture3D, or TextureCube. All render targets must have the same size in all dimensions (width and height, and depth for 3D or array size for *Array types). If render targets use multisample anti-aliasing, all bound render targets and depth buffer must be the same form of multisample resource (that is, the sample counts must be the same). Each render target can have a different data format. These render target formats are not required to have identical bit-per-element counts.</p><p>Any combination of the eight slots for render targets can have a render target set or not set.</p><p>The same resource view cannot be bound to multiple render target slots simultaneously. However, you can set multiple non-overlapping resource views of a single resource as simultaneous multiple render targets.</p>	
+            </remarks>	
+            <msdn-id>ff476464</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::OMSetRenderTargets([In] unsigned int NumViews,[In] const void** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::OMSetRenderTargets</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.OutputMergerStage.SetTargets(SharpDX.Direct3D11.DepthStencilView,SharpDX.Direct3D11.RenderTargetView)">
             <summary>
@@ -5281,6 +5553,12 @@
             </summary>
             <param name = "depthStencilView">A view of the depth-stencil buffer to bind.</param>
             <param name = "renderTargetView">A view of the render target to bind.</param>
+            <remarks>	
+            <p>The maximum number of active render targets a device can have active at any given time is set by a #define in D3D11.h called  D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT. It is invalid to try to set the same subresource to multiple render target slots.  Any render targets not defined by this call are set to <strong><c>null</c></strong>.</p><p>If any subresources are also currently bound for reading in a different stage or writing (perhaps in a different part of the pipeline),  those bind points will be set to <strong><c>null</c></strong>, in order to prevent the same subresource from being read and written simultaneously in a single rendering operation.</p><p> The method will hold a reference to the interfaces passed in. This differs from the device state behavior in Direct3D 10. </p><p>If the render-target views were created from an array resource type, then all of the render-target views must have the same array size.   This restriction also applies to the depth-stencil view, its array size must match that of the render-target views being bound.</p><p>The pixel shader must be able to simultaneously render to at least eight separate render targets. All of these render targets must access the same type of resource: Buffer, Texture1D, Texture1DArray, Texture2D, Texture2DArray, Texture3D, or TextureCube. All render targets must have the same size in all dimensions (width and height, and depth for 3D or array size for *Array types). If render targets use multisample anti-aliasing, all bound render targets and depth buffer must be the same form of multisample resource (that is, the sample counts must be the same). Each render target can have a different data format. These render target formats are not required to have identical bit-per-element counts.</p><p>Any combination of the eight slots for render targets can have a render target set or not set.</p><p>The same resource view cannot be bound to multiple render target slots simultaneously. However, you can set multiple non-overlapping resource views of a single resource as simultaneous multiple render targets.</p>	
+            </remarks>	
+            <msdn-id>ff476464</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::OMSetRenderTargets([In] unsigned int NumViews,[In] const void** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::OMSetRenderTargets</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.OutputMergerStage.SetTargets(SharpDX.Direct3D11.DepthStencilView,SharpDX.ComArray{SharpDX.Direct3D11.RenderTargetView})">
             <summary>
@@ -5289,6 +5567,12 @@
             <param name = "depthStencilView">A view of the depth-stencil buffer to bind.</param>
             <param name = "renderTargetViews">A set of render target views to bind.</param>
             <unmanaged>void ID3D11DeviceContext::OMSetRenderTargets([In] unsigned int NumViews,[In, Buffer, Optional] const ID3D11RenderTargetView** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView)</unmanaged>	
+            <remarks>	
+            <p>The maximum number of active render targets a device can have active at any given time is set by a #define in D3D11.h called  D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT. It is invalid to try to set the same subresource to multiple render target slots.  Any render targets not defined by this call are set to <strong><c>null</c></strong>.</p><p>If any subresources are also currently bound for reading in a different stage or writing (perhaps in a different part of the pipeline),  those bind points will be set to <strong><c>null</c></strong>, in order to prevent the same subresource from being read and written simultaneously in a single rendering operation.</p><p> The method will hold a reference to the interfaces passed in. This differs from the device state behavior in Direct3D 10. </p><p>If the render-target views were created from an array resource type, then all of the render-target views must have the same array size.   This restriction also applies to the depth-stencil view, its array size must match that of the render-target views being bound.</p><p>The pixel shader must be able to simultaneously render to at least eight separate render targets. All of these render targets must access the same type of resource: Buffer, Texture1D, Texture1DArray, Texture2D, Texture2DArray, Texture3D, or TextureCube. All render targets must have the same size in all dimensions (width and height, and depth for 3D or array size for *Array types). If render targets use multisample anti-aliasing, all bound render targets and depth buffer must be the same form of multisample resource (that is, the sample counts must be the same). Each render target can have a different data format. These render target formats are not required to have identical bit-per-element counts.</p><p>Any combination of the eight slots for render targets can have a render target set or not set.</p><p>The same resource view cannot be bound to multiple render target slots simultaneously. However, you can set multiple non-overlapping resource views of a single resource as simultaneous multiple render targets.</p>	
+            </remarks>	
+            <msdn-id>ff476464</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::OMSetRenderTargets([In] unsigned int NumViews,[In] const void** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::OMSetRenderTargets</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.OutputMergerStage.SetTargets(SharpDX.ComArray{SharpDX.Direct3D11.RenderTargetView})">
             <summary>
@@ -5296,6 +5580,12 @@
             </summary>
             <param name = "renderTargetViews">A set of render target views to bind.</param>
             <unmanaged>void ID3D11DeviceContext::OMSetRenderTargets([In] unsigned int NumViews,[In, Buffer, Optional] const ID3D11RenderTargetView** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView)</unmanaged>	
+            <remarks>	
+            <p>The maximum number of active render targets a device can have active at any given time is set by a #define in D3D11.h called  D3D11_SIMULTANEOUS_RENDER_TARGET_COUNT. It is invalid to try to set the same subresource to multiple render target slots.  Any render targets not defined by this call are set to <strong><c>null</c></strong>.</p><p>If any subresources are also currently bound for reading in a different stage or writing (perhaps in a different part of the pipeline),  those bind points will be set to <strong><c>null</c></strong>, in order to prevent the same subresource from being read and written simultaneously in a single rendering operation.</p><p> The method will hold a reference to the interfaces passed in. This differs from the device state behavior in Direct3D 10. </p><p>If the render-target views were created from an array resource type, then all of the render-target views must have the same array size.   This restriction also applies to the depth-stencil view, its array size must match that of the render-target views being bound.</p><p>The pixel shader must be able to simultaneously render to at least eight separate render targets. All of these render targets must access the same type of resource: Buffer, Texture1D, Texture1DArray, Texture2D, Texture2DArray, Texture3D, or TextureCube. All render targets must have the same size in all dimensions (width and height, and depth for 3D or array size for *Array types). If render targets use multisample anti-aliasing, all bound render targets and depth buffer must be the same form of multisample resource (that is, the sample counts must be the same). Each render target can have a different data format. These render target formats are not required to have identical bit-per-element counts.</p><p>Any combination of the eight slots for render targets can have a render target set or not set.</p><p>The same resource view cannot be bound to multiple render target slots simultaneously. However, you can set multiple non-overlapping resource views of a single resource as simultaneous multiple render targets.</p>	
+            </remarks>	
+            <msdn-id>ff476464</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::OMSetRenderTargets([In] unsigned int NumViews,[In] const void** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::OMSetRenderTargets</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.OutputMergerStage.SetTargets(SharpDX.Direct3D11.RenderTargetView,System.Int32,SharpDX.Direct3D11.UnorderedAccessView[])">
             <summary>
@@ -5304,6 +5594,9 @@
             <param name = "startSlot">Index into a zero-based array to begin setting unordered access views.</param>
             <param name = "unorderedAccessViews">A set of unordered access views to bind.</param>
             <param name = "renderTargetView">A view of the render target to bind.</param>
+            <msdn-id>ff476465</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::OMSetRenderTargetsAndUnorderedAccessViews([In] unsigned int NumRTVs,[In, Buffer, Optional] const ID3D11RenderTargetView** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView,[In] unsigned int UAVStartSlot,[In] unsigned int NumUAVs,[In, Buffer, Optional] const ID3D11UnorderedAccessView** ppUnorderedAccessViews,[In, Buffer, Optional] const unsigned int* pUAVInitialCounts)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::OMSetRenderTargetsAndUnorderedAccessViews</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.OutputMergerStage.SetTargets(System.Int32,SharpDX.Direct3D11.UnorderedAccessView[],SharpDX.Direct3D11.RenderTargetView[])">
             <summary>
@@ -5312,6 +5605,9 @@
             <param name = "startSlot">Index into a zero-based array to begin setting unordered access views.</param>
             <param name = "unorderedAccessViews">A set of unordered access views to bind.</param>
             <param name = "renderTargetViews">A set of render target views to bind.</param>
+            <msdn-id>ff476465</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::OMSetRenderTargetsAndUnorderedAccessViews([In] unsigned int NumRTVs,[In, Buffer, Optional] const ID3D11RenderTargetView** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView,[In] unsigned int UAVStartSlot,[In] unsigned int NumUAVs,[In, Buffer, Optional] const ID3D11UnorderedAccessView** ppUnorderedAccessViews,[In, Buffer, Optional] const unsigned int* pUAVInitialCounts)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::OMSetRenderTargetsAndUnorderedAccessViews</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.OutputMergerStage.SetTargets(SharpDX.Direct3D11.DepthStencilView,SharpDX.Direct3D11.RenderTargetView,System.Int32,SharpDX.Direct3D11.UnorderedAccessView[])">
             <summary>
@@ -5321,6 +5617,9 @@
             <param name = "startSlot">Index into a zero-based array to begin setting unordered access views.</param>
             <param name = "unorderedAccessViews">A set of unordered access views to bind.</param>
             <param name = "renderTargetView">A view of the render target to bind.</param>
+            <msdn-id>ff476465</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::OMSetRenderTargetsAndUnorderedAccessViews([In] unsigned int NumRTVs,[In, Buffer, Optional] const ID3D11RenderTargetView** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView,[In] unsigned int UAVStartSlot,[In] unsigned int NumUAVs,[In, Buffer, Optional] const ID3D11UnorderedAccessView** ppUnorderedAccessViews,[In, Buffer, Optional] const unsigned int* pUAVInitialCounts)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::OMSetRenderTargetsAndUnorderedAccessViews</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.OutputMergerStage.SetTargets(SharpDX.Direct3D11.DepthStencilView,System.Int32,SharpDX.Direct3D11.UnorderedAccessView[],SharpDX.Direct3D11.RenderTargetView[])">
             <summary>
@@ -5330,6 +5629,9 @@
             <param name = "startSlot">Index into a zero-based array to begin setting unordered access views.</param>
             <param name = "unorderedAccessViews">A set of unordered access views to bind.</param>
             <param name = "renderTargetViews">A set of render target views to bind.</param>
+            <msdn-id>ff476465</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::OMSetRenderTargetsAndUnorderedAccessViews([In] unsigned int NumRTVs,[In, Buffer, Optional] const ID3D11RenderTargetView** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView,[In] unsigned int UAVStartSlot,[In] unsigned int NumUAVs,[In, Buffer, Optional] const ID3D11UnorderedAccessView** ppUnorderedAccessViews,[In, Buffer, Optional] const unsigned int* pUAVInitialCounts)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::OMSetRenderTargetsAndUnorderedAccessViews</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.OutputMergerStage.SetTargets(SharpDX.Direct3D11.RenderTargetView,System.Int32,SharpDX.Direct3D11.UnorderedAccessView[],System.Int32[])">
             <summary>
@@ -5339,6 +5641,9 @@
             <param name = "unorderedAccessViews">A set of unordered access views to bind.</param>
             <param name = "renderTargetView">A view of the render target to bind.</param>
             <param name = "initialLengths">An array of Append/Consume buffer offsets. A value of -1 indicates the current offset should be kept. Any other values set the hidden counter for that Appendable/Consumeable UAV.</param>
+            <msdn-id>ff476465</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::OMSetRenderTargetsAndUnorderedAccessViews([In] unsigned int NumRTVs,[In, Buffer, Optional] const ID3D11RenderTargetView** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView,[In] unsigned int UAVStartSlot,[In] unsigned int NumUAVs,[In, Buffer, Optional] const ID3D11UnorderedAccessView** ppUnorderedAccessViews,[In, Buffer, Optional] const unsigned int* pUAVInitialCounts)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::OMSetRenderTargetsAndUnorderedAccessViews</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.OutputMergerStage.SetTargets(System.Int32,SharpDX.Direct3D11.UnorderedAccessView[],System.Int32[],SharpDX.Direct3D11.RenderTargetView[])">
             <summary>
@@ -5348,6 +5653,9 @@
             <param name = "unorderedAccessViews">A set of unordered access views to bind.</param>
             <param name = "renderTargetViews">A set of render target views to bind.</param>
             <param name = "initialLengths">An array of Append/Consume buffer offsets. A value of -1 indicates the current offset should be kept. Any other values set the hidden counter for that Appendable/Consumeable UAV.</param>
+            <msdn-id>ff476465</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::OMSetRenderTargetsAndUnorderedAccessViews([In] unsigned int NumRTVs,[In, Buffer, Optional] const ID3D11RenderTargetView** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView,[In] unsigned int UAVStartSlot,[In] unsigned int NumUAVs,[In, Buffer, Optional] const ID3D11UnorderedAccessView** ppUnorderedAccessViews,[In, Buffer, Optional] const unsigned int* pUAVInitialCounts)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::OMSetRenderTargetsAndUnorderedAccessViews</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.OutputMergerStage.SetTargets(SharpDX.Direct3D11.DepthStencilView,SharpDX.Direct3D11.RenderTargetView,System.Int32,SharpDX.Direct3D11.UnorderedAccessView[],System.Int32[])">
             <summary>
@@ -5358,6 +5666,9 @@
             <param name = "unorderedAccessViews">A set of unordered access views to bind.</param>
             <param name = "renderTargetView">A view of the render target to bind.</param>
             <param name = "initialLengths">An array of Append/Consume buffer offsets. A value of -1 indicates the current offset should be kept. Any other values set the hidden counter for that Appendable/Consumeable UAV.</param>
+            <msdn-id>ff476465</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::OMSetRenderTargetsAndUnorderedAccessViews([In] unsigned int NumRTVs,[In, Buffer, Optional] const ID3D11RenderTargetView** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView,[In] unsigned int UAVStartSlot,[In] unsigned int NumUAVs,[In, Buffer, Optional] const ID3D11UnorderedAccessView** ppUnorderedAccessViews,[In, Buffer, Optional] const unsigned int* pUAVInitialCounts)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::OMSetRenderTargetsAndUnorderedAccessViews</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.OutputMergerStage.SetTargets(SharpDX.Direct3D11.DepthStencilView,System.Int32,SharpDX.Direct3D11.UnorderedAccessView[],System.Int32[],SharpDX.Direct3D11.RenderTargetView[])">
             <summary>
@@ -5368,6 +5679,9 @@
             <param name = "unorderedAccessViews">A set of unordered access views to bind.</param>
             <param name = "renderTargetViews">A set of render target views to bind.</param>
             <param name = "initialLengths">An array of Append/Consume buffer offsets. A value of -1 indicates the current offset should be kept. Any other values set the hidden counter for that Appendable/Consumeable UAV.</param>
+            <msdn-id>ff476465</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::OMSetRenderTargetsAndUnorderedAccessViews([In] unsigned int NumRTVs,[In, Buffer, Optional] const ID3D11RenderTargetView** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView,[In] unsigned int UAVStartSlot,[In] unsigned int NumUAVs,[In, Buffer, Optional] const ID3D11UnorderedAccessView** ppUnorderedAccessViews,[In, Buffer, Optional] const unsigned int* pUAVInitialCounts)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::OMSetRenderTargetsAndUnorderedAccessViews</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.OutputMergerStage.SetRenderTargets(System.Int32,SharpDX.Direct3D11.RenderTargetView[],SharpDX.Direct3D11.DepthStencilView)">
             <unmanaged>void ID3D11DeviceContext::OMSetRenderTargets([In] unsigned int NumViews,[In, Buffer, Optional] const ID3D11RenderTargetView** ppRenderTargetViews,[In, Optional] ID3D11DepthStencilView* pDepthStencilView)</unmanaged>	
@@ -5588,6 +5902,9 @@
             </summary>	
             <returns>An array of viewports (see <see cref="T:SharpDX.Direct3D11.Viewport"/>).</returns>
             <unmanaged>void RSGetViewports([InOut] int* NumViewports,[Out, Buffer, Optional] D3D10_VIEWPORT* pViewports)</unmanaged>
+            <msdn-id>ff476477</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::RSGetViewports([InOut] unsigned int* pNumViewports,[Out, Buffer, Optional] D3D11_VIEWPORT* pViewports)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::RSGetViewports</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.RasterizerStage.GetViewports(SharpDX.Direct3D11.Viewport[])">
             <summary>	
@@ -5595,6 +5912,9 @@
             </summary>	
             <returns>An array of viewports (see <see cref="T:SharpDX.Direct3D11.Viewport"/>).</returns>
             <unmanaged>void RSGetViewports([InOut] int* NumViewports,[Out, Buffer, Optional] D3D10_VIEWPORT* pViewports)</unmanaged>
+            <msdn-id>ff476477</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::RSGetViewports([InOut] unsigned int* pNumViewports,[Out, Buffer, Optional] D3D11_VIEWPORT* pViewports)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::RSGetViewports</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.RasterizerStage.GetScissorRectangles">
             <summary>	
@@ -5602,6 +5922,9 @@
             </summary>	
             <returns>An array of scissor rectangles (see <see cref="T:SharpDX.Rectangle"/>).</returns>
             <unmanaged>void RSGetScissorRects([InOut] int* NumRects,[Out, Buffer, Optional] D3D10_RECT* pRects)</unmanaged>
+            <msdn-id>ff476475</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::RSGetScissorRects([InOut] unsigned int* pNumRects,[Out, Buffer, Optional] RECT* pRects)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::RSGetScissorRects</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.RasterizerStage.GetScissorRectangles(SharpDX.Rectangle[])">
             <summary>	
@@ -5609,6 +5932,9 @@
             </summary>	
             <returns>An array of scissor rectangles (see <see cref="T:SharpDX.Rectangle"/>).</returns>
             <unmanaged>void RSGetScissorRects([InOut] int* NumRects,[Out, Buffer, Optional] D3D10_RECT* pRects)</unmanaged>
+            <msdn-id>ff476475</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::RSGetScissorRects([InOut] unsigned int* pNumRects,[Out, Buffer, Optional] RECT* pRects)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::RSGetScissorRects</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.RasterizerStage.SetScissorRectangle(System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>
@@ -5618,12 +5944,24 @@
             <param name="top">The top.</param>
             <param name="right">The right.</param>
             <param name="bottom">The bottom.</param>
+            <remarks>	
+            <p>All scissor rects must be set atomically as one operation. Any scissor rects not defined by the call are disabled.</p><p>The scissor rectangles will only be used if ScissorEnable is set to true in the rasterizer state (see <strong><see cref="T:SharpDX.Direct3D11.RasterizerStateDescription"/></strong>).</p><p>Which scissor rectangle to use is determined by the SV_ViewportArrayIndex semantic output by a geometry shader (see shader semantic syntax). If a geometry shader does not make use of the SV_ViewportArrayIndex semantic then Direct3D will use the first scissor rectangle in the array.</p><p>Each scissor rectangle in the array corresponds to a viewport in an array of viewports (see <strong><see cref="M:SharpDX.Direct3D11.RasterizerStage.SetViewports(SharpDX.Direct3D11.Viewport)"/></strong>).</p>	
+            </remarks>	
+            <msdn-id>ff476478</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::RSSetScissorRects([In] unsigned int NumRects,[In, Buffer, Optional] const void* pRects)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::RSSetScissorRects</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.RasterizerStage.SetScissorRectangles(SharpDX.Rectangle[])">
             <summary>
               Binds a set of scissor rectangles to the rasterizer stage.
             </summary>
-            <param name = "scissorRectangles">The set of scissor rectangles to bind.</param>
+            <param name="scissorRectangles">The set of scissor rectangles to bind.</param>
+            <remarks>	
+            <p>All scissor rects must be set atomically as one operation. Any scissor rects not defined by the call are disabled.</p><p>The scissor rectangles will only be used if ScissorEnable is set to true in the rasterizer state (see <strong><see cref="T:SharpDX.Direct3D11.RasterizerStateDescription"/></strong>).</p><p>Which scissor rectangle to use is determined by the SV_ViewportArrayIndex semantic output by a geometry shader (see shader semantic syntax). If a geometry shader does not make use of the SV_ViewportArrayIndex semantic then Direct3D will use the first scissor rectangle in the array.</p><p>Each scissor rectangle in the array corresponds to a viewport in an array of viewports (see <strong><see cref="M:SharpDX.Direct3D11.RasterizerStage.SetViewports(SharpDX.Direct3D11.Viewport)"/></strong>).</p>	
+            </remarks>	
+            <msdn-id>ff476478</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::RSSetScissorRects([In] unsigned int NumRects,[In, Buffer, Optional] const void* pRects)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::RSSetScissorRects</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.RasterizerStage.SetViewport(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
             <summary>
@@ -5635,18 +5973,36 @@
             <param name="height">The height.</param>
             <param name="minZ">The min Z.</param>
             <param name="maxZ">The max Z.</param>
+            <remarks>	
+            <p></p><p>All viewports must be set atomically as one operation. Any viewports not defined by the call are disabled.</p><p>Which viewport to use is determined by the SV_ViewportArrayIndex semantic output by a geometry shader; if a geometry shader does not specify the semantic, Direct3D will use the first viewport in the array.</p>	
+            </remarks>	
+            <msdn-id>ff476480</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::RSSetViewports([In] unsigned int NumViewports,[In, Buffer, Optional] const void* pViewports)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::RSSetViewports</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.RasterizerStage.SetViewports(SharpDX.Direct3D11.Viewport)">
             <summary>
             Binds a single viewport to the rasterizer stage.
             </summary>
             <param name="viewport">The viewport.</param>
+            <remarks>	
+            <p></p><p>All viewports must be set atomically as one operation. Any viewports not defined by the call are disabled.</p><p>Which viewport to use is determined by the SV_ViewportArrayIndex semantic output by a geometry shader; if a geometry shader does not specify the semantic, Direct3D will use the first viewport in the array.</p>	
+            </remarks>	
+            <msdn-id>ff476480</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::RSSetViewports([In] unsigned int NumViewports,[In, Buffer, Optional] const void* pViewports)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::RSSetViewports</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.RasterizerStage.SetViewports(SharpDX.Direct3D11.Viewport[])">
             <summary>
               Binds a set of viewports to the rasterizer stage.
             </summary>
             <param name = "viewports">The set of viewports to bind.</param>
+            <remarks>	
+            <p></p><p>All viewports must be set atomically as one operation. Any viewports not defined by the call are disabled.</p><p>Which viewport to use is determined by the SV_ViewportArrayIndex semantic output by a geometry shader; if a geometry shader does not specify the semantic, Direct3D will use the first viewport in the array.</p>	
+            </remarks>	
+            <msdn-id>ff476480</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::RSSetViewports([In] unsigned int NumViewports,[In, Buffer, Optional] const void* pViewports)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::RSSetViewports</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.RasterizerStage.#ctor(System.IntPtr)">
             <summary>
@@ -11619,6 +11975,9 @@
             <param name = "device">The device with which to associate the state object.</param>
             <param name = "description">The state description.</param>
             <returns>The newly created object.</returns>
+            <msdn-id>ff476518</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateSamplerState([In] const D3D11_SAMPLER_DESC* pSamplerDesc,[Out, Fast] ID3D11SamplerState** ppSamplerState)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateSamplerState</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.SamplerState.#ctor(SharpDX.Direct3D11.Device,SharpDX.Direct3D11.SamplerStateDescription@)">
             <summary>
@@ -11627,6 +11986,9 @@
             <param name = "device">The device with which to associate the state object.</param>
             <param name = "description">The state description.</param>
             <returns>The newly created object.</returns>
+            <msdn-id>ff476518</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateSamplerState([In] const D3D11_SAMPLER_DESC* pSamplerDesc,[Out, Fast] ID3D11SamplerState** ppSamplerState)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateSamplerState</unmanaged-short>	
         </member>
         <member name="P:SharpDX.Direct3D11.SamplerState.Description">
             <summary>	
@@ -15163,90 +15525,6 @@
             <unmanaged>D3D11_COMPARISON_FUNC StencilFunc</unmanaged>	
             <unmanaged-short>D3D11_COMPARISON_FUNC StencilFunc</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.Direct3D11.DepthStencilStateDescription">
-            <summary>	
-            <p>Describes depth-stencil state.</p>	
-            </summary>	
-            <remarks>	
-            <p>Depth-stencil state controls how depth-stencil testing is performed by the output-merger stage.</p><p>The following table shows the default values of depth-stencil states.</p><table> <tr><th>State</th><th>Default Value</th></tr> <tr><td>DepthEnable</td><td>TRUE</td></tr> <tr><td>DepthWriteMask</td><td><see cref="F:SharpDX.Direct3D11.DepthWriteMask.All"/></td></tr> <tr><td>DepthFunc</td><td><see cref="F:SharpDX.Direct3D11.Comparison.Less"/></td></tr> <tr><td>StencilEnable</td><td><see cref="F:SharpDX.Result.False"/></td></tr> <tr><td>StencilReadMask</td><td>D3D11_DEFAULT_STENCIL_READ_MASK</td></tr> <tr><td>StencilWriteMask</td><td>D3D11_DEFAULT_STENCIL_WRITE_MASK</td></tr> <tr><td> <p>FrontFace.StencilFunc</p> <p>and</p> <p>BackFace.StencilFunc</p> </td><td><see cref="F:SharpDX.Direct3D11.Comparison.Always"/></td></tr> <tr><td> <p>FrontFace.StencilDepthFailOp</p> <p>and</p> <p>BackFace.StencilDepthFailOp</p> </td><td><see cref="F:SharpDX.Direct3D11.StencilOperation.Keep"/></td></tr> <tr><td> <p>FrontFace.StencilPassOp</p> <p>and</p> <p>BackFace.StencilPassOp</p> </td><td><see cref="F:SharpDX.Direct3D11.StencilOperation.Keep"/></td></tr> <tr><td> <p>FrontFace.StencilFailOp</p> <p>and</p> <p>BackFace.StencilFailOp</p> </td><td><see cref="F:SharpDX.Direct3D11.StencilOperation.Keep"/></td></tr> </table><p>?</p><p>The formats that support stenciling are <see cref="F:SharpDX.DXGI.Format.D24_UNorm_S8_UInt"/> and <see cref="F:SharpDX.DXGI.Format.D32_Float_S8X24_UInt"/>.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC']/*"/>	
-            <msdn-id>ff476110</msdn-id>	
-            <unmanaged>D3D11_DEPTH_STENCIL_DESC</unmanaged>	
-            <unmanaged-short>D3D11_DEPTH_STENCIL_DESC</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.IsDepthEnabled">
-            <summary>	
-            <dd> <p>Enable depth testing.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::DepthEnable']/*"/>	
-            <msdn-id>ff476110</msdn-id>	
-            <unmanaged>BOOL DepthEnable</unmanaged>	
-            <unmanaged-short>BOOL DepthEnable</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.DepthWriteMask">
-            <summary>	
-            <dd> <p>Identify a portion of the depth-stencil buffer that can be modified by depth data (see <strong><see cref="T:SharpDX.Direct3D11.DepthWriteMask"/></strong>).</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::DepthWriteMask']/*"/>	
-            <msdn-id>ff476110</msdn-id>	
-            <unmanaged>D3D11_DEPTH_WRITE_MASK DepthWriteMask</unmanaged>	
-            <unmanaged-short>D3D11_DEPTH_WRITE_MASK DepthWriteMask</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.DepthComparison">
-            <summary>	
-            <dd> <p>A function that compares depth data against existing depth data. The function options are listed in <strong><see cref="T:SharpDX.Direct3D11.Comparison"/></strong>.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::DepthFunc']/*"/>	
-            <msdn-id>ff476110</msdn-id>	
-            <unmanaged>D3D11_COMPARISON_FUNC DepthFunc</unmanaged>	
-            <unmanaged-short>D3D11_COMPARISON_FUNC DepthFunc</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.IsStencilEnabled">
-            <summary>	
-            <dd> <p>Enable stencil testing.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::StencilEnable']/*"/>	
-            <msdn-id>ff476110</msdn-id>	
-            <unmanaged>BOOL StencilEnable</unmanaged>	
-            <unmanaged-short>BOOL StencilEnable</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.StencilReadMask">
-            <summary>	
-            <dd> <p>Identify a portion of the depth-stencil buffer for reading stencil data.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::StencilReadMask']/*"/>	
-            <msdn-id>ff476110</msdn-id>	
-            <unmanaged>unsigned char StencilReadMask</unmanaged>	
-            <unmanaged-short>unsigned char StencilReadMask</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.StencilWriteMask">
-            <summary>	
-            <dd> <p>Identify a portion of the depth-stencil buffer for writing stencil data.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::StencilWriteMask']/*"/>	
-            <msdn-id>ff476110</msdn-id>	
-            <unmanaged>unsigned char StencilWriteMask</unmanaged>	
-            <unmanaged-short>unsigned char StencilWriteMask</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.FrontFace">
-            <summary>	
-            <dd> <p>Identify how to use the results of the depth test and the stencil test for pixels whose surface normal is facing towards the camera (see <strong><see cref="T:SharpDX.Direct3D11.DepthStencilOperationDescription"/></strong>).</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::FrontFace']/*"/>	
-            <msdn-id>ff476110</msdn-id>	
-            <unmanaged>D3D11_DEPTH_STENCILOP_DESC FrontFace</unmanaged>	
-            <unmanaged-short>D3D11_DEPTH_STENCILOP_DESC FrontFace</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.DepthStencilStateDescription.BackFace">
-            <summary>	
-            <dd> <p>Identify how to use the results of the depth test and the stencil test for pixels whose surface normal is facing away from the camera (see <strong><see cref="T:SharpDX.Direct3D11.DepthStencilOperationDescription"/></strong>).</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_DEPTH_STENCIL_DESC::BackFace']/*"/>	
-            <msdn-id>ff476110</msdn-id>	
-            <unmanaged>D3D11_DEPTH_STENCILOP_DESC BackFace</unmanaged>	
-            <unmanaged-short>D3D11_DEPTH_STENCILOP_DESC BackFace</unmanaged-short>	
-        </member>
         <member name="T:SharpDX.Direct3D11.DepthStencilViewDescription">
             <summary>	
             <p>Specifies the subresources of a texture that are accessible from a depth-stencil view.</p>	
@@ -16314,114 +16592,6 @@
             <unmanaged>unsigned int ForcedSampleCount</unmanaged>	
             <unmanaged-short>unsigned int ForcedSampleCount</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.Direct3D11.RasterizerStateDescription">
-            <summary>	
-            <p>Describes rasterizer state.</p>	
-            </summary>	
-            <remarks>	
-            <p>Rasterizer state defines the behavior of the rasterizer stage; to set rasterizer state, call <strong><see cref="M:SharpDX.Direct3D11.RasterizerStage.SetState(SharpDX.Direct3D11.RasterizerState)"/></strong>.</p><p>These are the default values for rasterizer state.</p><table> <tr><th>State</th><th>Default Value</th></tr> <tr><td>FillMode</td><td>Solid</td></tr> <tr><td>CullMode</td><td>Back</td></tr> <tr><td>FrontCounterClockwise</td><td><see cref="F:SharpDX.Result.False"/></td></tr> <tr><td>DepthBias</td><td>0</td></tr> <tr><td>SlopeScaledDepthBias</td><td>0.0f</td></tr> <tr><td>DepthBiasClamp</td><td>0.0f</td></tr> <tr><td>DepthClipEnable</td><td>TRUE</td></tr> <tr><td>ScissorEnable</td><td><see cref="F:SharpDX.Result.False"/></td></tr> <tr><td>MultisampleEnable</td><td><see cref="F:SharpDX.Result.False"/></td></tr> <tr><td>AntialiasedLineEnable</td><td><see cref="F:SharpDX.Result.False"/></td></tr> </table><p>?</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC']/*"/>	
-            <msdn-id>ff476198</msdn-id>	
-            <unmanaged>D3D11_RASTERIZER_DESC</unmanaged>	
-            <unmanaged-short>D3D11_RASTERIZER_DESC</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.FillMode">
-            <summary>	
-            <dd> <p>Determines the fill mode to use when rendering (see <strong><see cref="T:SharpDX.Direct3D11.FillMode"/></strong>).</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::FillMode']/*"/>	
-            <msdn-id>ff476198</msdn-id>	
-            <unmanaged>D3D11_FILL_MODE FillMode</unmanaged>	
-            <unmanaged-short>D3D11_FILL_MODE FillMode</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.CullMode">
-            <summary>	
-            <dd> <p>Indicates triangles facing the specified direction are not drawn (see <strong><see cref="T:SharpDX.Direct3D11.CullMode"/></strong>).</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::CullMode']/*"/>	
-            <msdn-id>ff476198</msdn-id>	
-            <unmanaged>D3D11_CULL_MODE CullMode</unmanaged>	
-            <unmanaged-short>D3D11_CULL_MODE CullMode</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.IsFrontCounterClockwise">
-            <summary>	
-            <dd> <p>Determines if a triangle is front- or back-facing. If this parameter is true, then a triangle will be considered front-facing if its vertices are counter-clockwise on the render target and considered back-facing if they are clockwise. If this parameter is false then the opposite is true.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::FrontCounterClockwise']/*"/>	
-            <msdn-id>ff476198</msdn-id>	
-            <unmanaged>BOOL FrontCounterClockwise</unmanaged>	
-            <unmanaged-short>BOOL FrontCounterClockwise</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.DepthBias">
-            <summary>	
-            <dd> <p>Depth value added to a given pixel.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::DepthBias']/*"/>	
-            <msdn-id>ff476198</msdn-id>	
-            <unmanaged>int DepthBias</unmanaged>	
-            <unmanaged-short>int DepthBias</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.DepthBiasClamp">
-            <summary>	
-            <dd> <p>Maximum depth bias of a pixel.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::DepthBiasClamp']/*"/>	
-            <msdn-id>ff476198</msdn-id>	
-            <unmanaged>float DepthBiasClamp</unmanaged>	
-            <unmanaged-short>float DepthBiasClamp</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.SlopeScaledDepthBias">
-            <summary>	
-            <dd> <p>Scalar on a given pixel's slope.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::SlopeScaledDepthBias']/*"/>	
-            <msdn-id>ff476198</msdn-id>	
-            <unmanaged>float SlopeScaledDepthBias</unmanaged>	
-            <unmanaged-short>float SlopeScaledDepthBias</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.IsDepthClipEnabled">
-            <summary>	
-            <dd> <p>Enable clipping based on distance.</p> <p>The hardware always performs x and y clipping of rasterized coordinates. When <strong>DepthClipEnable</strong> is set to the default?TRUE, the hardware also clips the z value (that is, the hardware performs the last step of the following algorithm).	
-            </p> <code> 0 &lt; w	
-            -w &lt;= x &lt;= w (or arbitrarily wider range if implementation uses a guard band to reduce clipping burden)	
-            -w &lt;= y &lt;= w (or arbitrarily wider range if implementation uses a guard band to reduce clipping burden)	
-            0 &lt;= z &lt;= w	
-            </code> <p>When you set <strong>DepthClipEnable</strong> to <see cref="F:SharpDX.Result.False"/>, the hardware skips the z clipping (that is, the last step in the preceding algorithm). However, the hardware still performs the "0 &lt; w" clipping. When z clipping is disabled, improper depth ordering at the pixel level might result. However, when z clipping is disabled, stencil shadow implementations are simplified. In other words, you can avoid complex special-case handling for geometry that goes beyond the back clipping plane.	
-            </p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::DepthClipEnable']/*"/>	
-            <msdn-id>ff476198</msdn-id>	
-            <unmanaged>BOOL DepthClipEnable</unmanaged>	
-            <unmanaged-short>BOOL DepthClipEnable</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.IsScissorEnabled">
-            <summary>	
-            <dd> <p>Enable scissor-rectangle culling. All pixels ouside an active scissor rectangle are culled.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::ScissorEnable']/*"/>	
-            <msdn-id>ff476198</msdn-id>	
-            <unmanaged>BOOL ScissorEnable</unmanaged>	
-            <unmanaged-short>BOOL ScissorEnable</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.IsMultisampleEnabled">
-            <summary>	
-            <dd> <p>Enable multisample antialiasing.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::MultisampleEnable']/*"/>	
-            <msdn-id>ff476198</msdn-id>	
-            <unmanaged>BOOL MultisampleEnable</unmanaged>	
-            <unmanaged-short>BOOL MultisampleEnable</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription.IsAntialiasedLineEnabled">
-            <summary>	
-            <dd> <p>Enable line antialiasing; only applies if doing line drawing and <em>MultisampleEnable</em> is false.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC::AntialiasedLineEnable']/*"/>	
-            <msdn-id>ff476198</msdn-id>	
-            <unmanaged>BOOL AntialiasedLineEnable</unmanaged>	
-            <unmanaged-short>BOOL AntialiasedLineEnable</unmanaged-short>	
-        </member>
         <member name="T:SharpDX.Direct3D11.RenderTargetBlendDescription">
             <summary>	
             <p>Describes the blend state for a render target.</p>	
@@ -17159,6 +17329,14 @@
             <msdn-id>ff476207</msdn-id>	
             <unmanaged>float MaxLOD</unmanaged>	
             <unmanaged-short>float MaxLOD</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.SamplerStateDescription.Default">
+            <summary>
+            Returns default values for <see cref="T:SharpDX.Direct3D11.SamplerStateDescription"/>. 
+            </summary>
+            <remarks>
+            See MSDN documentation for default values.
+            </remarks>
         </member>
         <member name="T:SharpDX.Direct3D11.ShaderResourceViewDescription">
             <summary>	

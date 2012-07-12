@@ -110,7 +110,9 @@
             </summary>	
             <param name="renderTarget">an instance of <see cref="T:SharpDX.Direct2D1.RenderTarget"/></param>
             <param name="size">The dimension of the bitmap to create in pixels.</param>
+            <msdn-id>dd371800</msdn-id>	
             <unmanaged>HRESULT ID2D1RenderTarget::CreateBitmap([In] D2D_SIZE_U size,[In, Optional] const void* srcData,[In] unsigned int pitch,[In] const D2D1_BITMAP_PROPERTIES* bitmapProperties,[Out, Fast] ID2D1Bitmap** bitmap)</unmanaged>	
+            <unmanaged-short>ID2D1RenderTarget::CreateBitmap</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingSize,SharpDX.Direct2D1.BitmapProperties)">
             <summary>	
@@ -119,28 +121,34 @@
             <param name="renderTarget">an instance of <see cref="T:SharpDX.Direct2D1.RenderTarget"/></param>
             <param name="size">The dimension of the bitmap to create in pixels.</param>
             <param name="bitmapProperties">The pixel format and dots per inch (DPI) of the bitmap to create.</param>
+            <msdn-id>dd371800</msdn-id>	
             <unmanaged>HRESULT ID2D1RenderTarget::CreateBitmap([In] D2D_SIZE_U size,[In, Optional] const void* srcData,[In] unsigned int pitch,[In] const D2D1_BITMAP_PROPERTIES* bitmapProperties,[Out, Fast] ID2D1Bitmap** bitmap)</unmanaged>	
+            <unmanaged-short>ID2D1RenderTarget::CreateBitmap</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingSize,SharpDX.DataStream,System.Int32)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingSize,SharpDX.DataPointer,System.Int32)">
             <summary>	
             Creates a Direct2D bitmap from a pointer to in-memory source data.	
             </summary>	
             <param name="renderTarget">an instance of <see cref="T:SharpDX.Direct2D1.RenderTarget"/></param>
             <param name="size">The dimension of the bitmap to create in pixels.</param>
-            <param name="dataStream">A pointer to the memory location of the image data, or NULL to create an uninitialized bitmap.</param>
+            <param name="dataPointer">A pointer to the memory location of the image data, or NULL to create an uninitialized bitmap.</param>
             <param name="pitch">The byte count of each scanline, which is equal to (the image width in pixels * the number of bytes per pixel) + memory padding. If srcData is NULL, this value is ignored. (Note that pitch is also sometimes called stride.)</param>
+            <msdn-id>dd371800</msdn-id>	
             <unmanaged>HRESULT ID2D1RenderTarget::CreateBitmap([In] D2D_SIZE_U size,[In, Optional] const void* srcData,[In] unsigned int pitch,[In] const D2D1_BITMAP_PROPERTIES* bitmapProperties,[Out, Fast] ID2D1Bitmap** bitmap)</unmanaged>	
+            <unmanaged-short>ID2D1RenderTarget::CreateBitmap</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingSize,SharpDX.DataStream,System.Int32,SharpDX.Direct2D1.BitmapProperties)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingSize,SharpDX.DataPointer,System.Int32,SharpDX.Direct2D1.BitmapProperties)">
             <summary>	
             Creates a Direct2D bitmap from a pointer to in-memory source data.	
             </summary>	
             <param name="renderTarget">an instance of <see cref="T:SharpDX.Direct2D1.RenderTarget"/></param>
             <param name="size">The dimension of the bitmap to create in pixels.</param>
-            <param name="dataStream">A pointer to the memory location of the image data, or NULL to create an uninitialized bitmap.</param>
+            <param name="dataPointer">A pointer to the memory location of the image data, or NULL to create an uninitialized bitmap.</param>
             <param name="pitch">The byte count of each scanline, which is equal to (the image width in pixels * the number of bytes per pixel) + memory padding. If srcData is NULL, this value is ignored. (Note that pitch is also sometimes called stride.)</param>
             <param name="bitmapProperties">The pixel format and dots per inch (DPI) of the bitmap to create.</param>
+            <msdn-id>dd371800</msdn-id>	
             <unmanaged>HRESULT ID2D1RenderTarget::CreateBitmap([In] D2D_SIZE_U size,[In, Optional] const void* srcData,[In] unsigned int pitch,[In] const D2D1_BITMAP_PROPERTIES* bitmapProperties,[Out, Fast] ID2D1Bitmap** bitmap)</unmanaged>	
+            <unmanaged-short>ID2D1RenderTarget::CreateBitmap</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.Direct2D1.Bitmap)">
             <summary>	
@@ -148,7 +156,9 @@
             </summary>	
             <param name="renderTarget">an instance of <see cref="T:SharpDX.Direct2D1.RenderTarget"/></param>
             <param name="bitmap">An <see cref="T:SharpDX.Direct2D1.Bitmap"/> that contains the data to share with the new ID2D1Bitmap. For more information, see the Remarks section.</param>
+            <msdn-id>dd371865</msdn-id>	
             <unmanaged>HRESULT ID2D1RenderTarget::CreateSharedBitmap([In] const GUID&amp; riid,[In] void* data,[In, Optional] const D2D1_BITMAP_PROPERTIES* bitmapProperties,[Out, Fast] ID2D1Bitmap** bitmap)</unmanaged>	
+            <unmanaged-short>ID2D1RenderTarget::CreateSharedBitmap</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.Direct2D1.Bitmap,System.Nullable{SharpDX.Direct2D1.BitmapProperties})">
             <summary>	
@@ -157,7 +167,9 @@
             <param name="renderTarget">an instance of <see cref="T:SharpDX.Direct2D1.RenderTarget"/></param>
             <param name="bitmap">An <see cref="T:SharpDX.Direct2D1.Bitmap"/> that contains the data to share with the new ID2D1Bitmap. For more information, see the Remarks section.</param>
             <param name="bitmapProperties">The pixel format  and DPI of the bitmap to create . The <see cref="T:SharpDX.DXGI.Format"/> portion of the pixel format  must match the <see cref="T:SharpDX.DXGI.Format"/> of data or the method will fail, but the alpha modes don't have to match. To prevent a  mismatch, you can pass NULL or the value obtained from the {{D2D1::PixelFormat}} helper function. The DPI settings do not have to match those of data. If both dpiX and dpiY are  0.0f, the default DPI, 96, is used.</param>
+            <msdn-id>dd371865</msdn-id>	
             <unmanaged>HRESULT ID2D1RenderTarget::CreateSharedBitmap([In] const GUID&amp; riid,[In] void* data,[In, Optional] const D2D1_BITMAP_PROPERTIES* bitmapProperties,[Out, Fast] ID2D1Bitmap** bitmap)</unmanaged>	
+            <unmanaged-short>ID2D1RenderTarget::CreateSharedBitmap</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.DXGI.Surface)">
             <summary>	
@@ -165,7 +177,9 @@
             </summary>	
             <param name="renderTarget">an instance of <see cref="T:SharpDX.Direct2D1.RenderTarget"/></param>
             <param name="surface">An <see cref="T:SharpDX.DXGI.Surface"/> that contains the data to share with the new ID2D1Bitmap. For more information, see the Remarks section.</param>
+            <msdn-id>dd371865</msdn-id>	
             <unmanaged>HRESULT ID2D1RenderTarget::CreateSharedBitmap([In] const GUID&amp; riid,[In] void* data,[In, Optional] const D2D1_BITMAP_PROPERTIES* bitmapProperties,[Out, Fast] ID2D1Bitmap** bitmap)</unmanaged>	
+            <unmanaged-short>ID2D1RenderTarget::CreateSharedBitmap</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.DXGI.Surface,System.Nullable{SharpDX.Direct2D1.BitmapProperties})">
             <summary>	
@@ -174,7 +188,21 @@
             <param name="renderTarget">an instance of <see cref="T:SharpDX.Direct2D1.RenderTarget"/></param>
             <param name="surface">An <see cref="T:SharpDX.DXGI.Surface"/> that contains the data to share with the new ID2D1Bitmap. For more information, see the Remarks section.</param>
             <param name="bitmapProperties">The pixel format  and DPI of the bitmap to create . The <see cref="T:SharpDX.DXGI.Format"/> portion of the pixel format  must match the <see cref="T:SharpDX.DXGI.Format"/> of data or the method will fail, but the alpha modes don't have to match. To prevent a  mismatch, you can pass NULL or the value obtained from the {{D2D1::PixelFormat}} helper function. The DPI settings do not have to match those of data. If both dpiX and dpiY are  0.0f, the default DPI, 96, is used.</param>
+            <msdn-id>dd371865</msdn-id>	
             <unmanaged>HRESULT ID2D1RenderTarget::CreateSharedBitmap([In] const GUID&amp; riid,[In] void* data,[In, Optional] const D2D1_BITMAP_PROPERTIES* bitmapProperties,[Out, Fast] ID2D1Bitmap** bitmap)</unmanaged>	
+            <unmanaged-short>ID2D1RenderTarget::CreateSharedBitmap</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct2D1.Bitmap.New``1(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingSize,``0[],SharpDX.Direct2D1.BitmapProperties)">
+            <summary>	
+            Creates a Direct2D bitmap from a pointer to in-memory source data.	
+            </summary>	
+            <param name="renderTarget">an instance of <see cref="T:SharpDX.Direct2D1.RenderTarget"/></param>
+            <param name="size">The dimension of the bitmap to create in pixels.</param>
+            <param name="pixelDatas">A pointer to an array of pixel data. The size of the array must be equal to sizeof(pixel) * Size.Width * Height.</param>
+            <param name="bitmapProperties">The pixel format and dots per inch (DPI) of the bitmap to create.</param>
+            <msdn-id>dd371800</msdn-id>	
+            <unmanaged>HRESULT ID2D1RenderTarget::CreateBitmap([In] D2D_SIZE_U size,[In, Optional] const void* srcData,[In] unsigned int pitch,[In] const D2D1_BITMAP_PROPERTIES* bitmapProperties,[Out, Fast] ID2D1Bitmap** bitmap)</unmanaged>	
+            <unmanaged-short>ID2D1RenderTarget::CreateBitmap</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct2D1.Bitmap.FromWicBitmap(SharpDX.Direct2D1.RenderTarget,SharpDX.WIC.BitmapSource)">
             <summary>
@@ -183,7 +211,9 @@
             <param name="renderTarget">The render target.</param>
             <param name="wicBitmapSource">A reference to a <see cref="T:SharpDX.WIC.BitmapSource"/> wic bitmap.</param>
             <returns></returns>
+            <msdn-id>dd371797</msdn-id>	
             <unmanaged>HRESULT ID2D1RenderTarget::CreateBitmapFromWicBitmap([In] IWICBitmapSource* wicBitmapSource,[In, Optional] const D2D1_BITMAP_PROPERTIES* bitmapProperties,[Out] ID2D1Bitmap** bitmap)</unmanaged>	
+            <unmanaged-short>ID2D1RenderTarget::CreateBitmapFromWicBitmap</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct2D1.Bitmap.FromWicBitmap(SharpDX.Direct2D1.RenderTarget,SharpDX.WIC.BitmapSource,SharpDX.Direct2D1.BitmapProperties)">
             <summary>
@@ -193,9 +223,11 @@
             <param name="wicBitmap">The wic bitmap.</param>
             <param name="bitmapProperties">The bitmap properties.</param>
             <returns></returns>
+            <msdn-id>dd371797</msdn-id>	
             <unmanaged>HRESULT ID2D1RenderTarget::CreateBitmapFromWicBitmap([In] IWICBitmapSource* wicBitmapSource,[In, Optional] const D2D1_BITMAP_PROPERTIES* bitmapProperties,[Out] ID2D1Bitmap** bitmap)</unmanaged>	
+            <unmanaged-short>ID2D1RenderTarget::CreateBitmapFromWicBitmap</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.FromBitmap(SharpDX.Direct2D1.Bitmap)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromBitmap(SharpDX.Direct2D1.Bitmap)">
             <summary>	
             Copies the specified region from the specified bitmap into the current bitmap. 	
             </summary>	
@@ -204,9 +236,11 @@
             </remarks>	
             <param name="sourceBitmap">The bitmap to copy from. </param>
             <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code. </returns>
-            <unmanaged>HRESULT ID2D1Bitmap::CopyFromBitmap([In, Optional] const D2D1_POINT_2U* destPoint,[In] ID2D1Bitmap* bitmap,[In, Optional] const D2D1_RECT_U* srcRect)</unmanaged>
+            <msdn-id>dd371152</msdn-id>	
+            <unmanaged>HRESULT ID2D1Bitmap::CopyFromBitmap([In, Optional] const D2D_POINT_2U* destPoint,[In] ID2D1Bitmap* bitmap,[In, Optional] const D2D_RECT_U* srcRect)</unmanaged>	
+            <unmanaged-short>ID2D1Bitmap::CopyFromBitmap</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.FromBitmap(SharpDX.Direct2D1.Bitmap,SharpDX.DrawingPoint)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromBitmap(SharpDX.Direct2D1.Bitmap,SharpDX.DrawingPoint)">
             <summary>	
             Copies the specified region from the specified bitmap into the current bitmap. 	
             </summary>	
@@ -216,9 +250,11 @@
             <param name="sourceBitmap">The bitmap to copy from. </param>
             <param name="destinationPoint">In the current bitmap, the upper-left corner of the area to which the region specified by srcRect is copied. </param>
             <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code. </returns>
-            <unmanaged>HRESULT ID2D1Bitmap::CopyFromBitmap([In, Optional] const D2D1_POINT_2U* destPoint,[In] ID2D1Bitmap* bitmap,[In, Optional] const D2D1_RECT_U* srcRect)</unmanaged>
+            <msdn-id>dd371152</msdn-id>	
+            <unmanaged>HRESULT ID2D1Bitmap::CopyFromBitmap([In, Optional] const D2D_POINT_2U* destPoint,[In] ID2D1Bitmap* bitmap,[In, Optional] const D2D_RECT_U* srcRect)</unmanaged>	
+            <unmanaged-short>ID2D1Bitmap::CopyFromBitmap</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.FromBitmap(SharpDX.Direct2D1.Bitmap,SharpDX.DrawingPoint,SharpDX.Rectangle)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromBitmap(SharpDX.Direct2D1.Bitmap,SharpDX.DrawingPoint,SharpDX.Rectangle)">
             <summary>	
             Copies the specified region from the specified bitmap into the current bitmap. 	
             </summary>	
@@ -229,9 +265,11 @@
             <param name="sourceArea">The area of bitmap to copy. </param>
             <param name="destinationPoint">In the current bitmap, the upper-left corner of the area to which the region specified by srcRect is copied. </param>
             <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code. </returns>
-            <unmanaged>HRESULT ID2D1Bitmap::CopyFromBitmap([In, Optional] const D2D1_POINT_2U* destPoint,[In] ID2D1Bitmap* bitmap,[In, Optional] const D2D1_RECT_U* srcRect)</unmanaged>
+            <msdn-id>dd371152</msdn-id>	
+            <unmanaged>HRESULT ID2D1Bitmap::CopyFromBitmap([In, Optional] const D2D_POINT_2U* destPoint,[In] ID2D1Bitmap* bitmap,[In, Optional] const D2D_RECT_U* srcRect)</unmanaged>	
+            <unmanaged-short>ID2D1Bitmap::CopyFromBitmap</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.FromMemory(System.IntPtr,System.Int32)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromMemory(System.IntPtr,System.Int32)">
             <summary>	
             Copies the specified region from memory into the current bitmap. 	
             </summary>	
@@ -241,9 +279,11 @@
             <param name="pointer">The data to copy. </param>
             <param name="pitch">The stride, or pitch, of the source bitmap stored in srcData. The stride is the byte count of a scanline (one row of pixels in memory). The stride can be computed from the following formula: pixel width * bytes per pixel + memory padding. </param>
             <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code. </returns>
-            <unmanaged>HRESULT ID2D1Bitmap::CopyFromMemory([In, Optional] const D2D1_RECT_U* dstRect,[In] const void* srcData,[None] int pitch)</unmanaged>
+            <msdn-id>dd371155</msdn-id>	
+            <unmanaged>HRESULT ID2D1Bitmap::CopyFromMemory([In, Optional] const D2D_RECT_U* dstRect,[In] const void* srcData,[In] unsigned int pitch)</unmanaged>	
+            <unmanaged-short>ID2D1Bitmap::CopyFromMemory</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.FromMemory(System.Byte[],System.Int32)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromMemory(System.Byte[],System.Int32)">
             <summary>	
             Copies the specified region from memory into the current bitmap. 	
             </summary>	
@@ -257,7 +297,7 @@
             <unmanaged>HRESULT ID2D1Bitmap::CopyFromMemory([In, Optional] const D2D_RECT_U* dstRect,[In] const void* srcData,[In] unsigned int pitch)</unmanaged>	
             <unmanaged-short>ID2D1Bitmap::CopyFromMemory</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.FromMemory``1(``0[],System.Int32)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromMemory``1(``0[],System.Int32)">
             <summary>	
             Copies the specified region from memory into the current bitmap. 	
             </summary>	
@@ -271,7 +311,7 @@
             <unmanaged>HRESULT ID2D1Bitmap::CopyFromMemory([In, Optional] const D2D_RECT_U* dstRect,[In] const void* srcData,[In] unsigned int pitch)</unmanaged>	
             <unmanaged-short>ID2D1Bitmap::CopyFromMemory</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.FromMemory(System.IntPtr,System.Int32,SharpDX.Rectangle)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromMemory(System.IntPtr,System.Int32,SharpDX.Rectangle)">
             <summary>	
             Copies the specified region from memory into the current bitmap. 	
             </summary>	
@@ -286,7 +326,7 @@
             <unmanaged>HRESULT ID2D1Bitmap::CopyFromMemory([In, Optional] const D2D_RECT_U* dstRect,[In] const void* srcData,[In] unsigned int pitch)</unmanaged>	
             <unmanaged-short>ID2D1Bitmap::CopyFromMemory</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.FromMemory(System.Byte[],System.Int32,SharpDX.Rectangle)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromMemory(System.Byte[],System.Int32,SharpDX.Rectangle)">
             <summary>	
             Copies the specified region from memory into the current bitmap. 	
             </summary>	
@@ -301,7 +341,7 @@
             <unmanaged>HRESULT ID2D1Bitmap::CopyFromMemory([In, Optional] const D2D_RECT_U* dstRect,[In] const void* srcData,[In] unsigned int pitch)</unmanaged>	
             <unmanaged-short>ID2D1Bitmap::CopyFromMemory</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.FromMemory``1(``0[],System.Int32,SharpDX.Rectangle)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromMemory``1(``0[],System.Int32,SharpDX.Rectangle)">
             <summary>	
             Copies the specified region from memory into the current bitmap. 	
             </summary>	
@@ -316,7 +356,7 @@
             <unmanaged>HRESULT ID2D1Bitmap::CopyFromMemory([In, Optional] const D2D_RECT_U* dstRect,[In] const void* srcData,[In] unsigned int pitch)</unmanaged>	
             <unmanaged-short>ID2D1Bitmap::CopyFromMemory</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.FromRenderTarget(SharpDX.Direct2D1.RenderTarget)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromRenderTarget(SharpDX.Direct2D1.RenderTarget)">
             <summary>	
             Copies the specified region from the specified render target into the current bitmap. 	
             </summary>	
@@ -325,9 +365,11 @@
             </remarks>	
             <param name="renderTarget">The render target that contains the region to copy. </param>
             <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code. </returns>
-            <unmanaged>HRESULT ID2D1Bitmap::CopyFromRenderTarget([In, Optional] const D2D1_POINT_2U* destPoint,[In] ID2D1RenderTarget* renderTarget,[In, Optional] const D2D1_RECT_U* srcRect)</unmanaged>
+            <msdn-id>dd371158</msdn-id>	
+            <unmanaged>HRESULT ID2D1Bitmap::CopyFromRenderTarget([In, Optional] const D2D_POINT_2U* destPoint,[In] ID2D1RenderTarget* renderTarget,[In, Optional] const D2D_RECT_U* srcRect)</unmanaged>	
+            <unmanaged-short>ID2D1Bitmap::CopyFromRenderTarget</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.FromRenderTarget(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingPoint)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromRenderTarget(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingPoint)">
             <summary>	
             Copies the specified region from the specified render target into the current bitmap. 	
             </summary>	
@@ -337,9 +379,11 @@
             <param name="renderTarget">The render target that contains the region to copy. </param>
             <param name="destinationPoint">In the current bitmap, the upper-left corner of the area to which the region specified by srcRect is copied. </param>
             <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code. </returns>
-            <unmanaged>HRESULT ID2D1Bitmap::CopyFromRenderTarget([In, Optional] const D2D1_POINT_2U* destPoint,[In] ID2D1RenderTarget* renderTarget,[In, Optional] const D2D1_RECT_U* srcRect)</unmanaged>
+            <msdn-id>dd371158</msdn-id>	
+            <unmanaged>HRESULT ID2D1Bitmap::CopyFromRenderTarget([In, Optional] const D2D_POINT_2U* destPoint,[In] ID2D1RenderTarget* renderTarget,[In, Optional] const D2D_RECT_U* srcRect)</unmanaged>	
+            <unmanaged-short>ID2D1Bitmap::CopyFromRenderTarget</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.FromRenderTarget(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingPoint,SharpDX.Rectangle)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromRenderTarget(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingPoint,SharpDX.Rectangle)">
             <summary>	
             Copies the specified region from the specified render target into the current bitmap. 	
             </summary>	
@@ -350,7 +394,9 @@
             <param name="destinationPoint">In the current bitmap, the upper-left corner of the area to which the region specified by srcRect is copied. </param>
             <param name="sourceArea">The area of renderTarget to copy. </param>
             <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code. </returns>
-            <unmanaged>HRESULT ID2D1Bitmap::CopyFromRenderTarget([In, Optional] const D2D1_POINT_2U* destPoint,[In] ID2D1RenderTarget* renderTarget,[In, Optional] const D2D1_RECT_U* srcRect)</unmanaged>
+            <msdn-id>dd371158</msdn-id>	
+            <unmanaged>HRESULT ID2D1Bitmap::CopyFromRenderTarget([In, Optional] const D2D_POINT_2U* destPoint,[In] ID2D1RenderTarget* renderTarget,[In, Optional] const D2D_RECT_U* srcRect)</unmanaged>	
+            <unmanaged-short>ID2D1Bitmap::CopyFromRenderTarget</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct2D1.Bitmap.FromStream(System.IO.Stream,System.Int32,System.Int32)">
             <summary>	
@@ -363,7 +409,9 @@
             <param name="length">Length in bytes of the data to copy from the stream.</param>
             <param name="pitch">The stride, or pitch, of the source bitmap stored in srcData. The stride is the byte count of a scanline (one row of pixels in memory). The stride can be computed from the following formula: pixel width * bytes per pixel + memory padding. </param>
             <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code. </returns>
-            <unmanaged>HRESULT ID2D1Bitmap::CopyFromMemory([In, Optional] const D2D1_RECT_U* dstRect,[In] const void* srcData,[None] int pitch)</unmanaged>
+            <msdn-id>dd371158</msdn-id>	
+            <unmanaged>HRESULT ID2D1Bitmap::CopyFromRenderTarget([In, Optional] const D2D_POINT_2U* destPoint,[In] ID2D1RenderTarget* renderTarget,[In, Optional] const D2D_RECT_U* srcRect)</unmanaged>	
+            <unmanaged-short>ID2D1Bitmap::CopyFromRenderTarget</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct2D1.Bitmap.FromStream(System.IO.Stream,System.Int32,System.Int32,SharpDX.Rectangle)">
             <summary>	
@@ -377,7 +425,9 @@
             <param name="pitch">The stride, or pitch, of the source bitmap stored in srcData. The stride is the byte count of a scanline (one row of pixels in memory). The stride can be computed from the following formula: pixel width * bytes per pixel + memory padding. </param>
             <param name="destinationArea">In the current bitmap, the upper-left corner of the area to which the region specified by srcRect is copied. </param>
             <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code. </returns>
-            <unmanaged>HRESULT ID2D1Bitmap::CopyFromMemory([In, Optional] const D2D1_RECT_U* dstRect,[In] const void* srcData,[None] int pitch)</unmanaged>
+            <msdn-id>dd371158</msdn-id>	
+            <unmanaged>HRESULT ID2D1Bitmap::CopyFromRenderTarget([In, Optional] const D2D_POINT_2U* destPoint,[In] ID2D1RenderTarget* renderTarget,[In, Optional] const D2D_RECT_U* srcRect)</unmanaged>	
+            <unmanaged-short>ID2D1Bitmap::CopyFromRenderTarget</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(System.IntPtr)">
             <summary>
@@ -12983,24 +13033,63 @@
             <unmanaged>HRESULT IWICBitmapSource::CopyPixels([In, Optional] const WICRect* prc,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer)</unmanaged>	
             <unmanaged-short>IWICBitmapSource::CopyPixels</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.BitmapSource.CopyPixels(SharpDX.DrawingRectangle,System.Int32,SharpDX.DataStream)">
-            <summary>
-            Copies the pixels.
-            </summary>
-            <param name="rectangle">The rectangle.</param>
-            <param name="stride">The stride.</param>
-            <param name="output">The output stream.</param>
-            <returns></returns>
-            <unmanaged>HRESULT IWICBitmapSource::CopyPixels([In, Optional] const WICRect* prc,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer)</unmanaged>
+        <member name="M:SharpDX.WIC.BitmapSource.CopyPixels(SharpDX.DrawingRectangle,System.Int32,SharpDX.DataPointer)">
+            <summary>	
+            <p>Instructs the object to produce pixels.</p>	
+            </summary>	
+            <param name="rectangle"><dd>  <p>The rectangle to copy. A <strong><c>null</c></strong> value specifies the entire bitmap.</p> </dd></param>	
+            <param name="stride"><dd>  <p>The stride of the bitmap</p> </dd></param>	
+            <param name="dataPointer"><dd>  <p>A reference to the buffer.</p> </dd></param>	
+            <remarks>	
+            <p><strong>CopyPixels</strong> is one of the two main image processing routines (the other being <strong>Lock</strong>) triggering the actual processing.  It instructs the object to produce pixels according to its algorithm - this may involve decoding a portion of a JPEG stored on disk, copying a block of memory, or even analytically computing a complex gradient.  The algorithm is completely dependent on the object implementing the interface. </p><p> The caller can restrict the operation to a rectangle of interest (ROI) using the prc parameter.  The ROI sub-rectangle must be fully contained in the bounds of the bitmap.  Specifying a <strong><c>null</c></strong> ROI implies that the whole bitmap should be returned. 	
+            </p><p> The caller controls the memory management and must provide an output buffer (<em>pbBuffer</em>) for the results of the copy along with the buffer's bounds (<em>cbBufferSize</em>).  The cbStride parameter defines the count of bytes between two vertically adjacent pixels in the output buffer.  The caller must ensure that there is sufficient buffer to complete the call based on the width, height and pixel format of the bitmap and the sub-rectangle provided to the copy method. </p><p> If the caller needs to perform numerous copies of an expensive <strong><see cref="T:SharpDX.WIC.BitmapSource"/></strong> such as a JPEG, it is recommended to create an in-memory <strong><see cref="T:SharpDX.WIC.Bitmap"/></strong> first. </p>Codec Developer Remarks<p> The callee must only write to the first (prc-&gt;Width*bitsperpixel+7)/8 bytes of each line of the output buffer (in this case, a line is a consecutive string of <em>cbStride</em> bytes). </p>	
+            </remarks>	
+            <msdn-id>ee690179</msdn-id>	
+            <unmanaged>HRESULT IWICBitmapSource::CopyPixels([In, Optional] const WICRect* prc,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer)</unmanaged>	
+            <unmanaged-short>IWICBitmapSource::CopyPixels</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.BitmapSource.CopyPixels(System.Int32,SharpDX.DataStream)">
-            <summary>
-            Copies the pixels.
-            </summary>
-            <param name="stride">The stride.</param>
-            <param name="output">The output stream.</param>
-            <returns></returns>
-            <unmanaged>HRESULT IWICBitmapSource::CopyPixels([In, Optional] const WICRect* prc,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer)</unmanaged>
+        <member name="M:SharpDX.WIC.BitmapSource.CopyPixels(System.Int32,SharpDX.DataPointer)">
+            <summary>	
+            <p>Instructs the object to produce pixels.</p>	
+            </summary>	
+            <param name="stride"><dd>  <p>The stride of the bitmap</p> </dd></param>	
+            <param name="dataPointer"><dd>  <p>A reference to the buffer.</p> </dd></param>	
+            <remarks>	
+            <p><strong>CopyPixels</strong> is one of the two main image processing routines (the other being <strong>Lock</strong>) triggering the actual processing.  It instructs the object to produce pixels according to its algorithm - this may involve decoding a portion of a JPEG stored on disk, copying a block of memory, or even analytically computing a complex gradient.  The algorithm is completely dependent on the object implementing the interface. </p><p> The caller can restrict the operation to a rectangle of interest (ROI) using the prc parameter.  The ROI sub-rectangle must be fully contained in the bounds of the bitmap.  Specifying a <strong><c>null</c></strong> ROI implies that the whole bitmap should be returned. 	
+            </p><p> The caller controls the memory management and must provide an output buffer (<em>pbBuffer</em>) for the results of the copy along with the buffer's bounds (<em>cbBufferSize</em>).  The cbStride parameter defines the count of bytes between two vertically adjacent pixels in the output buffer.  The caller must ensure that there is sufficient buffer to complete the call based on the width, height and pixel format of the bitmap and the sub-rectangle provided to the copy method. </p><p> If the caller needs to perform numerous copies of an expensive <strong><see cref="T:SharpDX.WIC.BitmapSource"/></strong> such as a JPEG, it is recommended to create an in-memory <strong><see cref="T:SharpDX.WIC.Bitmap"/></strong> first. </p>Codec Developer Remarks<p> The callee must only write to the first (prc-&gt;Width*bitsperpixel+7)/8 bytes of each line of the output buffer (in this case, a line is a consecutive string of <em>cbStride</em> bytes). </p>	
+            </remarks>	
+            <msdn-id>ee690179</msdn-id>	
+            <unmanaged>HRESULT IWICBitmapSource::CopyPixels([In, Optional] const WICRect* prc,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer)</unmanaged>	
+            <unmanaged-short>IWICBitmapSource::CopyPixels</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.WIC.BitmapSource.CopyPixels``1(SharpDX.DrawingRectangle,``0[])">
+            <summary>	
+            <p>Instructs the object to produce pixels.</p>	
+            </summary>	
+            <param name="rectangle"><dd>  <p>The rectangle to copy. A <strong><c>null</c></strong> value specifies the entire bitmap.</p> </dd></param>	
+            <param name="output">The destination array. The size of the array must be sizeof(pixel) * rectangle.Width * rectangle.Height</param>	
+            <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
+            <remarks>	
+            <p><strong>CopyPixels</strong> is one of the two main image processing routines (the other being <strong>Lock</strong>) triggering the actual processing.  It instructs the object to produce pixels according to its algorithm - this may involve decoding a portion of a JPEG stored on disk, copying a block of memory, or even analytically computing a complex gradient.  The algorithm is completely dependent on the object implementing the interface. </p><p> The caller can restrict the operation to a rectangle of interest (ROI) using the prc parameter.  The ROI sub-rectangle must be fully contained in the bounds of the bitmap.  Specifying a <strong><c>null</c></strong> ROI implies that the whole bitmap should be returned. 	
+            </p><p> The caller controls the memory management and must provide an output buffer (<em>pbBuffer</em>) for the results of the copy along with the buffer's bounds (<em>cbBufferSize</em>).  The cbStride parameter defines the count of bytes between two vertically adjacent pixels in the output buffer.  The caller must ensure that there is sufficient buffer to complete the call based on the width, height and pixel format of the bitmap and the sub-rectangle provided to the copy method. </p><p> If the caller needs to perform numerous copies of an expensive <strong><see cref="T:SharpDX.WIC.BitmapSource"/></strong> such as a JPEG, it is recommended to create an in-memory <strong><see cref="T:SharpDX.WIC.Bitmap"/></strong> first. </p>Codec Developer Remarks<p> The callee must only write to the first (prc-&gt;Width*bitsperpixel+7)/8 bytes of each line of the output buffer (in this case, a line is a consecutive string of <em>cbStride</em> bytes). </p>	
+            </remarks>	
+            <msdn-id>ee690179</msdn-id>	
+            <unmanaged>HRESULT IWICBitmapSource::CopyPixels([In, Optional] const WICRect* prc,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer)</unmanaged>	
+            <unmanaged-short>IWICBitmapSource::CopyPixels</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.WIC.BitmapSource.CopyPixels``1(``0[])">
+            <summary>	
+            <p>Instructs the object to produce pixels.</p>	
+            </summary>	
+            <param name="output">The destination array. The size of the array must be sizeof(pixel) * Width * Height</param>	
+            <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
+            <remarks>	
+            <p><strong>CopyPixels</strong> is one of the two main image processing routines (the other being <strong>Lock</strong>) triggering the actual processing.  It instructs the object to produce pixels according to its algorithm - this may involve decoding a portion of a JPEG stored on disk, copying a block of memory, or even analytically computing a complex gradient.  The algorithm is completely dependent on the object implementing the interface. </p><p> The caller can restrict the operation to a rectangle of interest (ROI) using the prc parameter.  The ROI sub-rectangle must be fully contained in the bounds of the bitmap.  Specifying a <strong><c>null</c></strong> ROI implies that the whole bitmap should be returned. 	
+            </p><p> The caller controls the memory management and must provide an output buffer (<em>pbBuffer</em>) for the results of the copy along with the buffer's bounds (<em>cbBufferSize</em>).  The cbStride parameter defines the count of bytes between two vertically adjacent pixels in the output buffer.  The caller must ensure that there is sufficient buffer to complete the call based on the width, height and pixel format of the bitmap and the sub-rectangle provided to the copy method. </p><p> If the caller needs to perform numerous copies of an expensive <strong><see cref="T:SharpDX.WIC.BitmapSource"/></strong> such as a JPEG, it is recommended to create an in-memory <strong><see cref="T:SharpDX.WIC.Bitmap"/></strong> first. </p>Codec Developer Remarks<p> The callee must only write to the first (prc-&gt;Width*bitsperpixel+7)/8 bytes of each line of the output buffer (in this case, a line is a consecutive string of <em>cbStride</em> bytes). </p>	
+            </remarks>	
+            <msdn-id>ee690179</msdn-id>	
+            <unmanaged>HRESULT IWICBitmapSource::CopyPixels([In, Optional] const WICRect* prc,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer)</unmanaged>	
+            <unmanaged-short>IWICBitmapSource::CopyPixels</unmanaged-short>	
         </member>
         <member name="P:SharpDX.WIC.BitmapSource.PixelFormat">
             <summary>	
@@ -13016,10 +13105,13 @@
             <unmanaged>HRESULT IWICBitmapSource::GetPixelFormat([Out] GUID* pPixelFormat)</unmanaged>
         </member>
         <member name="P:SharpDX.WIC.BitmapSource.Size">
-            <summary>
-            Gets the size.
-            </summary>
+            <summary>	
+            <p>Retrieves the pixel width and height of the bitmap.</p>	
+            </summary>	
             <unmanaged>HRESULT IWICBitmapSource::GetSize([Out] unsigned int* puiWidth,[Out] unsigned int* puiHeight)</unmanaged>
+            <msdn-id>ee690185</msdn-id>	
+            <unmanaged>HRESULT IWICBitmapSource::GetSize([Out] unsigned int* puiWidth,[Out] unsigned int* puiHeight)</unmanaged>	
+            <unmanaged-short>IWICBitmapSource::GetSize</unmanaged-short>	
         </member>
         <member name="M:SharpDX.WIC.Bitmap.#ctor(System.IntPtr)">
             <summary>
@@ -13086,7 +13178,9 @@
             <param name="height">The height.</param>
             <param name="pixelFormat">The pixel format. <see cref="T:SharpDX.WIC.PixelFormat"/> for a list of valid formats. </param>
             <param name="option">The option.</param>
-            <unmanaged>HRESULT IWICImagingFactory::CreateBitmap([In] unsigned int uiWidth,[In] unsigned int uiHeight,[In] const GUID&amp; pixelFormat,[In] WICBitmapCreateCacheOption option,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>
+            <msdn-id>ee690282</msdn-id>	
+            <unmanaged>HRESULT IWICImagingFactory::CreateBitmap([In] unsigned int uiWidth,[In] unsigned int uiHeight,[In] const GUID&amp; pixelFormat,[In] WICBitmapCreateCacheOption option,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>	
+            <unmanaged-short>IWICImagingFactory::CreateBitmap</unmanaged-short>	
         </member>
         <member name="M:SharpDX.WIC.Bitmap.#ctor(SharpDX.WIC.ImagingFactory,System.Int32,System.Int32,System.Guid,SharpDX.DataRectangle)">
             <summary>
@@ -13097,7 +13191,9 @@
             <param name="height">The height.</param>
             <param name="pixelFormat">The pixel format.</param>
             <param name="dataRectangle">The data rectangle.</param>
-            <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromMemory([In] unsigned int uiWidth,[In] unsigned int uiHeight,[In] const GUID&amp; pixelFormat,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>
+            <msdn-id>ee690291</msdn-id>	
+            <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromMemory([In] unsigned int uiWidth,[In] unsigned int uiHeight,[In] const GUID&amp; pixelFormat,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>	
+            <unmanaged-short>IWICImagingFactory::CreateBitmapFromMemory</unmanaged-short>	
         </member>
         <member name="M:SharpDX.WIC.Bitmap.#ctor(SharpDX.WIC.ImagingFactory,SharpDX.WIC.BitmapSource,SharpDX.WIC.BitmapCreateCacheOption)">
             <summary>
@@ -13106,7 +13202,9 @@
             <param name="factory">The factory.</param>
             <param name="bitmapSource">The bitmap source ref.</param>
             <param name="option">The option.</param>
-            <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromSource([In, Optional] IWICBitmapSource* pIBitmapSource,[In] WICBitmapCreateCacheOption option,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>
+            <msdn-id>ee690293</msdn-id>	
+            <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromSource([In, Optional] IWICBitmapSource* pIBitmapSource,[In] WICBitmapCreateCacheOption option,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>	
+            <unmanaged-short>IWICImagingFactory::CreateBitmapFromSource</unmanaged-short>	
         </member>
         <member name="M:SharpDX.WIC.Bitmap.#ctor(SharpDX.WIC.ImagingFactory,SharpDX.WIC.BitmapSource,SharpDX.DrawingRectangle)">
             <summary>
@@ -13115,7 +13213,22 @@
             <param name="factory">The factory.</param>
             <param name="bitmapSource">The bitmap source.</param>
             <param name="rectangle">The rectangle.</param>
-            <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromSourceRect([In, Optional] IWICBitmapSource* pIBitmapSource,[In] unsigned int x,[In] unsigned int y,[In] unsigned int width,[In] unsigned int height,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>
+            <msdn-id>ee690294</msdn-id>	
+            <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromSourceRect([In, Optional] IWICBitmapSource* pIBitmapSource,[In] unsigned int x,[In] unsigned int y,[In] unsigned int width,[In] unsigned int height,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>	
+            <unmanaged-short>IWICImagingFactory::CreateBitmapFromSourceRect</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.WIC.Bitmap.New``1(SharpDX.WIC.ImagingFactory,System.Int32,System.Int32,System.Guid,``0[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.Bitmap"/> class from an array of pixel datas.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="width">The width.</param>
+            <param name="height">The height.</param>
+            <param name="pixelFormat">The pixel format.</param>
+            <param name="pixelDatas">The pixel datas.</param>
+            <msdn-id>ee690291</msdn-id>	
+            <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromMemory([In] unsigned int uiWidth,[In] unsigned int uiHeight,[In] const GUID&amp; pixelFormat,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>	
+            <unmanaged-short>IWICImagingFactory::CreateBitmapFromMemory</unmanaged-short>	
         </member>
         <member name="P:SharpDX.WIC.Bitmap.Palette">
             <summary>	
@@ -13883,7 +13996,26 @@
             <param name="metadataOptions">The metadata options.</param>
             <unmanaged>HRESULT IWICImagingFactory::CreateDecoderFromStream([In, Optional] IStream* pIStream,[In, Optional] const GUID* pguidVendor,[In] WICDecodeOptions metadataOptions,[Out, Fast] IWICBitmapDecoder** ppIDecoder)</unmanaged>
         </member>
+        <member name="M:SharpDX.WIC.BitmapDecoder.#ctor(SharpDX.WIC.ImagingFactory,System.IO.Stream,SharpDX.WIC.DecodeOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.BitmapDecoder"/> class from a <see cref="T:SharpDX.Win32.IStream"/>.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="streamRef">The stream ref.</param>
+            <param name="metadataOptions">The metadata options.</param>
+            <unmanaged>HRESULT IWICImagingFactory::CreateDecoderFromStream([In, Optional] IStream* pIStream,[In, Optional] const GUID* pguidVendor,[In] WICDecodeOptions metadataOptions,[Out, Fast] IWICBitmapDecoder** ppIDecoder)</unmanaged>
+        </member>
         <member name="M:SharpDX.WIC.BitmapDecoder.#ctor(SharpDX.WIC.ImagingFactory,SharpDX.Win32.IStream,System.Guid,SharpDX.WIC.DecodeOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.BitmapDecoder"/> class from a <see cref="T:SharpDX.Win32.IStream"/>.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="streamRef">The stream ref.</param>
+            <param name="guidVendorRef">The GUID vendor ref.</param>
+            <param name="metadataOptions">The metadata options.</param>
+            <unmanaged>HRESULT IWICImagingFactory::CreateDecoderFromStream([In, Optional] IStream* pIStream,[In, Optional] const GUID* pguidVendor,[In] WICDecodeOptions metadataOptions,[Out, Fast] IWICBitmapDecoder** ppIDecoder)</unmanaged>
+        </member>
+        <member name="M:SharpDX.WIC.BitmapDecoder.#ctor(SharpDX.WIC.ImagingFactory,System.IO.Stream,System.Guid,SharpDX.WIC.DecodeOptions)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.WIC.BitmapDecoder"/> class from a <see cref="T:SharpDX.Win32.IStream"/>.
             </summary>
@@ -14263,7 +14395,53 @@
             <param name="guidVendorRef">The GUID vendor ref.</param>
             <unmanaged>HRESULT IWICImagingFactory::CreateEncoder([In] const GUID&amp; guidContainerFormat,[In, Optional] const GUID* pguidVendor,[Out] IWICBitmapEncoder** ppIEncoder)</unmanaged>	
         </member>
+        <member name="M:SharpDX.WIC.BitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid,SharpDX.WIC.WICStream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.BitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="containerFormatGuid">The container format GUID. List from <see cref="T:SharpDX.WIC.ContainerFormatGuids"/> </param>
+            <param name="stream">A stream to use as the output of this bitmap encoder.</param>
+            <unmanaged>HRESULT IWICImagingFactory::CreateEncoder([In] const GUID&amp; guidContainerFormat,[In, Optional] const GUID* pguidVendor,[Out] IWICBitmapEncoder** ppIEncoder)</unmanaged>	
+        </member>
+        <member name="M:SharpDX.WIC.BitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid,System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.BitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="containerFormatGuid">The container format GUID. List from <see cref="T:SharpDX.WIC.ContainerFormatGuids"/> </param>
+            <param name="stream">A stream to use as the output of this bitmap encoder.</param>
+            <unmanaged>HRESULT IWICImagingFactory::CreateEncoder([In] const GUID&amp; guidContainerFormat,[In, Optional] const GUID* pguidVendor,[Out] IWICBitmapEncoder** ppIEncoder)</unmanaged>	
+        </member>
+        <member name="M:SharpDX.WIC.BitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid,System.Guid,SharpDX.WIC.WICStream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.BitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="containerFormatGuid">The container format GUID. List from <see cref="T:SharpDX.WIC.ContainerFormatGuids"/></param>
+            <param name="guidVendorRef">The GUID vendor ref.</param>
+            <param name="stream">A stream to use as the output of this bitmap encoder.</param>
+            <unmanaged>HRESULT IWICImagingFactory::CreateEncoder([In] const GUID&amp; guidContainerFormat,[In, Optional] const GUID* pguidVendor,[Out] IWICBitmapEncoder** ppIEncoder)</unmanaged>	
+        </member>
+        <member name="M:SharpDX.WIC.BitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid,System.Guid,System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.BitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="containerFormatGuid">The container format GUID. List from <see cref="T:SharpDX.WIC.ContainerFormatGuids"/></param>
+            <param name="guidVendorRef">The GUID vendor ref.</param>
+            <param name="stream">A stream to use as the output of this bitmap encoder.</param>
+            <unmanaged>HRESULT IWICImagingFactory::CreateEncoder([In] const GUID&amp; guidContainerFormat,[In, Optional] const GUID* pguidVendor,[Out] IWICBitmapEncoder** ppIEncoder)</unmanaged>	
+        </member>
         <member name="M:SharpDX.WIC.BitmapEncoder.Initialize(SharpDX.Win32.IStream)">
+            <summary>
+            Initializes the encoder with the provided stream.
+            </summary>
+            <param name="stream">The stream to use for initialization.</param>
+            <returns>If the method succeeds, it returns <see cref="F:SharpDX.Result.Ok"/>. Otherwise, it throws an exception.</returns>
+            <unmanaged>HRESULT IWICBitmapEncoder::Initialize([In, Optional] IStream* pIStream,[In] WICBitmapEncoderCacheOption cacheOption)</unmanaged>	
+        </member>
+        <member name="M:SharpDX.WIC.BitmapEncoder.Initialize(System.IO.Stream)">
             <summary>
             Initializes the encoder with the provided stream.
             </summary>
@@ -37300,12 +37478,35 @@
             </summary>
             <param name="factory">The factory.</param>
         </member>
-        <member name="M:SharpDX.WIC.BmpBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid)">
+        <member name="M:SharpDX.WIC.BmpBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.BmpBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.BmpBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid,System.IO.Stream)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.WIC.BmpBitmapEncoder"/> class.
             </summary>
             <param name="factory">The factory.</param>
             <param name="guidVendorRef">The GUID vendor ref.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.BmpBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,SharpDX.WIC.WICStream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.BmpBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.BmpBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid,SharpDX.WIC.WICStream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.BmpBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="guidVendorRef">The GUID vendor ref.</param>
+            <param name="stream">The output stream.</param>
         </member>
         <member name="T:SharpDX.WIC.GifBitmapDecoder">
             <summary>
@@ -37348,12 +37549,35 @@
             </summary>
             <param name="factory">The factory.</param>
         </member>
-        <member name="M:SharpDX.WIC.GifBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid)">
+        <member name="M:SharpDX.WIC.GifBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.GifBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.GifBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid,System.IO.Stream)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.WIC.GifBitmapEncoder"/> class.
             </summary>
             <param name="factory">The factory.</param>
             <param name="guidVendorRef">The GUID vendor ref.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.GifBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,SharpDX.WIC.WICStream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.GifBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.GifBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid,SharpDX.WIC.WICStream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.GifBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="guidVendorRef">The GUID vendor ref.</param>
+            <param name="stream">The output stream.</param>
         </member>
         <member name="T:SharpDX.WIC.JpegBitmapDecoder">
             <summary>
@@ -37396,12 +37620,35 @@
             </summary>
             <param name="factory">The factory.</param>
         </member>
-        <member name="M:SharpDX.WIC.JpegBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid)">
+        <member name="M:SharpDX.WIC.JpegBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.JpegBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.JpegBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid,System.IO.Stream)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.WIC.JpegBitmapEncoder"/> class.
             </summary>
             <param name="factory">The factory.</param>
             <param name="guidVendorRef">The GUID vendor ref.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.JpegBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,SharpDX.WIC.WICStream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.JpegBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.JpegBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid,SharpDX.WIC.WICStream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.JpegBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="guidVendorRef">The GUID vendor ref.</param>
+            <param name="stream">The output stream.</param>
         </member>
         <member name="T:SharpDX.WIC.NamespaceDoc">
             <summary>
@@ -37452,12 +37699,35 @@
             </summary>
             <param name="factory">The factory.</param>
         </member>
-        <member name="M:SharpDX.WIC.PngBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid)">
+        <member name="M:SharpDX.WIC.PngBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.PngBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.PngBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid,System.IO.Stream)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.WIC.PngBitmapEncoder"/> class.
             </summary>
             <param name="factory">The factory.</param>
             <param name="guidVendorRef">The GUID vendor ref.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.PngBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,SharpDX.WIC.WICStream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.PngBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.PngBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid,SharpDX.WIC.WICStream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.PngBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="guidVendorRef">The GUID vendor ref.</param>
+            <param name="stream">The output stream.</param>
         </member>
         <member name="T:SharpDX.WIC.TiffBitmapDecoder">
             <summary>
@@ -37500,12 +37770,35 @@
             </summary>
             <param name="factory">The factory.</param>
         </member>
-        <member name="M:SharpDX.WIC.TiffBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid)">
+        <member name="M:SharpDX.WIC.TiffBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.TiffBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.TiffBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid,System.IO.Stream)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.WIC.TiffBitmapEncoder"/> class.
             </summary>
             <param name="factory">The factory.</param>
             <param name="guidVendorRef">The GUID vendor ref.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.TiffBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,SharpDX.WIC.WICStream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.TiffBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.TiffBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid,SharpDX.WIC.WICStream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.TiffBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="guidVendorRef">The GUID vendor ref.</param>
+            <param name="stream">The output stream.</param>
         </member>
         <member name="T:SharpDX.WIC.WmpBitmapDecoder">
             <summary>
@@ -37548,12 +37841,35 @@
             </summary>
             <param name="factory">The factory.</param>
         </member>
-        <member name="M:SharpDX.WIC.WmpBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid)">
+        <member name="M:SharpDX.WIC.WmpBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.WmpBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.WmpBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid,System.IO.Stream)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.WIC.WmpBitmapEncoder"/> class.
             </summary>
             <param name="factory">The factory.</param>
             <param name="guidVendorRef">The GUID vendor ref.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.WmpBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,SharpDX.WIC.WICStream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.WmpBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:SharpDX.WIC.WmpBitmapEncoder.#ctor(SharpDX.WIC.ImagingFactory,System.Guid,SharpDX.WIC.WICStream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.WmpBitmapEncoder"/> class.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="guidVendorRef">The GUID vendor ref.</param>
+            <param name="stream">The output stream.</param>
         </member>
     </members>
 </doc>

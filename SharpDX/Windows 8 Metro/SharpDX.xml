@@ -1626,12 +1626,578 @@
             The <see cref="N:SharpDX"/> assembly is the core assembly providing infrastructure for all managed DirectX API.
             </summary>
         </member>
+        <member name="T:SharpDX.Color">
+            <summary>
+            Represents a 32-bit color (4 bytes) in the form of argb.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Red">
+            <summary>
+            The red component of the color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Green">
+            <summary>
+            The green component of the color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Blue">
+            <summary>
+            The blue component of the color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Alpha">
+            <summary>
+            The alpha component of the color.
+            </summary>
+        </member>
+        <member name="M:SharpDX.Color.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Color"/> struct.
+            </summary>
+            <param name="value">The value that will be assigned to all components.</param>
+        </member>
+        <member name="M:SharpDX.Color.#ctor(System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Color"/> struct.
+            </summary>
+            <param name="value">The value that will be assigned to all components.</param>
+        </member>
+        <member name="M:SharpDX.Color.#ctor(System.Byte,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Color"/> struct.
+            </summary>
+            <param name="red">The red component of the color.</param>
+            <param name="green">The green component of the color.</param>
+            <param name="blue">The blue component of the color.</param>
+            <param name="alpha">The alpha component of the color.</param>
+        </member>
+        <member name="M:SharpDX.Color.#ctor(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Color"/> struct.
+            </summary>
+            <param name="red">The red component of the color.</param>
+            <param name="green">The green component of the color.</param>
+            <param name="blue">The blue component of the color.</param>
+            <param name="alpha">The alpha component of the color.</param>
+        </member>
+        <member name="M:SharpDX.Color.#ctor(SharpDX.Vector4)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Color"/> struct.
+            </summary>
+            <param name="value">The red, green, blue, and alpha components of the color.</param>
+        </member>
+        <member name="M:SharpDX.Color.#ctor(SharpDX.Vector3,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Color"/> struct.
+            </summary>
+            <param name="value">The red, green, and blue compoennts of the color.</param>
+            <param name="alpha">The alpha component of the color.</param>
+        </member>
+        <member name="M:SharpDX.Color.#ctor(System.UInt32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Color"/> struct.
+            </summary>
+            <param name="argb">A packed integer containing all four color components.</param>
+        </member>
+        <member name="M:SharpDX.Color.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Color"/> struct.
+            </summary>
+            <param name="argb">A packed integer containing all four color components.</param>
+        </member>
+        <member name="M:SharpDX.Color.#ctor(System.Single[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Color"/> struct.
+            </summary>
+            <param name="values">The values to assign to the alpha, red, green, and blue components of the color. This must be an array with four elements.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="values"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="values"/> contains more or less than four elements.</exception>
+        </member>
+        <member name="M:SharpDX.Color.#ctor(System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Color"/> struct.
+            </summary>
+            <param name="values">The values to assign to the alpha, red, green, and blue components of the color. This must be an array with four elements.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="values"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="values"/> contains more or less than four elements.</exception>
+        </member>
+        <member name="M:SharpDX.Color.ToArgb">
+            <summary>
+            Converts the color into a packed integer.
+            </summary>
+            <returns>A packed integer containing all four color components.</returns>
+        </member>
+        <member name="M:SharpDX.Color.ToVector3">
+            <summary>
+            Converts the color into a three component vector.
+            </summary>
+            <returns>A three component vector containing the red, green, and blue components of the color.</returns>
+        </member>
+        <member name="M:SharpDX.Color.ToVector4">
+            <summary>
+            Converts the color into a four component vector.
+            </summary>
+            <returns>A four component vector containing all four color components.</returns>
+        </member>
+        <member name="M:SharpDX.Color.ToArray">
+            <summary>
+            Creates an array containing the elements of the color.
+            </summary>
+            <returns>A four-element array containing the components of the color.</returns>
+        </member>
+        <member name="M:SharpDX.Color.Add(SharpDX.Color@,SharpDX.Color@,SharpDX.Color@)">
+            <summary>
+            Adds two colors.
+            </summary>
+            <param name="left">The first color to add.</param>
+            <param name="right">The second color to add.</param>
+            <param name="result">When the method completes, completes the sum of the two colors.</param>
+        </member>
+        <member name="M:SharpDX.Color.Add(SharpDX.Color,SharpDX.Color)">
+            <summary>
+            Adds two colors.
+            </summary>
+            <param name="left">The first color to add.</param>
+            <param name="right">The second color to add.</param>
+            <returns>The sum of the two colors.</returns>
+        </member>
+        <member name="M:SharpDX.Color.Subtract(SharpDX.Color@,SharpDX.Color@,SharpDX.Color@)">
+            <summary>
+            Subtracts two colors.
+            </summary>
+            <param name="left">The first color to subtract.</param>
+            <param name="right">The second color to subtract.</param>
+            <param name="result">WHen the method completes, contains the difference of the two colors.</param>
+        </member>
+        <member name="M:SharpDX.Color.Subtract(SharpDX.Color,SharpDX.Color)">
+            <summary>
+            Subtracts two colors.
+            </summary>
+            <param name="left">The first color to subtract.</param>
+            <param name="right">The second color to subtract</param>
+            <returns>The difference of the two colors.</returns>
+        </member>
+        <member name="M:SharpDX.Color.Modulate(SharpDX.Color@,SharpDX.Color@,SharpDX.Color@)">
+            <summary>
+            Modulates two colors.
+            </summary>
+            <param name="left">The first color to modulate.</param>
+            <param name="right">The second color to modulate.</param>
+            <param name="result">When the method completes, contains the modulated color.</param>
+        </member>
+        <member name="M:SharpDX.Color.Modulate(SharpDX.Color,SharpDX.Color)">
+            <summary>
+            Modulates two colors.
+            </summary>
+            <param name="left">The first color to modulate.</param>
+            <param name="right">The second color to modulate.</param>
+            <returns>The modulated color.</returns>
+        </member>
+        <member name="M:SharpDX.Color.Scale(SharpDX.Color@,System.Single,SharpDX.Color@)">
+            <summary>
+            Scales a color.
+            </summary>
+            <param name="value">The color to scale.</param>
+            <param name="scale">The amount by which to scale.</param>
+            <param name="result">When the method completes, contains the scaled color.</param>
+        </member>
+        <member name="M:SharpDX.Color.Scale(SharpDX.Color,System.Single)">
+            <summary>
+            Scales a color.
+            </summary>
+            <param name="value">The color to scale.</param>
+            <param name="scale">The amount by which to scale.</param>
+            <returns>The scaled color.</returns>
+        </member>
+        <member name="M:SharpDX.Color.Negate(SharpDX.Color@,SharpDX.Color@)">
+            <summary>
+            Negates a color.
+            </summary>
+            <param name="value">The color to negate.</param>
+            <param name="result">When the method completes, contains the negated color.</param>
+        </member>
+        <member name="M:SharpDX.Color.Negate(SharpDX.Color)">
+            <summary>
+            Negates a color.
+            </summary>
+            <param name="value">The color to negate.</param>
+            <returns>The negated color.</returns>
+        </member>
+        <member name="M:SharpDX.Color.Clamp(SharpDX.Color@,SharpDX.Color@,SharpDX.Color@,SharpDX.Color@)">
+            <summary>
+            Restricts a value to be within a specified range.
+            </summary>
+            <param name="value">The value to clamp.</param>
+            <param name="min">The minimum value.</param>
+            <param name="max">The maximum value.</param>
+            <param name="result">When the method completes, contains the clamped value.</param>
+        </member>
+        <member name="M:SharpDX.Color.Clamp(SharpDX.Color,SharpDX.Color,SharpDX.Color)">
+            <summary>
+            Restricts a value to be within a specified range.
+            </summary>
+            <param name="value">The value to clamp.</param>
+            <param name="min">The minimum value.</param>
+            <param name="max">The maximum value.</param>
+            <returns>The clamped value.</returns>
+        </member>
+        <member name="M:SharpDX.Color.Lerp(SharpDX.Color@,SharpDX.Color@,System.Single,SharpDX.Color@)">
+            <summary>
+            Performs a linear interpolation between two colors.
+            </summary>
+            <param name="start">Start color.</param>
+            <param name="end">End color.</param>
+            <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
+            <param name="result">When the method completes, contains the linear interpolation of the two colors.</param>
+            <remarks>
+            This method performs the linear interpolation based on the following formula.
+            <code>start + (end - start) * amount</code>
+            Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
+            </remarks>
+        </member>
+        <member name="M:SharpDX.Color.Lerp(SharpDX.Color,SharpDX.Color,System.Single)">
+            <summary>
+            Performs a linear interpolation between two colors.
+            </summary>
+            <param name="start">Start color.</param>
+            <param name="end">End color.</param>
+            <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
+            <returns>The linear interpolation of the two colors.</returns>
+            <remarks>
+            This method performs the linear interpolation based on the following formula.
+            <code>start + (end - start) * amount</code>
+            Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
+            </remarks>
+        </member>
+        <member name="M:SharpDX.Color.SmoothStep(SharpDX.Color@,SharpDX.Color@,System.Single,SharpDX.Color@)">
+            <summary>
+            Performs a cubic interpolation between two colors.
+            </summary>
+            <param name="start">Start color.</param>
+            <param name="end">End color.</param>
+            <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
+            <param name="result">When the method completes, contains the cubic interpolation of the two colors.</param>
+        </member>
+        <member name="M:SharpDX.Color.SmoothStep(SharpDX.Color,SharpDX.Color,System.Single)">
+            <summary>
+            Performs a cubic interpolation between two colors.
+            </summary>
+            <param name="start">Start color.</param>
+            <param name="end">End color.</param>
+            <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
+            <returns>The cubic interpolation of the two colors.</returns>
+        </member>
+        <member name="M:SharpDX.Color.Max(SharpDX.Color@,SharpDX.Color@,SharpDX.Color@)">
+            <summary>
+            Returns a color containing the smallest components of the specified colorss.
+            </summary>
+            <param name="left">The first source color.</param>
+            <param name="right">The second source color.</param>
+            <param name="result">When the method completes, contains an new color composed of the largest components of the source colorss.</param>
+        </member>
+        <member name="M:SharpDX.Color.Max(SharpDX.Color,SharpDX.Color)">
+            <summary>
+            Returns a color containing the largest components of the specified colorss.
+            </summary>
+            <param name="left">The first source color.</param>
+            <param name="right">The second source color.</param>
+            <returns>A color containing the largest components of the source colors.</returns>
+        </member>
+        <member name="M:SharpDX.Color.Min(SharpDX.Color@,SharpDX.Color@,SharpDX.Color@)">
+            <summary>
+            Returns a color containing the smallest components of the specified colors.
+            </summary>
+            <param name="left">The first source color.</param>
+            <param name="right">The second source color.</param>
+            <param name="result">When the method completes, contains an new color composed of the smallest components of the source colors.</param>
+        </member>
+        <member name="M:SharpDX.Color.Min(SharpDX.Color,SharpDX.Color)">
+            <summary>
+            Returns a color containing the smallest components of the specified colors.
+            </summary>
+            <param name="left">The first source color.</param>
+            <param name="right">The second source color.</param>
+            <returns>A color containing the smallest components of the source colors.</returns>
+        </member>
+        <member name="M:SharpDX.Color.AdjustContrast(SharpDX.Color@,System.Single,SharpDX.Color@)">
+            <summary>
+            Adjusts the contrast of a color.
+            </summary>
+            <param name="value">The color whose contrast is to be adjusted.</param>
+            <param name="contrast">The amount by which to adjust the contrast.</param>
+            <param name="result">When the method completes, contains the adjusted color.</param>
+        </member>
+        <member name="M:SharpDX.Color.AdjustContrast(SharpDX.Color,System.Single)">
+            <summary>
+            Adjusts the contrast of a color.
+            </summary>
+            <param name="value">The color whose contrast is to be adjusted.</param>
+            <param name="contrast">The amount by which to adjust the contrast.</param>
+            <returns>The adjusted color.</returns>
+        </member>
+        <member name="M:SharpDX.Color.AdjustSaturation(SharpDX.Color@,System.Single,SharpDX.Color@)">
+            <summary>
+            Adjusts the saturation of a color.
+            </summary>
+            <param name="value">The color whose saturation is to be adjusted.</param>
+            <param name="saturation">The amount by which to adjust the saturation.</param>
+            <param name="result">When the method completes, contains the adjusted color.</param>
+        </member>
+        <member name="M:SharpDX.Color.AdjustSaturation(SharpDX.Color,System.Single)">
+            <summary>
+            Adjusts the saturation of a color.
+            </summary>
+            <param name="value">The color whose saturation is to be adjusted.</param>
+            <param name="saturation">The amount by which to adjust the saturation.</param>
+            <returns>The adjusted color.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Addition(SharpDX.Color,SharpDX.Color)">
+            <summary>
+            Adds two colors.
+            </summary>
+            <param name="left">The first color to add.</param>
+            <param name="right">The second color to add.</param>
+            <returns>The sum of the two colors.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_UnaryPlus(SharpDX.Color)">
+            <summary>
+            Assert a color (return it unchanged).
+            </summary>
+            <param name="value">The color to assert (unchange).</param>
+            <returns>The asserted (unchanged) color.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Subtraction(SharpDX.Color,SharpDX.Color)">
+            <summary>
+            Subtracts two colors.
+            </summary>
+            <param name="left">The first color to subtract.</param>
+            <param name="right">The second color to subtract.</param>
+            <returns>The difference of the two colors.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_UnaryNegation(SharpDX.Color)">
+            <summary>
+            Negates a color.
+            </summary>
+            <param name="value">The color to negate.</param>
+            <returns>A negated color.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Multiply(System.Single,SharpDX.Color)">
+            <summary>
+            Scales a color.
+            </summary>
+            <param name="scale">The factor by which to scale the color.</param>
+            <param name="value">The color to scale.</param>
+            <returns>The scaled color.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Multiply(SharpDX.Color,System.Single)">
+            <summary>
+            Scales a color.
+            </summary>
+            <param name="value">The factor by which to scale the color.</param>
+            <param name="scale">The color to scale.</param>
+            <returns>The scaled color.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Multiply(SharpDX.Color,SharpDX.Color)">
+            <summary>
+            Modulates two colors.
+            </summary>
+            <param name="left">The first color to modulate.</param>
+            <param name="right">The second color to modulate.</param>
+            <returns>The modulated color.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Equality(SharpDX.Color,SharpDX.Color)">
+            <summary>
+            Tests for equality between two objects.
+            </summary>
+            <param name="left">The first value to compare.</param>
+            <param name="right">The second value to compare.</param>
+            <returns><c>true</c> if <paramref name="left"/> has the same value as <paramref name="right"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Inequality(SharpDX.Color,SharpDX.Color)">
+            <summary>
+            Tests for inequality between two objects.
+            </summary>
+            <param name="left">The first value to compare.</param>
+            <param name="right">The second value to compare.</param>
+            <returns><c>true</c> if <paramref name="left"/> has a different value than <paramref name="right"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Explicit(SharpDX.Color)~SharpDX.Color3">
+            <summary>
+            Performs an explicit conversion from <see cref="T:SharpDX.Color"/> to <see cref="T:SharpDX.Color3"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Explicit(SharpDX.Color)~SharpDX.Vector3">
+            <summary>
+            Performs an explicit conversion from <see cref="T:SharpDX.Color"/> to <see cref="T:SharpDX.Vector3"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Explicit(SharpDX.Color)~SharpDX.Vector4">
+            <summary>
+            Performs an explicit conversion from <see cref="T:SharpDX.Color"/> to <see cref="T:SharpDX.Vector4"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Explicit(SharpDX.Color)~SharpDX.Color4">
+            <summary>
+            Performs an explicit conversion from <see cref="T:SharpDX.Color"/> to <see cref="T:SharpDX.Color4"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Explicit(SharpDX.Vector3)~SharpDX.Color">
+            <summary>
+            Performs an explicit conversion from <see cref="T:SharpDX.Vector3"/> to <see cref="T:SharpDX.Color"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Explicit(SharpDX.Vector4)~SharpDX.Color">
+            <summary>
+            Performs an explicit conversion from <see cref="T:SharpDX.Vector4"/> to <see cref="T:SharpDX.Color"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Implicit(SharpDX.Color4)~SharpDX.Color">
+            <summary>
+            Performs an explicit conversion from <see cref="T:SharpDX.Color4"/> to <see cref="T:SharpDX.Color"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Implicit(SharpDX.Color)~System.Int32">
+            <summary>
+            Performs an implicit conversion from <see cref="T:SharpDX.Color"/> to <see cref="T:System.Int32"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Implicit(System.Int32)~SharpDX.Color">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.Int32"/> to <see cref="T:SharpDX.Color"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:SharpDX.Color.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:SharpDX.Color.ToString(System.String)">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <param name="format">The format.</param>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:SharpDX.Color.ToString(System.IFormatProvider)">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <param name="formatProvider">The format provider.</param>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:SharpDX.Color.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <param name="format">The format.</param>
+            <param name="formatProvider">The format provider.</param>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:SharpDX.Color.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="M:SharpDX.Color.Equals(SharpDX.Color)">
+            <summary>
+            Determines whether the specified <see cref="T:SharpDX.Color"/> is equal to this instance.
+            </summary>
+            <param name="other">The <see cref="T:SharpDX.Color"/> to compare with this instance.</param>
+            <returns>
+            <c>true</c> if the specified <see cref="T:SharpDX.Color"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:SharpDX.Color.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            </summary>
+            <param name="value">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns>
+            <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="P:SharpDX.Color.R">
+            <summary>
+            Gets or sets the red component of the color.
+            </summary>
+        </member>
+        <member name="P:SharpDX.Color.G">
+            <summary>
+            Gets or sets the green component of the color.
+            </summary>
+        </member>
+        <member name="P:SharpDX.Color.B">
+            <summary>
+            Gets or sets the blue component of the color.
+            </summary>
+        </member>
+        <member name="P:SharpDX.Color.A">
+            <summary>
+            Gets or sets the alpha component of the color.
+            </summary>
+        </member>
+        <member name="P:SharpDX.Color.Item(System.Int32)">
+            <summary>
+            Gets or sets the component at the specified index.
+            </summary>
+            <value>The value of the alpha, red, green, or blue component, depending on the index.</value>
+            <param name="index">The index of the component to access. Use 0 for the alpha component, 1 for the red component, 2 for the green component, and 3 for the blue component.</param>
+            <returns>The value of the component at the specified index.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the <paramref name="index"/> is out of the range [0, 3].</exception>
+        </member>
         <member name="T:SharpDX.DataPointer">
             <summary>
             Pointer to a native buffer with a specific size.
             </summary>
         </member>
+        <member name="F:SharpDX.DataPointer.Zero">
+            <summary>
+            Gets an Empty Data Pointer.
+            </summary>
+        </member>
         <member name="M:SharpDX.DataPointer.#ctor(System.IntPtr,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.DataPointer"/> struct.
+            </summary>
+            <param name="pointer">The pointer.</param>
+            <param name="size">The size.</param>
+        </member>
+        <member name="M:SharpDX.DataPointer.#ctor(System.Void*,System.Int32)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.DataPointer"/> struct.
             </summary>
@@ -41444,6 +42010,11 @@
         <member name="T:SharpDX.Colors">
             <summary>
             List of predefined <see cref="T:SharpDX.Color4"/>.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Colors.Zero">
+            <summary>
+            Zero color.
             </summary>
         </member>
         <member name="F:SharpDX.Colors.Transparent">
