@@ -4820,7 +4820,7 @@
             </summary>
             <param name="stream">The stream.</param>
         </member>
-        <member name="M:SharpDX.D3DCompiler.ShaderBytecode.Preprocess(System.String,SharpDX.Direct3D.ShaderMacro[],SharpDX.D3DCompiler.Include)">
+        <member name="M:SharpDX.D3DCompiler.ShaderBytecode.Preprocess(System.String,SharpDX.Direct3D.ShaderMacro[],SharpDX.D3DCompiler.Include,System.String)">
             <summary>
               Preprocesses the provided shader or effect source.
             </summary>
@@ -4829,7 +4829,7 @@
             <param name = "include">An interface for handling include files.</param>
             <returns>The preprocessed shader source.</returns>
         </member>
-        <member name="M:SharpDX.D3DCompiler.ShaderBytecode.Preprocess(System.Byte[],SharpDX.Direct3D.ShaderMacro[],SharpDX.D3DCompiler.Include)">
+        <member name="M:SharpDX.D3DCompiler.ShaderBytecode.Preprocess(System.Byte[],SharpDX.Direct3D.ShaderMacro[],SharpDX.D3DCompiler.Include,System.String)">
             <summary>
               Preprocesses the provided shader or effect source.
             </summary>
@@ -4838,17 +4838,7 @@
             <param name = "include">An interface for handling include files.</param>
             <returns>The preprocessed shader source.</returns>
         </member>
-        <member name="M:SharpDX.D3DCompiler.ShaderBytecode.Preprocess(System.Byte[],SharpDX.Direct3D.ShaderMacro[],SharpDX.D3DCompiler.Include,System.String@)">
-            <summary>
-              Preprocesses the provided shader or effect source.
-            </summary>
-            <param name = "shaderSource">An array of bytes containing the raw source of the shader or effect to preprocess.</param>
-            <param name = "defines">A set of macros to define during preprocessing.</param>
-            <param name = "include">An interface for handling include files.</param>
-            <param name = "compilationErrors">When the method completes, contains a string of compilation errors, or an empty string if preprocessing succeeded.</param>
-            <returns>The preprocessed shader source.</returns>
-        </member>
-        <member name="M:SharpDX.D3DCompiler.ShaderBytecode.Preprocess(System.IntPtr,System.Int32,SharpDX.Direct3D.ShaderMacro[],SharpDX.D3DCompiler.Include,System.String@)">
+        <member name="M:SharpDX.D3DCompiler.ShaderBytecode.Preprocess(System.Byte[],SharpDX.Direct3D.ShaderMacro[],SharpDX.D3DCompiler.Include,System.String@,System.String)">
             <summary>
               Preprocesses the provided shader or effect source.
             </summary>
@@ -4858,7 +4848,17 @@
             <param name = "compilationErrors">When the method completes, contains a string of compilation errors, or an empty string if preprocessing succeeded.</param>
             <returns>The preprocessed shader source.</returns>
         </member>
-        <member name="M:SharpDX.D3DCompiler.ShaderBytecode.Preprocess(System.String,SharpDX.Direct3D.ShaderMacro[],SharpDX.D3DCompiler.Include,System.String@)">
+        <member name="M:SharpDX.D3DCompiler.ShaderBytecode.Preprocess(System.IntPtr,System.Int32,SharpDX.Direct3D.ShaderMacro[],SharpDX.D3DCompiler.Include,System.String@,System.String)">
+            <summary>
+              Preprocesses the provided shader or effect source.
+            </summary>
+            <param name = "shaderSource">An array of bytes containing the raw source of the shader or effect to preprocess.</param>
+            <param name = "defines">A set of macros to define during preprocessing.</param>
+            <param name = "include">An interface for handling include files.</param>
+            <param name = "compilationErrors">When the method completes, contains a string of compilation errors, or an empty string if preprocessing succeeded.</param>
+            <returns>The preprocessed shader source.</returns>
+        </member>
+        <member name="M:SharpDX.D3DCompiler.ShaderBytecode.Preprocess(System.String,SharpDX.Direct3D.ShaderMacro[],SharpDX.D3DCompiler.Include,System.String@,System.String)">
             <summary>
               Preprocesses the provided shader or effect source.
             </summary>

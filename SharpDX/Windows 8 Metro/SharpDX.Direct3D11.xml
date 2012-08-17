@@ -1176,6 +1176,42 @@
             <param name="format">The format for which to check support.</param>
             <returns>Flags indicating usage contexts in which the specified format is supported.</returns>
         </member>
+        <member name="M:SharpDX.Direct3D11.Device.CheckD3D11Feature">
+            <summary>	
+            <p>Gets information about the features <see cref="F:SharpDX.Direct3D11.Feature.D3D11Options"/> that are supported by the current graphics driver.</p>	
+            </summary>	
+            <returns>Returns a structure <see cref="T:SharpDX.Direct3D11.FeatureDataD3D11Options"/> </returns>	
+            <msdn-id>ff476497</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CheckFeatureSupport([In] D3D11_FEATURE Feature,[Out, Buffer] void* pFeatureSupportData,[In] unsigned int FeatureSupportDataSize)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CheckFeatureSupport</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.Device.CheckShaderMinimumPrecisionSupport">
+            <summary>	
+            <p>Gets information about the features <see cref="F:SharpDX.Direct3D11.Feature.ShaderMinimumPrecisionSupport"/> that are supported by the current graphics driver.</p>	
+            </summary>	
+            <returns>Returns a structure <see cref="T:SharpDX.Direct3D11.FeatureDataShaderMinimumPrecisionSupport"/> </returns>	
+            <msdn-id>ff476497</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CheckFeatureSupport([In] D3D11_FEATURE Feature,[Out, Buffer] void* pFeatureSupportData,[In] unsigned int FeatureSupportDataSize)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CheckFeatureSupport</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.Device.CheckFullNonPow2TextureSupport">
+            <summary>	
+            <p>Gets information about whether the driver supports the nonpowers-of-2-unconditionally feature. <strong>TRUE</strong> for hardware at Direct3D 10 and higher feature levels. </p>	
+            </summary>	
+            <returns>Returns <strong>true</strong> if this hardware supports non-powers-of-2 texture. This returns always true Direct3D 10 and higher feature levels.</returns>	
+            <msdn-id>ff476497</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CheckFeatureSupport([In] D3D11_FEATURE Feature,[Out, Buffer] void* pFeatureSupportData,[In] unsigned int FeatureSupportDataSize)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CheckFeatureSupport</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.Device.CheckTileBasedDeferredRendererSupport">
+            <summary>	
+            <p>Gets information about whether a rendering device batches rendering commands and performs multipass rendering into tiles or bins over a render area. Certain API usage patterns that are fine TileBasedDefferredRenderers (TBDRs) can perform worse on non-TBDRs and vice versa.  Applications that are careful about rendering can be friendly to both TBDR and non-TBDR architectures.</p> 
+            </summary>	
+            <returns>Returns <strong>TRUE</strong> if the rendering device batches rendering commands and <strong><see cref="F:SharpDX.Result.False"/></strong> otherwise.</returns>	
+            <msdn-id>ff476497</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CheckFeatureSupport([In] D3D11_FEATURE Feature,[Out, Buffer] void* pFeatureSupportData,[In] unsigned int FeatureSupportDataSize)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CheckFeatureSupport</unmanaged-short>	
+        </member>
         <member name="M:SharpDX.Direct3D11.Device.CheckFeatureSupport(SharpDX.Direct3D11.Feature)">
             <summary>
             Check if this device is supporting a feature.
@@ -2594,6 +2630,19 @@
             </summary>
             <param name = "device">The device with which to associate the state object.</param>
             <returns>The newly created object.</returns>
+        </member>
+        <member name="M:SharpDX.Direct3D11.DeviceContext.ClearUnorderedAccessView(SharpDX.Direct3D11.UnorderedAccessView,System.UInt32)">
+            <summary>	
+            <p>Clears an unordered access resource with bit-precise values.</p>	
+            </summary>	
+            <param name="unorderedAccessViewRef">No documentation.</param>	
+            <param name="values">No documentation.</param>	
+            <remarks>	
+            <p>This API copies the lower ni bits from each array element i to the corresponding channel, where ni is the number of bits in  the ith channel of the resource format (for example, R8G8B8_FLOAT has 8 bits for the first 3 channels). This works on any UAV with no format conversion.  For a raw or structured buffer view, only the first array element value is used.</p>	
+            </remarks>	
+            <msdn-id>ff476391</msdn-id>	
+            <unmanaged>void ID3D11DeviceContext::ClearUnorderedAccessViewUint([In] ID3D11UnorderedAccessView* pUnorderedAccessView,[In] const unsigned int* Values)</unmanaged>	
+            <unmanaged-short>ID3D11DeviceContext::ClearUnorderedAccessViewUint</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.DeviceContext.FinishCommandList(System.Boolean)">
             <summary>
@@ -7633,6 +7682,14 @@
             <unmanaged>D3D11_FEATURE_SHADER_MIN_PRECISION_SUPPORT</unmanaged>	
             <unmanaged-short>D3D11_FEATURE_SHADER_MIN_PRECISION_SUPPORT</unmanaged-short>	
         </member>
+        <member name="F:SharpDX.Direct3D11.Feature.D3D9ShadowSupport">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_FEATURE_D3D9_SHADOW_SUPPORT']/*"/>	
+            <unmanaged>D3D11_FEATURE_D3D9_SHADOW_SUPPORT</unmanaged>	
+            <unmanaged-short>D3D11_FEATURE_D3D9_SHADOW_SUPPORT</unmanaged-short>	
+        </member>
         <member name="T:SharpDX.Direct3D11.FillMode">
             <summary>	
             <p>Determines the fill mode to use when rendering triangles.</p>	
@@ -12140,6 +12197,17 @@
             <unmanaged>HRESULT ID3D11Device::CreateTexture1D([In] const D3D11_TEXTURE1D_DESC* pDesc,[In, Buffer, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Texture1D** ppTexture1D)</unmanaged>	
             <unmanaged-short>ID3D11Device::CreateTexture1D</unmanaged-short>	
         </member>
+        <member name="M:SharpDX.Direct3D11.Texture1D.#ctor(SharpDX.Direct3D11.Device,SharpDX.Direct3D11.Texture1DDescription,SharpDX.DataBox[])">
+            <summary>
+              Initializes a new instance of the <see cref = "T:SharpDX.Direct3D11.Texture1D" /> class.
+            </summary>
+            <param name = "device">The device with which to associate the texture.</param>
+            <param name = "description">The description of the texture.</param>
+            <param name = "data">An array of initial texture data for each subresource.</param>
+            <msdn-id>ff476520</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateTexture1D([In] const D3D11_TEXTURE1D_DESC* pDesc,[In, Buffer, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Texture1D** ppTexture1D)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateTexture1D</unmanaged-short>	
+        </member>
         <member name="M:SharpDX.Direct3D11.Texture1D.CalculateSubResourceIndex(System.Int32,System.Int32,System.Int32@)">
             <inheritdoc/>
         </member>
@@ -12201,6 +12269,17 @@
             <unmanaged-short>ID3D11Device::CreateTexture2D</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Texture2D.#ctor(SharpDX.Direct3D11.Device,SharpDX.Direct3D11.Texture2DDescription,SharpDX.DataRectangle[])">
+            <summary>
+              Initializes a new instance of the <see cref = "T:SharpDX.Direct3D11.Texture2D" /> class.
+            </summary>
+            <param name = "device">The device with which to associate the texture.</param>
+            <param name = "description">The description of the texture.</param>
+            <param name = "data">An array of initial texture data for each subresource.</param>
+            <msdn-id>ff476521</msdn-id>	
+            <unmanaged>HRESULT ID3D11Device::CreateTexture2D([In] const D3D11_TEXTURE2D_DESC* pDesc,[In, Buffer, Optional] const D3D11_SUBRESOURCE_DATA* pInitialData,[Out, Fast] ID3D11Texture2D** ppTexture2D)</unmanaged>	
+            <unmanaged-short>ID3D11Device::CreateTexture2D</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.Texture2D.#ctor(SharpDX.Direct3D11.Device,SharpDX.Direct3D11.Texture2DDescription,SharpDX.DataBox[])">
             <summary>
               Initializes a new instance of the <see cref = "T:SharpDX.Direct3D11.Texture2D" /> class.
             </summary>
@@ -13057,7 +13136,7 @@
             <param name="videoProcessorRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.Direct3D11.VideoProcessor"/></strong> interface. To get this reference, call <strong><see cref="M:SharpDX.Direct3D11.VideoDevice.CreateVideoProcessor(SharpDX.Direct3D11.VideoProcessorEnumerator,System.Int32,SharpDX.Direct3D11.VideoProcessor@)"/></strong>.</p> </dd></param>	
             <param name="streamIndex"><dd> <p>The zero-based index of the input stream. To get the maximum number of streams, call <strong><see cref="M:SharpDX.Direct3D11.VideoProcessorEnumerator.GetVideoProcessorCaps(SharpDX.Direct3D11.VideoProcessorCaps@)"/></strong> and check the <strong>MaxStreamStates</strong> structure member.</p> </dd></param>	
             <param name="count"><dd> <p>The number of elements in the <em>pEntries</em> array.</p> </dd></param>	
-            <param name="entriesRef"><dd> <p>A reference to an array of palette entries. For RGB streams, the palette entries use the <strong>DXGI_FORMAT_B8G8R8A8</strong> representation. For YCbCr streams, the palette entries use the <strong><see cref="F:SharpDX.DXGI.Format.Ayuv"/></strong> representation. The caller allocates the array.</p> </dd></param>	
+            <param name="entriesRef"><dd> <p>A reference to an array of palette entries. For RGB streams, the palette entries use the <strong>DXGI_FORMAT_B8G8R8A8</strong> representation. For YCbCr streams, the palette entries use the <strong><see cref="F:SharpDX.DXGI.Format.AYUV"/></strong> representation. The caller allocates the array.</p> </dd></param>	
             <remarks>	
             <p>This method applies only to  input streams that have a palettized color format. Palettized formats with 4 bits per pixel (bpp) use the first 16 entries in the list. Formats with 8 bpp use the first 256 entries.</p><p>If a pixel has a palette index greater than the number of entries, the device treats the pixel as white with opaque alpha. For full-range RGB, this value is (255, 255, 255, 255); for YCbCr the value is (255, 235, 128, 128).</p><p>If the driver does not report the <strong><see cref="F:SharpDX.Direct3D11.VideoProcessorFeatureCaps.AlphaPalette"/></strong> capability flag, every palette entry must have an alpha value of 0xFF (opaque). To query for this capability, call <strong><see cref="M:SharpDX.Direct3D11.VideoProcessorEnumerator.GetVideoProcessorCaps(SharpDX.Direct3D11.VideoProcessorCaps@)"/></strong>.</p>	
             </remarks>	
@@ -13245,7 +13324,7 @@
             <param name="videoProcessorRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.Direct3D11.VideoProcessor"/></strong> interface. To get this reference, call <strong><see cref="M:SharpDX.Direct3D11.VideoDevice.CreateVideoProcessor(SharpDX.Direct3D11.VideoProcessorEnumerator,System.Int32,SharpDX.Direct3D11.VideoProcessor@)"/></strong>.</p> </dd></param>	
             <param name="streamIndex"><dd> <p>The zero-based index of the input stream. To get the maximum number of streams, call <strong><see cref="M:SharpDX.Direct3D11.VideoProcessorEnumerator.GetVideoProcessorCaps(SharpDX.Direct3D11.VideoProcessorCaps@)"/></strong> and check the <strong>MaxStreamStates</strong> structure member.</p> </dd></param>	
             <param name="count"><dd> <p>The number of entries in the <em>pEntries</em> array.</p> </dd></param>	
-            <param name="entriesRef"><dd> <p>A reference to a <strong>UINT</strong> array allocated by the caller. The method fills the array with the palette entries. For RGB streams, the palette entries use the <strong>DXGI_FORMAT_B8G8R8A8</strong> representation. For YCbCr streams, the palette entries use the <strong><see cref="F:SharpDX.DXGI.Format.Ayuv"/></strong> representation.</p> </dd></param>	
+            <param name="entriesRef"><dd> <p>A reference to a <strong>UINT</strong> array allocated by the caller. The method fills the array with the palette entries. For RGB streams, the palette entries use the <strong>DXGI_FORMAT_B8G8R8A8</strong> representation. For YCbCr streams, the palette entries use the <strong><see cref="F:SharpDX.DXGI.Format.AYUV"/></strong> representation.</p> </dd></param>	
             <remarks>	
             <p>This method applies only to input streams that have a palettized color format. Palettized formats with 4 bits per pixel (bpp) use 16 palette entries. Formats with 8 bpp use 256 entries.</p>	
             </remarks>	
@@ -13825,7 +13904,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Given a DirectX Video Accelaration (DXVA) profile, checks whether the driver supports a specified output format.</p>	
             </summary>	
             <param name="decoderProfileRef"><dd> <p>A reference to a <see cref="T:System.Guid"/> that identifies the DXVA profile. To get the list of supported profiles, call <strong><see cref="M:SharpDX.Direct3D11.VideoDevice.GetVideoDecoderProfile(System.Int32,System.Guid@)"/></strong>.</p> </dd></param>	
-            <param name="format"><dd> <p>A <strong><see cref="T:SharpDX.DXGI.Format"/></strong> value that specifies the output format. Typical values include <strong><see cref="F:SharpDX.DXGI.Format.Nv12"/></strong> and <strong><see cref="F:SharpDX.DXGI.Format.Opaque420"/></strong>.</p> </dd></param>	
+            <param name="format"><dd> <p>A <strong><see cref="T:SharpDX.DXGI.Format"/></strong> value that specifies the output format. Typical values include <strong><see cref="F:SharpDX.DXGI.Format.NV12"/></strong> and <strong><see cref="F:SharpDX.DXGI.Format.Opaque420"/></strong>.</p> </dd></param>	
             <param name="supportedRef"><dd> <p>Receives the value <strong>TRUE</strong> if the format is supported, or <strong><see cref="F:SharpDX.Result.False"/></strong> otherwise.</p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
@@ -16018,6 +16097,29 @@
             <msdn-id>hh404458</msdn-id>	
             <unmanaged>BOOL FullNonPow2TextureSupport</unmanaged>	
             <unmanaged-short>BOOL FullNonPow2TextureSupport</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D11.FeatureDataD3D9ShadowSupport">
+            <summary>	
+            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p><strong>Note</strong> This structure is supported by the Direct3D 11.1 runtime, which is available on Windows?8 and later operating systems.</p><p>Describes Direct3D?9 shadow support in the current graphics driver. </p>	
+            </summary>	
+            <remarks>	
+            <p>Shadows are an important element in realistic 3D scenes.  You can use the shadow buffer technique to render shadows.  The basic principle of the technique is to use a depth buffer to store the scene depth info from the perspective of the light source, and then compare each point rendered in the scene with that buffer to determine if it is in shadow.</p><p>To render objects into the scene with shadows on them, you create <strong>sampler state objects</strong> with comparison filtering set and  the comparison mode (ComparisonFunc) to LessEqual.  You can also set BorderColor addressing on this depth sampler, even though BorderColor isn't typically allowed on feature levels 9.1 and 9.2.  By using the border color and picking 0.0 or 1.0 as the border color value, you can control whether the regions off the edge of the shadow map appear to be always in shadow or never in shadow respectively.	
+            You can control the shadow filter quality by the Mag and Min filter settings in the comparison sampler.  Point sampling will produce shadows with non-anti-aliased edges.  Linear filter sampler settings will result in higher quality shadow edges, but might affect performance on some power-optimized devices.</p><p><strong>Note</strong> If you use a separate setting for Mag versus Min filter options, you produce an undefined result.  Anisotropic filtering is not supported. The Mip filter choice is not relevant because feature level 9.x does not allow mipmapped depth buffers.</p><p><strong>Note</strong> On feature level 9.x, you can't compile a shader with the <strong>SampleCmp</strong> and <strong>SampleCmpLevelZero</strong> intrinsic functions by using older versions of the compiler. For example,  you can't use the fxc.exe compiler that ships with the DirectX SDK or use the <strong><see cref="!:SharpDX.D3DCompiler.D3D.Compile"/>**</strong> functions (like <strong><see cref="!:SharpDX.D3DCompiler.D3D.CompileFromFile"/></strong>) that are implemented in D3DCompiler_43.dll and earlier. These intrinsic functions on feature level 9.x are only supported in the fxc.exe compiler that ships with the Windows?8 SDK and later and with the <strong><see cref="!:SharpDX.D3DCompiler.D3D.Compile"/>**</strong> functions that are implemented in D3DCompiler_44.dll and later.	
+            But these intrinsic functions are present in shader models for feature levels higher than 9.x.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT']/*"/>	
+            <msdn-id>jj247569</msdn-id>	
+            <unmanaged>D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT</unmanaged>	
+            <unmanaged-short>D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.FeatureDataD3D9ShadowSupport.SupportsDepthAsTextureWithLessEqualComparisonFilter">
+            <summary>	
+            <dd> <p>Specifies whether the driver supports the shadowing feature with the comparison-filtering mode set to less than or equal to. The runtime sets this member to <strong>TRUE</strong> for hardware at Direct3D 10 and higher feature levels.  For hardware at Direct3D 9.3 and lower feature levels, the runtime sets this member to <strong>TRUE</strong> only if the hardware and driver support the shadowing feature; otherwise <strong><see cref="F:SharpDX.Result.False"/></strong>. </p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT::SupportsDepthAsTextureWithLessEqualComparisonFilter']/*"/>	
+            <msdn-id>jj247569</msdn-id>	
+            <unmanaged>BOOL SupportsDepthAsTextureWithLessEqualComparisonFilter</unmanaged>	
+            <unmanaged-short>BOOL SupportsDepthAsTextureWithLessEqualComparisonFilter</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D11.FeatureDataDoubles">
             <summary>	

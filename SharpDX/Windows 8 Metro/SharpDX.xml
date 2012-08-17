@@ -1630,23 +1630,26 @@
             <summary>
             Represents a 32-bit color (4 bytes) in the form of argb.
             </summary>
+            <summary>
+            List of predefined <see cref="T:SharpDX.Color"/>.
+            </summary>
         </member>
-        <member name="F:SharpDX.Color.Red">
+        <member name="F:SharpDX.Color.R">
             <summary>
             The red component of the color.
             </summary>
         </member>
-        <member name="F:SharpDX.Color.Green">
+        <member name="F:SharpDX.Color.G">
             <summary>
             The green component of the color.
             </summary>
         </member>
-        <member name="F:SharpDX.Color.Blue">
+        <member name="F:SharpDX.Color.B">
             <summary>
             The blue component of the color.
             </summary>
         </member>
-        <member name="F:SharpDX.Color.Alpha">
+        <member name="F:SharpDX.Color.A">
             <summary>
             The alpha component of the color.
             </summary>
@@ -1733,6 +1736,12 @@
             Converts the color into a three component vector.
             </summary>
             <returns>A three component vector containing the red, green, and blue components of the color.</returns>
+        </member>
+        <member name="M:SharpDX.Color.ToColor3">
+            <summary>
+            Converts the color into a three component color.
+            </summary>
+            <returns>A three component color containing the red, green, and blue components of the color.</returns>
         </member>
         <member name="M:SharpDX.Color.ToVector4">
             <summary>
@@ -2043,7 +2052,7 @@
             <param name="value">The value.</param>
             <returns>The result of the conversion.</returns>
         </member>
-        <member name="M:SharpDX.Color.op_Explicit(SharpDX.Color)~SharpDX.Color4">
+        <member name="M:SharpDX.Color.op_Implicit(SharpDX.Color)~SharpDX.Color4">
             <summary>
             Performs an explicit conversion from <see cref="T:SharpDX.Color"/> to <see cref="T:SharpDX.Color4"/>.
             </summary>
@@ -2053,6 +2062,13 @@
         <member name="M:SharpDX.Color.op_Explicit(SharpDX.Vector3)~SharpDX.Color">
             <summary>
             Performs an explicit conversion from <see cref="T:SharpDX.Vector3"/> to <see cref="T:SharpDX.Color"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:SharpDX.Color.op_Explicit(SharpDX.Color3)~SharpDX.Color">
+            <summary>
+            Performs an explicit conversion from <see cref="T:SharpDX.Color3"/> to <see cref="T:SharpDX.Color"/>.
             </summary>
             <param name="value">The value.</param>
             <returns>The result of the conversion.</returns>
@@ -2071,7 +2087,7 @@
             <param name="value">The value.</param>
             <returns>The result of the conversion.</returns>
         </member>
-        <member name="M:SharpDX.Color.op_Implicit(SharpDX.Color)~System.Int32">
+        <member name="M:SharpDX.Color.op_Explicit(SharpDX.Color)~System.Int32">
             <summary>
             Performs an implicit conversion from <see cref="T:SharpDX.Color"/> to <see cref="T:System.Int32"/>.
             </summary>
@@ -2080,7 +2096,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.Color.op_Implicit(System.Int32)~SharpDX.Color">
+        <member name="M:SharpDX.Color.op_Explicit(System.Int32)~SharpDX.Color">
             <summary>
             Performs an implicit conversion from <see cref="T:System.Int32"/> to <see cref="T:SharpDX.Color"/>.
             </summary>
@@ -2151,24 +2167,714 @@
             <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
             </returns>
         </member>
-        <member name="P:SharpDX.Color.R">
+        <member name="F:SharpDX.Color.Zero">
             <summary>
-            Gets or sets the red component of the color.
+            Zero color.
             </summary>
         </member>
-        <member name="P:SharpDX.Color.G">
+        <member name="F:SharpDX.Color.Transparent">
             <summary>
-            Gets or sets the green component of the color.
+            Transparent color.
             </summary>
         </member>
-        <member name="P:SharpDX.Color.B">
+        <member name="F:SharpDX.Color.AliceBlue">
             <summary>
-            Gets or sets the blue component of the color.
+            AliceBlue color.
             </summary>
         </member>
-        <member name="P:SharpDX.Color.A">
+        <member name="F:SharpDX.Color.AntiqueWhite">
             <summary>
-            Gets or sets the alpha component of the color.
+            AntiqueWhite color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Aqua">
+            <summary>
+            Aqua color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Aquamarine">
+            <summary>
+            Aquamarine color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Azure">
+            <summary>
+            Azure color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Beige">
+            <summary>
+            Beige color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Bisque">
+            <summary>
+            Bisque color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Black">
+            <summary>
+            Black color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.BlanchedAlmond">
+            <summary>
+            BlanchedAlmond color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Blue">
+            <summary>
+            Blue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.BlueViolet">
+            <summary>
+            BlueViolet color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Brown">
+            <summary>
+            Brown color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.BurlyWood">
+            <summary>
+            BurlyWood color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.CadetBlue">
+            <summary>
+            CadetBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Chartreuse">
+            <summary>
+            Chartreuse color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Chocolate">
+            <summary>
+            Chocolate color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Coral">
+            <summary>
+            Coral color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.CornflowerBlue">
+            <summary>
+            CornflowerBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Cornsilk">
+            <summary>
+            Cornsilk color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Crimson">
+            <summary>
+            Crimson color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Cyan">
+            <summary>
+            Cyan color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkBlue">
+            <summary>
+            DarkBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkCyan">
+            <summary>
+            DarkCyan color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkGoldenrod">
+            <summary>
+            DarkGoldenrod color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkGray">
+            <summary>
+            DarkGray color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkGreen">
+            <summary>
+            DarkGreen color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkKhaki">
+            <summary>
+            DarkKhaki color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkMagenta">
+            <summary>
+            DarkMagenta color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkOliveGreen">
+            <summary>
+            DarkOliveGreen color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkOrange">
+            <summary>
+            DarkOrange color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkOrchid">
+            <summary>
+            DarkOrchid color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkRed">
+            <summary>
+            DarkRed color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkSalmon">
+            <summary>
+            DarkSalmon color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkSeaGreen">
+            <summary>
+            DarkSeaGreen color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkSlateBlue">
+            <summary>
+            DarkSlateBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkSlateGray">
+            <summary>
+            DarkSlateGray color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkTurquoise">
+            <summary>
+            DarkTurquoise color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DarkViolet">
+            <summary>
+            DarkViolet color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DeepPink">
+            <summary>
+            DeepPink color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DeepSkyBlue">
+            <summary>
+            DeepSkyBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DimGray">
+            <summary>
+            DimGray color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.DodgerBlue">
+            <summary>
+            DodgerBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Firebrick">
+            <summary>
+            Firebrick color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.FloralWhite">
+            <summary>
+            FloralWhite color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.ForestGreen">
+            <summary>
+            ForestGreen color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Fuchsia">
+            <summary>
+            Fuchsia color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Gainsboro">
+            <summary>
+            Gainsboro color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.GhostWhite">
+            <summary>
+            GhostWhite color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Gold">
+            <summary>
+            Gold color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Goldenrod">
+            <summary>
+            Goldenrod color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Gray">
+            <summary>
+            Gray color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Green">
+            <summary>
+            Green color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.GreenYellow">
+            <summary>
+            GreenYellow color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Honeydew">
+            <summary>
+            Honeydew color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.HotPink">
+            <summary>
+            HotPink color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.IndianRed">
+            <summary>
+            IndianRed color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Indigo">
+            <summary>
+            Indigo color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Ivory">
+            <summary>
+            Ivory color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Khaki">
+            <summary>
+            Khaki color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Lavender">
+            <summary>
+            Lavender color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LavenderBlush">
+            <summary>
+            LavenderBlush color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LawnGreen">
+            <summary>
+            LawnGreen color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LemonChiffon">
+            <summary>
+            LemonChiffon color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LightBlue">
+            <summary>
+            LightBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LightCoral">
+            <summary>
+            LightCoral color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LightCyan">
+            <summary>
+            LightCyan color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LightGoldenrodYellow">
+            <summary>
+            LightGoldenrodYellow color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LightGray">
+            <summary>
+            LightGray color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LightGreen">
+            <summary>
+            LightGreen color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LightPink">
+            <summary>
+            LightPink color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LightSalmon">
+            <summary>
+            LightSalmon color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LightSeaGreen">
+            <summary>
+            LightSeaGreen color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LightSkyBlue">
+            <summary>
+            LightSkyBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LightSlateGray">
+            <summary>
+            LightSlateGray color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LightSteelBlue">
+            <summary>
+            LightSteelBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LightYellow">
+            <summary>
+            LightYellow color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Lime">
+            <summary>
+            Lime color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.LimeGreen">
+            <summary>
+            LimeGreen color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Linen">
+            <summary>
+            Linen color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Magenta">
+            <summary>
+            Magenta color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Maroon">
+            <summary>
+            Maroon color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.MediumAquamarine">
+            <summary>
+            MediumAquamarine color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.MediumBlue">
+            <summary>
+            MediumBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.MediumOrchid">
+            <summary>
+            MediumOrchid color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.MediumPurple">
+            <summary>
+            MediumPurple color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.MediumSeaGreen">
+            <summary>
+            MediumSeaGreen color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.MediumSlateBlue">
+            <summary>
+            MediumSlateBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.MediumSpringGreen">
+            <summary>
+            MediumSpringGreen color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.MediumTurquoise">
+            <summary>
+            MediumTurquoise color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.MediumVioletRed">
+            <summary>
+            MediumVioletRed color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.MidnightBlue">
+            <summary>
+            MidnightBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.MintCream">
+            <summary>
+            MintCream color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.MistyRose">
+            <summary>
+            MistyRose color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Moccasin">
+            <summary>
+            Moccasin color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.NavajoWhite">
+            <summary>
+            NavajoWhite color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Navy">
+            <summary>
+            Navy color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.OldLace">
+            <summary>
+            OldLace color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Olive">
+            <summary>
+            Olive color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.OliveDrab">
+            <summary>
+            OliveDrab color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Orange">
+            <summary>
+            Orange color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.OrangeRed">
+            <summary>
+            OrangeRed color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Orchid">
+            <summary>
+            Orchid color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.PaleGoldenrod">
+            <summary>
+            PaleGoldenrod color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.PaleGreen">
+            <summary>
+            PaleGreen color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.PaleTurquoise">
+            <summary>
+            PaleTurquoise color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.PaleVioletRed">
+            <summary>
+            PaleVioletRed color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.PapayaWhip">
+            <summary>
+            PapayaWhip color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.PeachPuff">
+            <summary>
+            PeachPuff color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Peru">
+            <summary>
+            Peru color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Pink">
+            <summary>
+            Pink color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Plum">
+            <summary>
+            Plum color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.PowderBlue">
+            <summary>
+            PowderBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Purple">
+            <summary>
+            Purple color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Red">
+            <summary>
+            Red color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.RosyBrown">
+            <summary>
+            RosyBrown color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.RoyalBlue">
+            <summary>
+            RoyalBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.SaddleBrown">
+            <summary>
+            SaddleBrown color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Salmon">
+            <summary>
+            Salmon color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.SandyBrown">
+            <summary>
+            SandyBrown color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.SeaGreen">
+            <summary>
+            SeaGreen color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.SeaShell">
+            <summary>
+            SeaShell color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Sienna">
+            <summary>
+            Sienna color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Silver">
+            <summary>
+            Silver color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.SkyBlue">
+            <summary>
+            SkyBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.SlateBlue">
+            <summary>
+            SlateBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.SlateGray">
+            <summary>
+            SlateGray color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Snow">
+            <summary>
+            Snow color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.SpringGreen">
+            <summary>
+            SpringGreen color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.SteelBlue">
+            <summary>
+            SteelBlue color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Tan">
+            <summary>
+            Tan color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Teal">
+            <summary>
+            Teal color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Thistle">
+            <summary>
+            Thistle color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Tomato">
+            <summary>
+            Tomato color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Turquoise">
+            <summary>
+            Turquoise color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Violet">
+            <summary>
+            Violet color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Wheat">
+            <summary>
+            Wheat color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.White">
+            <summary>
+            White color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.WhiteSmoke">
+            <summary>
+            WhiteSmoke color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.Yellow">
+            <summary>
+            Yellow color.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color.YellowGreen">
+            <summary>
+            YellowGreen color.
             </summary>
         </member>
         <member name="P:SharpDX.Color.Item(System.Int32)">
@@ -3859,8 +4565,26 @@
         <member name="M:SharpDX.IO.NativeFileStream.Read(System.Byte[],System.Int32,System.Int32)">
             <inheritdoc/>
         </member>
+        <member name="M:SharpDX.IO.NativeFileStream.Read(System.IntPtr,System.Int32,System.Int32)">
+            <summary>
+            Reads a block of bytes from the stream and writes the data in a given buffer.
+            </summary>
+            <param name="buffer">When this method returns, contains the specified buffer with the values between offset and (offset + count - 1) replaced by the bytes read from the current source. </param>
+            <param name="offset">The byte offset in array at which the read bytes will be placed. </param>
+            <param name="count">The maximum number of bytes to read. </param>
+            <exception cref="T:System.ArgumentNullException">array is null. </exception>
+            <returns>The total number of bytes read into the buffer. This might be less than the number of bytes requested if that number of bytes are not currently available, or zero if the end of the stream is reached.</returns>
+        </member>
         <member name="M:SharpDX.IO.NativeFileStream.Write(System.Byte[],System.Int32,System.Int32)">
             <inheritdoc/>
+        </member>
+        <member name="M:SharpDX.IO.NativeFileStream.Write(System.IntPtr,System.Int32,System.Int32)">
+            <summary>
+            Writes a block of bytes to this stream using data from a buffer.
+            </summary>
+            <param name="buffer">The buffer containing data to write to the stream.</param>
+            <param name="offset">The zero-based byte offset in buffer at which to begin copying bytes to the current stream. </param>
+            <param name="count">The number of bytes to be written to the current stream. </param>
         </member>
         <member name="P:SharpDX.IO.NativeFileStream.CanRead">
             <inheritdoc/>
@@ -12477,6 +13201,38 @@
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ERROR_NOT_READ_FROM_COPY']/*"/>	
             <unmanaged>ERROR_NOT_READ_FROM_COPY</unmanaged>	
             <unmanaged-short>ERROR_NOT_READ_FROM_COPY</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Win32.ErrorCode.FtWriteFailure">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ERROR_FT_WRITE_FAILURE']/*"/>	
+            <unmanaged>ERROR_FT_WRITE_FAILURE</unmanaged>	
+            <unmanaged-short>ERROR_FT_WRITE_FAILURE</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Win32.ErrorCode.FtDiScanRequired">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ERROR_FT_DI_SCAN_REQUIRED']/*"/>	
+            <unmanaged>ERROR_FT_DI_SCAN_REQUIRED</unmanaged>	
+            <unmanaged-short>ERROR_FT_DI_SCAN_REQUIRED</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Win32.ErrorCode.InvalidKernelInformationVersion">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ERROR_INVALID_KERNEL_INFO_VERSION']/*"/>	
+            <unmanaged>ERROR_INVALID_KERNEL_INFO_VERSION</unmanaged>	
+            <unmanaged-short>ERROR_INVALID_KERNEL_INFO_VERSION</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Win32.ErrorCode.InvalidPepInformationVersion">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ERROR_INVALID_PEP_INFO_VERSION']/*"/>	
+            <unmanaged>ERROR_INVALID_PEP_INFO_VERSION</unmanaged>	
+            <unmanaged-short>ERROR_INVALID_PEP_INFO_VERSION</unmanaged-short>	
         </member>
         <member name="F:SharpDX.Win32.ErrorCode.FailNoactionReboot">
             <summary>	
@@ -36932,9 +37688,63 @@
             A FourCC descriptor.
             </summary>
         </member>
+        <member name="M:SharpDX.Multimedia.FourCC.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Multimedia.FourCC"/> struct.
+            </summary>
+            <param name="fourCC">The fourCC value as a string .</param>
+        </member>
+        <member name="M:SharpDX.Multimedia.FourCC.#ctor(System.Char,System.Char,System.Char,System.Char)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Multimedia.FourCC"/> struct.
+            </summary>
+            <param name="byte1">The byte1.</param>
+            <param name="byte2">The byte2.</param>
+            <param name="byte3">The byte3.</param>
+            <param name="byte4">The byte4.</param>
+        </member>
+        <member name="M:SharpDX.Multimedia.FourCC.#ctor(System.UInt32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Multimedia.FourCC"/> struct.
+            </summary>
+            <param name="fourCC">The fourCC value as an uint.</param>
+        </member>
+        <member name="M:SharpDX.Multimedia.FourCC.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Multimedia.FourCC"/> struct.
+            </summary>
+            <param name="fourCC">The fourCC value as an int.</param>
+        </member>
         <member name="M:SharpDX.Multimedia.FourCC.op_Implicit(SharpDX.Multimedia.FourCC)~System.UInt32">
             <summary>
             Performs an implicit conversion from <see cref="T:SharpDX.Multimedia.FourCC"/> to <see cref="T:System.Int32"/>.
+            </summary>
+            <param name="d">The d.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:SharpDX.Multimedia.FourCC.op_Implicit(SharpDX.Multimedia.FourCC)~System.Int32">
+            <summary>
+            Performs an implicit conversion from <see cref="T:SharpDX.Multimedia.FourCC"/> to <see cref="T:System.Int32"/>.
+            </summary>
+            <param name="d">The d.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:SharpDX.Multimedia.FourCC.op_Implicit(System.UInt32)~SharpDX.Multimedia.FourCC">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.Int32"/> to <see cref="T:SharpDX.Multimedia.FourCC"/>.
+            </summary>
+            <param name="d">The d.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:SharpDX.Multimedia.FourCC.op_Implicit(System.Int32)~SharpDX.Multimedia.FourCC">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.Int32"/> to <see cref="T:SharpDX.Multimedia.FourCC"/>.
             </summary>
             <param name="d">The d.</param>
             <returns>
@@ -36958,42 +37768,6 @@
             <returns>
             The result of the conversion.
             </returns>
-        </member>
-        <member name="M:SharpDX.Multimedia.FourCC.op_Implicit(System.UInt32)~SharpDX.Multimedia.FourCC">
-            <summary>
-            Performs an implicit conversion from <see cref="T:System.Int32"/> to <see cref="T:SharpDX.Multimedia.FourCC"/>.
-            </summary>
-            <param name="d">The d.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.Multimedia.FourCC.ToString">
-            <summary>
-            Returns a <see cref="T:System.String"/> that represents this instance.
-            </summary>
-            <returns>
-            A <see cref="T:System.String"/> that represents this instance.
-            </returns>
-        </member>
-        <member name="M:SharpDX.Multimedia.FourCC.FromFourCC(System.UInt32)">
-            <summary>
-            Converts a FourCC integer to a string
-            </summary>
-            <param name="fourCC">The FourCC.</param>
-            <returns>A FourCC string</returns>
-        </member>
-        <member name="M:SharpDX.Multimedia.FourCC.ToFourCC(System.String)">
-            <summary>
-            Convert a FourCC string to int
-            </summary>
-            <param name="fourCC">The fourCC.</param>
-            <returns>an integer version of the FourCC</returns>
-        </member>
-        <member name="P:SharpDX.Multimedia.FourCC.Value">
-            <summary>
-            Gets the value.
-            </summary>
         </member>
         <member name="T:SharpDX.Multimedia.RiffChunk">
             <summary>
@@ -39039,6 +39813,15 @@
             <param name="sizeInBytesToCopy">The count.</param>
             <returns></returns>
         </member>
+        <member name="M:SharpDX.Utilities.CompareMemory(System.IntPtr,System.IntPtr,System.Int32)">
+            <summary>
+            Compares two block of memory.
+            </summary>
+            <param name="from">The pointer to compare from.</param>
+            <param name="against">The pointer to compare against.</param>
+            <param name="sizeToCompare">The size in bytes to compare.</param>
+            <returns>True if the buffers are equivalent, false otherwise.</returns>
+        </member>
         <member name="M:SharpDX.Utilities.ClearMemory(System.IntPtr,System.Byte,System.Int32)">
             <summary>
             Clears the memory.
@@ -39155,6 +39938,26 @@
             </summary>
             <param name="type">The type.</param>
             <returns>The guid associated with this type</returns>
+        </member>
+        <member name="M:SharpDX.Utilities.AllocateMemory(System.Int32,System.Int32)">
+            <summary>
+            Allocate an aligned memory buffer.
+            </summary>
+            <param name="sizeInBytes">Size of the buffer to allocate.</param>
+            <param name="align">Alignment, 16 bytes by default.</param>
+            <returns>A pointer to a buffer aligned.</returns>
+            <remarks>
+            To free this buffer, call <see cref="M:SharpDX.Utilities.FreeMemory(System.IntPtr)"/>
+            </remarks>
+        </member>
+        <member name="M:SharpDX.Utilities.FreeMemory(System.IntPtr)">
+            <summary>
+            Allocate an aligned memory buffer.
+            </summary>
+            <returns>A pointer to a buffer aligned.</returns>
+            <remarks>
+            The buffer must have been allocated with <see cref="M:SharpDX.Utilities.AllocateMemory(System.Int32,System.Int32)"/>
+            </remarks>
         </member>
         <member name="M:SharpDX.Utilities.PtrToStringAnsi(System.IntPtr,System.Int32)">
             <summary>
@@ -42005,721 +42808,6 @@
         <member name="T:SharpDX.Windows.NamespaceDoc">
             <summary>
             The <see cref="N:SharpDX.Windows"/> namespace contains <see cref="!:System.Windows.Forms"/> basic controls used to render DirectX content.
-            </summary>
-        </member>
-        <member name="T:SharpDX.Colors">
-            <summary>
-            List of predefined <see cref="T:SharpDX.Color4"/>.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Zero">
-            <summary>
-            Zero color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Transparent">
-            <summary>
-            Transparent color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.AliceBlue">
-            <summary>
-            AliceBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.AntiqueWhite">
-            <summary>
-            AntiqueWhite color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Aqua">
-            <summary>
-            Aqua color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Aquamarine">
-            <summary>
-            Aquamarine color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Azure">
-            <summary>
-            Azure color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Beige">
-            <summary>
-            Beige color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Bisque">
-            <summary>
-            Bisque color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Black">
-            <summary>
-            Black color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.BlanchedAlmond">
-            <summary>
-            BlanchedAlmond color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Blue">
-            <summary>
-            Blue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.BlueViolet">
-            <summary>
-            BlueViolet color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Brown">
-            <summary>
-            Brown color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.BurlyWood">
-            <summary>
-            BurlyWood color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.CadetBlue">
-            <summary>
-            CadetBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Chartreuse">
-            <summary>
-            Chartreuse color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Chocolate">
-            <summary>
-            Chocolate color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Coral">
-            <summary>
-            Coral color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.CornflowerBlue">
-            <summary>
-            CornflowerBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Cornsilk">
-            <summary>
-            Cornsilk color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Crimson">
-            <summary>
-            Crimson color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Cyan">
-            <summary>
-            Cyan color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkBlue">
-            <summary>
-            DarkBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkCyan">
-            <summary>
-            DarkCyan color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkGoldenrod">
-            <summary>
-            DarkGoldenrod color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkGray">
-            <summary>
-            DarkGray color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkGreen">
-            <summary>
-            DarkGreen color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkKhaki">
-            <summary>
-            DarkKhaki color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkMagenta">
-            <summary>
-            DarkMagenta color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkOliveGreen">
-            <summary>
-            DarkOliveGreen color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkOrange">
-            <summary>
-            DarkOrange color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkOrchid">
-            <summary>
-            DarkOrchid color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkRed">
-            <summary>
-            DarkRed color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkSalmon">
-            <summary>
-            DarkSalmon color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkSeaGreen">
-            <summary>
-            DarkSeaGreen color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkSlateBlue">
-            <summary>
-            DarkSlateBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkSlateGray">
-            <summary>
-            DarkSlateGray color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkTurquoise">
-            <summary>
-            DarkTurquoise color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DarkViolet">
-            <summary>
-            DarkViolet color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DeepPink">
-            <summary>
-            DeepPink color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DeepSkyBlue">
-            <summary>
-            DeepSkyBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DimGray">
-            <summary>
-            DimGray color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.DodgerBlue">
-            <summary>
-            DodgerBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Firebrick">
-            <summary>
-            Firebrick color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.FloralWhite">
-            <summary>
-            FloralWhite color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.ForestGreen">
-            <summary>
-            ForestGreen color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Fuchsia">
-            <summary>
-            Fuchsia color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Gainsboro">
-            <summary>
-            Gainsboro color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.GhostWhite">
-            <summary>
-            GhostWhite color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Gold">
-            <summary>
-            Gold color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Goldenrod">
-            <summary>
-            Goldenrod color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Gray">
-            <summary>
-            Gray color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Green">
-            <summary>
-            Green color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.GreenYellow">
-            <summary>
-            GreenYellow color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Honeydew">
-            <summary>
-            Honeydew color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.HotPink">
-            <summary>
-            HotPink color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.IndianRed">
-            <summary>
-            IndianRed color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Indigo">
-            <summary>
-            Indigo color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Ivory">
-            <summary>
-            Ivory color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Khaki">
-            <summary>
-            Khaki color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Lavender">
-            <summary>
-            Lavender color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LavenderBlush">
-            <summary>
-            LavenderBlush color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LawnGreen">
-            <summary>
-            LawnGreen color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LemonChiffon">
-            <summary>
-            LemonChiffon color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LightBlue">
-            <summary>
-            LightBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LightCoral">
-            <summary>
-            LightCoral color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LightCyan">
-            <summary>
-            LightCyan color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LightGoldenrodYellow">
-            <summary>
-            LightGoldenrodYellow color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LightGray">
-            <summary>
-            LightGray color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LightGreen">
-            <summary>
-            LightGreen color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LightPink">
-            <summary>
-            LightPink color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LightSalmon">
-            <summary>
-            LightSalmon color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LightSeaGreen">
-            <summary>
-            LightSeaGreen color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LightSkyBlue">
-            <summary>
-            LightSkyBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LightSlateGray">
-            <summary>
-            LightSlateGray color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LightSteelBlue">
-            <summary>
-            LightSteelBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LightYellow">
-            <summary>
-            LightYellow color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Lime">
-            <summary>
-            Lime color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.LimeGreen">
-            <summary>
-            LimeGreen color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Linen">
-            <summary>
-            Linen color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Magenta">
-            <summary>
-            Magenta color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Maroon">
-            <summary>
-            Maroon color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.MediumAquamarine">
-            <summary>
-            MediumAquamarine color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.MediumBlue">
-            <summary>
-            MediumBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.MediumOrchid">
-            <summary>
-            MediumOrchid color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.MediumPurple">
-            <summary>
-            MediumPurple color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.MediumSeaGreen">
-            <summary>
-            MediumSeaGreen color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.MediumSlateBlue">
-            <summary>
-            MediumSlateBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.MediumSpringGreen">
-            <summary>
-            MediumSpringGreen color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.MediumTurquoise">
-            <summary>
-            MediumTurquoise color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.MediumVioletRed">
-            <summary>
-            MediumVioletRed color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.MidnightBlue">
-            <summary>
-            MidnightBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.MintCream">
-            <summary>
-            MintCream color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.MistyRose">
-            <summary>
-            MistyRose color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Moccasin">
-            <summary>
-            Moccasin color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.NavajoWhite">
-            <summary>
-            NavajoWhite color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Navy">
-            <summary>
-            Navy color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.OldLace">
-            <summary>
-            OldLace color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Olive">
-            <summary>
-            Olive color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.OliveDrab">
-            <summary>
-            OliveDrab color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Orange">
-            <summary>
-            Orange color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.OrangeRed">
-            <summary>
-            OrangeRed color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Orchid">
-            <summary>
-            Orchid color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.PaleGoldenrod">
-            <summary>
-            PaleGoldenrod color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.PaleGreen">
-            <summary>
-            PaleGreen color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.PaleTurquoise">
-            <summary>
-            PaleTurquoise color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.PaleVioletRed">
-            <summary>
-            PaleVioletRed color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.PapayaWhip">
-            <summary>
-            PapayaWhip color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.PeachPuff">
-            <summary>
-            PeachPuff color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Peru">
-            <summary>
-            Peru color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Pink">
-            <summary>
-            Pink color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Plum">
-            <summary>
-            Plum color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.PowderBlue">
-            <summary>
-            PowderBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Purple">
-            <summary>
-            Purple color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Red">
-            <summary>
-            Red color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.RosyBrown">
-            <summary>
-            RosyBrown color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.RoyalBlue">
-            <summary>
-            RoyalBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.SaddleBrown">
-            <summary>
-            SaddleBrown color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Salmon">
-            <summary>
-            Salmon color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.SandyBrown">
-            <summary>
-            SandyBrown color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.SeaGreen">
-            <summary>
-            SeaGreen color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.SeaShell">
-            <summary>
-            SeaShell color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Sienna">
-            <summary>
-            Sienna color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Silver">
-            <summary>
-            Silver color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.SkyBlue">
-            <summary>
-            SkyBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.SlateBlue">
-            <summary>
-            SlateBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.SlateGray">
-            <summary>
-            SlateGray color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Snow">
-            <summary>
-            Snow color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.SpringGreen">
-            <summary>
-            SpringGreen color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.SteelBlue">
-            <summary>
-            SteelBlue color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Tan">
-            <summary>
-            Tan color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Teal">
-            <summary>
-            Teal color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Thistle">
-            <summary>
-            Thistle color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Tomato">
-            <summary>
-            Tomato color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Turquoise">
-            <summary>
-            Turquoise color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Violet">
-            <summary>
-            Violet color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Wheat">
-            <summary>
-            Wheat color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.White">
-            <summary>
-            White color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.WhiteSmoke">
-            <summary>
-            WhiteSmoke color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.Yellow">
-            <summary>
-            Yellow color.
-            </summary>
-        </member>
-        <member name="F:SharpDX.Colors.YellowGreen">
-            <summary>
-            YellowGreen color.
             </summary>
         </member>
     </members>
