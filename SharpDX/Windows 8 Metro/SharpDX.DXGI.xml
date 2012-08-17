@@ -1405,6 +1405,61 @@
             <param name="format">The dxgi format.</param>
             <returns>size of in bits</returns>
         </member>
+        <member name="M:SharpDX.DXGI.FormatHelper.IsValid(SharpDX.DXGI.Format)">
+            <summary>
+            Returns true if the <see cref="T:SharpDX.DXGI.Format"/> is valid.
+            </summary>
+            <param name="format">A format to validate</param>
+            <returns>True if the <see cref="T:SharpDX.DXGI.Format"/> is valid.</returns>
+        </member>
+        <member name="M:SharpDX.DXGI.FormatHelper.IsCompressed(SharpDX.DXGI.Format)">
+            <summary>
+            Returns true if the <see cref="T:SharpDX.DXGI.Format"/> is a compressed format.
+            </summary>
+            <param name="fmt">The format to check for compressed.</param>
+            <returns>True if the <see cref="T:SharpDX.DXGI.Format"/> is a compressed format</returns>
+        </member>
+        <member name="M:SharpDX.DXGI.FormatHelper.IsPacked(SharpDX.DXGI.Format)">
+            <summary>
+            Determines whether the specified <see cref="T:SharpDX.DXGI.Format"/> is packed.
+            </summary>
+            <param name="fmt">The DXGI Format.</param>
+            <returns><c>true</c> if the specified <see cref="T:SharpDX.DXGI.Format"/> is packed; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.DXGI.FormatHelper.IsVideo(SharpDX.DXGI.Format)">
+            <summary>
+            Determines whether the specified <see cref="T:SharpDX.DXGI.Format"/> is video.
+            </summary>
+            <param name="fmt">The <see cref="T:SharpDX.DXGI.Format"/>.</param>
+            <returns><c>true</c> if the specified <see cref="T:SharpDX.DXGI.Format"/> is video; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.DXGI.FormatHelper.IsSRgb(SharpDX.DXGI.Format)">
+            <summary>
+            Determines whether the specified <see cref="T:SharpDX.DXGI.Format"/> is a SRGB format.
+            </summary>
+            <param name="fmt">The <see cref="T:SharpDX.DXGI.Format"/>.</param>
+            <returns><c>true</c> if the specified <see cref="T:SharpDX.DXGI.Format"/> is a SRGB format; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.DXGI.FormatHelper.IsTypeless(SharpDX.DXGI.Format)">
+            <summary>
+            Determines whether the specified <see cref="T:SharpDX.DXGI.Format"/> is typeless.
+            </summary>
+            <param name="fmt">The <see cref="T:SharpDX.DXGI.Format"/>.</param>
+            <returns><c>true</c> if the specified <see cref="T:SharpDX.DXGI.Format"/> is typeless; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.DXGI.FormatHelper.ComputeScanlineCount(SharpDX.DXGI.Format,System.Int32)">
+            <summary>
+            Computes the scanline count (number of scanlines).
+            </summary>
+            <param name="fmt">The <see cref="T:SharpDX.DXGI.Format"/>.</param>
+            <param name="height">The height.</param>
+            <returns>The scanline count.</returns>
+        </member>
+        <member name="M:SharpDX.DXGI.FormatHelper.#cctor">
+            <summary>
+            Static initializer to speed up size calculation (not sure the JIT is enough "smart" for this kind of thing).
+            </summary>
+        </member>
         <member name="T:SharpDX.DXGI.AdapterFlags">
             <summary>	
             <p>Identifies the type of DXGI adapter.</p>	
@@ -2718,7 +2773,7 @@
             <unmanaged>DXGI_FORMAT_BC7_UNORM_SRGB</unmanaged>	
             <unmanaged-short>DXGI_FORMAT_BC7_UNORM_SRGB</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DXGI.Format.Ayuv">
+        <member name="F:SharpDX.DXGI.Format.AYUV">
             <summary>	
             <dd> <p>Most common YUV 4:4:4 video resource format. Valid view formats for this video resource format are <see cref="F:SharpDX.DXGI.Format.R8G8B8A8_UNorm"/> and <see cref="F:SharpDX.DXGI.Format.R8G8B8A8_UInt"/>. For UAVs, an additional valid view format is <see cref="F:SharpDX.DXGI.Format.R32_UInt"/>. By using <see cref="F:SharpDX.DXGI.Format.R32_UInt"/> for UAVs, you can both read and write as opposed to just write for <see cref="F:SharpDX.DXGI.Format.R8G8B8A8_UNorm"/> and <see cref="F:SharpDX.DXGI.Format.R8G8B8A8_UInt"/>. Supported view types are SRV, RTV, and UAV. One view provides a straightforward mapping of the entire surface. The mapping to the view channel is V-&gt;R8, 	
             U-&gt;G8, 	
@@ -2754,7 +2809,7 @@
             <unmanaged>DXGI_FORMAT_Y416</unmanaged>	
             <unmanaged-short>DXGI_FORMAT_Y416</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DXGI.Format.Nv12">
+        <member name="F:SharpDX.DXGI.Format.NV12">
             <summary>	
             <dd> <p>Most common YUV 4:2:0 video resource format. Valid luminance data view formats for this video resource format are <see cref="F:SharpDX.DXGI.Format.R8_UNorm"/> and <see cref="F:SharpDX.DXGI.Format.R8_UInt"/>. Valid chrominance data view formats (width and height are each 1/2 of luminance view) for this video resource format are <see cref="F:SharpDX.DXGI.Format.R8G8_UNorm"/> and <see cref="F:SharpDX.DXGI.Format.R8G8_UInt"/>. Supported view types are SRV, RTV, and UAV. For luminance data view, the mapping to the view channel is Y-&gt;R8. For chrominance data view, the mapping to the view channel is U-&gt;R8 and	
             V-&gt;G8.</p> <strong>Direct3D 11:??</strong>This value is not supported until Windows Developer Preview. </dd>	
@@ -2786,14 +2841,14 @@
         </member>
         <member name="F:SharpDX.DXGI.Format.Opaque420">
             <summary>	
-            <dd> <p>8-bit per channel planar YUV 4:2:0 video resource format. This format is subsampled where each pixel has its own Y value, but each 2x2 pixel block shares a single U and V value. The runtime requires that the width and height of all resources that are created with this format are multiples of 2. The runtime also requires that the left, right, top, and bottom members of any <see cref="T:SharpDX.Rectangle"/> that are used for this format are multiples of 2. This format differs from <see cref="F:SharpDX.DXGI.Format.Nv12"/> in that the layout of the data within the resource is completely opaque to applications. Applications cannot use the CPU to map the resource and then access the data within the resource. You cannot use shaders with this format. Because of this behavior, legacy hardware that supports a non-NV12 4:2:0 layout (for example, YV12, and so on) can be used. Also, new hardware that has a 4:2:0 implementation better than NV12 can be used when the application does not need the data to be in a standard layout. </p> <strong>Direct3D 11:??</strong>This value is not supported until Windows Developer Preview. </dd>	
+            <dd> <p>8-bit per channel planar YUV 4:2:0 video resource format. This format is subsampled where each pixel has its own Y value, but each 2x2 pixel block shares a single U and V value. The runtime requires that the width and height of all resources that are created with this format are multiples of 2. The runtime also requires that the left, right, top, and bottom members of any <see cref="T:SharpDX.Rectangle"/> that are used for this format are multiples of 2. This format differs from <see cref="F:SharpDX.DXGI.Format.NV12"/> in that the layout of the data within the resource is completely opaque to applications. Applications cannot use the CPU to map the resource and then access the data within the resource. You cannot use shaders with this format. Because of this behavior, legacy hardware that supports a non-NV12 4:2:0 layout (for example, YV12, and so on) can be used. Also, new hardware that has a 4:2:0 implementation better than NV12 can be used when the application does not need the data to be in a standard layout. </p> <strong>Direct3D 11:??</strong>This value is not supported until Windows Developer Preview. </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_FORMAT_420_OPAQUE']/*"/>	
             <msdn-id>bb173059</msdn-id>	
             <unmanaged>DXGI_FORMAT_420_OPAQUE</unmanaged>	
             <unmanaged-short>DXGI_FORMAT_420_OPAQUE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DXGI.Format.Yuy2">
+        <member name="F:SharpDX.DXGI.Format.YUY2">
             <summary>	
             <dd> <p>Most common YUV 4:2:2 video resource format. Valid view formats for this video resource format are <see cref="F:SharpDX.DXGI.Format.R8G8B8A8_UNorm"/> and <see cref="F:SharpDX.DXGI.Format.R8G8B8A8_UInt"/>. For UAVs, an additional valid view format is <see cref="F:SharpDX.DXGI.Format.R32_UInt"/>. By using <see cref="F:SharpDX.DXGI.Format.R32_UInt"/> for UAVs, you can both read and write as opposed to just write for <see cref="F:SharpDX.DXGI.Format.R8G8B8A8_UNorm"/> and <see cref="F:SharpDX.DXGI.Format.R8G8B8A8_UInt"/>. Supported view types are SRV and UAV. One view provides a straightforward mapping of the entire surface. The mapping to the view channel is Y0-&gt;R8, 	
             U0-&gt;G8, 	
@@ -2834,7 +2889,7 @@
             <unmanaged>DXGI_FORMAT_Y216</unmanaged>	
             <unmanaged-short>DXGI_FORMAT_Y216</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DXGI.Format.Nv11">
+        <member name="F:SharpDX.DXGI.Format.NV11">
             <summary>	
             <dd> <p>Most common planar YUV 4:1:1 video resource format. Valid luminance data view formats for this video resource format are <see cref="F:SharpDX.DXGI.Format.R8_UNorm"/> and <see cref="F:SharpDX.DXGI.Format.R8_UInt"/>. Valid chrominance data view formats (width and height are each 1/4 of luminance view) for this video resource format are <see cref="F:SharpDX.DXGI.Format.R8G8_UNorm"/> and <see cref="F:SharpDX.DXGI.Format.R8G8_UInt"/>. Supported view types are SRV, RTV, and UAV. For luminance data view, the mapping to the view channel is Y-&gt;R8. For chrominance data view, the mapping to the view channel is U-&gt;R8 and	
             V-&gt;G8.</p> <strong>Direct3D 11:??</strong>This value is not supported until Windows Developer Preview. </dd>	
@@ -2844,7 +2899,7 @@
             <unmanaged>DXGI_FORMAT_NV11</unmanaged>	
             <unmanaged-short>DXGI_FORMAT_NV11</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DXGI.Format.Ai44">
+        <member name="F:SharpDX.DXGI.Format.AI44">
             <summary>	
             <dd> <p>4-bit palletized YUV format that is commonly used for DVD subpicture.</p> <strong>Direct3D 11:??</strong>This value is not supported until Windows Developer Preview. </dd>	
             </summary>	
@@ -2853,7 +2908,7 @@
             <unmanaged>DXGI_FORMAT_AI44</unmanaged>	
             <unmanaged-short>DXGI_FORMAT_AI44</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DXGI.Format.Ia44">
+        <member name="F:SharpDX.DXGI.Format.IA44">
             <summary>	
             <dd> <p>4-bit palletized YUV format that is commonly used for DVD subpicture.</p> <strong>Direct3D 11:??</strong>This value is not supported until Windows Developer Preview. </dd>	
             </summary>	
@@ -4753,6 +4808,9 @@
             <param name="device">A reference to the device that will write 2D images to the swap chain. </param>
             <param name="description">A reference to the swap-chain description (see <see cref="T:SharpDX.DXGI.SwapChainDescription"/>).</param>
             <unmanaged>HRESULT IDXGIFactory::CreateSwapChain([In] IUnknown* pDevice,[In] DXGI_SWAP_CHAIN_DESC* pDesc,[Out] IDXGISwapChain** ppSwapChain)</unmanaged>
+            <msdn-id>bb174537</msdn-id>	
+            <unmanaged>HRESULT IDXGIFactory::CreateSwapChain([In] IUnknown* pDevice,[In] DXGI_SWAP_CHAIN_DESC* pDesc,[Out, Fast] IDXGISwapChain** ppSwapChain)</unmanaged>	
+            <unmanaged-short>IDXGIFactory::CreateSwapChain</unmanaged-short>	
         </member>
         <member name="M:SharpDX.DXGI.SwapChain.GetBackBuffer``1(System.Int32)">
             <summary>
@@ -4763,7 +4821,9 @@
             <returns>
             Returns a reference to a back-buffer interface.
             </returns>
-            <unmanaged>HRESULT IDXGISwapChain::GetBuffer([None] int Buffer,[In] GUID* riid,[Out] void** ppSurface)</unmanaged>
+            <msdn-id>bb174570</msdn-id>	
+            <unmanaged>HRESULT IDXGISwapChain::GetBuffer([In] unsigned int Buffer,[In] const GUID&amp; riid,[Out] void** ppSurface)</unmanaged>	
+            <unmanaged-short>IDXGISwapChain::GetBuffer</unmanaged-short>	
         </member>
         <member name="P:SharpDX.DXGI.SwapChain.Description">
             <summary>	
@@ -4821,6 +4881,9 @@
             <value>
             	<c>true</c> if this swapchain is in fullscreen; otherwise, <c>false</c>.
             </value>
+            <msdn-id>bb174574</msdn-id>	
+            <unmanaged>HRESULT IDXGISwapChain::GetFullscreenState([Out] BOOL* pFullscreen,[Out] IDXGIOutput** ppTarget)</unmanaged>	
+            <unmanaged-short>IDXGISwapChain::GetFullscreenState</unmanaged-short>	
         </member>
         <member name="T:SharpDX.DXGI.SwapChain1">
             <summary>	

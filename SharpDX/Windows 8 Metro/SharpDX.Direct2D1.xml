@@ -398,7 +398,7 @@
             <unmanaged>HRESULT ID2D1Bitmap::CopyFromRenderTarget([In, Optional] const D2D_POINT_2U* destPoint,[In] ID2D1RenderTarget* renderTarget,[In, Optional] const D2D_RECT_U* srcRect)</unmanaged>	
             <unmanaged-short>ID2D1Bitmap::CopyFromRenderTarget</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.FromStream(System.IO.Stream,System.Int32,System.Int32)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromStream(System.IO.Stream,System.Int32,System.Int32)">
             <summary>	
             Copies the specified region from a stream into the current bitmap. 	
             </summary>	
@@ -409,11 +409,11 @@
             <param name="length">Length in bytes of the data to copy from the stream.</param>
             <param name="pitch">The stride, or pitch, of the source bitmap stored in srcData. The stride is the byte count of a scanline (one row of pixels in memory). The stride can be computed from the following formula: pixel width * bytes per pixel + memory padding. </param>
             <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code. </returns>
-            <msdn-id>dd371158</msdn-id>	
-            <unmanaged>HRESULT ID2D1Bitmap::CopyFromRenderTarget([In, Optional] const D2D_POINT_2U* destPoint,[In] ID2D1RenderTarget* renderTarget,[In, Optional] const D2D_RECT_U* srcRect)</unmanaged>	
-            <unmanaged-short>ID2D1Bitmap::CopyFromRenderTarget</unmanaged-short>	
+            <msdn-id>dd371155</msdn-id>	
+            <unmanaged>HRESULT ID2D1Bitmap::CopyFromMemory([In, Optional] const D2D_RECT_U* dstRect,[In] const void* srcData,[In] unsigned int pitch)</unmanaged>	
+            <unmanaged-short>ID2D1Bitmap::CopyFromMemory</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.FromStream(System.IO.Stream,System.Int32,System.Int32,SharpDX.Rectangle)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromStream(System.IO.Stream,System.Int32,System.Int32,SharpDX.Rectangle)">
             <summary>	
             Copies the specified region from a stream into the current bitmap. 	
             </summary>	
@@ -425,9 +425,9 @@
             <param name="pitch">The stride, or pitch, of the source bitmap stored in srcData. The stride is the byte count of a scanline (one row of pixels in memory). The stride can be computed from the following formula: pixel width * bytes per pixel + memory padding. </param>
             <param name="destinationArea">In the current bitmap, the upper-left corner of the area to which the region specified by srcRect is copied. </param>
             <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code. </returns>
-            <msdn-id>dd371158</msdn-id>	
-            <unmanaged>HRESULT ID2D1Bitmap::CopyFromRenderTarget([In, Optional] const D2D_POINT_2U* destPoint,[In] ID2D1RenderTarget* renderTarget,[In, Optional] const D2D_RECT_U* srcRect)</unmanaged>	
-            <unmanaged-short>ID2D1Bitmap::CopyFromRenderTarget</unmanaged-short>	
+            <msdn-id>dd371155</msdn-id>	
+            <unmanaged>HRESULT ID2D1Bitmap::CopyFromMemory([In, Optional] const D2D_RECT_U* dstRect,[In] const void* srcData,[In] unsigned int pitch)</unmanaged>	
+            <unmanaged-short>ID2D1Bitmap::CopyFromMemory</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(System.IntPtr)">
             <summary>
@@ -13062,6 +13062,21 @@
             <unmanaged>HRESULT IWICBitmapSource::CopyPixels([In, Optional] const WICRect* prc,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer)</unmanaged>	
             <unmanaged-short>IWICBitmapSource::CopyPixels</unmanaged-short>	
         </member>
+        <member name="M:SharpDX.WIC.BitmapSource.CopyPixels(System.Int32,System.IntPtr,System.Int32)">
+            <summary>	
+            <p>Instructs the object to produce pixels.</p>	
+            </summary>	
+            <param name="stride"><dd>  <p>The stride of the bitmap</p> </dd></param>	
+            <param name="dataPointer"><dd>  <p>A reference to the buffer.</p> </dd></param>	
+            <param name="size">Size of the buffer in bytes.</param>	
+            <remarks>	
+            <p><strong>CopyPixels</strong> is one of the two main image processing routines (the other being <strong>Lock</strong>) triggering the actual processing.  It instructs the object to produce pixels according to its algorithm - this may involve decoding a portion of a JPEG stored on disk, copying a block of memory, or even analytically computing a complex gradient.  The algorithm is completely dependent on the object implementing the interface. </p><p> The caller can restrict the operation to a rectangle of interest (ROI) using the prc parameter.  The ROI sub-rectangle must be fully contained in the bounds of the bitmap.  Specifying a <strong><c>null</c></strong> ROI implies that the whole bitmap should be returned. 	
+            </p><p> The caller controls the memory management and must provide an output buffer (<em>pbBuffer</em>) for the results of the copy along with the buffer's bounds (<em>cbBufferSize</em>).  The cbStride parameter defines the count of bytes between two vertically adjacent pixels in the output buffer.  The caller must ensure that there is sufficient buffer to complete the call based on the width, height and pixel format of the bitmap and the sub-rectangle provided to the copy method. </p><p> If the caller needs to perform numerous copies of an expensive <strong><see cref="T:SharpDX.WIC.BitmapSource"/></strong> such as a JPEG, it is recommended to create an in-memory <strong><see cref="T:SharpDX.WIC.Bitmap"/></strong> first. </p>Codec Developer Remarks<p> The callee must only write to the first (prc-&gt;Width*bitsperpixel+7)/8 bytes of each line of the output buffer (in this case, a line is a consecutive string of <em>cbStride</em> bytes). </p>	
+            </remarks>	
+            <msdn-id>ee690179</msdn-id>	
+            <unmanaged>HRESULT IWICBitmapSource::CopyPixels([In, Optional] const WICRect* prc,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer)</unmanaged>	
+            <unmanaged-short>IWICBitmapSource::CopyPixels</unmanaged-short>	
+        </member>
         <member name="M:SharpDX.WIC.BitmapSource.CopyPixels``1(SharpDX.DrawingRectangle,``0[])">
             <summary>	
             <p>Instructs the object to produce pixels.</p>	
@@ -13182,7 +13197,7 @@
             <unmanaged>HRESULT IWICImagingFactory::CreateBitmap([In] unsigned int uiWidth,[In] unsigned int uiHeight,[In] const GUID&amp; pixelFormat,[In] WICBitmapCreateCacheOption option,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>	
             <unmanaged-short>IWICImagingFactory::CreateBitmap</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.Bitmap.#ctor(SharpDX.WIC.ImagingFactory,System.Int32,System.Int32,System.Guid,SharpDX.DataRectangle)">
+        <member name="M:SharpDX.WIC.Bitmap.#ctor(SharpDX.WIC.ImagingFactory,System.Int32,System.Int32,System.Guid,SharpDX.DataRectangle,System.Int32)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.WIC.Bitmap"/> class from a memory location using <see cref="T:SharpDX.DataRectangle"/>.
             </summary>
@@ -13191,6 +13206,7 @@
             <param name="height">The height.</param>
             <param name="pixelFormat">The pixel format.</param>
             <param name="dataRectangle">The data rectangle.</param>
+            <param name="totalSizeInBytes">Size of the buffer in <see cref="!:dataRectangle"/>. If == 0, calculate the size automatically based on the height and row pitch.</param>
             <msdn-id>ee690291</msdn-id>	
             <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromMemory([In] unsigned int uiWidth,[In] unsigned int uiHeight,[In] const GUID&amp; pixelFormat,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>	
             <unmanaged-short>IWICImagingFactory::CreateBitmapFromMemory</unmanaged-short>	
@@ -13217,7 +13233,7 @@
             <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromSourceRect([In, Optional] IWICBitmapSource* pIBitmapSource,[In] unsigned int x,[In] unsigned int y,[In] unsigned int width,[In] unsigned int height,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>	
             <unmanaged-short>IWICImagingFactory::CreateBitmapFromSourceRect</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.Bitmap.New``1(SharpDX.WIC.ImagingFactory,System.Int32,System.Int32,System.Guid,``0[])">
+        <member name="M:SharpDX.WIC.Bitmap.New``1(SharpDX.WIC.ImagingFactory,System.Int32,System.Int32,System.Guid,``0[],System.Int32)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.WIC.Bitmap"/> class from an array of pixel datas.
             </summary>
@@ -13226,6 +13242,7 @@
             <param name="height">The height.</param>
             <param name="pixelFormat">The pixel format.</param>
             <param name="pixelDatas">The pixel datas.</param>
+            <param name="stride">Stride of a row of pixels (number of bytes per row). By default the stride is == 0, and calculated by taking the sizeof(T) * width.</param>
             <msdn-id>ee690291</msdn-id>	
             <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromMemory([In] unsigned int uiWidth,[In] unsigned int uiHeight,[In] const GUID&amp; pixelFormat,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>	
             <unmanaged-short>IWICImagingFactory::CreateBitmapFromMemory</unmanaged-short>	
@@ -14887,24 +14904,48 @@
             <returns>If the method succeeds, it returns <see cref="F:SharpDX.Result.Ok"/>. Otherwise, it throws an exception.</returns>
             <unmanaged>HRESULT IWICBitmapFrameEncode::SetColorContexts([In] unsigned int cCount,[In, Buffer] IWICColorContext** ppIColorContext)</unmanaged>	
         </member>
-        <member name="M:SharpDX.WIC.BitmapFrameEncode.WritePixels(System.Int32,SharpDX.DataRectangle)">
-            <summary>
-            Encodes the frame scanlines.
-            </summary>
-            <param name="lineCount">The line count.</param>
-            <param name="buffer">The buffer.</param>
-            <returns></returns>
-            <unmanaged>HRESULT IWICBitmapFrameEncode::WritePixels([In] unsigned int lineCount,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In, Buffer] unsigned char* pbPixels)</unmanaged>
-        </member>
-        <member name="P:SharpDX.WIC.BitmapFrameEncode.PixelFormat">
+        <member name="M:SharpDX.WIC.BitmapFrameEncode.WritePixels(System.Int32,SharpDX.DataRectangle,System.Int32)">
             <summary>	
-            <p>Requests that the encoder use the specified pixel format.</p>	
+            <p>Encodes the frame scanlines.</p>	
             </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmapFrameEncode::SetPixelFormat']/*"/>	
-            <msdn-id>ee690151</msdn-id>	
-            <unmanaged>SetPixelFormat</unmanaged>	
-            <unmanaged-short>SetPixelFormat</unmanaged-short>	
-            <unmanaged>HRESULT IWICBitmapFrameEncode::SetPixelFormat([InOut] GUID* pPixelFormat)</unmanaged>
+            <param name="lineCount"><dd>  <p>The number of lines to encode.</p> </dd></param>	
+            <param name="buffer">A data buffer containing the pixels to copy from.</param>	
+            <param name="totalSizeInBytes">Total size in bytes of pixels to write. If == 0, size is calculated with lineCount * rowStride.</param>
+            <remarks>	
+            <p>Successive <strong>WritePixels</strong> calls are assumed to be sequential scanline access in the output image.</p>	
+            </remarks>	
+            <msdn-id>ee690158</msdn-id>	
+            <unmanaged>HRESULT IWICBitmapFrameEncode::WritePixels([In] unsigned int lineCount,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In, Buffer] void* pbPixels)</unmanaged>	
+            <unmanaged-short>IWICBitmapFrameEncode::WritePixels</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.WIC.BitmapFrameEncode.WritePixels(System.Int32,System.IntPtr,System.Int32,System.Int32)">
+            <summary>	
+            <p>Encodes the frame scanlines.</p>	
+            </summary>	
+            <param name="lineCount"><dd>  <p>The number of lines to encode.</p> </dd></param>	
+            <param name="buffer">A data buffer containing the pixels to copy from.</param>
+            <param name="rowStride">The stride of one row.</param>
+            <param name="totalSizeInBytes">Total size in bytes of pixels to write. If == 0, size is calculated with lineCount * rowStride.</param>
+            <remarks>	
+            <p>Successive <strong>WritePixels</strong> calls are assumed to be sequential scanline access in the output image.</p>	
+            </remarks>	
+            <msdn-id>ee690158</msdn-id>	
+            <unmanaged>HRESULT IWICBitmapFrameEncode::WritePixels([In] unsigned int lineCount,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In, Buffer] void* pbPixels)</unmanaged>	
+            <unmanaged-short>IWICBitmapFrameEncode::WritePixels</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.WIC.BitmapFrameEncode.WritePixels``1(System.Int32,System.Int32,``0[])">
+            <summary>	
+            <p>Encodes the frame scanlines.</p>	
+            </summary>	
+            <param name="lineCount"><dd>  <p>The number of lines to encode.</p> </dd></param>	
+            <param name="stride"><dd>  <p>The <em>stride</em> of the image pixels.</p> </dd></param>	
+            <param name="pixelBuffer"><dd>  <p>A reference to the pixel buffer.</p> </dd></param>	
+            <remarks>	
+            <p>Successive <strong>WritePixels</strong> calls are assumed to be sequential scanline access in the output image.</p>	
+            </remarks>	
+            <msdn-id>ee690158</msdn-id>	
+            <unmanaged>HRESULT IWICBitmapFrameEncode::WritePixels([In] unsigned int lineCount,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In, Buffer] void* pbPixels)</unmanaged>	
+            <unmanaged-short>IWICBitmapFrameEncode::WritePixels</unmanaged-short>	
         </member>
         <member name="P:SharpDX.WIC.BitmapFrameEncode.Palette">
             <summary>	
@@ -17005,7 +17046,7 @@
             <unmanaged>HRESULT IWICPalette::InitializePredefined([In] WICBitmapPaletteType ePaletteType,[In] BOOL fAddTransparentColor)</unmanaged>	
             <unmanaged-short>IWICPalette::InitializePredefined</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.Palette.Initialize(System.Int32[],System.Int32)">
+        <member name="M:SharpDX.WIC.Palette.Initialize(System.IntPtr,System.Int32)">
             <summary>	
             <p>Initializes a palette to the custom color entries provided.</p>	
             </summary>	
@@ -17017,7 +17058,7 @@
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICPalette::InitializeCustom']/*"/>	
             <msdn-id>ee719750</msdn-id>	
-            <unmanaged>HRESULT IWICPalette::InitializeCustom([In, Buffer] unsigned int* pColors,[In] unsigned int cCount)</unmanaged>	
+            <unmanaged>HRESULT IWICPalette::InitializeCustom([In, Buffer] void* pColors,[In] unsigned int cCount)</unmanaged>	
             <unmanaged-short>IWICPalette::InitializeCustom</unmanaged-short>	
         </member>
         <member name="M:SharpDX.WIC.Palette.Initialize(SharpDX.WIC.BitmapSource,System.Int32,SharpDX.Bool)">
@@ -17072,7 +17113,7 @@
             <unmanaged>HRESULT IWICPalette::GetColorCount([Out] unsigned int* pcCount)</unmanaged>	
             <unmanaged-short>IWICPalette::GetColorCount</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.Palette.GetColors(System.Int32,System.Int32[],System.Int32@)">
+        <member name="M:SharpDX.WIC.Palette.GetColors(System.Int32,System.IntPtr,System.Int32@)">
             <summary>	
             <p>Fills out the supplied color array with the colors from the internal color table. The color array should be sized according to the return results from <strong>GetColorCount</strong>.</p>	
             </summary>	
@@ -17082,7 +17123,7 @@
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICPalette::GetColors']/*"/>	
             <msdn-id>ee719744</msdn-id>	
-            <unmanaged>HRESULT IWICPalette::GetColors([In] unsigned int cCount,[Out, Buffer] unsigned int* pColors,[Out] unsigned int* pcActualColors)</unmanaged>	
+            <unmanaged>HRESULT IWICPalette::GetColors([In] unsigned int cCount,[Out, Buffer] void* pColors,[Out] unsigned int* pcActualColors)</unmanaged>	
             <unmanaged-short>IWICPalette::GetColors</unmanaged-short>	
         </member>
         <member name="M:SharpDX.WIC.Palette.IsBlackWhite_(SharpDX.Bool@)">
@@ -17123,14 +17164,27 @@
             Initializes a new instance of the <see cref="T:SharpDX.WIC.Palette"/> class.
             </summary>
             <param name="factory">The factory.</param>
+            <msdn-id>ee690319</msdn-id>	
             <unmanaged>HRESULT IWICImagingFactory::CreatePalette([Out, Fast] IWICPalette** ppIPalette)</unmanaged>	
+            <unmanaged-short>IWICImagingFactory::CreatePalette</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.WIC.Palette.Initialize(SharpDX.Color[])">
+            <summary>
+            Initializes with the specified colors.
+            </summary>
+            <param name="colors">The colors.</param>
+            <msdn-id>ee719750</msdn-id>	
+            <unmanaged>HRESULT IWICPalette::InitializeCustom([In, Buffer] void* pColors,[In] unsigned int cCount)</unmanaged>	
+            <unmanaged-short>IWICPalette::InitializeCustom</unmanaged-short>	
         </member>
         <member name="M:SharpDX.WIC.Palette.Initialize(SharpDX.Color4[])">
             <summary>
             Initializes with the specified colors.
             </summary>
             <param name="colors">The colors.</param>
-            <unmanaged>HRESULT IWICPalette::InitializeCustom([In, Buffer] unsigned int* pColors,[In] unsigned int cCount)</unmanaged>	
+            <msdn-id>ee719750</msdn-id>	
+            <unmanaged>HRESULT IWICPalette::InitializeCustom([In, Buffer] void* pColors,[In] unsigned int cCount)</unmanaged>	
+            <unmanaged-short>IWICPalette::InitializeCustom</unmanaged-short>	
         </member>
         <member name="P:SharpDX.WIC.Palette.TypeInfo">
             <summary>	
@@ -17179,7 +17233,9 @@
             <summary>
             Gets the colors.
             </summary>
-            <unmanaged>HRESULT IWICPalette::GetColors([In] unsigned int cCount,[Out, Buffer] unsigned int* pColors,[Out] unsigned int* pcActualColors)</unmanaged>	
+            <msdn-id>ee719744</msdn-id>	
+            <unmanaged>HRESULT IWICPalette::GetColors([In] unsigned int cCount,[Out, Buffer] void* pColors,[Out] unsigned int* pcActualColors)</unmanaged>	
+            <unmanaged-short>IWICPalette::GetColors</unmanaged-short>	
         </member>
         <member name="T:SharpDX.WIC.PixelFormatInfo">
             <summary>	
@@ -17609,7 +17665,7 @@
             <unmanaged>HRESULT IWICStream::InitializeFromIStream([In, Optional] IStream* pIStream)</unmanaged>	
             <unmanaged-short>IWICStream::InitializeFromIStream</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.WICStream.#ctor(SharpDX.WIC.ImagingFactory,SharpDX.DataStream)">
+        <member name="M:SharpDX.WIC.WICStream.#ctor(SharpDX.WIC.ImagingFactory,SharpDX.DataPointer)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.WIC.WICStream"/> class from an unmanaged memory through a <see cref="T:SharpDX.DataStream"/>.
             </summary>
@@ -23124,6 +23180,17 @@
             <param name="fontSize">The logical size of the font in DIP ("device-independent pixel") units. A DIP equals 1/96 inch.</param>
             <param name="localeName">An array of characters that contains the locale name.</param>
             <unmanaged>HRESULT CreateTextFormat([In] const wchar* fontFamilyName,[None] IDWriteFontCollection* fontCollection,[None] DWRITE_FONT_WEIGHT fontWeight,[None] DWRITE_FONT_STYLE fontStyle,[None] DWRITE_FONT_STRETCH fontStretch,[None] FLOAT fontSize,[In] const wchar* localeName,[Out] IDWriteTextFormat** textFormat)</unmanaged>
+        </member>
+        <member name="M:SharpDX.DirectWrite.TextFormat.SetTrimming(SharpDX.DirectWrite.Trimming,SharpDX.DirectWrite.InlineObject)">
+            <summary>	
+            <p> Sets trimming options for text overflowing the layout width. </p>	
+            </summary>	
+            <param name="trimmingOptions"><dd> <p>Text trimming options.</p> </dd></param>	
+            <param name="trimmingSign"><dd> <p>Application-defined omission sign. This parameter may be <strong><c>null</c></strong>. See <strong><see cref="T:SharpDX.DirectWrite.InlineObject"/></strong> for more information.</p> </dd></param>	
+            <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
+            <msdn-id>dd316712</msdn-id>	
+            <unmanaged>HRESULT IDWriteTextFormat::SetTrimming([In] const DWRITE_TRIMMING* trimmingOptions,[In] IDWriteInlineObject* trimmingSign)</unmanaged>	
+            <unmanaged-short>IDWriteTextFormat::SetTrimming</unmanaged-short>	
         </member>
         <member name="M:SharpDX.DirectWrite.TextFormat.#ctor(System.IntPtr)">
             <summary>

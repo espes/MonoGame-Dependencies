@@ -1402,7 +1402,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Queries the Microsoft Direct3D device for an interface.</p>	
             </summary>	
             <param name="hDevice"><dd> <p>A handle to the Direct3D device. To get the device handle, call <strong><see cref="M:SharpDX.MediaFoundation.DXGIDeviceManager.OpenDeviceHandle"/></strong>.</p> </dd></param>	
-            <param name="riid"><dd> <p>The interface identifier (IID) of the requested interface. The Direct3D device supports the following interfaces:</p> <ul> <li> <strong>ID3D11VideoContext</strong> </li> <li> <strong>ID3D11VideoDevice</strong> </li> </ul> </dd></param>	
+            <param name="riid"><dd> <p>The interface identifier (IID) of the requested interface. The Direct3D device supports the following interfaces:</p> <ul> <li> <strong><see cref="!:SharpDX.Direct3D11.VideoContext"/></strong> </li> <li> <strong><see cref="!:SharpDX.Direct3D11.VideoDevice"/></strong> </li> </ul> </dd></param>	
             <returns><dd> <p>Receives a reference to the requested interface. The caller must release the interface.</p> </dd></returns>	
             <remarks>	
             <p>If the method returns <strong>MF_E_DXGI_NEW_VIDEO_DEVICE</strong>, call <strong><see cref="M:SharpDX.MediaFoundation.DXGIDeviceManager.CloseDeviceHandle(System.IntPtr)"/></strong> to close the handle and then call <strong>OpenDeviceHandle</strong> again to get a new handle. The  <strong><see cref="M:SharpDX.MediaFoundation.DXGIDeviceManager.ResetDevice(SharpDX.ComObject)"/></strong> method invalidates all open device handles.</p>	
@@ -1417,7 +1417,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gives the caller exclusive access to the Microsoft Direct3D device.</p>	
             </summary>	
             <param name="hDevice"><dd> <p>A handle to the Direct3D device. To get the device handle, call <strong><see cref="M:SharpDX.MediaFoundation.DXGIDeviceManager.OpenDeviceHandle"/></strong>.</p> </dd></param>	
-            <param name="riid"><dd> <p>The interface identifier (IID) of the requested interface. The Direct3D device will support the following interfaces:</p> <ul> <li> <strong>ID3D11Device</strong> </li> <li> <strong>ID3D11VideoContext</strong> </li> <li> <strong>ID3D11VideoDevice</strong> </li> </ul> </dd></param>	
+            <param name="riid"><dd> <p>The interface identifier (IID) of the requested interface. The Direct3D device will support the following interfaces:</p> <ul> <li> <strong><see cref="!:SharpDX.Direct3D11.Device"/></strong> </li> <li> <strong><see cref="!:SharpDX.Direct3D11.VideoContext"/></strong> </li> <li> <strong><see cref="!:SharpDX.Direct3D11.VideoDevice"/></strong> </li> </ul> </dd></param>	
             <param name="fBlock"><dd> <p>Specifies whether to wait for the device lock. If the device is already locked and this parameter is <strong>TRUE</strong>, the method blocks until the device is unlocked. Otherwise, if the device is locked and this parameter is <strong><see cref="F:SharpDX.Result.False"/></strong>, the method returns immediately with the error code <strong>DXVA2_E_VIDEO_DEVICE_LOCKED</strong>.</p> </dd></param>	
             <returns><dd> <p>Receives a reference to the requested interface. The caller must release the interface.</p> </dd></returns>	
             <remarks>	
@@ -2632,7 +2632,7 @@
             <unmanaged>HRESULT IMFMediaEngineEx::GetStreamAttribute([In] unsigned int dwStreamIndex,[In] const GUID&amp; guidMFAttribute,[Out] PROPVARIANT* pvValue)</unmanaged>	
             <unmanaged-short>IMFMediaEngineEx::GetStreamAttribute</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.MediaFoundation.MediaEngineEx.GetStreamSelection(System.Int32,SharpDX.Bool)">
+        <member name="M:SharpDX.MediaFoundation.MediaEngineEx.GetStreamSelection(System.Int32,SharpDX.Bool@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Queries whether a stream is selected to play.</p>	
             </summary>	
@@ -2641,7 +2641,7 @@
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngineEx::GetStreamSelection']/*"/>	
             <msdn-id>hh447944</msdn-id>	
-            <unmanaged>HRESULT IMFMediaEngineEx::GetStreamSelection([In] unsigned int dwStreamIndex,[In] BOOL* pEnabled)</unmanaged>	
+            <unmanaged>HRESULT IMFMediaEngineEx::GetStreamSelection([In] unsigned int dwStreamIndex,[Out] BOOL* pEnabled)</unmanaged>	
             <unmanaged-short>IMFMediaEngineEx::GetStreamSelection</unmanaged-short>	
         </member>
         <member name="M:SharpDX.MediaFoundation.MediaEngineEx.SetStreamSelection(System.Int32,SharpDX.Bool)">
@@ -5620,6 +5620,14 @@
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MFMEDIASOURCE_CAN_SKIPBACKWARD']/*"/>	
             <unmanaged>MFMEDIASOURCE_CAN_SKIPBACKWARD</unmanaged>	
             <unmanaged-short>MFMEDIASOURCE_CAN_SKIPBACKWARD</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.MediaFoundation.MediasourceCharacteristics.DoesNotUseNetwork">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MFMEDIASOURCE_DOES_NOT_USE_NETWORK']/*"/>	
+            <unmanaged>MFMEDIASOURCE_DOES_NOT_USE_NETWORK</unmanaged>	
+            <unmanaged-short>MFMEDIASOURCE_DOES_NOT_USE_NETWORK</unmanaged-short>	
         </member>
         <member name="T:SharpDX.MediaFoundation.MftDrainType">
             <summary>	
@@ -11133,7 +11141,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Queries the Microsoft DirectX Graphics Infrastructure (DXGI) surface for an interface.</p>	
             </summary>	
             <remarks>	
-            <p>You can use this method to get a reference to the <strong>ID3D11Texture2D</strong> interface of the surface. If the buffer is locked, the method returns <strong>MF_E_INVALIDREQUEST</strong>.</p>	
+            <p>You can use this method to get a reference to the <strong><see cref="!:SharpDX.Direct3D11.Texture2D"/></strong> interface of the surface. If the buffer is locked, the method returns <strong>MF_E_INVALIDREQUEST</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFDXGIBuffer']/*"/>	
             <msdn-id>hh447902</msdn-id>	
@@ -11163,7 +11171,7 @@
             <param name="vObjectOut"><dd> <p>Receives a reference to the interface. The caller must release the interface.</p> </dd></param>	
             <returns><p>This method can return one of these values.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>Success.</p> </td></tr> <tr><td> <dl> <dt><strong> E_NOINTERFACE</strong></dt> </dl> </td><td> <p>The object does not support the specified interface.</p> </td></tr> <tr><td> <dl> <dt><strong>MF_E_INVALIDREQUEST</strong></dt> </dl> </td><td> <p>Invalid request.</p> </td></tr> </table><p>?</p></returns>	
             <remarks>	
-            <p>You can use this method to get a reference to the <strong>ID3D11Texture2D</strong> interface of the surface. If the buffer is locked, the method returns <strong>MF_E_INVALIDREQUEST</strong>.</p>	
+            <p>You can use this method to get a reference to the <strong><see cref="!:SharpDX.Direct3D11.Texture2D"/></strong> interface of the surface. If the buffer is locked, the method returns <strong>MF_E_INVALIDREQUEST</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFDXGIBuffer::GetResource']/*"/>	
             <msdn-id>hh447902</msdn-id>	
@@ -11177,7 +11185,7 @@
             <param name="uSubresourceRef"><dd> <p>Receives the zero-based index of the subresource.</p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p>The subresource index is specified when you create the media buffer object. See <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateDXGISurfaceBuffer(System.Guid,SharpDX.ComObject,System.Int32,SharpDX.Bool,SharpDX.MediaFoundation.MediaBuffer@)"/></strong>.</p><p>For more information about texture subresources, see <strong>ID3D11Device::CreateTexture2D</strong>.</p>	
+            <p>The subresource index is specified when you create the media buffer object. See <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateDXGISurfaceBuffer(System.Guid,SharpDX.ComObject,System.Int32,SharpDX.Bool,SharpDX.MediaFoundation.MediaBuffer@)"/></strong>.</p><p>For more information about texture subresources, see <strong><see cref="!:SharpDX.Direct3D11.Device.CreateTexture2D"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFDXGIBuffer::GetSubresourceIndex']/*"/>	
             <msdn-id>hh447903</msdn-id>	
@@ -11217,7 +11225,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the index of the subresource that is associated with this media buffer.</p>	
             </summary>	
             <remarks>	
-            <p>The subresource index is specified when you create the media buffer object. See <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateDXGISurfaceBuffer(System.Guid,SharpDX.ComObject,System.Int32,SharpDX.Bool,SharpDX.MediaFoundation.MediaBuffer@)"/></strong>.</p><p>For more information about texture subresources, see <strong>ID3D11Device::CreateTexture2D</strong>.</p>	
+            <p>The subresource index is specified when you create the media buffer object. See <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateDXGISurfaceBuffer(System.Guid,SharpDX.ComObject,System.Int32,SharpDX.Bool,SharpDX.MediaFoundation.MediaBuffer@)"/></strong>.</p><p>For more information about texture subresources, see <strong><see cref="!:SharpDX.Direct3D11.Device.CreateTexture2D"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFDXGIBuffer::GetSubresourceIndex']/*"/>	
             <msdn-id>hh447903</msdn-id>	
@@ -11577,14 +11585,14 @@
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Enables the Media Engine to access protected content while in frame-server mode.</p>	
             </summary>	
-            <param name="reservedRef"><dd> <p>A reference to the Direct3D?11 device content. The Media Engine queries this reference for the <strong>ID3D11VideoContext</strong> interface. </p> </dd></param>	
+            <param name="unkDeviceContextRef"><dd> <p>A reference to the Direct3D?11 device content. The Media Engine queries this reference for the <strong><see cref="!:SharpDX.Direct3D11.VideoContext"/></strong> interface. </p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
             <p>In frame-server mode, this method enables the Media Engine to share protected content with the Direct3D?11 device.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngineProtectedContent::ShareResources']/*"/>	
             <msdn-id>hh447969</msdn-id>	
-            <unmanaged>HRESULT IMFMediaEngineProtectedContent::ShareResources([In] IUnknown* pReserved)</unmanaged>	
+            <unmanaged>HRESULT IMFMediaEngineProtectedContent::ShareResources([In] IUnknown* pUnkDeviceContext)</unmanaged>	
             <unmanaged-short>IMFMediaEngineProtectedContent::ShareResources</unmanaged-short>	
         </member>
         <member name="M:SharpDX.MediaFoundation.MediaEngineProtectedContent.GetRequiredProtections(System.Int32@)">
